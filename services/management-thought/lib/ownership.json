@@ -1,0 +1,14 @@
+{
+  "kind": "ownership-law-shadow",
+  "node": "management-thought",
+  "owners": ["union-officer-academy"],
+  "services": ["huidu-guanli", "rendanheyi"],
+  "effective-law": {
+    "rules": [
+      "source scholarship and historical provenance remain attributable to their recorded authors and sources",
+      "the Academy owns future doctrine stewardship, correction, educational presentation, curriculum use, and service contracting",
+      "management doctrine is a source for professional formation and never by itself grants office authority",
+      "new scientific claims commissioned from Lenticule Science arrive as external research and require Academy-local admission"
+    ]
+  }
+}

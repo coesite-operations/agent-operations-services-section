@@ -1,0 +1,21 @@
+{
+  "name": "@union-officer-academy/huidu-guanli",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A node micro-enterprise offering education and training on Huidu Guanli (灰度管理), the grayscale-management thought drawn from Huawei's institutional practice, delivered as a software service. Its current product is a glossary corpus.",
+  "x-owner": "union-officer-academy",
+  "x-rehomed-from": "lenticule-science/services/management-thought/huidu-guanli",
+  "x-rehomed-on": "2026-07-18",
+  "keywords": [
+    "huidu-guanli",
+    "grayscale-management",
+    "glossary",
+    "huawei",
+    "chinese-management",
+    "node-micro-enterprise",
+    "education",
+    "training"
+  ],
+  "license": "UNLICENSED"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "formation-market-xiaowei",
+  "description": "contestable formation-lianqun market brokerage",
+  "version": "0.1.0",
+  "defaultInputModes": ["application/activity+json"],
+  "defaultOutputModes": ["application/activity+json"],
+  "skills": [{"id": "formation-market-brokerage", "name": "formation market brokerage", "description": "bid and contract for the shared receiver outcome", "tags": ["Rendanheyi", "lianqun"]}],
+  "supportedInterfaces": [{"url": "urn:ame:formation-market-xiaowei#stdio", "protocolBinding": "local-activitystreams-stdio", "protocolVersion": "1"}]
+}
