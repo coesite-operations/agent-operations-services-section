@@ -110,7 +110,7 @@ function completeDenominator(demand) {
     authorityClass: "current-law",
   }));
   const admittedResearchPaths = [
-    "lib/emsenn/services/561-group/services/lenticule-science/content/documents/articles/notes/2026/07/11/2026-07-11-research-on-mape-k.md",
+    "lib/emsenn/services/561-group/services/science-services-section/content/documents/articles/notes/2026/07/11/2026-07-11-research-on-mape-k.md",
     "lib/emsenn/services/561-group/services/board-of-directors/lib/agency/characters/emsenn/content/documents/articles/notes/2026/07/01/2026-07-01-research-on-agent-run-as-charge.md",
     "lib/emsenn/services/561-group/services/board-of-directors/lib/agency/characters/emsenn/content/documents/articles/notes/2026/07/05/2026-07-05-research-on-charge-settled-development-a-verification-paradigm-for-agentic-programming.md",
     "lib/emsenn/services/561-group/services/board-of-directors/lib/agency/characters/emsenn/content/documents/articles/notes/2026/07/09/2026-07-09-explanation-as-affective-governance.md",
@@ -179,7 +179,7 @@ async function openFormation(demand, instant) {
     parents: priorBaseline ? [priorBaseline.curriculum] : [],
   }));
   const baseline = await retain(establishBaseline({ request: request.id, curriculum: curriculum.id, establishedAt: instant, predecessors: priorBaseline ? [priorBaseline.id] : [] }, await readRecords(NODE_ROOT)));
-  const projectorPath = "lib/emsenn/services/561-group/services/coesite-operations/services/coesite-agent-services-section/lib/professional-repertoire/skills/installing-claude-as-an-agent/scripts/install-claude-as-an-agent.js";
+  const projectorPath = "lib/emsenn/services/561-group/services/operations-services-section/services/coesite-agent-services-section/lib/professional-repertoire/skills/installing-claude-as-an-agent/scripts/install-claude-as-an-agent.js";
   const projectorDigest = rawDigest(readFileSync(join(REPOSITORY_ROOT, projectorPath)));
   const cohort = await retain(openCohort({
     baseline: baseline.id,

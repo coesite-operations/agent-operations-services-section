@@ -9,7 +9,7 @@ import { startTypedCircuitResidueAssayProcess } from "@lenticule-science/typed-c
 
 const SOURCE = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const REPOSITORY = resolve(SOURCE, "../../../../../..");
-const PROVIDER = join(REPOSITORY, "lib/emsenn/services/561-group/services/lenticule-science/services/obsmetrological-services-section/services/typed-circuit-residue-assay");
+const PROVIDER = join(REPOSITORY, "lib/emsenn/services/561-group/services/science-services-section/services/obsmetrological-services-section/services/typed-circuit-residue-assay");
 function fixture() {
   const base = mkdtempSync(join(tmpdir(), "uoa-rmn-v3-")), academy = join(base, "union-officer-academy");
   for (const relative of ["src/academy-rsi.mjs", "src/exercise-rmn-residue-profile.mjs", "content/evm/accounts/eip155-31337.json"]) { const target = join(academy, relative); mkdirSync(dirname(target), { recursive: true }); cpSync(join(SOURCE, relative), target); }
