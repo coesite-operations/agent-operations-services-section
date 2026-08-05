@@ -42,9 +42,9 @@ const CHARACTER_SOURCES = {
   "codex-interactive-session": `${EO}/services/leader-movement-team/content/characters/codex-interactive-session.json`,
   "rom-keldar": "lib/emsenn/services/561-group/lib/agency/characters/rom-keldar",
   "riley-park": "lib/emsenn/services/561-group/lib/agency/characters/riley-park",
-  "karen-wiener": "lib/emsenn/services/561-group/services/science-services-section/lib/characters/karen-wiener",
-  "lauren-becker": "lib/emsenn/services/561-group/services/science-services-section/lib/characters/lauren-becker",
-  "melvin-ginsberg": "lib/emsenn/services/561-group/services/science-services-section/lib/characters/melvin-ginsberg",
+  "karen-wiener": "lib/emsenn/services/561-group/services/science-services-section/lib/agency/characters/karen-wiener",
+  "lauren-becker": "lib/emsenn/services/561-group/services/science-services-section/lib/agency/characters/lauren-becker",
+  "melvin-ginsberg": "lib/emsenn/services/561-group/services/science-services-section/lib/agency/characters/melvin-ginsberg",
   "calder-underhill": "lib/emsenn/services/561-group/services/science-services-section/services/obsmetrological-services-section/src/lib/agency/characters/calder-underhill"
 };
 
