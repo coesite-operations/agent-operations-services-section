@@ -179,7 +179,7 @@ async function openFormation(demand, instant) {
     parents: priorBaseline ? [priorBaseline.curriculum] : [],
   }));
   const baseline = await retain(establishBaseline({ request: request.id, curriculum: curriculum.id, establishedAt: instant, predecessors: priorBaseline ? [priorBaseline.id] : [] }, await readRecords(NODE_ROOT)));
-  const projectorPath = "lib/emsenn/services/561-group/services/operations-services-section/services/coesite-agent-services-section/lib/professional-repertoire/skills/installing-claude-as-an-agent/scripts/install-claude-as-an-agent.js";
+  const projectorPath = "lib/emsenn/services/561-group/services/operations-services-section/services/agent-services-section/lib/professional-repertoire/skills/installing-claude-as-an-agent/scripts/install-claude-as-an-agent.js";
   const projectorDigest = rawDigest(readFileSync(join(REPOSITORY_ROOT, projectorPath)));
   const cohort = await retain(openCohort({
     baseline: baseline.id,

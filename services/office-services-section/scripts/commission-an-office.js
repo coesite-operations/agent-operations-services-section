@@ -37,7 +37,7 @@ const POOL = join(REPO_ROOT, "lib/emsenn/services/561-group/services/board-of-di
 const TERM = join(REPO_ROOT, "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/schemas/office.schema.json");
 const CHECKER = join(
   REPO_ROOT,
-  "lib/emsenn/services/561-group/services/operations-services-section/services/coesite-agent-services-section/lib/professional-repertoire/skills/checking-the-offices-of-a-firm-conform/scripts/check-the-offices-of-a-firm-conform.mjs",
+  "lib/emsenn/services/561-group/services/operations-services-section/services/agent-services-section/lib/professional-repertoire/skills/checking-the-offices-of-a-firm-conform/scripts/check-the-offices-of-a-firm-conform.mjs",
 );
 
 function argValue(flag) {
