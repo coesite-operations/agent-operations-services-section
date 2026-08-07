@@ -1,0 +1,20 @@
+{
+  "name": "@union-officer-academy/rendanheyi",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Rendanheyi (人单合一): a glossary of the Haier management model — micro-enterprises, chain groups, value-adjustment contracts, and user-paid compensation — described as a general public reference.",
+  "x-owner": "union-officer-academy",
+  "x-rehomed-from": "lenticule-science/services/management-thought/rendanheyi",
+  "x-rehomed-on": "2026-07-18",
+  "keywords": [
+    "rendanheyi",
+    "ren-dan-he-yi",
+    "glossary",
+    "haier",
+    "micro-enterprise",
+    "chinese-management",
+    "mnimanipi-micro-enterprise"
+  ],
+  "license": "UNLICENSED"
+}

@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "emsenn/schema/deontic-profile",
+  "$comment": "What an office is on the hook for: each work it governs, paired with what the office holds over that work — must do it, is free to do it, may put others under it, or cannot be put under it. It is a map, not a list, and that matters: each work gets exactly one answer, so an office cannot both owe a thing and be at liberty about it. The works are the keys, which is why you cannot write an office without first saying what work it governs — that is the whole job of writing one. The profile belongs to the office and not to whoever is currently sitting in it, so it passes whole to the next holder.",
+  "type": "object",
+  "minProperties": 1,
+  "propertyNames": {
+    "$ref": "#/$defs/workId"
+  },
+  "additionalProperties": {
+    "enum": [
+      "duty",
+      "liberty",
+      "deontic-power",
+      "deontic-immunity"
+    ],
+    "$comment": "What the office holds over that work. Duty is unprefixed because it is the root: deon is that which is binding, so deontic- marks descent from duty, and a 'deontic-duty' would be a duty-related duty. Liberty is unprefixed because nothing else in the enterprise is called one. Power and immunity are prefixed because both words are already taken — by watts and by biology. The other side of each — the claim, the no-claim, the liability, the disability — follows from naming this one, and is never written down separately: a copy is only a thing that can come to disagree."
+  },
+  "$comment-absences": "No holder: the profile is a fact about the office, and one that named its holder could not pass to the next. No entries for the other side of each relation: they follow from the one named. minProperties 1 because an office governing no work governs nothing.",
+  "$defs": {
+    "workId": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "$comment": "Names a work, and must resolve to one."
+    }
+  },
+  "x-source": {
+    "derived-from": "institution.md — the institution quintuple I = (Pos, D, CR, Rec, BG), where D assigns each position its profile. Domain is work, per ruling: what an office governs is work, not bare action."
+  },
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-15"
+  },
+  "title": "deontic profile"
+}

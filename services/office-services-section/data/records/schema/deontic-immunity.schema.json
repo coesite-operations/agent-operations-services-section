@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "emsenn/schema/deontic-immunity",
+  "$comment": "Being out of someone's reach: they hold no power to change your duties. Diplomatic immunity is one. Judicial immunity — a judge cannot be sued for what they did on the bench — is one. Constitutional rights are the large case: even a legislature holding enormous power cannot touch certain positions, and only changing the charter itself would let it. Prefixed because 'immunity' alone is the biological sense, and the enterprise means both — though the legal sense came first: immunis is in- plus munus, exempt from duty. An immunity is not a liberty. A liberty says you do no wrong by acting; an immunity says someone else cannot reach you.",
+  "type": "object",
+  "required": [
+    "name",
+    "under",
+    "protects",
+    "against"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "$comment": "What the immunity is called, as it is said."
+    },
+    "under": {
+      "type": "string",
+      "minLength": 1,
+      "$comment": "The authority that establishes it. An immunity holds because something structural says so, so the thing that says so is what would have to change for it to lapse."
+    },
+    "protects": {
+      "type": "string",
+      "minLength": 1,
+      "$comment": "The duty that cannot be changed. Names an obligation and not a work: an immunity is about the reach of others over your position, not about anything you do."
+    },
+    "against": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "$comment": "Who cannot reach you. They are correspondingly disabled — they simply lack the power. An immunity against nobody names no one who is thereby stopped, and so stops nothing."
+    }
+  },
+  "$comment-absences": "No discharged-when: an immunity is held, not discharged. It is a standing fact about what others cannot do, not an obligation with a settling condition. No holder or bearer: the office's deontic profile is where the holder enters.",
+  "x-source": {
+    "derived-from": "hohfeldian-position.md — second quartet, meta-level; Hohfeld, Fundamental Legal Conceptions as Applied in Judicial Reasoning, Yale Law Journal, 1913-1917",
+    "opposite": "liability",
+    "correlative": "disability"
+  },
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-15"
+  },
+  "title": "deontic immunity"
+}

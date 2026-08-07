@@ -1,0 +1,19 @@
+{
+  "name": "@union-officer-academy/qualification-registry-xiaowei",
+  "version": "0.1.2",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/run.mjs",
+    "./member": "./content/member.json"
+  },
+  "dependencies": {
+    "@union-officer-academy/formation-lianqun-member-runtime-service": "1.0.2"
+  },
+  "bin": {
+    "solicit-service": "./src/run.mjs",
+    "invoke-service": "./src/run.mjs",
+    "record-outcome": "./src/run.mjs",
+    "a2a-message": "./src/run.mjs"
+  }
+}

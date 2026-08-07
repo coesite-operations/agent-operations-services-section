@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "union-officer-academy/schema/academy-officer-supply-bid",
+  "type": "object",
+  "required": ["id", "type", "bidder", "lot", "receiver", "office", "offeredOutcome", "characterCandidate", "qualification", "capacityStatus", "recursivelyProcuredCapacity", "awardStatus", "authorityWithheld"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^urn:sha256:[a-f0-9]{64}$"},
+    "type": {"const": "AcademyOfficerSupplyBid"},
+    "bidder": {"const": "union-officer-academy"},
+    "lot": {"type": "string"},
+    "receiver": {"type": "string"},
+    "office": {"type": "object"},
+    "offeredOutcome": {"type": "string"},
+    "characterCandidate": {"type": "string"},
+    "qualification": {"type": "string"},
+    "capacityStatus": {"enum": ["ready", "conditional"]},
+    "recursivelyProcuredCapacity": {"type": "object"},
+    "settlement": {"type": "string"},
+    "awardStatus": {"const": "not-awarded"},
+    "authorityWithheld": {"type": "array", "minItems": 6}
+  }
+}

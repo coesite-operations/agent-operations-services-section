@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "emsenn/schema/liberty",
+  "$comment": "Being free to do something, because no duty forbids it. A liberty is the absence of a duty, and that is its whole content — which is why it is named against duty and why it carries no prefix: nothing else in the enterprise is called a liberty. A liberty is not a right. Your liberty to do a thing does not oblige anyone to let you: it means only that you do no wrong by doing it. The property owner has a claim that strangers not trespass AND a liberty to use the land; a stranger has the liberty to look at it but not to enter. Hohfeld called this 'privilege' and it was his worst word — in ordinary English a privilege is an unearned advantage, which is nearly the opposite. His successors say liberty. So do we.",
+  "type": "object",
+  "required": [
+    "name",
+    "under",
+    "free-to",
+    "against"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "$comment": "What the liberty is called, as it is said."
+    },
+    "under": {
+      "type": "string",
+      "minLength": 1,
+      "$comment": "The authority under which no duty forbids it. Being free of a duty under one authority is not being free of it under another."
+    },
+    "free-to": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "$comment": "The work you do no wrong by doing. Names a work and must resolve to one."
+    },
+    "against": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "$comment": "Who cannot complain of it. They hold the matching no-claim: if you are free to do it, they have no claim on you that you not. A liberty against nobody is not a liberty — there is no one it is held against."
+    }
+  },
+  "$comment-absences": "No discharged-when: a liberty is not owed and is not discharged. Nothing settles it, because there is nothing to do — a liberty carrying discharge conditions has been mis-written as a duty. No holder or bearer: the office's deontic profile is where the holder enters.",
+  "x-source": {
+    "derived-from": "hohfeldian-position.md — first quartet, act-level; Hohfeld, Fundamental Legal Conceptions as Applied in Judicial Reasoning, Yale Law Journal, 1913-1917. Named 'privilege' by Hohfeld; 'liberty' after Glanville Williams and most who followed.",
+    "opposite": "duty",
+    "correlative": "no-claim"
+  },
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-15"
+  },
+  "title": "liberty"
+}

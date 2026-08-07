@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "emsenn/schema/deontic-work",
+  "$comment": "Work that somebody is on the hook for. Work is work: it costs, and it changes something. It becomes deontic work when an authority says someone must do it, may do it, may make others do it, or cannot be made to do it. The two sets are not the same, and telling them apart is most of what running an enterprise is. They come apart both ways, and both ways have names: work that is owed and not done is an obligation outstanding; work that is done and was never owed is the labour nobody credits — the reason a place can run on someone whose job description says none of it. Neither gap is a flaw in the record. The record is what makes the gap visible at all. One line of an office's deontic profile is one of these.",
+  "type": "object",
+  "required": [
+    "name",
+    "work",
+    "kind",
+    "under",
+    "party"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "$comment": "What it is called, as it is said."
+    },
+    "work": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "$comment": "The work this is about. Names a work and must resolve to one: an obligation over something nobody has defined is the commonest way an enterprise comes to govern motions no one performs."
+    },
+    "kind": {
+      "enum": [
+        "duty",
+        "liberty",
+        "deontic-power",
+        "deontic-immunity"
+      ],
+      "$comment": "Which position the party holds over the work: they must do it, they are free to do it, they can put others under it, or they cannot be put under it. Exactly one — you cannot both owe a thing and be at liberty about it. Duty is unprefixed because it is the root the others are named against."
+    },
+    "under": {
+      "type": "string",
+      "minLength": 1,
+      "$comment": "The authority that says so. This is what makes the work deontic rather than merely done: absent something saying so, work is just work and nobody is on the hook."
+    },
+    "party": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "$comment": "The other side. Who it is owed to, who cannot complain of it, whose duties may be changed, or who cannot reach you — which one depends on the kind. Every one of these is three-cornered: there is the work, the one who holds the position, and the one it is held against. Without the third corner nothing is owed to anyone."
+    }
+  },
+  "$comment-absences": "No holder or bearer: the office's deontic profile is where the holder enters, and a deontic work that named its holder could not pass to whoever holds the office next. No done or discharged key: whether the work happened is a fact about the WORK; whether it was owed is a fact about this. Keeping them in one key is exactly the confusion the term exists to prevent. No cost: cost belongs to the work, not to the obligation over it.",
+  "x-source": {
+    "derived-from": "hohfeldian-position.md — the two quartets; normative-system.md — the quadrants that name the two gaps; what-is-the-theory-of-work.md — the work invariants"
+  },
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-15"
+  },
+  "title": "deontic work"
+}

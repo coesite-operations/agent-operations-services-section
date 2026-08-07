@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "union-officer-academy/schema/local-officer-supply-necessity",
+  "type": "object",
+  "required": ["id", "type", "actor", "receiver", "office", "premises", "conclusion", "standing", "authority"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {"type": "string", "pattern": "^urn:sha256:[a-f0-9]{64}$"},
+    "type": {"const": "LocalOfficerSupplyNecessity"},
+    "actor": {"type": "string", "minLength": 1},
+    "receiver": {"type": "string", "minLength": 1},
+    "office": {
+      "type": "object",
+      "required": ["id", "owner", "digest"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "owner": {"type": "string", "minLength": 1},
+        "digest": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"}
+      }
+    },
+    "premises": {"type": "object"},
+    "conclusion": {"type": "object"},
+    "standing": {"enum": ["not-needed", "locally-derived", "contracted"]},
+    "contract": {"type": "object"},
+    "authority": {"type": "object"}
+  }
+}
