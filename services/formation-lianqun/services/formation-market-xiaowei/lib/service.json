@@ -1,8 +1,0 @@
-{
-  "id": "formation-market-brokerage",
-  "kind": "answerable-service-capability",
-  "duty": "open an outcome lot, admit provider-authored bids, prove complete capability coverage, and close only mutual selection",
-  "work": ["validate shared user outcome", "preserve bid provenance", "reject incomplete coverage", "compute non-fixed contribution shares"],
-  "skill": "broker a contestable Rendanheyi lianqun without assigning its members",
-  "refusal": "refuse incomplete coverage, fixed allocations, or manager-authored provider bids"
-}
