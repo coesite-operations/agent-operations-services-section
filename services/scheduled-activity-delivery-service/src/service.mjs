@@ -778,7 +778,7 @@ function maskedParentDirectories(paths) {
   return [...directories].sort((left, right) => left.length - right.length);
 }
 export async function invokeTarget(registration, activity, options = {}) {
-  if (registration.request.executionMode === "dry-run") return { status: 0, signal: null, stdout: "", stderr: "", response: null, problem: null, dryRun: true };
+  if (registration.request.executionMode === "dry-run") return { status: 0, signal: null, stdout: "", stderr: "", response: null, problem: null, dryRun: true, customerTerritoryMutationAuthorized: false };
   if (typeof options.targetInvoker === "function") return await options.targetInvoker(registration, activity);
   const inspected = inspectTarget(registration.request.target); if (inspected.problem) return { status: null, signal: null, stdout: "", stderr: inspected.problem, response: null, problem: "target-runtime-inspection-failed", dryRun: false };
   if (!sameSemantic(registration.targetBinding, targetBindingFor(registration.request, inspected))) return { status: null, signal: null, stdout: "", stderr: "target package or selected bin changed after schedule registration", response: null, problem: "target-runtime-closure-changed", dryRun: false };
@@ -841,7 +841,11 @@ export async function invokeTarget(registration, activity, options = {}) {
     child.stdin.end(`${JSON.stringify(activity)}\n`);
   });
   let parsed = null; try { parsed = JSON.parse(result.stdout); } catch { /* recorded as transport failure */ }
-  return { status: result.status, signal: result.signal, stdout: result.stdout, stderr: result.stderr, response: parsed, problem: parsed === null ? "target-response-unparseable" : null, dryRun: false };
+  // A live target may truthfully report a customer-territory effect only when
+  // this carrier actually admitted one or more fixed writable roots into its
+  // Bubblewrap mount graph.  The target never gets authority from its own
+  // receipt: the flag merely attests to this already-enforced carrier fact.
+  return { status: result.status, signal: result.signal, stdout: result.stdout, stderr: result.stderr, response: parsed, problem: parsed === null ? "target-response-unparseable" : null, dryRun: false, customerTerritoryMutationAuthorized: writableRoots.length > 0 };
 }
 
 async function invokeFairly(attempts, maximum = MAX_CONCURRENT_TARGETS) {
@@ -856,7 +860,7 @@ async function invokeFairly(attempts, maximum = MAX_CONCURRENT_TARGETS) {
   await Promise.all(Array.from({ length: Math.min(maximum, attempts.length) }, () => worker())); return completed;
 }
 
-export function targetResponseProblem(response, registration, activity) {
+export function targetResponseProblem(response, registration, activity, options = {}) {
   const object = response?.object;
   if (response?.["@context"] !== CONTEXT) return "foreign-context";
   if (response?.actor !== registration?.request?.target?.actor) return "foreign-target-actor";
@@ -864,13 +868,14 @@ export function targetResponseProblem(response, registration, activity) {
   if (response?.inReplyTo !== activity?.id) return "foreign-reply";
   if (typeof object?.type !== "string") return "missing-target-response-type";
   if (object.contract !== registration?.request?.target?.contract) return "foreign-target-contract";
-  if (object.customerTerritoryMutation !== false) return "target-mutation-claim";
+  if (object.customerTerritoryMutation !== false && object.customerTerritoryMutation !== true) return "target-mutation-claim";
+  if (object.customerTerritoryMutation === true && !(response.type === "Accept" && options.customerTerritoryMutationAuthorized === true)) return "target-mutation-claim";
   if (response.type === "Accept") return null;
   if (response.type === "Reject" && /Refusal$/u.test(object.type) && typeof object.reason === "string" && object.reason) return null;
   return "unsupported-target-decision";
 }
-function targetDecisionType(response, registration, activity) {
-  if (targetResponseProblem(response, registration, activity)) return null;
+function targetDecisionType(response, registration, activity, options = {}) {
+  if (targetResponseProblem(response, registration, activity, options)) return null;
   if (response.type === "Accept") return "accept";
   if (response.type === "Reject") return "reject";
   return null;
@@ -969,8 +974,8 @@ export async function runDue(at = new Date().toISOString(), options = {}) {
   // so a slow enterprise cannot monopolize the clock and a flaky WitnessJournal carrier
   // is not needlessly flooded by simultaneous projections.
   for (const { registration, occurrence, scheduledFor, activity, attempt, started, invoked } of completed) {
-    const targetProblem = invoked.dryRun ? null : invoked.problem ?? targetResponseProblem(invoked.response, registration, activity);
-    const targetDecision = invoked.dryRun ? null : targetDecisionType(invoked.response, registration, activity);
+    const targetProblem = invoked.dryRun ? null : invoked.problem ?? targetResponseProblem(invoked.response, registration, activity, invoked);
+    const targetDecision = invoked.dryRun ? null : targetDecisionType(invoked.response, registration, activity, invoked);
     const disposition = invoked.dryRun ? "dry-run" : targetDecision ? `target-${targetDecision}` : "transport-failure";
     const receipt = { type: "ScheduledDeliveryReceipt", id: id({ scheduleId: registration.scheduleId, occurrence, attempt: attempt.id, activity, disposition, response: invoked.response }), attempt: attempt.id, scheduleId: registration.scheduleId, occurrence, scheduledFor, attemptedAt: at, activity, activityDigest: digest(activity), disposition, targetResponse: invoked.response, targetResponseDigest: invoked.response ? digest(invoked.response) : null, targetResponseProblem: targetProblem, process: { status: invoked.status, signal: invoked.signal, stderrDigest: digest(invoked.stderr ?? ""), wallTimeMilliseconds: Date.now() - started }, retryAuthorized: false, customerTerritoryMutation: false };
     const pending = { type: "PendingDeliverySettlement", receipt, recordedAt: at }; writePendingSettlement(root, receipt, at);
