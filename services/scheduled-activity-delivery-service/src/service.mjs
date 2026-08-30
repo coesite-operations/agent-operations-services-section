@@ -3,7 +3,7 @@
 import { spawn } from "node:child_process";
 import { createHash } from "node:crypto";
 import { accessSync, closeSync, constants, createReadStream, existsSync, fsyncSync, linkSync, lstatSync, mkdirSync, openSync, readFileSync, readdirSync, realpathSync, statSync, unlinkSync, writeFileSync } from "node:fs";
-import { dirname, isAbsolute, join, relative, resolve, sep } from "node:path";
+import { basename, dirname, isAbsolute, join, relative, resolve, sep } from "node:path";
 import { createInterface } from "node:readline";
 import { fileURLToPath } from "node:url";
 import { createSemanticRecordJournal } from "@red-cup-engineering/semantic-record-journal-service";
@@ -36,6 +36,7 @@ const MAX_DELIVERY_TIMEOUT_MS = 3_600_000;
 const MAX_CONCURRENT_TARGETS = 3;
 const MAX_TARGETS_PER_TICK = 32;
 const ACTIVE_SCHEDULE_PROJECTION = "ActiveScheduleProjection";
+const TICK_RESULTS_DIRECTORY = "tick-results";
 // These are the fixed, host-owned executables used for every live target
 // invocation. They are deliberately not PATH lookups or schedule inputs.
 export const TARGET_ISOLATION_EXECUTABLES = Object.freeze({
@@ -83,6 +84,56 @@ function response(type, source, object) {
 }
 function refusal(source, code, reason, contract = CONTRACT) { return response("Reject", source, { type: "Refusal", contract, code, reason, customerTerritoryMutation: false }); }
 function dataRoot(options = {}) { return resolve(options.dataRoot ?? process.env.SCHEDULED_ACTIVITY_DELIVERY_DATA_ROOT ?? join(ROOT, "data")); }
+export function tickResultFilename(at) {
+  if (!validInstant(at)) throw new Error("tick result requires an explicit valid instant");
+  return `${at.replaceAll(/[-:.]/gu, "")}.json`;
+}
+export function tickResultPath(root, at) { return join(root, TICK_RESULTS_DIRECTORY, tickResultFilename(at)); }
+function tickResultBody(result) { const { id: ignored, ...body } = result; return body; }
+function verifyTickResult(result, path = null) {
+  if (!result || typeof result !== "object" || result.type !== "ScheduledDeliveryTickResult" || result.actor !== ACTOR || !validInstant(result.at)) throw new Error(`invalid persisted tick result${path ? `: ${path}` : ""}`);
+  if (typeof result.id !== "string" || result.id !== id(tickResultBody(result))) throw new Error(`persisted tick result identity does not verify${path ? `: ${path}` : ""}`);
+  if (path && basename(path) !== tickResultFilename(result.at)) throw new Error(`persisted tick result filename does not bind its instant: ${path}`);
+  return Object.freeze(result);
+}
+function readTickResult(path) {
+  let stat;
+  try { stat = lstatSync(path); }
+  catch (error) { if (error?.code === "ENOENT") return null; throw error; }
+  if (!stat.isFile() || stat.isSymbolicLink() || (stat.mode & 0o777) !== 0o600) throw new Error(`persisted tick result is not a 0600 regular file: ${path}`);
+  let result; try { result = JSON.parse(readFileSync(path, "utf8")); }
+  catch { throw new Error(`persisted tick result is not valid JSON: ${path}`); }
+  return verifyTickResult(result, path);
+}
+function persistTickResult(root, result) {
+  const directory = join(root, TICK_RESULTS_DIRECTORY), path = tickResultPath(root, result.at), existing = readTickResult(path);
+  if (existing) return existing;
+  try {
+    mkdirSync(directory, { recursive: true, mode: 0o700 });
+    const directoryStat = lstatSync(directory);
+    if (!directoryStat.isDirectory() || directoryStat.isSymbolicLink()) throw new Error(`tick-results directory is unsafe: ${directory}`);
+    const descriptor = openSync(path, "wx", 0o600);
+    try { writeFileSync(descriptor, `${JSON.stringify(result)}\n`); fsyncSync(descriptor); }
+    finally { closeSync(descriptor); }
+  } catch (error) {
+    // A concurrent/replayed clock pulse may have won the one allowed write.
+    // Return only its independently verified immutable observation.
+    if (error?.code === "EEXIST") return readTickResult(path) ?? (() => { throw error; })();
+    throw error;
+  }
+  return readTickResult(path);
+}
+// Read-only operator observation. It creates neither the directory nor a
+// result cell, and fails closed instead of skipping a malformed newest cell.
+export function inspectLatestTick(options = {}) {
+  const root = dataRoot(options), directory = join(root, TICK_RESULTS_DIRECTORY);
+  if (!existsSync(directory)) return null;
+  const directoryStat = lstatSync(directory);
+  if (!directoryStat.isDirectory() || directoryStat.isSymbolicLink()) throw new Error(`tick-results directory is unsafe: ${directory}`);
+  const names = readdirSync(directory).filter((name) => /^\d{8}T\d{9}Z\.json$/u.test(name)).sort();
+  if (names.length === 0) return null;
+  return readTickResult(join(directory, names.at(-1)));
+}
 function store(options = {}) {
   const journal = createSemanticRecordJournal({ root: dataRoot(options), objectKind: "scheduled-activity-delivery.record" });
   return Object.freeze({
@@ -958,7 +1009,9 @@ export async function runDue(at = new Date().toISOString(), options = {}) {
   // Timer work must be proportional to accepted active schedules, not to the
   // append-only delivery history.  In particular, do not replace this with a
   // journal snapshot: Cold Red Gate has years of tiny reservation cells.
-  const root = dataRoot(options), ledger = options.ledger ?? store(options); const attempts = []; const results = []; const recovery = await reconcileRecoveryQueue(root, ledger, at); const settlementFailures = [...recovery.failures];
+  const root = dataRoot(options), replay = readTickResult(tickResultPath(root, at));
+  if (replay) return replay;
+  const ledger = options.ledger ?? store(options); const attempts = []; const results = []; const recovery = await reconcileRecoveryQueue(root, ledger, at); const settlementFailures = [...recovery.failures];
   // Kept only for programmatic compatibility fixtures that inject a ledger.
   // The installed timer never supplies one; it must use the explicit,
   // streaming migration below rather than recurse through historic attempts.
@@ -996,7 +1049,8 @@ export async function runDue(at = new Date().toISOString(), options = {}) {
     catch (error) { settlementFailures.push({ type: "PendingDeliverySettlementResidue", receipt: receipt.id, scheduleId: registration.scheduleId, occurrence, errorDigest: digest(error instanceof Error ? error.message : String(error)), customerTerritoryMutation: false }); }
     results.push(receipt);
   }
-  return { type: "ScheduledDeliveryTickResult", actor: ACTOR, at, attempted: results.length, receipts: results, recoveredSettlements: [], recoveredInterruptedAttempts: recovery.recovered, pendingSettlements: settlementFailures, activeScheduleProjection: true, activeSchedules: active.length, dispatchWindow: dispatchWindow.length, maximumTargetsPerTick: MAX_TARGETS_PER_TICK, migrationRequired: active.length === 0 && !existsSync(join(root, "active-schedule-projections")), concurrentTargetIsolation: true, maximumConcurrentTargets: MAX_CONCURRENT_TARGETS, perScheduleFailureIsolation: true, noCatchUpCascade: true };
+  const result = { type: "ScheduledDeliveryTickResult", actor: ACTOR, at, attempted: results.length, receipts: results, recoveredSettlements: [], recoveredInterruptedAttempts: recovery.recovered, pendingSettlements: settlementFailures, activeScheduleProjection: true, activeSchedules: active.length, dispatchWindow: dispatchWindow.length, maximumTargetsPerTick: MAX_TARGETS_PER_TICK, migrationRequired: active.length === 0 && !existsSync(join(root, "active-schedule-projections")), concurrentTargetIsolation: true, maximumConcurrentTargets: MAX_CONCURRENT_TARGETS, perScheduleFailureIsolation: true, noCatchUpCascade: true };
+  return persistTickResult(root, { ...result, id: id(result) });
 }
 
 // This is deliberately an observation, rather than a dry run: it never
@@ -1024,6 +1078,11 @@ export function inspectAcceptedSchedules(options = {}) {
 function arg(name, fallback) { const index = process.argv.indexOf(name); return index < 0 ? fallback : process.argv[index + 1]; }
 if (process.argv[1] && existsSync(process.argv[1]) && realpathSync(process.argv[1]) === realpathSync(fileURLToPath(import.meta.url))) {
   const operation = arg("--operation", "solicit-service"); const at = arg("--now", new Date().toISOString());
-  try { const output = operation === "run-due" ? await runDue(at) : await settle(JSON.parse(readFileSync(0, "utf8")), operation, at); process.stdout.write(`${JSON.stringify(output, null, 2)}\n`); if (output.type === "Reject") process.exitCode = 2; }
+  try {
+    const output = operation === "run-due" ? await runDue(at)
+      : operation === "inspect-latest-tick" ? inspectLatestTick()
+        : await settle(JSON.parse(readFileSync(0, "utf8")), operation, at);
+    process.stdout.write(`${JSON.stringify(output, null, 2)}\n`); if (output?.type === "Reject") process.exitCode = 2;
+  }
   catch (error) { process.stderr.write(`${error.stack ?? error.message}\n`); process.exitCode = 1; }
 }
