@@ -1,7 +1,7 @@
 # Union Officer Academy
 
 Union Officer Academy is the 561 Group's sovereign officer corps and
-professional-formation ANT Colony. It is the canonical home of the Union's
+professional-formation ANT Colony. It is the home of the Union's
 reusable professional offices, duties, works, disciplines, executable skills,
 and session characters. When an enterprise needs an office filled, the
 Academy supplies a cohort-formed, qualified character and an exact animation
@@ -111,7 +111,7 @@ The second population is the Academy's educational and labor product, not its
 internal staff roster. Historical Executive Office and character-store copies
 are retained only as digest-bound projections during consumer migration.
 `npm run verify` fails if a live carrier is unclassified, if reusable law lacks
-an Academy canonical carrier, or if a retained projection drifts.
+an Academy carrier, or if a retained projection drifts.
 
 ## The Academy's organs and operating swarm
 
