@@ -7,6 +7,7 @@ environment_file=${SCHEDULED_ACTIVITY_DELIVERY_ENVIRONMENT_FILE:-"$HOME/.config/
 unit_directory=${XDG_CONFIG_HOME:-"$HOME/.config"}/systemd/user
 deployment="$service_root/content/deployments/cold-red-gate"
 timer=scheduled-activity-delivery-run-due.timer
+node=/gnu/store/kba00zrnc1d1cg9bkx0krpvc2sp7wzrh-node-24.18.0/bin/node
 
 case ${1:-} in
   "") preflight_mode=normal ;;
@@ -22,10 +23,14 @@ if systemctl --user is-active --quiet "$timer"; then
   echo "refusing to replace an active $timer; stop it and inspect its current state first" >&2
   exit 2
 fi
+if [ ! -x "$node" ]; then
+  echo "pinned Cold Red Gate Guix Node is absent or not executable: $node" >&2
+  exit 2
+fi
 if [ "$preflight_mode" = structural-only ]; then
-  node "$service_root/scripts/cold-red-gate-preflight.mjs" --service-root "$service_root" --structural-only
+  "$node" "$service_root/scripts/cold-red-gate-preflight.mjs" --service-root "$service_root" --structural-only
 else
-  node "$service_root/scripts/cold-red-gate-preflight.mjs" --service-root "$service_root" --environment-file "$environment_file"
+  "$node" "$service_root/scripts/cold-red-gate-preflight.mjs" --service-root "$service_root" --environment-file "$environment_file"
 fi
 systemd-analyze verify "$deployment/scheduled-activity-delivery-run-due.service" "$deployment/$timer"
 install -d -m 0755 "$unit_directory"

@@ -5,7 +5,7 @@ import { spawnSync } from "node:child_process";
 import { homedir } from "node:os";
 import { dirname, isAbsolute, join, relative, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
-import { inspectAcceptedSchedules, inspectTarget, resolveTargetIsolationExecutables, TARGET_ISOLATION_EXECUTABLES, TARGET_WRITABLE_ROOT_ENVIRONMENT } from "../src/service.mjs";
+import { COLD_RED_GATE_NODE, inspectAcceptedSchedules, inspectTarget, resolveColdRedGateNodeExecutable, resolveTargetIsolationExecutables, TARGET_ISOLATION_EXECUTABLES, TARGET_WRITABLE_ROOT_ENVIRONMENT } from "../src/service.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const DEFAULT_ROOT = resolve(HERE, "..");
@@ -88,7 +88,10 @@ export function preflightKoiosTargetConfiguration(environment, at = new Date().t
   const target = inspectTarget(KOIOS_TARGET);
   if (target.problem) return Object.freeze({ ready: false, problem: `Koios target runtime is not admissible: ${target.problem}` });
   const admitted = Object.fromEntries(KOIOS_TARGET_ENVIRONMENT.flatMap((name) => typeof environment?.[name] === "string" ? [[name, environment[name]]] : []));
-  const result = spawnSync(process.execPath, [target.entry, "preflight", "--now", at], { cwd: target.packageRoot, encoding: "utf8", env: { PATH: process.env.PATH, NODE_PATH: process.env.NODE_PATH, NO_COLOR: "1", ...admitted } });
+  let nodeExecutable;
+  try { nodeExecutable = resolveColdRedGateNodeExecutable(); }
+  catch (error) { return Object.freeze({ ready: false, problem: error instanceof Error ? error.message : String(error) }); }
+  const result = spawnSync(nodeExecutable, [target.entry, "preflight", "--now", at], { cwd: target.packageRoot, encoding: "utf8", env: { PATH: process.env.PATH, NODE_PATH: process.env.NODE_PATH, NO_COLOR: "1", ...admitted } });
   let report; try { report = JSON.parse(result.stdout); } catch { report = null; }
   if (result.status !== 0 || report?.type !== "KoiosRoutineOperationPreflight" || report.ready !== true || !Array.isArray(report.effects) || report.effects.length !== 0) {
     const detail = result.stderr?.trim().split("\n").at(-1);
@@ -114,13 +117,16 @@ export function preflight({ serviceRoot = DEFAULT_ROOT, environmentFile, home = 
   check(unitValue(unit, "EnvironmentFile") === "%h/.config/emsenn/scheduled-activity-delivery.env", "unit does not require the isolated delivery environment file");
   check(new RegExp(`^Environment=SCHEDULED_ACTIVITY_DELIVERY_TARGET_ENV_ALLOWLIST=${KOIOS_TARGET_ENVIRONMENT.join(",")}$`, "mu").test(unit), "unit does not admit only the current Koios routine configuration names");
   check(new RegExp(`^Environment=SCHEDULED_ACTIVITY_DELIVERY_TARGET_WRITABLE_ROOT_ENV_ALLOWLIST=${TARGET_WRITABLE_ROOT_ENVIRONMENT.join(",")}$`, "mu").test(unit), "unit does not admit only the fixed Koios writable-root configuration names");
-  check(unitValue(unit, "ExecStart") === "/usr/bin/env node src/service.mjs --operation run-due", "unit can execute something other than the admitted run-due operation");
+  check(unitValue(unit, "ExecStart") === `${COLD_RED_GATE_NODE} src/service.mjs --operation run-due`, "unit does not bind run-due to the pinned Cold Red Gate Guix Node");
   check(unitValue(timer, "Unit") === "scheduled-activity-delivery-run-due.service", "timer does not target the admitted service unit");
   check(/^OnUnitActiveSec=15min$/mu.test(timer), "timer cadence is not the admitted fifteen-minute pulse");
   const isolation = assayIsolation();
   check(isolation?.ready === true, isolation?.problem ?? "Bubblewrap read-only-root isolation is not presently feasible");
+  let nodeExecutable;
+  try { nodeExecutable = resolveColdRedGateNodeExecutable(); }
+  catch (error) { problems.push(error instanceof Error ? error.message : String(error)); }
   const packagePath = join(root, "package.json");
-  if (isFile(packagePath)) {
+  if (isFile(packagePath) && nodeExecutable) {
     try {
       const pkg = JSON.parse(readFileSync(packagePath, "utf8"));
       check(pkg?.bin?.["run-due"] === "./src/service.mjs", "package does not advertise run-due at the inspected service entrypoint");
@@ -128,7 +134,7 @@ export function preflight({ serviceRoot = DEFAULT_ROOT, environmentFile, home = 
       // require.resolve check would reject that healthy production closure, so
       // ask the same Node ESM resolver the service entrypoint uses instead.
       const dependencies = Object.keys(pkg.dependencies ?? {});
-      const resolution = spawnSync(process.execPath, ["--input-type=module", "--eval", `for (const dependency of ${JSON.stringify(dependencies)}) import.meta.resolve(dependency);`], { cwd: root, encoding: "utf8" });
+      const resolution = spawnSync(nodeExecutable, ["--input-type=module", "--eval", `for (const dependency of ${JSON.stringify(dependencies)}) import.meta.resolve(dependency);`], { cwd: root, encoding: "utf8" });
       if (resolution.status !== 0) {
         problems.push(`required dependency closure is not resolvable by Node ESM${resolution.stderr?.trim() ? `: ${resolution.stderr.trim().split("\n").at(-1)}` : ""}`);
       }

@@ -43,6 +43,19 @@ export const TARGET_ISOLATION_EXECUTABLES = Object.freeze({
   nice: "/usr/bin/nice",
   bwrap: "/usr/bin/bwrap",
 });
+// Cold Red Gate's scheduled carrier and every target it launches use the
+// already-retained Guix Node closure, never the mutable NVM/PATH selection.
+// This path is part of that colony's deployment contract, not schedule input.
+export const COLD_RED_GATE_NODE = "/gnu/store/kba00zrnc1d1cg9bkx0krpvc2sp7wzrh-node-24.18.0/bin/node";
+export function resolveColdRedGateNodeExecutable(path = COLD_RED_GATE_NODE) {
+  let target, stat, store;
+  try { target = realpathSync(path); stat = statSync(target); store = statSync("/gnu/store"); accessSync(target, constants.X_OK); }
+  catch { throw new Error(`pinned Cold Red Gate Node is absent or not executable: ${path}`); }
+  if (target !== COLD_RED_GATE_NODE || !stat.isFile() || stat.uid !== store.uid || stat.dev !== store.dev || (stat.mode & 0o222) !== 0) {
+    throw new Error(`pinned Cold Red Gate Node is not the exact Guix-store-owned non-writable regular file: ${COLD_RED_GATE_NODE}`);
+  }
+  return target;
+}
 export function resolveTargetIsolationExecutables(executables = TARGET_ISOLATION_EXECUTABLES) {
   const resolved = {};
   for (const [name, path] of Object.entries(executables)) {
