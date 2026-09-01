@@ -1,13 +1,14 @@
 #!/usr/bin/env node
 import { createHash } from "node:crypto";
 import { spawnSync } from "node:child_process";
-import { closeSync, existsSync, mkdtempSync, openSync, readFileSync, readdirSync, rmSync, writeFileSync } from "node:fs";
+import { closeSync, existsSync, mkdtempSync, openSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { dirname, isAbsolute, join, relative, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import { academySemanticRecordStore } from "@coesite-operations/rendanheyi-formation-lianqun-member-runtime-service/semantic-records";
 import { canonical, contentId, digest } from "@coesite-operations/rendanheyi-formation-lianqun-member-runtime-service/a2a";
 import { inspectMeshScope } from "../lib/management/skills/enforcing-mesh-scope/scripts/mesh-scope.js";
+import { walkPosixPathsSync } from "@red-cup-engineering/path-walking-service";
 
 const CONTEXT = "https://www.w3.org/ns/activitystreams";
 const NODE_ID = "union-officer-academy";
@@ -134,15 +135,7 @@ function invocationProblem(activity) {
 }
 
 function filesBelow(root, stop = new Set([".git", "node_modules", "data", "assets", "_archive"])) {
-  const output = []; let entries;
-  try { entries = readdirSync(root, { withFileTypes: true }); } catch { return output; }
-  for (const entry of entries) {
-    if (stop.has(entry.name)) continue;
-    const path = join(root, entry.name);
-    if (entry.isSymbolicLink()) continue;
-    if (entry.isDirectory()) output.push(...filesBelow(path, stop)); else output.push(path);
-  }
-  return output;
+  return walkPosixPathsSync({ root, excludes: [...stop], missing: "empty", unreadable: "skip", symlinks: "skip", paths: "absolute", result: "paths" }).files;
 }
 function fileDigest(path) { return `sha256:${createHash("sha256").update(readFileSync(path)).digest("hex")}`; }
 function runJsonProcess(runner, cwd, args, value, timeout = 30_000) {

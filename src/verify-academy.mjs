@@ -5,6 +5,7 @@ import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { canonical, digest, readRecords, verifyNode } from "./academy.mjs";
+import { walkPosixPathsSync } from "@red-cup-engineering/path-walking-service";
 
 const NODE_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const REQUIRED_SCHEMAS = ["formation-request", "curriculum-revision", "formation-baseline", "cohort", "assessment-challenge-commitment", "assessment-challenge-reveal", "enrollment", "training-event", "assessment", "qualification", "formation-refusal", "formation-record-correction", "requalification-gap", "formation-epoch-gap", "doctrine-admission", "qualification-status-event", "succession-exercise", "curriculum-program", "character-cohort-membership", "character-animation"];
@@ -24,8 +25,7 @@ function territoryRoot(start) {
 }
 
 function filesBelow(path) {
-  if (!existsSync(path)) return [];
-  return readdirSync(path, { withFileTypes: true }).flatMap((entry) => entry.isDirectory() ? filesBelow(join(path, entry.name)) : [join(path, entry.name)]);
+  return walkPosixPathsSync({ root: path, missing: "empty", paths: "absolute", result: "paths" }).files;
 }
 
 function assertDigest(root, path, expected, owner) {

@@ -4,49 +4,16 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-overrides:
-  '@coesite-operations/rendanheyi-formation-lianqun-member-runtime-service': 1.0.3
-  '@red-cup-engineering/witness-journal-entry-service': 0.1.6
-  '@red-cup-engineering/witness-journal-log-service': 0.1.5
-  '@red-cup-engineering/semantic-content-identify-service': 0.2.3
-
 importers:
 
   .:
     dependencies:
-      '@lenticule-science/typed-circuit-residue-assay':
-        specifier: 1.1.1
-        version: 1.1.1(express@5.2.1)
-      '@modelcontextprotocol/sdk':
-        specifier: 1.29.0
-        version: 1.29.0(zod@4.3.6)
-      '@red-cup-engineering/json-schema-services-section':
-        specifier: 0.1.4
-        version: 0.1.4
-      '@red-cup-engineering/markdown-file-reading-service':
-        specifier: 0.1.0
-        version: 0.1.0
-      '@red-cup-engineering/markdown-file-writing-service':
-        specifier: 0.1.0
-        version: 0.1.0
-      '@red-cup-engineering/ni-services-section':
-        specifier: 0.1.1
-        version: 0.1.1
-      '@red-cup-engineering/semantic-content-identify-service':
-        specifier: 0.2.3
-        version: 0.2.3
-      '@red-cup-engineering/skills-services-section':
-        specifier: 0.1.0
-        version: 0.1.0
-      '@red-cup-engineering/witness-journal-entry-service':
-        specifier: 0.1.6
-        version: 0.1.6
-      '@red-cup-engineering/witness-journal-log-service':
-        specifier: 0.1.5
-        version: 0.1.5
       '@coesite-operations/rendanheyi-context-compilation-xiaowei':
         specifier: 0.1.2
         version: 0.1.2
+      '@coesite-operations/rendanheyi-enterprise-services-section':
+        specifier: 0.1.0
+        version: 0.1.0
       '@coesite-operations/rendanheyi-formation-lianqun-member-runtime-service':
         specifier: 1.0.3
         version: 1.0.3
@@ -62,6 +29,39 @@ importers:
       '@coesite-operations/rendanheyi-situated-practice-xiaowei':
         specifier: 0.1.2
         version: 0.1.2
+      '@lenticule-science/typed-circuit-residue-assay':
+        specifier: 1.1.1
+        version: 1.1.1(express@5.2.1)
+      '@modelcontextprotocol/sdk':
+        specifier: 1.29.0
+        version: 1.29.0(zod@4.3.6)
+      '@red-cup-engineering/json-schema-services-section':
+        specifier: 0.1.7
+        version: 0.1.7
+      '@red-cup-engineering/markdown-file-reading-service':
+        specifier: 0.1.0
+        version: 0.1.0
+      '@red-cup-engineering/markdown-file-writing-service':
+        specifier: 0.1.0
+        version: 0.1.0
+      '@red-cup-engineering/ni-services-section':
+        specifier: 0.1.1
+        version: 0.1.1
+      '@red-cup-engineering/path-walking-service':
+        specifier: 1.2.1
+        version: 1.2.1
+      '@red-cup-engineering/semantic-content-identify-service':
+        specifier: 0.2.7
+        version: 0.2.7
+      '@red-cup-engineering/skills-services-section':
+        specifier: 0.1.0
+        version: 0.1.0
+      '@red-cup-engineering/witness-journal-entry-service':
+        specifier: 0.1.7
+        version: 0.1.7
+      '@red-cup-engineering/witness-journal-log-service':
+        specifier: 0.1.6
+        version: 0.1.6
       zod:
         specifier: 4.3.6
         version: 4.3.6
@@ -83,6 +83,33 @@ packages:
       express:
         optional: true
 
+  '@coesite-operations/rendanheyi-context-compilation-xiaowei@0.1.2':
+    resolution: {integrity: sha512-hsDk/2BSRwVYEkpQ05P0MA7+Jr21xaeU43gPzBxFe/g+HLZvmUfD4khOd8vmtnxzPG/5pUYpx9SGwfYNqUqxZA==}
+    hasBin: true
+
+  '@coesite-operations/rendanheyi-enterprise-services-section@0.1.0':
+    resolution: {integrity: sha512-Tp+5SQf+x2zBlSvf/jWe70o9HLr22lj2oNZhb0gjf+L4I5VlzXXjsBZVy9F8kCD59J5mLfEbDvsg3h8mk1OTnA==}
+
+  '@coesite-operations/rendanheyi-formation-lianqun-member-runtime-service@1.0.3':
+    resolution: {integrity: sha512-PBrMy8dVpdY8fBRvfC4ZrQRlBfQYanhqtn9Onc9aG7EWWxGmlAHs4s2OJ0DNQLPv05CIyagQCEcTx+HcebISVQ==}
+    engines: {node: '>=22'}
+
+  '@coesite-operations/rendanheyi-formation-market-xiaowei@0.1.2':
+    resolution: {integrity: sha512-Cgo9u5upwrKr5CVdVCuJqsqBlMnlPs8tWxolIUbhlKYL2H0ymHlzGQeiDPv6khE3niQGcVMlI69wE9Hi7gP7Kg==}
+    hasBin: true
+
+  '@coesite-operations/rendanheyi-independent-examination-xiaowei@0.1.2':
+    resolution: {integrity: sha512-imta0ehPzbArhQ553cuIoYkOLyXIDDnDsuup96+1v+k7M75vALx8hv/i7ueyoR9cv0pP3tOSV+YAGfToSWiQMQ==}
+    hasBin: true
+
+  '@coesite-operations/rendanheyi-qualification-registry-xiaowei@0.1.2':
+    resolution: {integrity: sha512-f5WOg2Qp3BEKSQmFiodxIEa/lH4PQlP0qOLuQ1IHMS0qdlqVnoLX+HlFmmRvyZ1WnGmWz5vVz75U5u/dpEBWYg==}
+    hasBin: true
+
+  '@coesite-operations/rendanheyi-situated-practice-xiaowei@0.1.2':
+    resolution: {integrity: sha512-1LQmj8Qo85mo+Q9T6TLO0VHFivNgyVU1weHW1G+addYLm94FeF1Owfy7odurRwv143usRG5tz4FWAaFxNzCMWg==}
+    hasBin: true
+
   '@hono/node-server@1.19.17':
     resolution: {integrity: sha512-dSneS5qhiauZWGDCeK4o695Xd9nUNjviSZCMQrj10eetr8Uln1ucn6bbphOM6UynAMMtNIzZNSpL9vnASJwrPQ==}
     engines: {node: '>=18.14.1'}
@@ -91,6 +118,9 @@ packages:
 
   '@lenticule-science/articulating@0.2.0':
     resolution: {integrity: sha512-lH+IZiWM0XbcvBQGs8PEM3e9C2w6LbsH8NQG7DR5HqdLZVsFzABgNwoE27orvxUu4sW2JcI4g6E+uo89s/ClTg==}
+
+  '@lenticule-science/articulating@0.2.2':
+    resolution: {integrity: sha512-namzkMve433Wf34Ek8juKOnUK9bgv7Hqm3PHHcBHtmfHwXvJhRv2qKqNj7pEcL9Eca7ljKWih7UNQHfg0cMpMg==}
 
   '@lenticule-science/typed-circuit-residue-assay@1.1.1':
     resolution: {integrity: sha512-MIn9XDHfrVPSW+8hq8fOg4/QHxla6x+c/J+rchRxX1pZEnF5ak7Z9wK0xL7qyQtiKhuasQMcOUs/7ZLs3/0FxQ==}
@@ -146,8 +176,8 @@ packages:
     resolution: {integrity: sha512-oJU8kInZov9CC10p6qjmgOGdkl00HVPMArn3hJUXj7A9Psv7dVTW5ADKV8LHypQXsuTyIF3YstAP6y9fZjVyXw==}
     engines: {node: '>=22'}
 
-  '@red-cup-engineering/cryptographic-integrity-service@0.1.2':
-    resolution: {integrity: sha512-0sD/Ghj05EeNcRKW1F1WPICCrS2VTBtpZP0wItl+hJcdqKO6PKPBNSbKxwBEXHH6WXEYjHc2DhOlcZURpfzgrw==}
+  '@red-cup-engineering/cryptographic-integrity-service@0.1.3':
+    resolution: {integrity: sha512-BHawKjfX1cEbA7kRLLe09tYEtHNUI2FPJcAIpRkhed08zOmdEa0pVeg0gBKs8EkEsJLH0aFjFdMQv4cvLUKwFA==}
     engines: {node: '>=22'}
 
   '@red-cup-engineering/file-services@0.2.0':
@@ -160,19 +190,27 @@ packages:
     engines: {node: '>=22'}
     hasBin: true
 
-  '@red-cup-engineering/immutable-content-custody-service@2.0.0':
-    resolution: {integrity: sha512-UAdsXCvO9+07vRv1/47W9DtwL+5P4hH+NZSo8o51P1OCjxLprjdlk7swjXRtTug7OMOZ8iWtH/iz2L37ao73og==}
+  '@red-cup-engineering/immutable-content-custody-service@2.0.2':
+    resolution: {integrity: sha512-GHsw0+cT5ZRRu+9mDcIabAG7zVT+arXS1l3N+wpXQEMlC/XjZR265RiD2LAXHgAc1Ze1n2b84o8j49+/tuBA/g==}
     engines: {node: '>=22'}
     hasBin: true
+
+  '@red-cup-engineering/json-byte-carrier-service@0.1.0':
+    resolution: {integrity: sha512-iXhf+ltj6qVV9imTJivJkl96Ja59Ktaej9Q205yMTBedhhG5/9MSWajmRWmmnXjkkHlDlWmBMzHSZJsfDUYIyg==}
+    engines: {node: '>=22'}
 
   '@red-cup-engineering/json-codec-service@0.1.3':
     resolution: {integrity: sha512-6BEs9XfxRtGKFVK5oDNLjfBUTEjoRk/5ef4HOTeDD6xZrFVAHgVgltki9LxGYFZ6eQ21K+q0oGShk81O6Fu5XA==}
 
-  '@red-cup-engineering/json-codec-service@0.1.4':
-    resolution: {integrity: sha512-ka3t5Q5Tv76TJsnepvQEoIoO07KOQ/cOXi7lPfuyNRaq/WXrzPWVrlV4NbelWmVHyVRUuPP8JcpCDqQedzLD4w==}
+  '@red-cup-engineering/json-codec-service@0.1.6':
+    resolution: {integrity: sha512-NQNj/QQ6xPfKQ5FfsFOEe2rFnxGt+xbQMan16dAVnvxaOn5Ot9vEYX+n48nIFozTM8YoQ23yJP2JkNWCsujuGg==}
 
   '@red-cup-engineering/json-schema-services-section@0.1.4':
     resolution: {integrity: sha512-oENT45Is7UJeVnLf30P9fUh4NNWWmz5wPSLEh/ywSPabZsjrN17lSWpgP5AKUTeUAb7nabvmDdNxqpD2gMna0w==}
+    hasBin: true
+
+  '@red-cup-engineering/json-schema-services-section@0.1.7':
+    resolution: {integrity: sha512-eeSsGpWy2TL7Q/JsZPWdnB1VKH2wvbFA0bP62+aL1k/UZdGLeNVifrmld6iiQPJb0Eyn2WD9qmdDklC640oX5w==}
     hasBin: true
 
   '@red-cup-engineering/markdown-file-reading-service@0.1.0':
@@ -187,6 +225,10 @@ packages:
     resolution: {integrity: sha512-HPnx3PLzbjUqJvtj8SH5etWrko2GSgwIQBP+RhF2ZwAle/Q8KMMvYXp5/FtJIIxyp9p4ggMmWYeRX/Hmr08ocA==}
     engines: {node: '>=18'}
 
+  '@red-cup-engineering/ni-services-section@0.1.2':
+    resolution: {integrity: sha512-HmrSr/AbF3/14dWQxjOm8/TzI6PheZy23IPCLdqzyereyPmQyxzANpGQC4Kn8SRJMVnLECjVm7WXkFKqIu/46w==}
+    engines: {node: '>=18'}
+
   '@red-cup-engineering/path-prioritization-service@0.1.0':
     resolution: {integrity: sha512-Yo21pQHGQv3/eFxkjCjHhp26IEwnanLfsh49hv5iSmWj1tLiq+E2as43Ge4JC6NN6YOswWYFKWhQ/HcWYVAl5g==}
     engines: {node: '>=22'}
@@ -197,8 +239,17 @@ packages:
     engines: {node: '>=22'}
     hasBin: true
 
+  '@red-cup-engineering/path-walking-service@1.2.1':
+    resolution: {integrity: sha512-9Wkh/OpppVQjdkMEKoW8aEUtvmPClWPuOzvgb02G3bwgNDAeHD7jAXLAd183MdM+ajXmtpW39vJAbFXDf8/1tg==}
+    engines: {node: '>=22'}
+    hasBin: true
+
   '@red-cup-engineering/punctuated-name-derivation-service@0.1.3':
     resolution: {integrity: sha512-YJtmN7sXDtTTlzR8QxBRrDXOUm23Jg+c9I5qeNFRHHAst9nFeKTCw7gW1aN4gfjLjX+F7JP2Jc/w4tAZ8+HzIQ==}
+    engines: {node: '>=22'}
+
+  '@red-cup-engineering/punctuated-name-derivation-service@0.1.4':
+    resolution: {integrity: sha512-FMNxLSi/QKuhlapFMCFhLM7ExbmuIgKQv4xdJgRBrnaZeE4byFDITAULYrRz41ke/KFIJKs3cFfwk6lhCYJvXA==}
     engines: {node: '>=22'}
 
   '@red-cup-engineering/relation-model-notation-cbor-codec@0.1.0':
@@ -209,8 +260,16 @@ packages:
     resolution: {integrity: sha512-npT2Icso4psu3a3Jkvswf/nKtrPXMifXfy4tlwRUe8AaMgrMePGuY0k2e29dTDBHJmT/qCeQupSnBJYPivwBcg==}
     engines: {node: '>=22'}
 
+  '@red-cup-engineering/relation-model-notation-eval@0.0.4':
+    resolution: {integrity: sha512-VC5Y2vKbGFWSaAHItSPLrqa1jEctOcrIeJ27YHsuaQUKrsceQbdyL3lKr62gQs33QnfJdCRQujXGyTBTRLPFjg==}
+    engines: {node: '>=22'}
+
   '@red-cup-engineering/relation-model-notation-json-codec@0.0.4':
     resolution: {integrity: sha512-WO9+zrSNGFbKLRy9uy2svCYomhm/HUZVxmXAi3VJDk0+exnOyqFHfpzCh1THII+GEfVEnLSOqj7PWC3+laZ7HQ==}
+    engines: {node: '>=22'}
+
+  '@red-cup-engineering/relation-model-notation-json-codec@0.0.6':
+    resolution: {integrity: sha512-+OIdLjldO1ao0y/T6vUgl9qA9YlexntRp4bhOua8Sb0lTI1yMxq1WTqgQziiCDcyzn8L84UtUhY/BfP4JxLLHQ==}
     engines: {node: '>=22'}
 
   '@red-cup-engineering/relation-model-notation-runtime@8.0.0':
@@ -233,14 +292,20 @@ packages:
     engines: {node: '>=22'}
     hasBin: true
 
-  '@red-cup-engineering/semantic-linefeed-normalization-service@0.1.0':
-    resolution: {integrity: sha512-sbcxVdXV3wI3zci7AWANDcDNkUMQkppwQkn6sfY9vEqn/7JJ5ynbAfuGShxhPPAaYU74V+cCHJdXeg4UckIeWQ==}
+  '@red-cup-engineering/semantic-content-identify-service@0.2.7':
+    resolution: {integrity: sha512-Ag+I4MNasoc5alXN/fmbt81UBhVGx+Yff4CgOicJDo5K9Vmc1XnRYssAyJzu+GzaKveTE5B4b8VP48ep7E7YeA==}
+    engines: {node: '>=22'}
+    hasBin: true
 
   '@red-cup-engineering/semantic-linefeed-normalization-service@0.1.1':
     resolution: {integrity: sha512-dfsZipgY1/bY/2eKVdTSkJVTlAIAef7w9B4hmYSjORTU7/d2RTAORHRa1HiWoa1srF9woV0ugDcV2tn/vCtbag==}
 
   '@red-cup-engineering/semiotic-resource-name-addressing-service@0.1.3':
     resolution: {integrity: sha512-pLuusMc58QM021t92+pi44u+y27ayZjIkZejRcEygLm3fzQ1ABX+GHGtx09SirYTRXZS8K6mktPogQHbbXAsdA==}
+    engines: {node: '>=22'}
+
+  '@red-cup-engineering/semiotic-resource-name-addressing-service@0.1.4':
+    resolution: {integrity: sha512-LOpcZjBLYverY9F8/ySt+whSh0dbdvEhEHOXvvlmdfOnQ8Ipl6+Pch9ySkMMZTGTbm7OOD2gdMD4lV3lBQ6IOA==}
     engines: {node: '>=22'}
 
   '@red-cup-engineering/skills-services-section@0.1.0':
@@ -256,45 +321,29 @@ packages:
     resolution: {integrity: sha512-S3KnCZsl1JfushVME7QPhEH9CG6CvwRLRQPevTDC8HvRx4A3lQvik63QdE2AHvv6fCjYHlm7JctROmcRMWua5Q==}
     engines: {node: '>=22'}
 
-  '@red-cup-engineering/typed-resource-classification-kernel-service@0.1.2':
-    resolution: {integrity: sha512-ueAVMg/Fp2J/QgLD0iKNo+KYJxQJj4alemnFpDAW0FI3FNZ+PrQ2HKcYWjigiwmYV2l50IMiZwm9qGApjo3yew==}
+  '@red-cup-engineering/typed-resource-classification-kernel-service@0.1.3':
+    resolution: {integrity: sha512-zp3Zutyx7lW8SJk8VWTpvDv+MnLD0+EbdqFSqTmc4YkfZLQ9tB9orkCG6veKN7z80qixWJgrWgVoM0kEQXd27w==}
     engines: {node: '>=22'}
 
-  '@red-cup-engineering/witness-journal-entry-service@0.1.6':
-    resolution: {integrity: sha512-awhdDn4/dyjblCzVTkaT7aHta8nDcTQTtEdS1RqqcKU6c4xrv8mMeHLDAsr2d5mPJOBx3vgogELZJhpA+L+qBw==}
+  '@red-cup-engineering/witness-journal-entry-service@0.1.5':
+    resolution: {integrity: sha512-GgZ1Dk7EnGOYE80/pEA88vLovVWFP0sdEafTZM8+9jMrcjPXp0wkkQmNYWj9O4928hHn2eUtVlMHMai6GhSNVg==}
     engines: {node: '>=22'}
 
-  '@red-cup-engineering/witness-journal-log-service@0.1.5':
-    resolution: {integrity: sha512-q4i/xpA09bVq7w9HxcbbSf9JEQOT0KaThOt1VfD1K+PV7eaeeMmihdxT+IlFmbGCHKHYHdGV1+HyD7OgMThHVA==}
+  '@red-cup-engineering/witness-journal-entry-service@0.1.7':
+    resolution: {integrity: sha512-tJ/Tt95makS1uwG3n3xb2++F/JdHR2ABIcYZWHAd+WZMRqyndTh1+tGxhRdELfoPuxiPtMj1OOc+TXSt/AFIMA==}
+    engines: {node: '>=22'}
+
+  '@red-cup-engineering/witness-journal-log-service@0.1.4':
+    resolution: {integrity: sha512-Giv30KBaGLcvYc3xZsLOrf8U9pb/rAVr0F1wdzm/+upLzhmi53g7febaf2L841EGv8OIUfWHLh7aC2Fc2QXJCQ==}
+    engines: {node: '>=22'}
+
+  '@red-cup-engineering/witness-journal-log-service@0.1.6':
+    resolution: {integrity: sha512-WBqtp/NXpJuTyAl2UnEPloyCPAWCENyXsSdXUvlrbQK+anPazxGyagVfxx0vRPpms08XPF5zcut/9gpnsLoc3Q==}
     engines: {node: '>=22'}
     hasBin: true
 
   '@red-cup-engineering/write-markdown-file-service@0.2.0':
     resolution: {integrity: sha512-6s3koVsB/uBn+K4dH5OpdQgKp6iGmM0kZBibbpoPrDEtnnH+diPGtXS5Z4rJMOF8cUz/mAAQ/2MWeGZRCLSOSA==}
-
-  '@coesite-operations/rendanheyi-context-compilation-xiaowei@0.1.2':
-    resolution: {integrity: sha512-zMIpQTsfjb5cioOHowl+8qQTi98NGoWkUO1RV+sxZfmmDhAm0xsO5DJCguDlErlr3walpVbpjO6Et1fSkmIuyw==}
-    hasBin: true
-
-  '@coesite-operations/rendanheyi-formation-lianqun-member-runtime-service@1.0.3':
-    resolution: {integrity: sha512-xuvDF6KQj4E20f5HhWuouvcrYCguRpmEBUQRUgw5dXxv3Xqgt3rlpa4WTYcCS3CWOI19612Z6oI0WXFHi2d8Ng==}
-    engines: {node: '>=22'}
-
-  '@coesite-operations/rendanheyi-formation-market-xiaowei@0.1.2':
-    resolution: {integrity: sha512-k1ThBA423PJItVxJRmBEVqE/eT923j3yo5yQZBG7R8qCUOXO2wzD5K5K7G6S5G5ak7AxdnyKJ0SCo2IOn0PThw==}
-    hasBin: true
-
-  '@coesite-operations/rendanheyi-independent-examination-xiaowei@0.1.2':
-    resolution: {integrity: sha512-eg5N2hsXqC83kvezfmA7uk7YL561T2EnF74jEY3qoiz5yOfVY3M1xR/pFRTjY6Molh30I5hD/2HZarhCHhMXbg==}
-    hasBin: true
-
-  '@coesite-operations/rendanheyi-qualification-registry-xiaowei@0.1.2':
-    resolution: {integrity: sha512-JlokduGcC0OWFlLWRloBgpWXoklaX5wh9jMdBVuYWTrWBcFc0UYlpZ7wGvmOTX34iNfmW1mYi3LKDNuccAC/1w==}
-    hasBin: true
-
-  '@coesite-operations/rendanheyi-situated-practice-xiaowei@0.1.2':
-    resolution: {integrity: sha512-YD0g1koo8ISke32J28NxSgb211r3V7R0GjpT0OUtoYjL9LbT6IF31h4Vzxbp9KxRJwIl0mLLsiJe65Bap3qLlQ==}
-    hasBin: true
 
   accepts@2.0.0:
     resolution: {integrity: sha512-5cvg6CtKwfgdmVqY1WIiXKc3Q1bkRqGLi+2W/6ao+6Y7gu/RCwRuAhGEzh5B4KlszSuTLgZYuqFqo5bImjNKng==}
@@ -677,11 +726,47 @@ snapshots:
     optionalDependencies:
       express: 5.2.1
 
+  '@coesite-operations/rendanheyi-context-compilation-xiaowei@0.1.2':
+    dependencies:
+      '@coesite-operations/rendanheyi-formation-lianqun-member-runtime-service': 1.0.3
+
+  '@coesite-operations/rendanheyi-enterprise-services-section@0.1.0':
+    dependencies:
+      '@coesite-operations/rendanheyi-formation-lianqun-member-runtime-service': 1.0.3
+
+  '@coesite-operations/rendanheyi-formation-lianqun-member-runtime-service@1.0.3':
+    dependencies:
+      '@red-cup-engineering/immutable-content-custody-service': 2.0.2
+      '@red-cup-engineering/ni-services-section': 0.1.1
+      '@red-cup-engineering/semantic-content-identify-service': 0.2.7
+      '@red-cup-engineering/witness-journal-entry-service': 0.1.7
+      '@red-cup-engineering/witness-journal-log-service': 0.1.6
+
+  '@coesite-operations/rendanheyi-formation-market-xiaowei@0.1.2':
+    dependencies:
+      '@coesite-operations/rendanheyi-formation-lianqun-member-runtime-service': 1.0.3
+
+  '@coesite-operations/rendanheyi-independent-examination-xiaowei@0.1.2':
+    dependencies:
+      '@coesite-operations/rendanheyi-formation-lianqun-member-runtime-service': 1.0.3
+
+  '@coesite-operations/rendanheyi-qualification-registry-xiaowei@0.1.2':
+    dependencies:
+      '@coesite-operations/rendanheyi-formation-lianqun-member-runtime-service': 1.0.3
+
+  '@coesite-operations/rendanheyi-situated-practice-xiaowei@0.1.2':
+    dependencies:
+      '@coesite-operations/rendanheyi-formation-lianqun-member-runtime-service': 1.0.3
+
   '@hono/node-server@1.19.17(hono@4.13.1)':
     dependencies:
       hono: 4.13.1
 
   '@lenticule-science/articulating@0.2.0':
+    dependencies:
+      '@red-cup-engineering/transform-json-schema-to-typescript-service': 0.1.0
+
+  '@lenticule-science/articulating@0.2.2':
     dependencies:
       '@red-cup-engineering/transform-json-schema-to-typescript-service': 0.1.0
 
@@ -694,8 +779,8 @@ snapshots:
       '@red-cup-engineering/relation-model-notation-cbor-codec': 0.1.0
       '@red-cup-engineering/relation-model-notation-runtime': 8.0.0
       '@red-cup-engineering/semantic-content-identify-service': 0.2.3
-      '@red-cup-engineering/witness-journal-entry-service': 0.1.6
-      '@red-cup-engineering/witness-journal-log-service': 0.1.5
+      '@red-cup-engineering/witness-journal-entry-service': 0.1.5
+      '@red-cup-engineering/witness-journal-log-service': 0.1.4
     transitivePeerDependencies:
       - '@bufbuild/protobuf'
       - '@grpc/grpc-js'
@@ -823,7 +908,7 @@ snapshots:
 
   '@red-cup-engineering/cryptographic-integrity-service@0.1.1': {}
 
-  '@red-cup-engineering/cryptographic-integrity-service@0.1.2': {}
+  '@red-cup-engineering/cryptographic-integrity-service@0.1.3': {}
 
   '@red-cup-engineering/file-services@0.2.0':
     dependencies:
@@ -833,9 +918,11 @@ snapshots:
 
   '@red-cup-engineering/filepath-services-section@0.1.0': {}
 
-  '@red-cup-engineering/immutable-content-custody-service@2.0.0':
+  '@red-cup-engineering/immutable-content-custody-service@2.0.2':
     dependencies:
-      '@red-cup-engineering/ni-services-section': 0.1.1
+      '@red-cup-engineering/ni-services-section': 0.1.2
+
+  '@red-cup-engineering/json-byte-carrier-service@0.1.0': {}
 
   '@red-cup-engineering/json-codec-service@0.1.3':
     dependencies:
@@ -843,17 +930,22 @@ snapshots:
       '@red-cup-engineering/cryptographic-integrity-service': 0.1.1
       '@red-cup-engineering/typed-resource-classification-kernel-service': 0.1.1
 
-  '@red-cup-engineering/json-codec-service@0.1.4':
+  '@red-cup-engineering/json-codec-service@0.1.6':
     dependencies:
-      '@lenticule-science/articulating': 0.2.0
-      '@red-cup-engineering/cryptographic-integrity-service': 0.1.2
-      '@red-cup-engineering/typed-resource-classification-kernel-service': 0.1.2
+      '@lenticule-science/articulating': 0.2.2
+      '@red-cup-engineering/cryptographic-integrity-service': 0.1.3
+      '@red-cup-engineering/typed-resource-classification-kernel-service': 0.1.3
 
   '@red-cup-engineering/json-schema-services-section@0.1.4':
     dependencies:
       '@red-cup-engineering/json-codec-service': 0.1.3
       '@red-cup-engineering/ni-services-section': 0.1.1
       '@red-cup-engineering/semantic-content-identify-service': 0.2.3
+
+  '@red-cup-engineering/json-schema-services-section@0.1.7':
+    dependencies:
+      '@red-cup-engineering/json-codec-service': 0.1.6
+      '@red-cup-engineering/semantic-content-identify-service': 0.2.7
 
   '@red-cup-engineering/markdown-file-reading-service@0.1.0': {}
 
@@ -864,15 +956,25 @@ snapshots:
 
   '@red-cup-engineering/ni-services-section@0.1.1': {}
 
+  '@red-cup-engineering/ni-services-section@0.1.2': {}
+
   '@red-cup-engineering/path-prioritization-service@0.1.0': {}
 
   '@red-cup-engineering/path-walking-service@1.1.0': {}
+
+  '@red-cup-engineering/path-walking-service@1.2.1': {}
 
   '@red-cup-engineering/punctuated-name-derivation-service@0.1.3':
     dependencies:
       '@red-cup-engineering/relation-model-notation': 0.0.2
       '@red-cup-engineering/relation-model-notation-typing': 0.0.2
       '@red-cup-engineering/semantic-content-identify-service': 0.2.3
+
+  '@red-cup-engineering/punctuated-name-derivation-service@0.1.4':
+    dependencies:
+      '@red-cup-engineering/relation-model-notation': 0.0.2
+      '@red-cup-engineering/relation-model-notation-typing': 0.0.2
+      '@red-cup-engineering/semantic-content-identify-service': 0.2.7
 
   '@red-cup-engineering/relation-model-notation-cbor-codec@0.1.0':
     dependencies:
@@ -885,7 +987,16 @@ snapshots:
       '@red-cup-engineering/relation-model-notation': 0.0.2
       '@red-cup-engineering/relation-model-notation-json-codec': 0.0.4
 
+  '@red-cup-engineering/relation-model-notation-eval@0.0.4':
+    dependencies:
+      '@red-cup-engineering/relation-model-notation': 0.0.2
+      '@red-cup-engineering/relation-model-notation-json-codec': 0.0.6
+
   '@red-cup-engineering/relation-model-notation-json-codec@0.0.4':
+    dependencies:
+      '@red-cup-engineering/relation-model-notation': 0.0.2
+
+  '@red-cup-engineering/relation-model-notation-json-codec@0.0.6':
     dependencies:
       '@red-cup-engineering/relation-model-notation': 0.0.2
 
@@ -917,7 +1028,14 @@ snapshots:
       '@red-cup-engineering/relation-model-notation-json-codec': 0.0.4
       '@red-cup-engineering/relation-model-notation-typing': 0.0.2
 
-  '@red-cup-engineering/semantic-linefeed-normalization-service@0.1.0': {}
+  '@red-cup-engineering/semantic-content-identify-service@0.2.7':
+    dependencies:
+      '@red-cup-engineering/cbor-codec-service': 0.0.2
+      '@red-cup-engineering/json-byte-carrier-service': 0.1.0
+      '@red-cup-engineering/relation-model-notation': 0.0.2
+      '@red-cup-engineering/relation-model-notation-eval': 0.0.4
+      '@red-cup-engineering/relation-model-notation-json-codec': 0.0.6
+      '@red-cup-engineering/relation-model-notation-typing': 0.0.2
 
   '@red-cup-engineering/semantic-linefeed-normalization-service@0.1.1': {}
 
@@ -925,6 +1043,11 @@ snapshots:
     dependencies:
       '@red-cup-engineering/punctuated-name-derivation-service': 0.1.3
       '@red-cup-engineering/semantic-content-identify-service': 0.2.3
+
+  '@red-cup-engineering/semiotic-resource-name-addressing-service@0.1.4':
+    dependencies:
+      '@red-cup-engineering/punctuated-name-derivation-service': 0.1.4
+      '@red-cup-engineering/semantic-content-identify-service': 0.2.7
 
   '@red-cup-engineering/skills-services-section@0.1.0':
     dependencies:
@@ -934,55 +1057,41 @@ snapshots:
 
   '@red-cup-engineering/typed-resource-classification-kernel-service@0.1.1': {}
 
-  '@red-cup-engineering/typed-resource-classification-kernel-service@0.1.2': {}
+  '@red-cup-engineering/typed-resource-classification-kernel-service@0.1.3': {}
 
-  '@red-cup-engineering/witness-journal-entry-service@0.1.6':
+  '@red-cup-engineering/witness-journal-entry-service@0.1.5':
     dependencies:
-      '@red-cup-engineering/json-codec-service': 0.1.4
+      '@red-cup-engineering/json-codec-service': 0.1.3
       '@red-cup-engineering/punctuated-name-derivation-service': 0.1.3
       '@red-cup-engineering/relation-model-notation-json-codec': 0.0.4
       '@red-cup-engineering/relation-model-notation-typing': 0.0.2
       '@red-cup-engineering/semantic-content-identify-service': 0.2.3
       '@red-cup-engineering/semiotic-resource-name-addressing-service': 0.1.3
 
-  '@red-cup-engineering/witness-journal-log-service@0.1.5':
+  '@red-cup-engineering/witness-journal-entry-service@0.1.7':
     dependencies:
-      '@red-cup-engineering/json-codec-service': 0.1.4
-      '@red-cup-engineering/witness-journal-entry-service': 0.1.6
+      '@red-cup-engineering/json-codec-service': 0.1.6
+      '@red-cup-engineering/punctuated-name-derivation-service': 0.1.4
+      '@red-cup-engineering/relation-model-notation-json-codec': 0.0.6
+      '@red-cup-engineering/relation-model-notation-typing': 0.0.2
+      '@red-cup-engineering/semantic-content-identify-service': 0.2.7
+      '@red-cup-engineering/semiotic-resource-name-addressing-service': 0.1.4
+
+  '@red-cup-engineering/witness-journal-log-service@0.1.4':
+    dependencies:
+      '@red-cup-engineering/json-codec-service': 0.1.3
+      '@red-cup-engineering/witness-journal-entry-service': 0.1.5
+
+  '@red-cup-engineering/witness-journal-log-service@0.1.6':
+    dependencies:
+      '@red-cup-engineering/json-codec-service': 0.1.6
+      '@red-cup-engineering/witness-journal-entry-service': 0.1.7
 
   '@red-cup-engineering/write-markdown-file-service@0.2.0':
     dependencies:
       '@red-cup-engineering/file-services': 0.2.0
       '@red-cup-engineering/filepath-services-section': 0.1.0
       '@red-cup-engineering/semantic-linefeed-normalization-service': 0.1.1
-
-  '@coesite-operations/rendanheyi-context-compilation-xiaowei@0.1.2':
-    dependencies:
-      '@coesite-operations/rendanheyi-formation-lianqun-member-runtime-service': 1.0.3
-
-  '@coesite-operations/rendanheyi-formation-lianqun-member-runtime-service@1.0.3':
-    dependencies:
-      '@red-cup-engineering/immutable-content-custody-service': 2.0.0
-      '@red-cup-engineering/ni-services-section': 0.1.1
-      '@red-cup-engineering/semantic-content-identify-service': 0.2.3
-      '@red-cup-engineering/witness-journal-entry-service': 0.1.6
-      '@red-cup-engineering/witness-journal-log-service': 0.1.5
-
-  '@coesite-operations/rendanheyi-formation-market-xiaowei@0.1.2':
-    dependencies:
-      '@coesite-operations/rendanheyi-formation-lianqun-member-runtime-service': 1.0.3
-
-  '@coesite-operations/rendanheyi-independent-examination-xiaowei@0.1.2':
-    dependencies:
-      '@coesite-operations/rendanheyi-formation-lianqun-member-runtime-service': 1.0.3
-
-  '@coesite-operations/rendanheyi-qualification-registry-xiaowei@0.1.2':
-    dependencies:
-      '@coesite-operations/rendanheyi-formation-lianqun-member-runtime-service': 1.0.3
-
-  '@coesite-operations/rendanheyi-situated-practice-xiaowei@0.1.2':
-    dependencies:
-      '@coesite-operations/rendanheyi-formation-lianqun-member-runtime-service': 1.0.3
 
   accepts@2.0.0:
     dependencies:

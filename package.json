@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@red-cup-engineering/ni-services-section": "0.1.1",
+    "@red-cup-engineering/path-walking-service": "1.2.1",
     "@lenticule-science/typed-circuit-residue-assay": "1.1.1",
     "@modelcontextprotocol/sdk": "1.29.0",
     "@red-cup-engineering/json-schema-services-section": "0.1.7",

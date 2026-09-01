@@ -2,6 +2,7 @@ import { createHash } from "node:crypto";
 import { existsSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { dirname, join, relative, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
+import { walkPosixPathsSync } from "@red-cup-engineering/path-walking-service";
 
 export const ACADEMY_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -19,12 +20,7 @@ export function rawDigest(path) {
 }
 
 export function filesBelow(path, { exclude = [] } = {}) {
-  if (!existsSync(path)) return [];
-  return readdirSync(path, { withFileTypes: true }).flatMap((entry) => {
-    if (exclude.includes(entry.name)) return [];
-    const child = join(path, entry.name);
-    return entry.isDirectory() ? filesBelow(child, { exclude }) : [child];
-  });
+  return walkPosixPathsSync({ root: path, excludes: exclude, missing: "empty", paths: "absolute", result: "paths" }).files;
 }
 
 export function treeDigest(root) {

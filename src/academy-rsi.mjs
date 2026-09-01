@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { existsSync, readFileSync, readdirSync } from "node:fs";
+import { readFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { exerciseRmnResidueProfile } from "./exercise-rmn-residue-profile.mjs";
@@ -8,6 +8,7 @@ import { seavt } from "@red-cup-engineering/witness-journal-entry-service";
 import { appendSeavt, readSeavtAtPath } from "@red-cup-engineering/witness-journal-log-service";
 import { EMPTY_WITNESS_ROOT, identifyJsonSemanticContent } from "@red-cup-engineering/semantic-content-identify-service";
 import { isNiUri as isCanonicalSha256NiUri, niUriDigest as sha256DigestFromNiUri } from "@red-cup-engineering/ni-services-section";
+import { walkPosixPathsSync } from "@red-cup-engineering/path-walking-service";
 const contentId = (value) => identifyJsonSemanticContent({ objectKind: "union-officer-academy.json", value, witnessRoot: EMPTY_WITNESS_ROOT }).token;
 const contentSurface = (role, token) => `semantic-content.${role}.sha256.${Buffer.from(sha256DigestFromNiUri(token),"base64url").toString("hex")}`;
 
@@ -17,15 +18,7 @@ const NI = Object.freeze({ test: isCanonicalSha256NiUri });
 function option(argv, name, fallback) { const at = argv.indexOf(name); return at === -1 ? fallback : argv[at + 1]; }
 function journalFiles(root) {
   const base = join(root, "data", "logs");
-  if (!existsSync(base)) return [];
-  function visit(path) {
-    return readdirSync(path, { withFileTypes: true }).flatMap((entry) => {
-      const child = join(path, entry.name);
-      if (entry.isDirectory()) return visit(child);
-      return entry.name.endsWith(".jsonl") ? [child] : [];
-    });
-  }
-  return visit(base);
+  return walkPosixPathsSync({ root: base, extensions: [".jsonl"], missing: "empty", paths: "absolute", result: "paths", symlinks: "skip" }).files;
 }
 function validateAssayEvidence(assay) {
   if (!NI.test(assay?.id ?? "") || assay.type !== "TypedCircuitResidueV4CustomerAssay" || !NI.test(assay.profileCommitment ?? "") || !Array.isArray(assay.vectors) || assay.vectors.length === 0) {

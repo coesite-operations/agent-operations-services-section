@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { createHash } from "node:crypto";
-import { existsSync, readFileSync, readdirSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { dirname, join, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { academySemanticRecordStore, queryAcademySemanticContent } from "@coesite-operations/rendanheyi-formation-lianqun-member-runtime-service/semantic-records";
@@ -18,6 +18,7 @@ import {
 } from "./academy.mjs";
 import { contentId, digest } from "@coesite-operations/rendanheyi-formation-lianqun-member-runtime-service/a2a";
 import { currentFormationLianqun, formationProviders } from "@coesite-operations/rendanheyi-enterprise-services-section/formation-lianqun";
+import { walkPosixPathsSync } from "@red-cup-engineering/path-walking-service";
 
 const CONTEXT = "https://www.w3.org/ns/activitystreams";
 const ACTOR = "urn:ame:union-officer-academy";
@@ -65,8 +66,7 @@ async function retain(record) {
 function rawDigest(bytes) { return `sha256:${createHash("sha256").update(bytes).digest("hex")}`; }
 function json(path) { return JSON.parse(readFileSync(path, "utf8")); }
 function filesBelow(path) {
-  let entries; try { entries = readdirSync(path, { withFileTypes: true }); } catch { return []; }
-  return entries.flatMap((entry) => entry.isDirectory() ? filesBelow(join(path, entry.name)) : [join(path, entry.name)]);
+  return walkPosixPathsSync({ root: path, missing: "empty", unreadable: "skip", paths: "absolute", result: "paths" }).files;
 }
 function sourceOwner(path) {
   if (path.startsWith("services/management-thought/")) return "union-officer-academy";
