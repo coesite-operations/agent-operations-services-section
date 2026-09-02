@@ -13,7 +13,6 @@ function legacyDocument(value) {
 }
 
 export function legacyRecordDigest(value) { return semanticId(legacyDocument(value)); }
-function carrierDigest(bytes) { return `ni:///sha-256;${createHash("sha256").update(bytes).digest("base64url")}`; }
 
 export function admitDurableRecord(bytes) {
   try {
@@ -23,7 +22,7 @@ export function admitDurableRecord(bytes) {
       // `identify` admits a JSON value, not an encoded Uint8Array carrier.
       // The admitted value retains semantic identity through `recordDigest`;
       // this field names the exact durable bytes for migration/audit custody.
-      sourceDigest: carrierDigest(bytes),
+      sourceDigest: `ni:///sha-256;${createHash("sha256").update(bytes).digest("base64url")}`,
       recordDigest: (value) => identify(value, RECORD_KIND).id,
     });
   } catch (currentError) {

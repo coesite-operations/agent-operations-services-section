@@ -5,6 +5,7 @@ import { createInterface } from "node:readline";
 import { EMPTY_WITNESS_ROOT, identifyJsonSemanticContent } from "@red-cup-engineering/semantic-content-identify-service";
 import { entry, seavt } from "@red-cup-engineering/witness-journal-entry-service";
 import { appendEntries, appendSeavt } from "@red-cup-engineering/witness-journal-log-service";
+import { canonical } from "@red-cup-engineering/json-codec-service";
 import { RECORD_KIND, identify } from "./semantic-content.mjs";
 
 const LEGACY_CONTRACT = "clocked-activity-delivery";
@@ -12,11 +13,6 @@ const LEGACY_RETIREMENT_CONTRACT = "clocked-activity-delivery-retirement";
 export const LEGACY_ARCHIVE_CONTRACT = "legacy-clockkeeper/archive/v1";
 const NI_PREFIX = "ni:///sha-256;";
 
-function canonical(value) {
-  if (Array.isArray(value)) return `[${value.map(canonical).join(",")}]`;
-  if (value && typeof value === "object") return `{${Object.keys(value).sort().map((key) => `${JSON.stringify(key)}:${canonical(value[key])}`).join(",")}}`;
-  return JSON.stringify(value);
-}
 function legacyDigest(value) { return `sha256:${createHash("sha256").update(canonical(value)).digest("hex")}`; }
 function legacyId(value) { return `urn:${legacyDigest(value)}`; }
 function safeInstant(value) { return typeof value === "string" && Number.isFinite(Date.parse(value)); }
