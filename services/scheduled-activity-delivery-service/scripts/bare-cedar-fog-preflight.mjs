@@ -80,7 +80,7 @@ export function preflight({
   }
   check(unitValue(service, "ExecStart") === "%h/.local/bin/node src/service.mjs --operation run-due", "unit does not use the admitted host Node carrier for run-due");
   check(/^Environment=SCHEDULED_ACTIVITY_DELIVERY_ACTOR=urn:ame:scheduled-activity-delivery-service$/mu.test(service), "unit does not carry the admitted provider actor");
-  check(/^Environment=SCHEDULED_ACTIVITY_DELIVERY_DATA_ROOT=%h\/info\/lib\/emsenn\/services\/561-group\/services\/operations-services-section\/services\/agent-services-section\/services\/scheduled-activity-delivery-service\/data$/mu.test(service), "unit does not carry the admitted durable data root");
+  check(/^Environment=SCHEDULED_ACTIVITY_DELIVERY_ROOT=%h\/info\/lib\/emsenn\/services\/561-group\/services\/operations-services-section\/services\/agent-services-section\/services\/scheduled-activity-delivery-service$/mu.test(service), "unit does not carry the admitted section root");
   check(unitValue(timer, "Unit") === "scheduled-activity-delivery-run-due.service", "timer does not target the admitted service unit");
   check(/^OnUnitActiveSec=1min$/mu.test(timer), "timer cadence is not the admitted one-minute pulse");
 
@@ -98,7 +98,7 @@ export function preflight({
 
   let schedules = [];
   if (!structuralOnly) {
-    try { schedules = inspectSchedules({ dataRoot: join(root, "data") }); }
+    try { schedules = inspectSchedules({ root }); }
     catch (error) { problems.push(`accepted schedules cannot be inspected: ${error instanceof Error ? error.message : String(error)}`); }
   }
   const liveSchedules = schedules.filter((schedule) => schedule.executionMode === "live");

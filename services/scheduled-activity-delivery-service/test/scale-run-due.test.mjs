@@ -18,16 +18,16 @@ test("run-due reads the active projection, not historic reservation cells", asyn
       },
     };
     createSemanticRecordJournal({ root: dataRoot, objectKind: "scheduled-activity-delivery.record" }).record({ category: `${CONTRACT}.schedules`, recordedAt: "2026-08-29T00:00:00.000Z", record: registration, charge: { support: true, refutation: false } });
-    const migration = await migrateScheduleDeliveryProjections({ dataRoot });
+    const migration = await migrateScheduleDeliveryProjections({ root: dataRoot });
     assert.equal(migration.activeSchedules, 1);
 
     // Deliberately invalid historic cells prove the timer does not decode or
     // enumerate them.  A legacy tree can be much larger without changing the
     // timer's working set.
-    const history = join(dataRoot, "pending-delivery-attempts", "historic"); mkdirSync(history, { recursive: true });
+    const history = join(dataRoot, "data", "state", "pending-delivery-attempts", "historic"); mkdirSync(history, { recursive: true });
     for (let occurrence = 0; occurrence < 512; occurrence += 1) writeFileSync(join(history, `${occurrence}.rmn.cbor`), "historic-reservation");
 
-    const result = await runDue("2026-08-29T00:00:00.000Z", { dataRoot });
+    const result = await runDue("2026-08-29T00:00:00.000Z", { root: dataRoot });
     assert.equal(result.attempted, 0);
     assert.equal(result.migrationRequired, false);
   } finally {

@@ -32,7 +32,7 @@ test("the bare-cedar-fog tick's WorkingDirectory names this service's actual cur
 test("the installed tick opens its default durable journal before reading it", async () => {
   const dataRoot = mkdtempSync(join(tmpdir(), "scheduled-activity-delivery-default-journal-"));
   try {
-    const result = await runDue("2098-07-17T12:00:00.000Z", { dataRoot });
+    const result = await runDue("2098-07-17T12:00:00.000Z", { root: dataRoot });
     assert.equal(result.type, "ScheduledDeliveryTickResult");
     assert.equal(result.attempted, 0);
     assert.deepEqual(result.pendingSettlements, []);

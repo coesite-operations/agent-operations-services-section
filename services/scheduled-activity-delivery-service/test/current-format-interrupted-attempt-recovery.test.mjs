@@ -39,16 +39,16 @@ test("a current-format interrupted attempt is recovered and settled exactly once
     };
     const attempt = { id: digest(body), ...body };
     const scheduleDigest = digest(scheduleId).slice("ni:///sha-256;".length);
-    const attemptDirectory = join(dataRoot, "pending-delivery-attempts", scheduleDigest);
-    const recoveryDirectory = join(dataRoot, "pending-delivery-recovery", scheduleDigest);
+    const attemptDirectory = join(dataRoot, "data", "state", "pending-delivery-attempts", scheduleDigest);
+    const recoveryDirectory = join(dataRoot, "data", "state", "pending-delivery-recovery", scheduleDigest);
     mkdirSync(attemptDirectory, { recursive: true });
     mkdirSync(recoveryDirectory, { recursive: true });
     writeFileSync(join(attemptDirectory, "0.rmn.cbor"), currentBytes(attempt));
     writeFileSync(join(recoveryDirectory, "0.rmn.cbor"), currentBytes({ type: "PendingDeliveryRecovery", scheduleId, occurrence: 0, attempt: attempt.id, customerTerritoryMutation: false }));
 
     const ledger = inMemoryLedger();
-    const first = await runDue("2098-01-01T00:02:00.000Z", { dataRoot, ledger });
-    const second = await runDue("2098-01-01T00:03:00.000Z", { dataRoot, ledger });
+    const first = await runDue("2098-01-01T00:02:00.000Z", { root: dataRoot, ledger });
+    const second = await runDue("2098-01-01T00:03:00.000Z", { root: dataRoot, ledger });
 
     assert.equal(first.recoveredInterruptedAttempts.length, 1);
     assert.deepEqual(second.recoveredInterruptedAttempts, []);

@@ -39,17 +39,17 @@ test("legacy relational-RMN attempts retain their historic identity and earn a c
     assert.equal(admission.format, LEGACY_DURABLE_CELL_FORMAT);
     assert.equal(admission.recordDigest(body), attempt.id);
 
-    const directory = join(dataRoot, "pending-delivery-attempts", "legacy-schedule");
+    const directory = join(dataRoot, "data", "state", "pending-delivery-attempts", "legacy-schedule");
     mkdirSync(directory, { recursive: true });
     writeFileSync(join(directory, "0.rmn.cbor"), bytes);
-    const result = await runDue("2098-01-01T00:00:30.000Z", { dataRoot, ledger: emptyLedger() });
+    const result = await runDue("2098-01-01T00:00:30.000Z", { root: dataRoot, ledger: emptyLedger() });
 
     assert.deepEqual(result.pendingSettlements, []);
     assert.deepEqual(result.recoveredInterruptedAttempts, []);
-    assert.equal(existsSync(join(dataRoot, "durable-cell-format-migrations", `${admission.sourceDigest.slice("ni:///sha-256;".length)}.rmn.cbor`)), true);
-    assert.equal(existsSync(join(dataRoot, "durable-cell-current-projections", `${admission.sourceDigest.slice("ni:///sha-256;".length)}.rmn.cbor`)), true);
-    assert.equal(existsSync(join(dataRoot, "durable-cell-decoding-caches", `${admission.sourceDigest.slice("ni:///sha-256;".length)}.json`)), true);
-    assert.equal(existsSync(join(dataRoot, "durable-cell-migration-decoding-caches", `${admission.sourceDigest.slice("ni:///sha-256;".length)}.json`)), true);
+    assert.equal(existsSync(join(dataRoot, "data", "state", "durable-cell-format-migrations", `${admission.sourceDigest.slice("ni:///sha-256;".length)}.rmn.cbor`)), true);
+    assert.equal(existsSync(join(dataRoot, "data", "state", "durable-cell-current-projections", `${admission.sourceDigest.slice("ni:///sha-256;".length)}.rmn.cbor`)), true);
+    assert.equal(existsSync(join(dataRoot, "data", "state", "durable-cell-decoding-caches", `${admission.sourceDigest.slice("ni:///sha-256;".length)}.json`)), true);
+    assert.equal(existsSync(join(dataRoot, "data", "state", "durable-cell-migration-decoding-caches", `${admission.sourceDigest.slice("ni:///sha-256;".length)}.json`)), true);
   } finally {
     rmSync(dataRoot, { recursive: true, force: true });
   }

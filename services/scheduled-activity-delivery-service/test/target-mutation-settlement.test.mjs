@@ -34,9 +34,9 @@ test("a carrier-set writable-root authorization settles an admitted target candi
   try {
     const journal = createSemanticRecordJournal({ root: dataRoot, objectKind: "scheduled-activity-delivery.record" });
     journal.record({ category: `${CONTRACT}.schedules`, recordedAt: AT, record: registration(), charge: { support: true, refutation: false } });
-    assert.equal((await migrateScheduleDeliveryProjections({ dataRoot })).activeSchedules, 1);
+    assert.equal((await migrateScheduleDeliveryProjections({ root: dataRoot })).activeSchedules, 1);
     const tick = await runDue(AT, {
-      dataRoot,
+      root: dataRoot,
       targetInvoker: (_registration, activity) => Object.freeze({ status: 0, signal: null, stdout: "", stderr: "", response: acceptedMutation(activity), problem: null, dryRun: false, customerTerritoryMutationAuthorized: true }),
     });
     assert.equal(tick.receipts.length, 1);

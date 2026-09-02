@@ -9,7 +9,7 @@ WorkingDirectory=%h/info/lib/emsenn/services/561-group/services/operations-servi
 Environment=PATH=%h/.local/bin:/usr/local/bin:/usr/bin:/bin
 EnvironmentFile=-%h/.config/emsenn/improvement-game-design-supplier.env
 Environment=SCHEDULED_ACTIVITY_DELIVERY_ACTOR=urn:ame:scheduled-activity-delivery-service
-Environment=SCHEDULED_ACTIVITY_DELIVERY_DATA_ROOT=%h/info/lib/emsenn/services/561-group/services/operations-services-section/services/agent-services-section/services/scheduled-activity-delivery-service/data
+Environment=SCHEDULED_ACTIVITY_DELIVERY_ROOT=%h/info/lib/emsenn/services/561-group/services/operations-services-section/services/agent-services-section/services/scheduled-activity-delivery-service
 Environment=WITNESS_JOURNAL_RDF_AGENT=http://127.0.0.1:19764/.well-known/agent-card.json
 Environment=IMPROVEMENT_BOARD_SETTLEMENT=eip155:31337:0xa0c84cb82405996dddb141bebd6647d02fee0ee3
 Environment=RMN_CONFORMANCE_AGENT=http://127.0.0.1:8786/.well-known/agent-card.json

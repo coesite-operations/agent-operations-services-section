@@ -6,6 +6,7 @@ import { accessSync, closeSync, constants, createReadStream, existsSync, fsyncSy
 import { basename, dirname, isAbsolute, join, relative, resolve, sep } from "node:path";
 import { createInterface } from "node:readline";
 import { fileURLToPath } from "node:url";
+import { dataCustodyDirectory } from "@red-cup-engineering/data-custody-directory-service";
 import { createSemanticRecordJournal } from "@red-cup-engineering/semantic-record-journal-service";
 import { semanticBytes } from "@red-cup-engineering/relation-model-notation-cbor-codec";
 import { encodeRelationalValue } from "@red-cup-engineering/relational-value-graph-service";
@@ -83,12 +84,12 @@ function response(type, source, object) {
     target: source?.actor ?? "urn:actor:unidentified", inReplyTo: source?.id ?? "urn:activity:unidentified", object };
 }
 function refusal(source, code, reason, contract = CONTRACT) { return response("Reject", source, { type: "Refusal", contract, code, reason, customerTerritoryMutation: false }); }
-function dataRoot(options = {}) { return resolve(options.dataRoot ?? process.env.SCHEDULED_ACTIVITY_DELIVERY_DATA_ROOT ?? join(ROOT, "data")); }
+function sectionRoot(options = {}) { return resolve(options.root ?? process.env.SCHEDULED_ACTIVITY_DELIVERY_ROOT ?? ROOT); }
 export function tickResultFilename(at) {
   if (!validInstant(at)) throw new Error("tick result requires an explicit valid instant");
   return `${at.replaceAll(/[-:.]/gu, "")}.json`;
 }
-export function tickResultPath(root, at) { return join(root, TICK_RESULTS_DIRECTORY, tickResultFilename(at)); }
+export function tickResultPath(root, at) { return join(dataCustodyDirectory(root, "state", TICK_RESULTS_DIRECTORY), tickResultFilename(at)); }
 function tickResultBody(result) { const { id: ignored, ...body } = result; return body; }
 function verifyTickResult(result, path = null) {
   if (!result || typeof result !== "object" || result.type !== "ScheduledDeliveryTickResult" || result.actor !== ACTOR || !validInstant(result.at)) throw new Error(`invalid persisted tick result${path ? `: ${path}` : ""}`);
@@ -106,7 +107,7 @@ function readTickResult(path) {
   return verifyTickResult(result, path);
 }
 function persistTickResult(root, result) {
-  const directory = join(root, TICK_RESULTS_DIRECTORY), path = tickResultPath(root, result.at), existing = readTickResult(path);
+  const directory = dataCustodyDirectory(root, "state", TICK_RESULTS_DIRECTORY), path = tickResultPath(root, result.at), existing = readTickResult(path);
   if (existing) return existing;
   try {
     mkdirSync(directory, { recursive: true, mode: 0o700 });
@@ -126,7 +127,7 @@ function persistTickResult(root, result) {
 // Read-only operator observation. It creates neither the directory nor a
 // result cell, and fails closed instead of skipping a malformed newest cell.
 export function inspectLatestTick(options = {}) {
-  const root = dataRoot(options), directory = join(root, TICK_RESULTS_DIRECTORY);
+  const root = sectionRoot(options), directory = dataCustodyDirectory(root, "state", TICK_RESULTS_DIRECTORY);
   if (!existsSync(directory)) return null;
   const directoryStat = lstatSync(directory);
   if (!directoryStat.isDirectory() || directoryStat.isSymbolicLink()) throw new Error(`tick-results directory is unsafe: ${directory}`);
@@ -135,7 +136,9 @@ export function inspectLatestTick(options = {}) {
   return readTickResult(join(directory, names.at(-1)));
 }
 function store(options = {}) {
-  const journal = createSemanticRecordJournal({ root: dataRoot(options), objectKind: "scheduled-activity-delivery.record" });
+  const journal = createSemanticRecordJournal({ root: sectionRoot(options), objectKind: "scheduled-activity-delivery.record" });
+  // sectionRoot(options) is the package/section root, not a data directory:
+  // createSemanticRecordJournal appends its own lawful "data/logs" beneath it.
   return Object.freeze({
     records: (category) => journal.query({ category }).map(({ record: value }) => value),
     record: ({ category, recordedAt, record: value }) => journal.record({ category, recordedAt, record: value, charge: { support: true, refutation: false } }),
@@ -174,7 +177,7 @@ function targetBindingFor(_request, target) {
 function sameSemantic(left, right) { return canonical(left).equals(canonical(right)); }
 function registrations(ledger) { return [...records(ledger, "schedules"), ...records(ledger, "schedule-transitions").map((item) => item.successorRegistration)]; }
 function retirements(ledger) { return [...records(ledger, "schedule-retirements"), ...records(ledger, "schedule-transitions").map((item) => item.predecessorRetirement)]; }
-function transitionIntentPath(root, predecessorSchedule) { return join(root, "schedule-transition-intents", `${digest(predecessorSchedule).slice("ni:///sha-256;".length)}.rmn.cbor`); }
+function transitionIntentPath(root, predecessorSchedule) { return dataCustodyDirectory(root, "state", "schedule-transition-intents", `${digest(predecessorSchedule).slice("ni:///sha-256;".length)}.rmn.cbor`); }
 function fsyncDirectory(path) { const fd = openSync(path, "r"); try { fsyncSync(fd); } finally { closeSync(fd); } }
 function ensureDurableDirectory(directory) {
   if (existsSync(directory)) {
@@ -230,7 +233,7 @@ function retireActiveSchedule(root, retirement) {
   catch (error) { if (error?.code !== "ENOENT") throw error; }
 }
 function activeScheduleProjections(root) {
-  const directory = join(root, "active-schedule-projections");
+  const directory = dataCustodyDirectory(root, "state", "active-schedule-projections");
   if (!existsSync(directory)) return [];
   const active = [];
   for (const entry of readdirSync(directory, { withFileTypes: true })) {
@@ -241,13 +244,13 @@ function activeScheduleProjections(root) {
   }
   return active.sort((left, right) => bytewiseTextOrder(left.scheduleId, right.scheduleId));
 }
-function migrationProjectionPath(root, sourceDigest) { return join(root, "durable-cell-format-migrations", `${sourceDigest.slice("ni:///sha-256;".length)}.rmn.cbor`); }
-function currentCellProjectionPath(root, sourceDigest) { return join(root, "durable-cell-current-projections", `${sourceDigest.slice("ni:///sha-256;".length)}.rmn.cbor`); }
-function decodingCachePath(root, sourceDigest) { return join(root, "durable-cell-decoding-caches", `${sourceDigest.slice("ni:///sha-256;".length)}.json`); }
-function migrationDecodingCachePath(root, sourceDigest) { return join(root, "durable-cell-migration-decoding-caches", `${sourceDigest.slice("ni:///sha-256;".length)}.json`); }
+function migrationProjectionPath(root, sourceDigest) { return dataCustodyDirectory(root, "state", "durable-cell-format-migrations", `${sourceDigest.slice("ni:///sha-256;".length)}.rmn.cbor`); }
+function currentCellProjectionPath(root, sourceDigest) { return dataCustodyDirectory(root, "state", "durable-cell-current-projections", `${sourceDigest.slice("ni:///sha-256;".length)}.rmn.cbor`); }
+function decodingCachePath(root, sourceDigest) { return dataCustodyDirectory(root, "state", "durable-cell-decoding-caches", `${sourceDigest.slice("ni:///sha-256;".length)}.json`); }
+function migrationDecodingCachePath(root, sourceDigest) { return dataCustodyDirectory(root, "state", "durable-cell-migration-decoding-caches", `${sourceDigest.slice("ni:///sha-256;".length)}.json`); }
 function scheduleProjectionName(scheduleId) { return digest(scheduleId).slice("ni:///sha-256;".length); }
-function activeScheduleProjectionPath(root, scheduleId) { return join(root, "active-schedule-projections", `${scheduleProjectionName(scheduleId)}.rmn.cbor`); }
-function retiredScheduleProjectionPath(root, scheduleId) { return join(root, "retired-schedule-projections", `${scheduleProjectionName(scheduleId)}.rmn.cbor`); }
+function activeScheduleProjectionPath(root, scheduleId) { return dataCustodyDirectory(root, "state", "active-schedule-projections", `${scheduleProjectionName(scheduleId)}.rmn.cbor`); }
+function retiredScheduleProjectionPath(root, scheduleId) { return dataCustodyDirectory(root, "state", "retired-schedule-projections", `${scheduleProjectionName(scheduleId)}.rmn.cbor`); }
 function rawDigest(bytes) { return `ni:///sha-256;${createHash("sha256").update(bytes).digest("base64url")}`; }
 function admitDurableCell(root, path) {
   const sourceBytes = readFileSync(path), sourceDigest = rawDigest(sourceBytes);
@@ -299,7 +302,7 @@ function readPreparedTransition(root, predecessorSchedule) {
   return prepared;
 }
 function preparedTransitionForSuccessor(root, successorSchedule) {
-  const intentRoot = join(root, "schedule-transition-intents"); if (!existsSync(intentRoot)) return null;
+  const intentRoot = dataCustodyDirectory(root, "state", "schedule-transition-intents"); if (!existsSync(intentRoot)) return null;
   for (const name of readdirSync(intentRoot).filter((item) => item.endsWith(".rmn.cbor")).sort()) {
     const path = join(intentRoot, name), admission = admitDurableCell(root, path), prepared = admission.value;
     if (prepared?.type !== "ScheduleTransition" || prepared.id !== admission.recordDigest(Object.fromEntries(Object.entries(prepared).filter(([key]) => key !== "id"))) || typeof prepared.transitionRequestDigest !== "string") throw new Error("invalid prepared schedule transition");
@@ -315,7 +318,7 @@ function prepareTransition(root, candidate) {
 }
 
 async function withScheduleMutationLock(root, action) {
-  const path = join(root, "locks", "schedule-mutation.lock"); mkdirSync(dirname(path), { recursive: true });
+  const path = dataCustodyDirectory(root, "state", "locks", "schedule-mutation.lock"); mkdirSync(dirname(path), { recursive: true });
   const holder = spawn("/usr/bin/flock", ["--exclusive", path, process.execPath, "-e", "process.stdout.write('acquired\\n'); process.stdin.resume();"], { stdio: ["pipe", "pipe", "pipe"] });
   let stderr = ""; holder.stderr.setEncoding("utf8"); holder.stderr.on("data", (chunk) => { stderr += chunk; });
   await new Promise((accept, reject) => {
@@ -404,7 +407,7 @@ function inspectDeclaredRuntimeFiles(packageRoot, entryRelative, entry, pkg, ope
 }
 
 function immutableRuntimeImage(registration, inspected, options = {}) {
-  const imageRoot = join(dataRoot(options), "runtime-images", digest({ target: registration.request.target, binding: registration.targetBinding }).slice("ni:///sha-256;".length));
+  const imageRoot = join(dataCustodyDirectory(sectionRoot(options), "state", "runtime-images"), digest({ target: registration.request.target, binding: registration.targetBinding }).slice("ni:///sha-256;".length));
   const descriptors = [
     { relativePath: "package.json", source: inspected.packagePath, expected: inspected.packageDigest, assay: rawDigest },
     ...inspected.runtimeFiles.map((file) => ({ relativePath: file.relativePath, source: file.source, expected: file.digest, assay: rawDigest })),
@@ -505,23 +508,23 @@ export async function settle(activity, operation = "solicit-service", at = new D
     const result = response("Offer", activity, offerObject(activity, request, inspected.target)); await witness(ledger, result, "offer.emitted", at, { scheduleId: result.object.scheduleId, requestDigest: result.object.requestDigest }); return result;
   }
   if (operation === "invoke-service") {
-    return withScheduleMutationLock(dataRoot(options), async () => {
+    return withScheduleMutationLock(sectionRoot(options), async () => {
       await witness(ledger, activity, "invocation.received", at); const invalid = validInvocation(activity, at, ledger); if (invalid) return refusal(activity, "invalid-contract", invalid);
       const offered = activity.object.offer.object; const prior = registrations(ledger).find((item) => item.scheduleId === offered.scheduleId);
       if (prior) {
         if (prior.requestDigest !== offered.requestDigest) return refusal(activity, "conflicting-schedule", "schedule identity was already registered with different bytes");
         // The journal append is authoritative.  Rebuild a projection that may
         // have been missed by a crash between that append and projection.
-        projectActiveSchedule(dataRoot(options), prior);
+        projectActiveSchedule(sectionRoot(options), prior);
         return response("Accept", activity, prior);
       }
-      if (preparedTransitionForSuccessor(dataRoot(options), offered.scheduleId)) return refusal(activity, "transition-prepared", "schedule is reserved as an atomic transition successor and cannot be registered independently");
+      if (preparedTransitionForSuccessor(sectionRoot(options), offered.scheduleId)) return refusal(activity, "transition-prepared", "schedule is reserved as an atomic transition successor and cannot be registered independently");
       const registration = { type: "ScheduleRegistration", id: offered.scheduleId, scheduleId: offered.scheduleId, provider: ACTOR, customer: activity.actor, request: offered.request, requestDigest: offered.requestDigest, targetBinding: offered.targetBinding, acceptedOffer: activity.object.offer.id, registrationCapabilityDigest: digest(activity.object.capability), status: "active", registeredAt: at, customerTerritoryMutation: false };
-      await append(ledger, "schedules", registration, at); await witness(ledger, registration, "schedule.registered", at, { scheduleId: registration.scheduleId }); projectActiveSchedule(dataRoot(options), registration); return response("Accept", activity, registration);
+      await append(ledger, "schedules", registration, at); await witness(ledger, registration, "schedule.registered", at, { scheduleId: registration.scheduleId }); projectActiveSchedule(sectionRoot(options), registration); return response("Accept", activity, registration);
     });
   }
   if (operation === "renew-schedule") {
-    return withScheduleMutationLock(dataRoot(options), async () => {
+    return withScheduleMutationLock(sectionRoot(options), async () => {
       await witness(ledger, activity, "transition.received", at);
       const request = activity?.object; const offered = request?.offer?.object; const requestDigest = digest(activity);
       const prior = records(ledger, "schedule-transitions").find((item) => item.predecessorSchedule === request?.predecessorSchedule);
@@ -529,27 +532,27 @@ export async function settle(activity, operation = "solicit-service", at = new D
         if (prior.transitionRequestDigest !== requestDigest) return refusal(activity, "conflicting-transition", "predecessor already names a different authenticated successor");
         // Retire first: after a crash, temporary non-delivery is safer than
         // allowing predecessor and successor to deliver the same occurrence.
-        retireActiveSchedule(dataRoot(options), prior.predecessorRetirement);
-        projectActiveSchedule(dataRoot(options), prior.successorRegistration);
+        retireActiveSchedule(sectionRoot(options), prior.predecessorRetirement);
+        projectActiveSchedule(sectionRoot(options), prior.successorRegistration);
         return response("Accept", activity, prior);
       }
-      const prepared = readPreparedTransition(dataRoot(options), request?.predecessorSchedule);
+      const prepared = readPreparedTransition(sectionRoot(options), request?.predecessorSchedule);
       if (prepared) {
         if (prepared.transitionRequestDigest !== requestDigest) return refusal(activity, "conflicting-transition", "predecessor already has a different prepared successor");
-        await append(ledger, "schedule-transitions", prepared, prepared.settledAt); await witness(ledger, prepared, "schedule.transitioned", prepared.settledAt, { predecessorSchedule: prepared.predecessorSchedule, successorSchedule: prepared.successorSchedule }); retireActiveSchedule(dataRoot(options), prepared.predecessorRetirement); projectActiveSchedule(dataRoot(options), prepared.successorRegistration); return response("Accept", activity, prepared);
+        await append(ledger, "schedule-transitions", prepared, prepared.settledAt); await witness(ledger, prepared, "schedule.transitioned", prepared.settledAt, { predecessorSchedule: prepared.predecessorSchedule, successorSchedule: prepared.successorSchedule }); retireActiveSchedule(sectionRoot(options), prepared.predecessorRetirement); projectActiveSchedule(sectionRoot(options), prepared.successorRegistration); return response("Accept", activity, prepared);
       }
       const invalid = validTransition(activity, at, ledger); if (invalid) return refusal(activity, "invalid-transition", invalid);
       const successorRegistration = { type: "ScheduleRegistration", id: offered.scheduleId, scheduleId: offered.scheduleId, provider: ACTOR, customer: activity.actor, request: offered.request, requestDigest: offered.requestDigest, targetBinding: offered.targetBinding, acceptedOffer: request.offer.id, registrationCapabilityDigest: digest(request.capability), status: "active", registeredAt: at, customerTerritoryMutation: false };
       const predecessor = registrations(ledger).find((item) => item.scheduleId === request.predecessorSchedule);
       const predecessorRetirement = { type: "ScheduleRetirement", id: id({ scheduleId: predecessor.scheduleId, transition: offered.scheduleId }), scheduleId: predecessor.scheduleId, provider: ACTOR, customer: activity.actor, contract: CONTRACT, requestDigest, registrationDigest: digest(predecessor), status: "retired", retiredAt: at, customerTerritoryMutation: false };
       const body = { type: "ScheduleTransition", provider: ACTOR, customer: activity.actor, predecessorSchedule: predecessor.scheduleId, successorSchedule: successorRegistration.scheduleId, successorRegistration, predecessorRetirement, transitionRequestDigest: requestDigest, status: "settled", settledAt: at, customerTerritoryMutation: false };
-      const candidate = { id: id(body), ...body }, transition = prepareTransition(dataRoot(options), candidate);
+      const candidate = { id: id(body), ...body }, transition = prepareTransition(sectionRoot(options), candidate);
       if (transition.transitionRequestDigest !== requestDigest) return refusal(activity, "conflicting-transition", "predecessor already has a different prepared successor");
-      await append(ledger, "schedule-transitions", transition, transition.settledAt); await witness(ledger, transition, "schedule.transitioned", transition.settledAt, { predecessorSchedule: transition.predecessorSchedule, successorSchedule: transition.successorRegistration.scheduleId }); retireActiveSchedule(dataRoot(options), transition.predecessorRetirement); projectActiveSchedule(dataRoot(options), transition.successorRegistration); return response("Accept", activity, transition);
+      await append(ledger, "schedule-transitions", transition, transition.settledAt); await witness(ledger, transition, "schedule.transitioned", transition.settledAt, { predecessorSchedule: transition.predecessorSchedule, successorSchedule: transition.successorRegistration.scheduleId }); retireActiveSchedule(sectionRoot(options), transition.predecessorRetirement); projectActiveSchedule(sectionRoot(options), transition.successorRegistration); return response("Accept", activity, transition);
     });
   }
   if (operation === "retire-schedule") {
-    return withScheduleMutationLock(dataRoot(options), async () => {
+    return withScheduleMutationLock(sectionRoot(options), async () => {
       const rejectRetirement = (code, reason) => refusal(activity, code, reason, RETIREMENT_CONTRACT);
       await witness(ledger, activity, "retirement.received", at);
       const request = activity?.object;
@@ -562,22 +565,22 @@ export async function settle(activity, operation = "solicit-service", at = new D
       if (cap?.type !== "Capability" || cap.issuer !== activity.actor || cap.holder !== ACTOR || cap.invocationTarget !== ACTOR || cap.attenuation?.scheduleId !== scheduleId || cap.singleUse !== true || !validInstant(cap.expiresAt) || Date.parse(cap.expiresAt) < Date.parse(at) || !sameSet(cap.allowedActions, ["retire-schedule"])) return rejectRetirement("invalid-retirement-capability", "exact unexpired single-use schedule retirement capability is required");
       const requestDigest = digest(activity);
       const prior = retirements(ledger).find((item) => item.scheduleId === scheduleId);
-      if (prior) { retireActiveSchedule(dataRoot(options), prior); return response("Accept", activity, prior); }
+      if (prior) { retireActiveSchedule(sectionRoot(options), prior); return response("Accept", activity, prior); }
       const retirement = { type: "ScheduleRetirement", id: id({ scheduleId, requestDigest }), scheduleId, provider: ACTOR, customer: activity.actor, contract: RETIREMENT_CONTRACT, requestDigest, registrationDigest: digest(registration), status: "retired", retiredAt: at, customerTerritoryMutation: false };
       // Suspend delivery before the authoritative append. If this process is
       // interrupted, omission is recoverable on retry; delivering a schedule
       // after its accepted retirement is not.
-      retireActiveSchedule(dataRoot(options), retirement); await append(ledger, "schedule-retirements", retirement, at); await witness(ledger, retirement, "schedule.retired", at, { scheduleId }); return response("Accept", activity, retirement);
+      retireActiveSchedule(sectionRoot(options), retirement); await append(ledger, "schedule-retirements", retirement, at); await witness(ledger, retirement, "schedule.retired", at, { scheduleId }); return response("Accept", activity, retirement);
     });
   }
   return refusal(activity, "unknown-operation", `unknown operation ${operation}`);
 }
 
-function pendingSettlementPath(root, scheduleId, occurrence) { return join(root, "pending-delivery-settlements", digest(scheduleId).slice("ni:///sha-256;".length), `${occurrence}.rmn.cbor`); }
-function confirmedSettlementPath(root, scheduleId, occurrence) { return join(root, "confirmed-delivery-settlements", digest(scheduleId).slice("ni:///sha-256;".length), `${occurrence}.rmn.cbor`); }
-function attemptDirectory(root, scheduleId) { return join(root, "pending-delivery-attempts", digest(scheduleId).slice("ni:///sha-256;".length)); }
+function pendingSettlementPath(root, scheduleId, occurrence) { return dataCustodyDirectory(root, "state", "pending-delivery-settlements", digest(scheduleId).slice("ni:///sha-256;".length), `${occurrence}.rmn.cbor`); }
+function confirmedSettlementPath(root, scheduleId, occurrence) { return dataCustodyDirectory(root, "state", "confirmed-delivery-settlements", digest(scheduleId).slice("ni:///sha-256;".length), `${occurrence}.rmn.cbor`); }
+function attemptDirectory(root, scheduleId) { return dataCustodyDirectory(root, "state", "pending-delivery-attempts", digest(scheduleId).slice("ni:///sha-256;".length)); }
 function attemptPath(root, scheduleId, occurrence) { return join(attemptDirectory(root, scheduleId), `${occurrence}.rmn.cbor`); }
-function recoveryAttemptPath(root, scheduleId, occurrence) { return join(root, "pending-delivery-recovery", digest(scheduleId).slice("ni:///sha-256;".length), `${occurrence}.rmn.cbor`); }
+function recoveryAttemptPath(root, scheduleId, occurrence) { return dataCustodyDirectory(root, "state", "pending-delivery-recovery", digest(scheduleId).slice("ni:///sha-256;".length), `${occurrence}.rmn.cbor`); }
 function readDeliveryAttemptCell(root, path) {
   const admission = admitDurableCell(root, path), attempt = admission.value;
   const body = Object.fromEntries(Object.entries(attempt ?? {}).filter(([key]) => key !== "id"));
@@ -623,7 +626,7 @@ function deliveryAttemptFiles(root) {
       if (entry.isDirectory()) visit(child); else if (entry.isFile() && entry.name.endsWith(".rmn.cbor")) found.push(child);
     }
   };
-  visit(join(root, "pending-delivery-attempts")); return found.sort();
+  visit(dataCustodyDirectory(root, "state", "pending-delivery-attempts")); return found.sort();
 }
 function *iterateDeliveryAttemptFiles(root) {
   const visit = function *(path) {
@@ -634,7 +637,7 @@ function *iterateDeliveryAttemptFiles(root) {
       else if (entry.isFile() && entry.name.endsWith(".rmn.cbor")) yield child;
     }
   };
-  yield* visit(join(root, "pending-delivery-attempts"));
+  yield* visit(dataCustodyDirectory(root, "state", "pending-delivery-attempts"));
 }
 function readDeliveryAttempts(root) {
   return deliveryAttemptFiles(root).map((path) => {
@@ -645,7 +648,7 @@ function readDeliveryAttempts(root) {
   });
 }
 export function migratePendingDeliveryAttemptCells(options = {}) {
-  const root = dataRoot(options), candidates = readDeliveryAttempts(root);
+  const root = sectionRoot(options), candidates = readDeliveryAttempts(root);
   return {
     type: "PendingDeliveryAttemptCellMigrationResult",
     admitted: candidates.filter((candidate) => !candidate.error).length,
@@ -664,7 +667,7 @@ function pendingSettlementFiles(root) {
       if (entry.isDirectory()) visit(child); else if (entry.isFile() && entry.name.endsWith(".rmn.cbor")) found.push(child);
     }
   };
-  visit(join(root, "pending-delivery-settlements")); return found.sort();
+  visit(dataCustodyDirectory(root, "state", "pending-delivery-settlements")); return found.sort();
 }
 function writePendingSettlement(root, receipt, recordedAt) {
   const path = pendingSettlementPath(root, receipt.scheduleId, receipt.occurrence);
@@ -678,7 +681,7 @@ function confirmPendingSettlement(root, receipt) {
 function readPendingSettlements(root) {
   return pendingSettlementFiles(root).filter((path) => {
     const occurrence = Number(path.split(sep).at(-1).replace(/\.rmn\.cbor$/u, "")), scheduleDigest = path.split(sep).at(-2);
-    return !existsSync(join(root, "confirmed-delivery-settlements", scheduleDigest, `${occurrence}.rmn.cbor`));
+    return !existsSync(dataCustodyDirectory(root, "state", "confirmed-delivery-settlements", scheduleDigest, `${occurrence}.rmn.cbor`));
   }).map((path) => {
     try {
       const admission = admitDurableCell(root, path), pending = admission.value;
@@ -728,7 +731,7 @@ async function reconcileInterruptedAttempts(root, ledger, at) {
   return { recovered, failures, attemptOccurrences };
 }
 function *recoveryAttemptCells(root, at, limit = 32) {
-  const directory = join(root, "pending-delivery-recovery");
+  const directory = dataCustodyDirectory(root, "state", "pending-delivery-recovery");
   if (!existsSync(directory)) return;
   const minute = Math.floor(Date.parse(at) / 60_000);
   const shards = readdirSync(directory, { withFileTypes: true }).filter((entry) => entry.isDirectory()).map((entry) => entry.name).sort(bytewiseTextOrder);
@@ -751,7 +754,7 @@ async function reconcileRecoveryQueue(root, ledger, at) {
       const scheduleDigest = dirname(marker).split(sep).at(-1), occurrence = Number(marker.split(sep).at(-1).replace(/\.rmn\.cbor$/u, ""));
       // The marker is merely a bounded work coordinate; the signed attempt is
       // always re-admitted from its original durable cell.
-      const attemptsRoot = join(root, "pending-delivery-attempts", scheduleDigest), attempt = readDeliveryAttempt(root, join(attemptsRoot, `${occurrence}.rmn.cbor`));
+      const attemptsRoot = dataCustodyDirectory(root, "state", "pending-delivery-attempts", scheduleDigest), attempt = readDeliveryAttempt(root, join(attemptsRoot, `${occurrence}.rmn.cbor`));
       if (existsSync(confirmedSettlementPath(root, attempt.scheduleId, attempt.occurrence))) { unlinkSync(marker); continue; }
       if (existsSync(pendingSettlementPath(root, attempt.scheduleId, attempt.occurrence))) {
         const pendingAdmission = admitDurableCell(root, pendingSettlementPath(root, attempt.scheduleId, attempt.occurrence)), pending = pendingAdmission.value;
@@ -972,7 +975,7 @@ async function *streamJournalRows(root) {
 // reserves no new occurrence, so an operator can migrate Cold Red Gate's
 // legacy history before separately enabling its timer.
 export async function migrateScheduleDeliveryProjections(options = {}) {
-  const root = dataRoot(options), registrationsById = new Map(), retirementsById = new Map(); let rows = 0, receipts = 0, recoveryAttempts = 0;
+  const root = sectionRoot(options), registrationsById = new Map(), retirementsById = new Map(); let rows = 0, receipts = 0, recoveryAttempts = 0;
   const categories = new Set([CONTRACT, ...PREDECESSOR_CONTRACTS]);
   for await (const row of streamJournalRows(root)) {
     const match = [...categories].find((contract) => row.a === `${contract}.schedules` || row.a === `${contract}.schedule-transitions` || row.a === `${contract}.schedule-retirements` || row.a === `${contract}.delivery-receipts`);
@@ -1009,13 +1012,13 @@ export async function runDue(at = new Date().toISOString(), options = {}) {
   // Timer work must be proportional to accepted active schedules, not to the
   // append-only delivery history.  In particular, do not replace this with a
   // journal snapshot: Cold Red Gate has years of tiny reservation cells.
-  const root = dataRoot(options), replay = readTickResult(tickResultPath(root, at));
+  const root = sectionRoot(options), replay = readTickResult(tickResultPath(root, at));
   if (replay) return replay;
   const ledger = options.ledger ?? store(options); const attempts = []; const results = []; const recovery = await reconcileRecoveryQueue(root, ledger, at); const settlementFailures = [...recovery.failures];
   // Kept only for programmatic compatibility fixtures that inject a ledger.
   // The installed timer never supplies one; it must use the explicit,
   // streaming migration below rather than recurse through historic attempts.
-  if (options.ledger && !existsSync(join(root, "active-schedule-projections"))) migratePendingDeliveryAttemptCells({ dataRoot: root });
+  if (options.ledger && !existsSync(dataCustodyDirectory(root, "state", "active-schedule-projections"))) migratePendingDeliveryAttemptCells({ root });
   const active = activeScheduleProjections(root);
   // Bound target work per timer activation. The time-derived rotation is
   // stateless (there is no cursor to corrupt) and moves by one full dispatch
@@ -1049,7 +1052,7 @@ export async function runDue(at = new Date().toISOString(), options = {}) {
     catch (error) { settlementFailures.push({ type: "PendingDeliverySettlementResidue", receipt: receipt.id, scheduleId: registration.scheduleId, occurrence, errorDigest: digest(error instanceof Error ? error.message : String(error)), customerTerritoryMutation: false }); }
     results.push(receipt);
   }
-  const result = { type: "ScheduledDeliveryTickResult", actor: ACTOR, at, attempted: results.length, receipts: results, recoveredSettlements: [], recoveredInterruptedAttempts: recovery.recovered, pendingSettlements: settlementFailures, activeScheduleProjection: true, activeSchedules: active.length, dispatchWindow: dispatchWindow.length, maximumTargetsPerTick: MAX_TARGETS_PER_TICK, migrationRequired: active.length === 0 && !existsSync(join(root, "active-schedule-projections")), concurrentTargetIsolation: true, maximumConcurrentTargets: MAX_CONCURRENT_TARGETS, perScheduleFailureIsolation: true, noCatchUpCascade: true };
+  const result = { type: "ScheduledDeliveryTickResult", actor: ACTOR, at, attempted: results.length, receipts: results, recoveredSettlements: [], recoveredInterruptedAttempts: recovery.recovered, pendingSettlements: settlementFailures, activeScheduleProjection: true, activeSchedules: active.length, dispatchWindow: dispatchWindow.length, maximumTargetsPerTick: MAX_TARGETS_PER_TICK, migrationRequired: active.length === 0 && !existsSync(dataCustodyDirectory(root, "state", "active-schedule-projections")), concurrentTargetIsolation: true, maximumConcurrentTargets: MAX_CONCURRENT_TARGETS, perScheduleFailureIsolation: true, noCatchUpCascade: true };
   return persistTickResult(root, { ...result, id: id(result) });
 }
 

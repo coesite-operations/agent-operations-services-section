@@ -27,6 +27,7 @@
     "preflight:cold-red-gate": "node scripts/cold-red-gate-preflight.mjs"
   },
   "dependencies": {
+    "@red-cup-engineering/data-custody-directory-service": "0.1.1",
     "@red-cup-engineering/json-codec-service": "0.1.11",
     "@red-cup-engineering/relation-model-notation-cbor-codec": "0.1.0",
     "@red-cup-engineering/relation-model-notation-runtime": "8.0.1",

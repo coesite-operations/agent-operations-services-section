@@ -58,7 +58,7 @@ function invocation(offer) {
 test("a standard package.json bin is the complete operation advertisement", async () => {
   const fixture = targetFixture();
   const journal = ledger();
-  const result = await settle(solicitation(fixture.target), "solicit-service", "2026-08-09T12:00:00.000Z", { ledger: journal, dataRoot: fixture.root });
+  const result = await settle(solicitation(fixture.target), "solicit-service", "2026-08-09T12:00:00.000Z", { ledger: journal, root: fixture.root });
 
   assert.equal(result.type, "Offer");
   assert.deepEqual(Object.keys(result.object.targetBinding).sort(), ["packageDigest", "selectedBinDigest"]);
@@ -69,7 +69,7 @@ test("a standard package.json bin is the complete operation advertisement", asyn
 test("a bin importing mutable runtime code is not schedulable", async () => {
   const fixture = targetFixture(undefined, "import { response } from './response.mjs';\nprocess.stdout.write(response);\n");
   writeFileSync(join(fixture.packageRoot, "response.mjs"), "export const response = '{}';\n");
-  const result = await settle(solicitation(fixture.target, "imported-bin"), "solicit-service", "2026-08-09T12:00:00.000Z", { ledger: ledger(), dataRoot: fixture.root });
+  const result = await settle(solicitation(fixture.target, "imported-bin"), "solicit-service", "2026-08-09T12:00:00.000Z", { ledger: ledger(), root: fixture.root });
   assert.equal(result.type, "Question");
   assert.match(result.object.missing.join(" "), /self-contained/u);
 });
@@ -77,7 +77,7 @@ test("a bin importing mutable runtime code is not schedulable", async () => {
 test("a declared relative runtime file is bound into the operation closure", async () => {
   const fixture = targetFixture(undefined, "import { response } from './response.mjs';\nprocess.stdout.write(response);\n", { "receive-pulse": ["./response.mjs"] });
   writeFileSync(join(fixture.packageRoot, "response.mjs"), "export const response = '{}';\n");
-  const result = await settle(solicitation(fixture.target, "declared-import"), "solicit-service", "2026-08-09T12:00:00.000Z", { ledger: ledger(), dataRoot: fixture.root });
+  const result = await settle(solicitation(fixture.target, "declared-import"), "solicit-service", "2026-08-09T12:00:00.000Z", { ledger: ledger(), root: fixture.root });
   assert.equal(result.type, "Offer");
   assert.match(result.object.targetBinding.runtimeClosureDigest, /^ni:\/\/\/sha-256;/u);
 });
@@ -85,7 +85,7 @@ test("a declared relative runtime file is bound into the operation closure", asy
 test("a declared module may use import.meta without expanding its runtime closure", async () => {
   const fixture = targetFixture(undefined, "import { response } from './response.mjs';\nprocess.stdout.write(`${response}:${import.meta.url}`);\n", { "receive-pulse": ["./response.mjs"] });
   writeFileSync(join(fixture.packageRoot, "response.mjs"), "export const response = '{}';\n");
-  const result = await settle(solicitation(fixture.target, "declared-import-meta"), "solicit-service", "2026-08-09T12:00:00.000Z", { ledger: ledger(), dataRoot: fixture.root });
+  const result = await settle(solicitation(fixture.target, "declared-import-meta"), "solicit-service", "2026-08-09T12:00:00.000Z", { ledger: ledger(), root: fixture.root });
   assert.equal(result.type, "Offer");
   assert.match(result.object.targetBinding.runtimeClosureDigest, /^ni:\/\/\/sha-256;/u);
 });
@@ -95,8 +95,8 @@ test("a declared closure still rejects bare and dynamic imports", async () => {
   const dynamic = targetFixture(undefined, "await import('./response.mjs');\n", { "receive-pulse": ["./response.mjs"] });
   writeFileSync(join(dynamic.packageRoot, "response.mjs"), "export const response = '{}';\n");
   writeFileSync(join(bare.packageRoot, "declared.mjs"), "export const declared = true;\n");
-  const bareResult = await settle(solicitation(bare.target, "bare-import"), "solicit-service", "2026-08-09T12:00:00.000Z", { ledger: ledger(), dataRoot: bare.root });
-  const dynamicResult = await settle(solicitation(dynamic.target, "dynamic-import"), "solicit-service", "2026-08-09T12:00:00.000Z", { ledger: ledger(), dataRoot: dynamic.root });
+  const bareResult = await settle(solicitation(bare.target, "bare-import"), "solicit-service", "2026-08-09T12:00:00.000Z", { ledger: ledger(), root: bare.root });
+  const dynamicResult = await settle(solicitation(dynamic.target, "dynamic-import"), "solicit-service", "2026-08-09T12:00:00.000Z", { ledger: ledger(), root: dynamic.root });
   assert.equal(bareResult.type, "Question");
   assert.match(bareResult.object.missing.join(" "), /bare import/u);
   assert.equal(dynamicResult.type, "Question");
@@ -107,9 +107,9 @@ test("acceptance rejects drift in a declared relative runtime file", async () =>
   const fixture = targetFixture(undefined, "import { response } from './response.mjs';\nprocess.stdout.write(response);\n", { "receive-pulse": ["./response.mjs"] });
   writeFileSync(join(fixture.packageRoot, "response.mjs"), "export const response = '{}';\n");
   const journal = ledger();
-  const offer = await settle(solicitation(fixture.target, "declared-import-drift"), "solicit-service", "2026-08-09T12:00:00.000Z", { ledger: journal, dataRoot: fixture.root });
+  const offer = await settle(solicitation(fixture.target, "declared-import-drift"), "solicit-service", "2026-08-09T12:00:00.000Z", { ledger: journal, root: fixture.root });
   writeFileSync(join(fixture.packageRoot, "response.mjs"), "export const response = '{\\\"changed\\\":true}';\n");
-  const result = await settle(invocation(offer), "invoke-service", "2026-08-09T12:00:01.000Z", { ledger: journal, dataRoot: fixture.root });
+  const result = await settle(invocation(offer), "invoke-service", "2026-08-09T12:00:01.000Z", { ledger: journal, root: fixture.root });
   assert.equal(result.type, "Reject");
   assert.match(result.object.reason, /target binding/u);
 });
@@ -119,13 +119,13 @@ test("live execution refuses drift in a declared relative runtime file", async (
   writeFileSync(join(fixture.packageRoot, "response.mjs"), "export const response = '{}';\n");
   const inspected = inspectTarget(fixture.target);
   writeFileSync(join(fixture.packageRoot, "response.mjs"), "export const response = '{\\\"changed\\\":true}';\n");
-  const result = await invokeTarget({ request: { executionMode: "live", target: fixture.target }, targetBinding: { packageDigest: inspected.packageDigest, selectedBinDigest: inspected.selectedBinDigest, runtimeClosureDigest: inspected.runtimeClosureDigest } }, { type: "Create" }, { dataRoot: fixture.root });
+  const result = await invokeTarget({ request: { executionMode: "live", target: fixture.target }, targetBinding: { packageDigest: inspected.packageDigest, selectedBinDigest: inspected.selectedBinDigest, runtimeClosureDigest: inspected.runtimeClosureDigest } }, { type: "Create" }, { root: fixture.root });
   assert.equal(result.problem, "target-runtime-closure-changed");
 });
 
 test("live execution refuses an imported bin before capture or process launch", async () => {
   const fixture = targetFixture(undefined, "require('./mutable.cjs');\n");
-  const result = await invokeTarget({ request: { executionMode: "live", target: fixture.target }, targetBinding: {} }, { type: "Create" }, { dataRoot: fixture.root });
+  const result = await invokeTarget({ request: { executionMode: "live", target: fixture.target }, targetBinding: {} }, { type: "Create" }, { root: fixture.root });
   assert.equal(result.problem, "target-runtime-inspection-failed");
   assert.match(result.stderr, /self-contained/u);
 });
@@ -133,7 +133,7 @@ test("live execution refuses an imported bin before capture or process launch", 
 test("live execution admits the exact no-import bin class before isolation", async () => {
   const fixture = targetFixture();
   const inspected = inspectTarget(fixture.target);
-  const result = await invokeTarget({ request: { executionMode: "live", timeoutMilliseconds: 1, target: fixture.target }, targetBinding: { packageDigest: inspected.packageDigest, selectedBinDigest: inspected.selectedBinDigest } }, { type: "Create" }, { dataRoot: fixture.root });
+  const result = await invokeTarget({ request: { executionMode: "live", timeoutMilliseconds: 1, target: fixture.target }, targetBinding: { packageDigest: inspected.packageDigest, selectedBinDigest: inspected.selectedBinDigest } }, { type: "Create" }, { root: fixture.root });
   assert.notEqual(result.problem, "target-runtime-inspection-failed");
 });
 
@@ -154,7 +154,7 @@ test("live execution overlays committed files in a Bubblewrap read-only root wit
     process.env.KOIOS_NEWS_ROUTINE_PUBLICATION_OUTPUT_ROOT = outputRoot;
     process.env.KOIOS_NEWS_ROUTINE_PUBLICATION_REPLAY_ROOT = replayRoot;
     const inspected = inspectTarget(fixture.target);
-    const result = await invokeTarget({ request: { executionMode: "live", timeoutMilliseconds: 5_000, target: fixture.target }, targetBinding: { packageDigest: inspected.packageDigest, selectedBinDigest: inspected.selectedBinDigest } }, { type: "Create" }, { dataRoot: fixture.root });
+    const result = await invokeTarget({ request: { executionMode: "live", timeoutMilliseconds: 5_000, target: fixture.target }, targetBinding: { packageDigest: inspected.packageDigest, selectedBinDigest: inspected.selectedBinDigest } }, { type: "Create" }, { root: fixture.root });
     assert.equal(result.status, 0, result.stderr);
     assert.equal(result.problem, null);
   } finally {
@@ -179,7 +179,7 @@ test("Bubblewrap hides unadmitted home files while exposing admitted input and f
     }, previous = Object.fromEntries(Object.keys(names).map((name) => [name, process.env[name]]));
   try {
     Object.assign(process.env, names);
-    const inspected = inspectTarget(fixture.target), result = await invokeTarget({ request: { executionMode: "live", timeoutMilliseconds: 5_000, target: fixture.target }, targetBinding: { packageDigest: inspected.packageDigest, selectedBinDigest: inspected.selectedBinDigest } }, { type: "Create" }, { dataRoot: fixture.root });
+    const inspected = inspectTarget(fixture.target), result = await invokeTarget({ request: { executionMode: "live", timeoutMilliseconds: 5_000, target: fixture.target }, targetBinding: { packageDigest: inspected.packageDigest, selectedBinDigest: inspected.selectedBinDigest } }, { type: "Create" }, { root: fixture.root });
     assert.equal(result.status, 0, result.stderr);
     assert.deepEqual(JSON.parse(readFileSync(join(outputRoot, "report.json"), "utf8")), { admitted: "admitted\n", hidden: false });
   } finally {
@@ -197,12 +197,12 @@ test("live isolation rejects extra writable names and broad writable roots befor
     process.env.SCHEDULED_ACTIVITY_DELIVERY_TARGET_ENV_ALLOWLIST = "TEST_OUTPUT_ROOT";
     process.env.SCHEDULED_ACTIVITY_DELIVERY_TARGET_WRITABLE_ROOT_ENV_ALLOWLIST = "TEST_OUTPUT_ROOT,EXTRA_ROOT";
     process.env.TEST_OUTPUT_ROOT = root; process.env.EXTRA_ROOT = root;
-    const extra = await invokeTarget(registration, { type: "Create" }, { dataRoot: fixture.root });
+    const extra = await invokeTarget(registration, { type: "Create" }, { root: fixture.root });
     assert.equal(extra.problem, "target-runtime-isolation-unavailable");
     assert.match(extra.stderr, /not admitted/u);
     process.env.SCHEDULED_ACTIVITY_DELIVERY_TARGET_WRITABLE_ROOT_ENV_ALLOWLIST = "TEST_OUTPUT_ROOT";
     process.env.TEST_OUTPUT_ROOT = "/";
-    const broad = await invokeTarget(registration, { type: "Create" }, { dataRoot: fixture.root });
+    const broad = await invokeTarget(registration, { type: "Create" }, { root: fixture.root });
     assert.equal(broad.problem, "target-runtime-isolation-unavailable");
     assert.match(broad.stderr, /not broad host directories/u);
   } finally {
@@ -213,13 +213,13 @@ test("live isolation rejects extra writable names and broad writable roots befor
 
 test("the standard string bin shorthand is addressed by the unscoped package name", async () => {
   const fixture = targetFixture("./receive-pulse.mjs");
-  const result = await settle(solicitation(fixture.target, "string-bin"), "solicit-service", "2026-08-09T12:00:00.000Z", { ledger: ledger(), dataRoot: fixture.root });
+  const result = await settle(solicitation(fixture.target, "string-bin"), "solicit-service", "2026-08-09T12:00:00.000Z", { ledger: ledger(), root: fixture.root });
   assert.equal(result.type, "Offer");
 });
 
 test("an operation absent from package.json bin is not schedulable", async () => {
   const fixture = targetFixture();
-  const result = await settle(solicitation({ ...fixture.target, operation: "unadvertised" }, "missing-bin"), "solicit-service", "2026-08-09T12:00:00.000Z", { ledger: ledger(), dataRoot: fixture.root });
+  const result = await settle(solicitation({ ...fixture.target, operation: "unadvertised" }, "missing-bin"), "solicit-service", "2026-08-09T12:00:00.000Z", { ledger: ledger(), root: fixture.root });
   assert.equal(result.type, "Question");
   assert.match(result.object.missing.join(" "), /no package bin entry/u);
 });
@@ -227,10 +227,10 @@ test("an operation absent from package.json bin is not schedulable", async () =>
 test("acceptance rejects a selected bin whose bytes changed after the offer", async () => {
   const fixture = targetFixture();
   const journal = ledger();
-  const offer = await settle(solicitation(fixture.target, "changed-bin"), "solicit-service", "2026-08-09T12:00:00.000Z", { ledger: journal, dataRoot: fixture.root });
+  const offer = await settle(solicitation(fixture.target, "changed-bin"), "solicit-service", "2026-08-09T12:00:00.000Z", { ledger: journal, root: fixture.root });
   writeFileSync(join(fixture.packageRoot, "receive-pulse.mjs"), "process.stdout.write('{\"changed\":true}');\n");
 
-  const result = await settle(invocation(offer), "invoke-service", "2026-08-09T12:00:01.000Z", { ledger: journal, dataRoot: fixture.root });
+  const result = await settle(invocation(offer), "invoke-service", "2026-08-09T12:00:01.000Z", { ledger: journal, root: fixture.root });
   assert.equal(result.type, "Reject");
   assert.equal(result.object.code, "invalid-contract");
   assert.match(result.object.reason, /target binding/u);

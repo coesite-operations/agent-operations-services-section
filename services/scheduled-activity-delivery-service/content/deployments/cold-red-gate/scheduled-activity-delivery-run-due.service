@@ -8,7 +8,7 @@ Type=oneshot
 WorkingDirectory=%h/services/scheduled-activity-delivery-service
 Environment=PATH=/usr/local/bin:/usr/bin:/bin
 Environment=SCHEDULED_ACTIVITY_DELIVERY_ACTOR=https://bare-cedar-fog.561.group/actors/cold-red-gate-scheduled-activity-delivery
-Environment=SCHEDULED_ACTIVITY_DELIVERY_DATA_ROOT=%h/services/scheduled-activity-delivery-service/data
+Environment=SCHEDULED_ACTIVITY_DELIVERY_ROOT=%h/services/scheduled-activity-delivery-service
 Environment=WITNESS_JOURNAL_RDF_AGENT=http://127.0.0.1:8787/.well-known/agent-card.json
 EnvironmentFile=%h/.config/emsenn/scheduled-activity-delivery.env
 Environment=SCHEDULED_ACTIVITY_DELIVERY_TARGET_ENV_ALLOWLIST=KOIOS_NEWS_ROUTINE_PUBLICATION_JOB,KOIOS_NEWS_ROUTINE_PUBLICATION_QUEUE,KOIOS_NEWS_ROUTINE_PUBLICATION_AUTHORITY_KEYS,KOIOS_NEWS_ROUTINE_PUBLICATION_ASSESSMENT_KEYS,KOIOS_NEWS_ROUTINE_PUBLICATION_BASELINE_ROOT,KOIOS_NEWS_ROUTINE_PUBLICATION_OUTPUT_ROOT,KOIOS_NEWS_ROUTINE_PUBLICATION_REPLAY_ROOT

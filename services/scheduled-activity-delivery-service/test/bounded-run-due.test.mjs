@@ -45,8 +45,8 @@ function writeCurrentInterruptedAttempt(root, index, recoverAfter) {
   };
   const attempt = { id: digest(body), ...body };
   const scheduleDigest = digest(scheduleId).slice("ni:///sha-256;".length);
-  const attemptDirectory = join(root, "pending-delivery-attempts", scheduleDigest);
-  const recoveryDirectory = join(root, "pending-delivery-recovery", scheduleDigest);
+  const attemptDirectory = join(root, "data", "state", "pending-delivery-attempts", scheduleDigest);
+  const recoveryDirectory = join(root, "data", "state", "pending-delivery-recovery", scheduleDigest);
   mkdirSync(attemptDirectory, { recursive: true });
   mkdirSync(recoveryDirectory, { recursive: true });
   writeFileSync(join(attemptDirectory, "0.rmn.cbor"), currentBytes(attempt));
@@ -62,10 +62,10 @@ test("run-due caps a migrated active set and rotates its dry-run dispatch window
     for (let index = 0; index < 33; index += 1) {
       journal.record({ category: `${CONTRACT}.schedules`, recordedAt: firstTickAt, record: registration(index, index === omittedIndex ? firstTickAt : "2099-01-01T00:00:00.000Z"), charge: { support: true, refutation: false } });
     }
-    assert.equal((await migrateScheduleDeliveryProjections({ dataRoot })).activeSchedules, 33);
+    assert.equal((await migrateScheduleDeliveryProjections({ root: dataRoot })).activeSchedules, 33);
 
     let targetInvocations = 0;
-    const options = { dataRoot, targetInvoker: () => { targetInvocations += 1; throw new Error("dry-run schedules must not invoke targets"); } };
+    const options = { root: dataRoot, targetInvoker: () => { targetInvocations += 1; throw new Error("dry-run schedules must not invoke targets"); } };
     const first = await runDue(firstTickAt, options);
     const second = await runDue("2026-08-29T00:01:00.000Z", options);
 
@@ -91,8 +91,8 @@ test("recovery queue rotation reaches the marker beyond its 32-cell work limit",
     const omittedIndex = ordered[(Math.floor(Date.parse(firstTickAt) / 60_000) + 32) % 33].index;
     for (let index = 0; index < 33; index += 1) writeCurrentInterruptedAttempt(dataRoot, index, index === omittedIndex ? "2098-01-01T00:01:00.000Z" : "2098-01-01T00:04:00.000Z");
     const ledger = inMemoryLedger();
-    const first = await runDue(firstTickAt, { dataRoot, ledger });
-    const second = await runDue("2098-01-01T00:03:00.000Z", { dataRoot, ledger });
+    const first = await runDue(firstTickAt, { root: dataRoot, ledger });
+    const second = await runDue("2098-01-01T00:03:00.000Z", { root: dataRoot, ledger });
 
     assert.equal(first.recoveredInterruptedAttempts.length, 0);
     assert.equal(second.recoveredInterruptedAttempts.length, 1);

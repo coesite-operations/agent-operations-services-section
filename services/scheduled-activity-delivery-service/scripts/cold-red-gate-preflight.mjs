@@ -189,7 +189,7 @@ export function preflight({ serviceRoot = DEFAULT_ROOT, environmentFile, home = 
   }
   let schedules = [];
   if (!structuralOnly) {
-    try { schedules = inspectSchedules({ dataRoot: join(root, "data") }); }
+    try { schedules = inspectSchedules({ root }); }
     catch (error) { problems.push(`accepted schedules cannot be inspected: ${error instanceof Error ? error.message : String(error)}`); }
   }
   const koiosSchedules = schedules.filter((schedule) => {
