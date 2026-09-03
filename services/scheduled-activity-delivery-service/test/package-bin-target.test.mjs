@@ -3,10 +3,24 @@ import { mkdtempSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "nod
 import { homedir, tmpdir } from "node:os";
 import { join } from "node:path";
 import test from "node:test";
+import { assayTargetIsolation } from "../scripts/cold-red-gate-preflight.mjs";
 import { ACTOR, CONTRACT, inspectTarget, invokeTarget, settle } from "../src/service.mjs";
 
 const CONTEXT = "https://www.w3.org/ns/activitystreams";
 const CUSTOMER = "urn:actor:test-customer";
+
+/**
+ * Live target execution shells out to the fixed Bubblewrap isolation
+ * executables and actually creates an unprivileged user namespace. Some
+ * hosts (kernel/AppArmor policy) refuse that regardless of whether the
+ * `bwrap` binary is installed. Probe the real assay once per test rather
+ * than assuming, and skip naming the exact reported problem when it fails.
+ * @returns {{available: boolean, reason?: string}}
+ */
+function bubblewrapIsolationAvailability() {
+  const assay = assayTargetIsolation();
+  return assay.ready ? { available: true } : { available: false, reason: assay.problem };
+}
 
 function ledger() {
   const categories = new Map();
@@ -137,7 +151,9 @@ test("live execution admits the exact no-import bin class before isolation", asy
   assert.notEqual(result.problem, "target-runtime-inspection-failed");
 });
 
-test("live execution overlays committed files in a Bubblewrap read-only root with only fixed writable roots", async () => {
+test("live execution overlays committed files in a Bubblewrap read-only root with only fixed writable roots", async (t) => {
+  const isolationAvailability = bubblewrapIsolationAvailability();
+  if (!isolationAvailability.available) { t.skip(isolationAvailability.reason); return; }
   const fixture = targetFixture(undefined, "process.stdout.write('{}');\n");
   const outputRoot = join(fixture.root, "output");
   const replayRoot = join(fixture.root, "replay");
@@ -165,7 +181,9 @@ test("live execution overlays committed files in a Bubblewrap read-only root wit
   }
 });
 
-test("Bubblewrap hides unadmitted home files while exposing admitted input and fixed writable roots", async () => {
+test("Bubblewrap hides unadmitted home files while exposing admitted input and fixed writable roots", async (t) => {
+  const isolationAvailability = bubblewrapIsolationAvailability();
+  if (!isolationAvailability.available) { t.skip(isolationAvailability.reason); return; }
   const homeFixture = mkdtempSync(join(homedir(), ".scheduled-bwrap-boundary-"));
   const admittedPath = join(homeFixture, "admitted.txt"), hiddenPath = join(homeFixture, "hidden.txt"),
     outputRoot = join(homeFixture, "output"), replayRoot = join(homeFixture, "replay");
@@ -188,7 +206,9 @@ test("Bubblewrap hides unadmitted home files while exposing admitted input and f
   }
 });
 
-test("live isolation rejects extra writable names and broad writable roots before target execution", async () => {
+test("live isolation rejects extra writable names and broad writable roots before target execution", async (t) => {
+  const isolationAvailability = bubblewrapIsolationAvailability();
+  if (!isolationAvailability.available) { t.skip(isolationAvailability.reason); return; }
   const fixture = targetFixture(), root = join(fixture.root, "writable"); mkdirSync(root);
   const variables = ["SCHEDULED_ACTIVITY_DELIVERY_TARGET_ENV_ALLOWLIST", "SCHEDULED_ACTIVITY_DELIVERY_TARGET_WRITABLE_ROOT_ENV_ALLOWLIST", "TEST_OUTPUT_ROOT", "EXTRA_ROOT"],
     previous = Object.fromEntries(variables.map((name) => [name, process.env[name]]));

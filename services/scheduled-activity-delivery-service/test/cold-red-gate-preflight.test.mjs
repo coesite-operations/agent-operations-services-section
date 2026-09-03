@@ -6,9 +6,22 @@ import { homedir } from "node:os";
 import { fileURLToPath } from "node:url";
 import test from "node:test";
 import { assayTargetIsolation, preflight } from "../scripts/cold-red-gate-preflight.mjs";
-import { resolveTargetIsolationExecutables } from "../src/service.mjs";
+import { resolveColdRedGateNodeExecutable, resolveTargetIsolationExecutables } from "../src/service.mjs";
 
 const serviceRoot = dirname(dirname(fileURLToPath(import.meta.url)));
+
+/**
+ * Cold Red Gate's own pinned Guix Node closure is a real host capability of
+ * that colony machine (and, when its Guix store item is retained, of any
+ * host sharing the same channel pin). A generic CI runner has no such
+ * closure. Tests that exercise it skip, naming the absent path, instead of
+ * failing on an environment fact this repository cannot fabricate.
+ * @returns {{available: boolean, reason?: string}}
+ */
+function coldRedGateNodeAvailability() {
+  try { resolveColdRedGateNodeExecutable(); return { available: true }; }
+  catch (error) { return { available: false, reason: error instanceof Error ? error.message : String(error) }; }
+}
 const KOIOS_SCHEDULE = Object.freeze({
   scheduleId: "urn:schedule:koios", customer: "urn:customer:koios",
   executionMode: "live",
@@ -58,7 +71,9 @@ function environmentFixture(values = {}, selector = "job") {
   return { root, environment };
 }
 
-test("Cold Red Gate preflight proves its isolated Koios routine boundary and accepted schedule without delivery", () => {
+test("Cold Red Gate preflight proves its isolated Koios routine boundary and accepted schedule without delivery", (t) => {
+  const nodeAvailability = coldRedGateNodeAvailability();
+  if (!nodeAvailability.available) { t.skip(nodeAvailability.reason); return; }
   const fixture = environmentFixture();
   try {
     const result = checkedPreflight({ serviceRoot, environmentFile: fixture.environment, requireKoiosSchedule: true, inspectSchedules: () => [KOIOS_SCHEDULE] });
@@ -68,7 +83,9 @@ test("Cold Red Gate preflight proves its isolated Koios routine boundary and acc
   } finally { rmSync(fixture.root, { recursive: true, force: true }); }
 });
 
-test("Cold Red Gate preflight passes the fixed baseline root to the selected Koios preflight", () => {
+test("Cold Red Gate preflight passes the fixed baseline root to the selected Koios preflight", (t) => {
+  const nodeAvailability = coldRedGateNodeAvailability();
+  if (!nodeAvailability.available) { t.skip(nodeAvailability.reason); return; }
   const fixture = environmentFixture();
   try {
     let admitted;
@@ -81,7 +98,9 @@ test("Cold Red Gate preflight passes the fixed baseline root to the selected Koi
   } finally { rmSync(fixture.root, { recursive: true, force: true }); }
 });
 
-test("Cold Red Gate preflight admits a real queue directory as the one routine selector", () => {
+test("Cold Red Gate preflight admits a real queue directory as the one routine selector", (t) => {
+  const nodeAvailability = coldRedGateNodeAvailability();
+  if (!nodeAvailability.available) { t.skip(nodeAvailability.reason); return; }
   const fixture = environmentFixture({}, "queue");
   try {
     let admitted;
@@ -108,7 +127,9 @@ test("Cold Red Gate preflight rejects ambiguous routine selectors before target 
   } finally { rmSync(fixture.root, { recursive: true, force: true }); }
 });
 
-test("structural-only preflight installs no delivery authority and is never activation-ready", () => {
+test("structural-only preflight installs no delivery authority and is never activation-ready", (t) => {
+  const nodeAvailability = coldRedGateNodeAvailability();
+  if (!nodeAvailability.available) { t.skip(nodeAvailability.reason); return; }
   const absentEnvironment = join(mkdtempSync("/var/tmp/scheduled-delivery-structural-"), "absent.env");
   try {
     const result = preflight({ serviceRoot, environmentFile: absentEnvironment, structuralOnly: true, inspectSchedules: () => { throw new Error("structural preflight must not inspect schedules"); }, assayIsolation: feasibleIsolationAssay });
@@ -224,7 +245,12 @@ test("the normal and staged installers never enable or start a schedule", async 
   assert.match(installer, /is-active\s+--quiet/u);
 });
 
-test("the staged installer installs and daemon-reloads without enabling or starting", () => {
+test("the staged installer installs and daemon-reloads without enabling or starting", (t) => {
+  // The installer shells out to the pinned Cold Red Gate Guix Node itself
+  // (content/deployments/cold-red-gate/install-and-verify.sh); it cannot run
+  // where that colony's Guix store item is absent.
+  const nodeAvailability = coldRedGateNodeAvailability();
+  if (!nodeAvailability.available) { t.skip(nodeAvailability.reason); return; }
   const root = mkdtempSync("/var/tmp/scheduled-delivery-staged-");
   const commandRoot = join(root, "bin");
   const commandLog = join(root, "systemctl.log");

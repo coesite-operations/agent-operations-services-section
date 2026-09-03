@@ -49,11 +49,19 @@ test("full preflight refuses timer activation without an accepted active live sc
 });
 
 test("the normal preflight command exits nonzero when activation is refused", () => {
-  const result = spawnSync(process.execPath, [join(serviceRoot, "scripts", "bare-cedar-fog-preflight.mjs"), "--service-root", serviceRoot], { encoding: "utf8" });
-  assert.equal(result.status, 2, result.stderr);
-  const report = JSON.parse(result.stdout);
-  assert.equal(report.ready, true);
-  assert.equal(report.activationReady, false);
+  // Like every other test here, this isolates HOME to a fixture: the real
+  // developer or CI account has no admitted ~/.local/bin/node carrier.
+  const fixture = fixtureDeployment();
+  try {
+    // Invoke the real (non-symlinked) script path: Node resolves import.meta.url
+    // through symlinks for its "run as main" check, so spawning the fixture's
+    // symlinked copy would silently no-op the CLI entrypoint.
+    const result = spawnSync(process.execPath, [join(serviceRoot, "scripts", "bare-cedar-fog-preflight.mjs"), "--service-root", fixture.serviceRoot], { encoding: "utf8", env: { ...process.env, HOME: fixture.home } });
+    assert.equal(result.status, 2, result.stderr);
+    const report = JSON.parse(result.stdout);
+    assert.equal(report.ready, true);
+    assert.equal(report.activationReady, false);
+  } finally { rmSync(fixture.home, { recursive: true, force: true }); }
 });
 
 test("full preflight admits only a live schedule bound to its current target closure", () => {
