@@ -1,0 +1,58 @@
+{
+  "name": "@coesite-operations/union-officer-academy",
+  "version": "0.1.4",
+  "type": "module",
+  "description": "The sovereign 561 Group officer-corps ANT Colony that owns reusable professions, forms characters in cohorts, and supplies qualified characters for receiver-owned offices.",
+  "bin": {
+    "union-officer-academy": "./src/union-officer-academy.mjs",
+    "solicit-service": "./src/contract-union-formation-mape.mjs",
+    "invoke-service": "./src/contract-union-formation-mape.mjs",
+    "mape-formation-territory": "./src/contract-union-formation-mape.mjs",
+    "invoke-officer-formation": "./src/contract-officer-formation.mjs",
+    "supply-character": "./src/character-officer-supply.mjs",
+    "record-character-animation": "./src/character-officer-supply.mjs",
+    "academy-rsi": "./src/academy-rsi.mjs",
+    "resolve-formation-evidence": "./src/resolve-formation-evidence.mjs",
+    "serve-office-repertoire-market": "./src/serve-office-repertoire-mcp.mjs",
+    "smoke-office-repertoire-market": "./scripts/smoke-office-repertoire-mcp.mjs",
+    "run-formation-lianqun-market": "./src/run-formation-lianqun-market.mjs"
+  },
+  "scripts": {
+    "check": "node --check src/academy.mjs && node --check src/union-officer-academy.mjs && node --check src/professional-repertoire.mjs && node --check src/character-officer-supply.mjs && node --check src/local-academy-necessity.mjs && node --check src/officer-supply-market.mjs && node --check src/office-repertoire-market.mjs && node --check src/serve-office-repertoire-mcp.mjs && node --check scripts/smoke-office-repertoire-mcp.mjs && node --check src/verify-professional-repertoire.mjs && node --check src/verify-academy.mjs && node --check src/verify-operational-academy.mjs && node --check src/resolve-formation-evidence.mjs && node --check src/academy-rsi.mjs && node --check src/exercise-rmn-residue-profile.mjs && node --check src/contract-union-formation-mape.mjs && node --check src/contract-officer-formation.mjs && node --check src/collect-colony-activity.mjs && node --check test/academy.test.mjs && node --check test/character-officer-supply.test.mjs && node --check test/office-repertoire-market.test.mjs && node --check test/operational-academy.test.mjs && node --check test/academy-rsi.test.mjs && node --check test/colony-activity-pulse.test.mjs",
+    "test": "node --test --test-concurrency=1 test/academy.test.mjs test/character-officer-supply.test.mjs test/office-repertoire-market.test.mjs test/operational-academy.test.mjs test/academy-rsi.test.mjs test/colony-activity-pulse.test.mjs",
+    "repertoire:compile": "node src/professional-repertoire.mjs --write",
+    "smoke:office-market": "node scripts/smoke-office-repertoire-mcp.mjs"
+  },
+  "dependencies": {
+    "@red-cup-engineering/ni-services-section": "0.1.1",
+    "@red-cup-engineering/path-walking-service": "1.2.1",
+    "@lenticule-science/typed-circuit-residue-assay": "1.1.1",
+    "@modelcontextprotocol/sdk": "1.29.0",
+    "@red-cup-engineering/json-schema-services-section": "0.1.7",
+    "@red-cup-engineering/markdown-file-reading-service": "0.1.0",
+    "@red-cup-engineering/markdown-file-writing-service": "0.1.0",
+    "@red-cup-engineering/semantic-content-identify-service": "0.2.7",
+    "@red-cup-engineering/witness-journal-entry-service": "0.1.7",
+    "@red-cup-engineering/witness-journal-log-service": "0.1.6",
+    "@red-cup-engineering/skills-services-section": "0.1.0",
+    "@coesite-operations/rendanheyi-context-compilation-xiaowei": "0.1.2",
+    "@coesite-operations/rendanheyi-enterprise-services-section": "0.1.0",
+    "@coesite-operations/rendanheyi-formation-lianqun-member-runtime-service": "1.0.3",
+    "@coesite-operations/rendanheyi-formation-market-xiaowei": "0.1.2",
+    "@coesite-operations/rendanheyi-independent-examination-xiaowei": "0.1.2",
+    "@coesite-operations/rendanheyi-qualification-registry-xiaowei": "0.1.2",
+    "@coesite-operations/rendanheyi-situated-practice-xiaowei": "0.1.2",
+    "zod": "4.3.6"
+  },
+  "license": "UNLICENSED",
+  "files": [
+    "src/",
+    "scripts/",
+    "README.md"
+  ],
+  "exports": {
+    "./src/collect-colony-activity.mjs": "./src/collect-colony-activity.mjs",
+    "./academy": "./src/academy.mjs",
+    "./collect-colony-activity": "./src/collect-colony-activity.mjs"
+  }
+}
