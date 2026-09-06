@@ -1,6 +1,6 @@
 {
   "name": "@coesite-operations/scheduled-activity-delivery-service",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "type": "module",
   "description": "Portable ScheduleDelivery service for colony-owned, contracted, idempotent ActivityStreams delivery.",
   "exports": {
@@ -28,12 +28,13 @@
   },
   "dependencies": {
     "@red-cup-engineering/data-custody-directory-service": "0.1.1",
+    "@red-cup-engineering/expand-recurrence-rule-service": "0.1.0",
     "@red-cup-engineering/json-codec-service": "0.2.0",
     "@red-cup-engineering/relation-model-notation-cbor-codec": "0.1.0",
     "@red-cup-engineering/relation-model-notation-runtime": "8.0.1",
     "@red-cup-engineering/relational-value-graph-service": "0.1.1",
     "@red-cup-engineering/semantic-content-identify-service": "0.2.7",
-    "@red-cup-engineering/semantic-record-journal-service": "0.1.6",
+    "@red-cup-engineering/semantic-record-journal-service": "0.1.11",
     "@red-cup-engineering/witness-journal-entry-service": "0.1.7",
     "@red-cup-engineering/witness-journal-log-service": "0.1.6"
   }

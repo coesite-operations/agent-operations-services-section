@@ -7,6 +7,7 @@ import { basename, dirname, isAbsolute, join, relative, resolve, sep } from "nod
 import { createInterface } from "node:readline";
 import { fileURLToPath } from "node:url";
 import { dataCustodyDirectory } from "@red-cup-engineering/data-custody-directory-service";
+import { expandRecurrenceRule } from "@red-cup-engineering/expand-recurrence-rule-service";
 import { createSemanticRecordJournal } from "@red-cup-engineering/semantic-record-journal-service";
 import { semanticBytes } from "@red-cup-engineering/relation-model-notation-cbor-codec";
 import { encodeRelationalValue } from "@red-cup-engineering/relational-value-graph-service";
@@ -1007,6 +1008,42 @@ export async function migrateScheduleDeliveryProjections(options = {}) {
   return Object.freeze({ type: "ScheduledActivityDeliveryProjectionMigration", journalRows: rows, activeSchedules: active, retiredSchedules: retirementsById.size, receiptReservations: receipts, recoveryAttempts, deliveryActivated: false, customerTerritoryMutation: false });
 }
 
+/**
+ * Floors an ISO 8601 instant to whole seconds, the precision RFC 5545's basic UTC date-time form carries.
+ * @param {string} instant An ISO 8601 UTC instant, any fractional-second precision.
+ * @returns {string} The same instant with its fractional seconds dropped, still ISO 8601 UTC.
+ */
+function toIsoWholeSecondUtc(instant) {
+  return new Date(instant).toISOString().replace(/\.\d{3}Z$/u, "Z");
+}
+
+/**
+ * Formats an ISO 8601 UTC instant as an RFC 5545 basic UTC date-time ("YYYYMMDDTHHMMSSZ"), the DTSTART form expand-recurrence-rule-service requires.
+ * @param {string} instant An ISO 8601 UTC instant, any fractional-second precision.
+ * @returns {string} The equivalent RFC 5545 basic UTC date-time.
+ */
+function toBasicUtcDateTime(instant) {
+  return toIsoWholeSecondUtc(instant).replace(/[-:]/gu, "");
+}
+
+/**
+ * Finds a schedule's most recent recurrence instance at or before `at`, expressing the schedule's firstDueAt/intervalSeconds pair as an RFC 5545 VEVENT (a FREQ=SECONDLY;INTERVAL=n RRULE) and composing expand-recurrence-rule-service for the recurrence arithmetic, rather than hand-rolled interval division.
+ * @param {{firstDueAt: string, intervalSeconds: number}} schedule The schedule's first-due instant and its whole-second recurrence interval.
+ * @param {string} at The current instant to evaluate recurrence up to (inclusive).
+ * @returns {{occurrence: number, scheduledFor: string}|null} The zero-based occurrence index and its ISO 8601 UTC instant, or null when no occurrence has yet fallen at or before `at`.
+ */
+function mostRecentScheduleOccurrence(schedule, at) {
+  const windowStart = toIsoWholeSecondUtc(schedule.firstDueAt);
+  if (Date.parse(at) < Date.parse(windowStart)) return null;
+  const { occurrences } = expandRecurrenceRule({
+    dtstart: toBasicUtcDateTime(schedule.firstDueAt),
+    rrule: `FREQ=SECONDLY;INTERVAL=${schedule.intervalSeconds}`,
+    window: { start: windowStart, end: at },
+  });
+  if (occurrences.length === 0) return null;
+  return { occurrence: occurrences.length - 1, scheduledFor: occurrences[occurrences.length - 1] };
+}
+
 export async function runDue(at = new Date().toISOString(), options = {}) {
   if (!validInstant(at)) throw new Error("run-due requires an explicit valid instant");
   // Timer work must be proportional to accepted active schedules, not to the
@@ -1029,11 +1066,11 @@ export async function runDue(at = new Date().toISOString(), options = {}) {
     : Array.from({ length: MAX_TARGETS_PER_TICK }, (_, index) => active[(offset + index) % active.length]);
   for (const registration of dispatchWindow) {
     if (registration.status !== "active") continue;
-    const first = Date.parse(registration.request.schedule.firstDueAt); const now = Date.parse(at); if (now < first) continue;
-    const occurrence = Math.floor((now - first) / (registration.request.schedule.intervalSeconds * 1000));
+    const due = mostRecentScheduleOccurrence(registration.request.schedule, at); if (due === null) continue;
+    const { occurrence, scheduledFor } = due;
     if (registration.request.schedule.maxDeliveries !== null && reservedOccurrenceCount(root, registration.scheduleId) >= registration.request.schedule.maxDeliveries) continue;
     if (occurrenceReserved(root, registration.scheduleId, occurrence)) continue;
-    const scheduledFor = new Date(first + occurrence * registration.request.schedule.intervalSeconds * 1000).toISOString(); const activity = deliveredActivity(registration, occurrence, scheduledFor, at);
+    const activity = deliveredActivity(registration, occurrence, scheduledFor, at);
     const attemptBody = { type: "ScheduledDeliveryAttempt", scheduleId: registration.scheduleId, occurrence, scheduledFor, attemptedAt: at, recoverAfter: new Date(Date.parse(at) + registration.request.timeoutMilliseconds + 20_000).toISOString(), activity, activityDigest: digest(activity), targetBinding: registration.targetBinding, retryAuthorized: false, customerTerritoryMutation: false };
     const attempt = { id: id(attemptBody), ...attemptBody }; if (!writeDeliveryAttempt(root, attempt)) continue;
     attempts.push({ registration, occurrence, scheduledFor, activity, attempt, options });
