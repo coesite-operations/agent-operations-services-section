@@ -6,9 +6,38 @@ const REQUIRED = (value, name) => {
 const TRI = new Set(['HELD', 'REFUTED', 'UNKNOWN', 'CONTESTED']);
 const HEALTH = new Set(['AVAILABLE', 'CONFIRMATION_GATED', 'RESERVED', 'UNSUPPORTED', 'DEGRADED', 'UNKNOWN']);
 
+const FOUR_BITS = Object.freeze({
+  HELD: Object.freeze({ positive: true, negative: false }),
+  REFUTED: Object.freeze({ positive: false, negative: true }),
+  UNKNOWN: Object.freeze({ positive: false, negative: false }),
+  CONTESTED: Object.freeze({ positive: true, negative: true })
+});
+
 function tri(value, name) {
   if (!TRI.has(value)) throw new TypeError(name + ' has invalid FOUR standing');
   return value;
+}
+
+function fromFourBits(positive, negative) {
+  if (positive) return negative ? 'CONTESTED' : 'HELD';
+  return negative ? 'REFUTED' : 'UNKNOWN';
+}
+
+export function fourNeg(value) {
+  const standing = tri(value, 'value');
+  const bits = FOUR_BITS[standing];
+  return fromFourBits(bits.negative, bits.positive);
+}
+
+export function fourAnd(left, right) {
+  const l = FOUR_BITS[tri(left, 'left')];
+  const r = FOUR_BITS[tri(right, 'right')];
+  return fromFourBits(l.positive && r.positive, l.negative || r.negative);
+}
+
+export function fourAll(values) {
+  if (!Array.isArray(values)) throw new TypeError('values must be an array');
+  return values.reduce((acc, value) => fourAnd(acc, value), 'HELD');
 }
 
 export function makeCapabilitySurface(input) {
@@ -36,15 +65,30 @@ export function makeCapabilitySurface(input) {
 
 export function surfaceDiagnosis(surface) {
   const s = makeCapabilitySurface(surface);
+  const connectorGapStanding = fourAnd(s.providerSupport, fourNeg(s.connectorExposure));
+  const providerAbsentStanding = fourNeg(s.providerSupport);
+  const executableStanding = fourAll([
+    s.providerSupport,
+    s.implementationSupport,
+    s.connectorExposure,
+    s.principalPermission,
+    s.harnessCallability
+  ]);
+  const receivedStanding = fourAll([executableStanding, s.providerEffect, s.readback]);
+
   const connectorGap = s.providerSupport !== 'REFUTED' && s.connectorExposure === 'REFUTED';
-  const executable = [s.providerSupport, s.implementationSupport, s.connectorExposure, s.principalPermission, s.harnessCallability]
-    .every((value) => value === 'HELD');
-  const received = executable && s.providerEffect === 'HELD' && s.readback === 'HELD';
+  const executable = executableStanding === 'HELD';
+  const received = receivedStanding === 'HELD';
+
   return Object.freeze({
     executable,
     received,
     connectorGap,
     providerAbsent: s.providerSupport === 'REFUTED',
+    connectorGapStanding,
+    providerAbsentStanding,
+    executableStanding,
+    receivedStanding,
     standing: received ? 'RECEIVED' : executable ? 'CALLABLE_UNRECEIVED' : connectorGap ? 'CONNECTOR_SURFACE_GAP' : s.health
   });
 }
