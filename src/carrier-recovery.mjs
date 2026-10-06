@@ -64,3 +64,43 @@ export function assertEffectCustodyContinuity(record) {
 
   return record;
 }
+
+export function classifyMutationOutcome({
+  providerEffectObserved = false,
+  blockedBeforeProvider = false,
+  providerRejected = false
+} = {}) {
+  if (blockedBeforeProvider && !providerEffectObserved) {
+    return {
+      state: 'PRE_PROVIDER_BLOCKED',
+      providerEffectObserved: false,
+      custody: 'RETAIN',
+      next: 'WAIT_FOR_WRITE_ADMISSION_OR_USE_DISTINCT_AUTHORIZED_ACTUATOR'
+    };
+  }
+
+  if (providerEffectObserved && providerRejected) {
+    return {
+      state: 'PROVIDER_REJECTED',
+      providerEffectObserved: true,
+      custody: 'RETAIN',
+      next: 'REPAIR_PROVIDER_STATE_OR_INPUT'
+    };
+  }
+
+  if (providerEffectObserved) {
+    return {
+      state: 'PROVIDER_EFFECT_OBSERVED',
+      providerEffectObserved: true,
+      custody: 'RETAIN_UNTIL_READBACK',
+      next: 'VERIFY_RECEIVER_READBACK'
+    };
+  }
+
+  return {
+    state: 'UNRESOLVED',
+    providerEffectObserved: false,
+    custody: 'RETAIN',
+    next: 'OBTAIN_EFFECT_EVIDENCE'
+  };
+}
