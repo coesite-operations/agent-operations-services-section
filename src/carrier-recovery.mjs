@@ -41,3 +41,26 @@ export function assertFallbackNeverCanonical(state) {
   }
   return state;
 }
+
+export function assertEffectCustodyContinuity(record) {
+  const required = ['workRef', 'canonicalReceiver', 'actualCarrier', 'acceptanceTest', 'syncBackState'];
+  for (const field of required) {
+    if (typeof record?.[field] !== 'string' || record[field].trim() === '') {
+      throw new Error(`effect-custody record missing ${field}`);
+    }
+  }
+
+  if (yes(record.custodyMoved) && record.receiverState !== 'ACCEPTED') {
+    throw new Error('custody cannot move before receiver acceptance');
+  }
+
+  if (
+    record.actualCarrier !== 'semioverse' &&
+    record.syncBackState === 'COMPLETE' &&
+    !yes(record.canonicalReadback)
+  ) {
+    throw new Error('fallback sync-back cannot complete without canonical readback');
+  }
+
+  return record;
+}
