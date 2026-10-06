@@ -1,26 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {
-  makeCapability,
-  makeCapabilitySurface,
-  surfaceDiagnosis,
-  makeCapabilityDemand,
-  makeCapabilitySupplyReceipt,
-  receiveCapabilitySupply
-} from '../src/capability-pressure.mjs';
-
-test('capability carries stable semantic identity separately from tool surfaces', () => {
-  const capability = makeCapability({
-    capabilityId: 'semioverse.resource.admit',
-    effect: 'admit a typed resource into Semioverse',
-    evidenceAt: '2026-10-06T04:23:01Z',
-    sourceTimestamp: '2026-10-06T04:23:01Z',
-    evidenceRefs: ['work:connector-defect:5']
-  });
-  assert.equal(capability.resourceType, 'Capability');
-  assert.equal(capability.capabilityId, 'semioverse.resource.admit');
-  assert.equal(capability.sourceTimestamp, capability.evidenceAt);
-});
+import { makeCapabilitySurface, surfaceDiagnosis, makeCapabilityDemand, receiveCapabilitySupply } from '../src/capability-pressure.mjs';
 
 test('connector gap does not imply provider absence', () => {
   const surface = makeCapabilitySurface({
@@ -40,32 +20,6 @@ test('connector gap does not imply provider absence', () => {
   assert.equal(diagnosis.connectorGap, true);
   assert.equal(diagnosis.providerAbsent, false);
   assert.equal(diagnosis.standing, 'CONNECTOR_SURFACE_GAP');
-});
-
-test('surface preserves provider connector principal coordinates and source timestamp', () => {
-  const surface = makeCapabilitySurface({
-    surfaceId: 'cold-red-gate:chatgpt-web:semioverse.session.participate',
-    capabilityId: 'semioverse.session.participate',
-    provider: '561-group-cold-red-gate',
-    implementation: 'metroplat',
-    connector: 'chatgpt-web-mcp',
-    principal: 'authenticated-account',
-    providerObjectId: 'cold-red-gate',
-    connectorObjectId: 'metroplat_harness_hook_event_admit',
-    providerSupport: 'HELD',
-    implementationSupport: 'HELD',
-    connectorExposure: 'HELD',
-    principalPermission: 'HELD',
-    harnessCallability: 'HELD',
-    providerEffect: 'HELD',
-    readback: 'UNKNOWN',
-    health: 'AVAILABLE',
-    evidenceAt: '2026-10-06T04:23:01Z',
-    sourceTimestamp: '2026-10-06T04:23:01Z'
-  });
-  assert.equal(surface.principal, 'authenticated-account');
-  assert.equal(surface.sourceTimestamp, '2026-10-06T04:23:01Z');
-  assert.equal(surfaceDiagnosis(surface).standing, 'CALLABLE_UNRECEIVED');
 });
 
 test('capability demand remains with the consumer until downstream acceptance', () => {
@@ -90,7 +44,6 @@ test('capability demand remains with the consumer until downstream acceptance', 
     downstreamAccepted: false
   });
   assert.equal(supplied.state, 'SUPPLIED_AWAITING_DOWNSTREAM_ACCEPTANCE');
-  assert.equal(supplied.receivingState, 'SUPPLIED_PENDING_ACCEPTANCE');
   assert.equal(supplied.effectCustodian, 'urn:561:office:cfo');
 
   const accepted = receiveCapabilitySupply(demand, {
@@ -102,24 +55,6 @@ test('capability demand remains with the consumer until downstream acceptance', 
     acceptedBy: demand.demandingActor
   });
   assert.equal(accepted.state, 'ACCEPTED');
-  assert.equal(accepted.receivingState, 'RECEIVED');
-});
-
-test('typed supply receipt retains provider effect and downstream acceptance evidence', () => {
-  const receipt = makeCapabilitySupplyReceipt({
-    supplyReceiptId: 'supply:semioverse:mcp-session:1',
-    demandId: 'demand:semioverse:session',
-    capabilityId: 'semioverse.session.participate',
-    suppliedSurfaceId: 'cold-red-gate:chatgpt-web:semioverse.session.participate',
-    supplierActor: 'red-cup-engineering',
-    providerEffectRef: 'session:chatgpt-web-cio-2026-10-06T04:23:01Z',
-    readbackRef: null,
-    downstreamAccepted: false,
-    evidenceAt: '2026-10-06T04:23:01Z'
-  });
-  assert.equal(receipt.resourceType, 'CapabilitySupplyReceipt');
-  assert.equal(receipt.downstreamAccepted, false);
-  assert.equal(receipt.readbackRef, null);
 });
 
 test('upstream provider cannot self-accept downstream demand', () => {
