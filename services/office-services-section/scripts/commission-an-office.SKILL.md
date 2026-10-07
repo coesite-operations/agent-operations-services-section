@@ -71,6 +71,45 @@ The record is kept and marked: `status: decommissioned` and `succeeded-by` are a
 
 This is not politeness — deleting the record would destroy settled facts about an office that existed, and a roster that forgets its retired offices cannot say why the work moved. The record is what persists; the incumbency is what ends.
 
+## Receiving in the caller's larger workflow
+
+The deterministic commissioning script still ends at its stated postcondition:
+the office record seats, its required relations hold, and the pool conformance
+check passes. That bounded success remains the script's result. The steps below
+belong to the caller's larger workflow when its existing promise requires
+source receiving, integration, or operating delivery. They neither extend the
+script's postcondition nor impose a new review gate on every invocation.
+
+Keep that local postcondition separate from the receiving enterprise's
+judgment. A passing conformance check establishes what that check inspected:
+the office records and their required relations in the selected pool. It does
+not appoint an incumbent, grant a capability, establish a live allocation, or
+prove that an operating consumer loaded the changed records.
+
+When the caller's existing receiving or delivery contract requires it:
+
+1. Retain the exact proposed source revision, changed office records, selected
+   pool, checker command, and observed output. Preserve a failed check as a
+   failed check; a written file alone does not satisfy the postcondition.
+2. Submit those source facts through the receiving enterprise's existing
+   source-review method. Its accountable receiver checks the exact proposal
+   and records the judgment under that method. Compare the proposed record's
+   normative structure, named relation targets, and owed work with the supplied
+   spec and authorized commissioning purpose. Schema conformance can admit
+   two different valid records; it does not establish that the intended record
+   was proposed. Retain any mismatch alongside the checker result. A producer's
+   report and a proposal receipt are inputs to receiving, not a substitute for it.
+3. Follow the accepted source through the authorized integration path. If the
+   promised result includes an operating consumer, verify its loaded revision
+   and the relevant office readout. Otherwise, report the bounded source
+   result and leave any separate operating-delivery obligation open.
+
+For example, if the new office record and reciprocal superior edge pass the
+checker while the live office readout still shows the prior revision, source
+conformance has passed and operating delivery remains unverified. Correct the
+precise remaining gap; do not rerun commissioning on an already seated office
+or create an incumbency to make the report appear complete.
+
 ## When NOT to use
 
 - Not for changing an existing office's relations — this commissions and retires; edit the record and re-run the checker otherwise.
