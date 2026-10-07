@@ -93,8 +93,12 @@ When the caller's existing receiving or delivery contract requires it:
    failed check; a written file alone does not satisfy the postcondition.
 2. Submit those source facts through the receiving enterprise's existing
    source-review method. Its accountable receiver checks the exact proposal
-   and records the judgment under that method. A producer's report and a
-   proposal receipt are inputs to receiving, not a substitute for it.
+   and records the judgment under that method. Compare the proposed record's
+   normative structure, named relation targets, and owed work with the supplied
+   spec and authorized commissioning purpose. Schema conformance can admit
+   two different valid records; it does not establish that the intended record
+   was proposed. Retain any mismatch alongside the checker result. A producer's
+   report and a proposal receipt are inputs to receiving, not a substitute for it.
 3. Follow the accepted source through the authorized integration path. If the
    promised result includes an operating consumer, verify its loaded revision
    and the relevant office readout. Otherwise, report the bounded source

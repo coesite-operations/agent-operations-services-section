@@ -70,10 +70,18 @@ export function makeCapabilityDemand(input) {
 }
 
 export function receiveCapabilitySupply(demand, supply) {
-  if (!demand || demand.state !== 'OPEN') throw new TypeError('an OPEN demand is required');
+  const awaitingAcceptance = demand?.state === 'SUPPLIED_AWAITING_DOWNSTREAM_ACCEPTANCE';
+  if (!demand || (demand.state !== 'OPEN' && !awaitingAcceptance)) {
+    throw new TypeError('an OPEN demand or supply awaiting downstream acceptance is required');
+  }
   if (REQUIRED(supply.demandId, 'supply.demandId') !== demand.demandId) throw new Error('supply does not answer this demand');
   const suppliedCapabilityId = REQUIRED(supply.capabilityId, 'supply.capabilityId');
   if (suppliedCapabilityId !== demand.capabilityId) throw new Error('supply capability does not match demand');
+  const supplyReceiptId = REQUIRED(supply.supplyReceiptId, 'supply.supplyReceiptId');
+  const suppliedSurfaceId = REQUIRED(supply.suppliedSurfaceId, 'supply.suppliedSurfaceId');
+  if (awaitingAcceptance && (supplyReceiptId !== demand.supplyReceiptId || suppliedSurfaceId !== demand.suppliedSurfaceId)) {
+    throw new Error('supply identity does not match the supply awaiting downstream acceptance');
+  }
 
   const downstreamAccepted = supply.downstreamAccepted === true;
   const acceptedBy = supply.acceptedBy ?? null;
@@ -85,8 +93,8 @@ export function receiveCapabilitySupply(demand, supply) {
     ...demand,
     state: downstreamAccepted ? 'ACCEPTED' : 'SUPPLIED_AWAITING_DOWNSTREAM_ACCEPTANCE',
     effectCustodian: downstreamAccepted ? acceptedBy : demand.effectCustodian,
-    supplyReceiptId: REQUIRED(supply.supplyReceiptId, 'supply.supplyReceiptId'),
-    suppliedSurfaceId: REQUIRED(supply.suppliedSurfaceId, 'supply.suppliedSurfaceId'),
+    supplyReceiptId,
+    suppliedSurfaceId,
     downstreamAccepted,
     acceptedBy: downstreamAccepted ? acceptedBy : null
   });
