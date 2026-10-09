@@ -7,7 +7,9 @@ function independentlyReceivedSource(state) {
     receipt?.verdict === 'MET' && receipt.revision === state.headSha &&
     typeof receipt.producer === 'string' && receipt.producer.length > 0 &&
     typeof receipt.acceptedBy === 'string' && receipt.acceptedBy.length > 0 &&
-    receipt.producer !== receipt.acceptedBy;
+    typeof receipt.producerActorId === 'string' && receipt.producerActorId.length > 0 &&
+    typeof receipt.receiverActorId === 'string' && receipt.receiverActorId.length > 0 &&
+    receipt.producer !== receipt.acceptedBy && receipt.producerActorId !== receipt.receiverActorId;
 }
 
 export function nextRepairAction(state) {
