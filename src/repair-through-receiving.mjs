@@ -1,4 +1,5 @@
 const bool = (value) => value === true;
+const nonblank = (value) => typeof value === 'string' && value.trim().length > 0;
 
 /** A source receipt is bound to the exact PR revision and a distinct receiver. */
 function independentlyReceivedSource(state) {
@@ -12,10 +13,32 @@ function independentlyReceivedSource(state) {
     receipt.producer !== receipt.acceptedBy && receipt.producerActorId !== receipt.receiverActorId;
 }
 
+/** A provider/consumer receipt must name the actual version and same causal work. */
+function witnessedEffect(state, field, kind, principal) {
+  const receipt = state[field];
+  if (kind === 'CONSUMER_READBACK' && (
+    !nonblank(state.producerActorId) ||
+    !nonblank(receipt?.receiverActorId) ||
+    receipt.receiverActorId === state.producerActorId
+  )) return false;
+  return nonblank(state.workRef) && nonblank(state.mergedRevision) &&
+    receipt?.kind === kind && receipt.verdict === 'MET' &&
+    receipt.workRef === state.workRef && receipt.sourceRevision === state.mergedRevision &&
+    nonblank(receipt[principal]) && nonblank(receipt.witnessId);
+}
+
 export function nextRepairAction(state) {
+  // Neither a merge nor a self-reported deployed/received flag is a live-service witness.
+  if (bool(state.deployRequired)) {
+    if ((bool(state.deployed) || bool(state.received)) && !bool(state.merged)) return 'RECONCILE_SOURCE_REVISION';
+    if (bool(state.merged) && !bool(state.deployed)) return 'DEPLOY';
+    if (bool(state.merged) && !witnessedEffect(state, 'deploymentReceipt', 'DEPLOYMENT_WITNESS', 'provider')) return 'VERIFY_DEPLOYMENT_WITNESS';
+    if (bool(state.merged) && !witnessedEffect(state, 'consumerReceipt', 'CONSUMER_READBACK', 'receiver')) return 'VERIFY_RECEIVER_READBACK';
+    if (bool(state.merged) && bool(state.received)) return 'CLOSED_RECEIVED';
+    if (bool(state.merged)) return 'VERIFY_RECEIVER_READBACK';
+  }
   if (bool(state.received)) return 'CLOSED_RECEIVED';
   if (bool(state.deployed) && !bool(state.received)) return 'VERIFY_RECEIVER_READBACK';
-  if (bool(state.merged) && bool(state.deployRequired) && !bool(state.deployed)) return 'DEPLOY';
   if (bool(state.merged) && !bool(state.deployRequired)) return 'VERIFY_RECEIVER_READBACK';
   if (bool(state.prOpen) && bool(state.mergeable) && !bool(state.merged)) {
     if (!bool(state.tested)) return 'VERIFY_PR_TESTS';
@@ -32,7 +55,7 @@ export function nextRepairAction(state) {
 }
 
 export function isRepairClosed(state) {
-  return bool(state.received);
+  return nextRepairAction(state) === 'CLOSED_RECEIVED';
 }
 
 export function coordinationOnly(state) {
