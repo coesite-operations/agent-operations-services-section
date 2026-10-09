@@ -290,3 +290,39 @@ test('no required operations is unknown, and invalid input fails closed', () => 
   assert.throws(() => operationReadbackCoverage({ observations: null }), /invalid operation/);
   assert.throws(() => operationReadbackCoverage({ requiredOperations: [''] }), /required operation/);
 });
+
+
+test('an explicit multi-operation closure contract refuses to close from a successful sibling', () => {
+  const now = Date.parse('2026-10-09T18:00:00Z');
+  const requiredOperations = ['world-connect', 'world-command'];
+  const partial = [
+    { operation: 'world-connect', at: '2026-10-09T17:58:00Z', state: 'FAILURE', attemptId: 'connect:1' },
+    { operation: 'world-command', at: '2026-10-09T17:59:00Z', state: 'SUCCESS', attemptId: 'command:1' }
+  ];
+  const base = { coldRedGateAttempted: true, coldRedGateSucceeded: true,
+    coldRedGateReadback: true, requiredOperations, operationObservations: partial, operationReadbackAtMs: now };
+  assert.equal(nextCarrierRecoveryAction(base), 'VERIFY_OPERATION_READBACK');
+  assert.equal(nextCarrierRecoveryAction({ ...base, canonicalReceived: true,
+    coldRedGateOutcome: classifyMutationOutcome({ providerEffectObserved: true }) }), 'VERIFY_OPERATION_READBACK');
+  assert.equal(nextCarrierRecoveryAction({ ...base, postGithubColdRedGateAttempted: true,
+    postGithubColdRedGateSucceeded: true, postGithubColdRedGateReadback: true,
+    coldRedGateSucceeded: false, coldRedGateOutcome: classifyMutationOutcome({ providerEffectAbsent: true, failureKind: 'SERVICE_UNAVAILABLE' }),
+    githubFallbackAttempted: true, githubFallbackSucceeded: true }), 'VERIFY_OPERATION_READBACK');
+});
+
+test('separately witnessed later success allows the declared operation set to close', () => {
+  const now = Date.parse('2026-10-09T18:00:00Z');
+  const base = { coldRedGateAttempted: true, coldRedGateSucceeded: true, coldRedGateReadback: true,
+    requiredOperations: ['world-connect', 'world-command'], operationReadbackAtMs: now,
+    operationObservations: [
+      { operation: 'world-connect', at: '2026-10-09T17:57:00Z', state: 'FAILURE', attemptId: 'old' },
+      { operation: 'world-connect', at: '2026-10-09T17:59:00Z', state: 'SUCCESS', attemptId: 'new' },
+      { operation: 'world-command', at: '2026-10-09T17:59:30Z', state: 'SUCCESS', attemptId: 'command' }
+    ]
+  };
+  assert.equal(nextCarrierRecoveryAction(base), 'CLOSED_RECEIVED');
+  assert.equal(nextCarrierRecoveryAction({ ...base, operationObservations: [], requiredOperations: [] }), 'VERIFY_OPERATION_READBACK');
+  assert.equal(nextCarrierRecoveryAction({ ...base, operationObservations: [], requiredOperations: ['world-connect'] }), 'VERIFY_OPERATION_READBACK');
+  assert.equal(nextCarrierRecoveryAction({ coldRedGateAttempted: true, coldRedGateSucceeded: true,
+    coldRedGateReadback: true }), 'CLOSED_RECEIVED');
+});
