@@ -3,7 +3,9 @@ import assert from 'node:assert/strict';
 import { nextRepairAction, isRepairClosed, assertNoIssueOnlyClosure } from '../src/repair-through-receiving.mjs';
 const independentlyReceived = Object.freeze({
   producer: 'agent:engineer',
-  acceptedBy: 'agent:independent-receiver',
+  acceptedBy: 'office:independent-receiver',
+  producerActorId: 'actor:claude-on-bare-cedar-fog',
+  receiverActorId: 'actor:codex-on-bare-cedar-fog',
   revision: 'sha:exact-merge-head',
   verdict: 'MET'
 });
@@ -41,6 +43,8 @@ test('source receiving must be independent, MET, and bound to the current PR hea
     { sourceReceipt: null },
     { sourceReceipt: { ...independentlyReceived, verdict: 'UNVERIFIED' } },
     { sourceReceipt: { ...independentlyReceived, acceptedBy: independentlyReceived.producer } },
+    { sourceReceipt: { ...independentlyReceived, acceptedBy: 'office:another', receiverActorId: independentlyReceived.producerActorId } },
+    { sourceReceipt: { ...independentlyReceived, receiverActorId: null } },
     { sourceReceipt: { ...independentlyReceived, acceptedBy: null } },
     { sourceReceipt: { ...independentlyReceived, revision: 'sha:stale' } },
     { headSha: null },
