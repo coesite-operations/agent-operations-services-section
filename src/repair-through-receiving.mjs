@@ -1,11 +1,25 @@
 const bool = (value) => value === true;
 
+/** A source receipt is bound to the exact PR revision and a distinct receiver. */
+function independentlyReceivedSource(state) {
+  const receipt = state.sourceReceipt;
+  return typeof state.headSha === 'string' && state.headSha.length > 0 &&
+    receipt?.verdict === 'MET' && receipt.revision === state.headSha &&
+    typeof receipt.producer === 'string' && receipt.producer.length > 0 &&
+    typeof receipt.acceptedBy === 'string' && receipt.acceptedBy.length > 0 &&
+    receipt.producer !== receipt.acceptedBy;
+}
+
 export function nextRepairAction(state) {
   if (bool(state.received)) return 'CLOSED_RECEIVED';
   if (bool(state.deployed) && !bool(state.received)) return 'VERIFY_RECEIVER_READBACK';
   if (bool(state.merged) && bool(state.deployRequired) && !bool(state.deployed)) return 'DEPLOY';
   if (bool(state.merged) && !bool(state.deployRequired)) return 'VERIFY_RECEIVER_READBACK';
-  if (bool(state.prOpen) && bool(state.mergeable) && !bool(state.merged)) return 'MERGE_PR';
+  if (bool(state.prOpen) && bool(state.mergeable) && !bool(state.merged)) {
+    if (!bool(state.tested)) return 'VERIFY_PR_TESTS';
+    if (!independentlyReceivedSource(state)) return 'OBTAIN_INDEPENDENT_SOURCE_RECEIVING';
+    return 'MERGE_PR';
+  }
   if (bool(state.prOpen) && !bool(state.mergeable)) return 'REPAIR_PR_TO_MERGEABLE';
   if (bool(state.tested) && !bool(state.prOpen)) return 'OPEN_OR_UPDATE_PR';
   if (bool(state.patched) && !bool(state.tested)) return 'TEST_PATCH';
