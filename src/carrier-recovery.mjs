@@ -18,6 +18,18 @@ function failureNext(outcome) {
   }
 }
 
+/** An opt-in multi-operation closure test; no sibling call can substitute for a named required method. */
+function closeWithOperationCoverage(state) {
+  if (!Object.hasOwn(state, 'requiredOperations')) return 'CLOSED_RECEIVED';
+  const coverage = operationReadbackCoverage({
+    requiredOperations: state.requiredOperations,
+    observations: state.operationObservations ?? [],
+    now: state.operationReadbackAtMs ?? Date.now(),
+    maxAgeMs: state.operationMaxAgeMs ?? 10 * 60_000
+  });
+  return coverage.state === 'HEALTHY' ? 'CLOSED_RECEIVED' : 'VERIFY_OPERATION_READBACK';
+}
+
 export function nextCarrierRecoveryAction(state) {
   const outcomes = [state.coldRedGateOutcome, state.githubFallbackOutcome, state.postGithubColdRedGateOutcome];
   const stopped = outcomes.find((outcome) => outcome?.state === 'DENIED' || outcome?.state === 'CANCELLED');
@@ -36,13 +48,13 @@ export function nextCarrierRecoveryAction(state) {
   if (yes(state.canonicalReceived)) {
     const latestOutcome = state.postGithubColdRedGateOutcome ?? state.githubFallbackOutcome ?? state.coldRedGateOutcome;
     if (latestOutcome && latestOutcome.state !== 'PROVIDER_EFFECT_OBSERVED') return failureNext(latestOutcome) ?? 'OBTAIN_EFFECT_EVIDENCE';
-    return 'CLOSED_RECEIVED';
+    return closeWithOperationCoverage(state);
   }
   if (!yes(state.coldRedGateAttempted)) return 'ATTEMPT_COLD_RED_GATE';
 
   if (yes(state.coldRedGateSucceeded)) {
     return yes(state.coldRedGateReadback)
-      ? 'CLOSED_RECEIVED'
+      ? closeWithOperationCoverage(state)
       : 'VERIFY_COLD_RED_GATE_READBACK';
   }
 
@@ -64,7 +76,7 @@ export function nextCarrierRecoveryAction(state) {
   if (yes(state.postGithubColdRedGateAttempted)) {
     if (yes(state.postGithubColdRedGateSucceeded)) {
       return yes(state.postGithubColdRedGateReadback)
-        ? 'CLOSED_RECEIVED'
+        ? closeWithOperationCoverage(state)
         : 'VERIFY_COLD_RED_GATE_READBACK';
     }
     const retryBarrier = failureNext(state.postGithubColdRedGateOutcome);
