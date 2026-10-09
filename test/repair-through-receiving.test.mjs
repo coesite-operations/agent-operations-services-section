@@ -68,3 +68,45 @@ test('source acceptance never substitutes for mergeability, deployment or consum
 test('issue-only coordination cannot declare repair closed', () => {
   assert.throws(() => assertNoIssueOnlyClosure({ issueOpen: true, status: 'DONE' }), /issue-only coordination cannot close/);
 });
+
+const deploymentFixture = Object.freeze({
+  workRef: 'red-cup-engineering/computer-services-section#134',
+  mergedRevision: '148cb3c58218f626c9578dff70ba7c83fcdd00b3',
+  producerActorId: 'actor:bare-cedar-fog-claude',
+  merged: true, deployRequired: true, deployed: true, received: true,
+  deploymentReceipt: {
+    kind: 'DEPLOYMENT_WITNESS', verdict: 'MET', provider: 'cold-red-gate', witnessId: 'synthetic-release:1',
+    workRef: 'red-cup-engineering/computer-services-section#134',
+    sourceRevision: '148cb3c58218f626c9578dff70ba7c83fcdd00b3'
+  },
+  consumerReceipt: {
+    kind: 'CONSUMER_READBACK', verdict: 'MET', receiver: 'chatgpt-web', receiverActorId: 'actor:chatgpt-web',
+    witnessId: 'synthetic-rpc:1', workRef: 'red-cup-engineering/computer-services-section#134',
+    sourceRevision: '148cb3c58218f626c9578dff70ba7c83fcdd00b3'
+  }
+});
+
+test('merged world-entry fix with observed failure remains at deployment and custody', () => {
+  const state = { ...deploymentFixture, deployed: false, received: false, deploymentReceipt: null, consumerReceipt: null };
+  assert.equal(nextRepairAction(state), 'DEPLOY');
+  assert.equal(isRepairClosed(state), false);
+});
+
+test('claimed deployment and receiving never close without exact witnesses', () => {
+  const base = deploymentFixture;
+  assert.equal(nextRepairAction({ ...base, deploymentReceipt: null }), 'VERIFY_DEPLOYMENT_WITNESS');
+  assert.equal(nextRepairAction({ ...base, deploymentReceipt: { ...base.deploymentReceipt, sourceRevision: 'stale' } }), 'VERIFY_DEPLOYMENT_WITNESS');
+  assert.equal(nextRepairAction({ ...base, consumerReceipt: null }), 'VERIFY_RECEIVER_READBACK');
+  assert.equal(nextRepairAction({ ...base, consumerReceipt: { ...base.consumerReceipt, workRef: 'wrong-work' } }), 'VERIFY_RECEIVER_READBACK');
+  assert.equal(nextRepairAction({ ...base, consumerReceipt: { ...base.consumerReceipt, witnessId: '' } }), 'VERIFY_RECEIVER_READBACK');
+  assert.equal(nextRepairAction({ ...base, consumerReceipt: { ...base.consumerReceipt, receiverActorId: base.producerActorId } }), 'VERIFY_RECEIVER_READBACK');
+  assert.equal(nextRepairAction({ ...base, producerActorId: null }), 'VERIFY_RECEIVER_READBACK');
+  assert.equal(nextRepairAction({ ...base, received: false }), 'VERIFY_RECEIVER_READBACK');
+  assert.equal(nextRepairAction({ ...base, merged: false }), 'RECONCILE_SOURCE_REVISION');
+  assert.equal(isRepairClosed({ ...base, consumerReceipt: null }), false);
+});
+
+test('matching synthetic deployment and independent readback can close; they are not a real witness', () => {
+  assert.equal(nextRepairAction(deploymentFixture), 'CLOSED_RECEIVED');
+  assert.equal(isRepairClosed(deploymentFixture), true);
+});
