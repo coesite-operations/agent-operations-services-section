@@ -138,3 +138,60 @@ export function classifyMutationOutcome({
     next: failureNext(outcome) ?? 'CHECK_FALLBACK_ADMISSION'
   };
 }
+
+
+/**
+ * Reconcile *operation-scoped* probe observations. A successful sibling method
+ * never closes a failing method or a whole carrier; an advertised catalog entry
+ * is not a successful readback. This is a diagnostic readout, NOT effect receiving.
+ *
+ * Each observation has { operation, at (ISO instant), state: 'SUCCESS'|'FAILURE',
+ * attemptId (nonempty), ... }. Same-time contradictory outcomes are contested.
+ * Stale/future/unidentified observations are not evidence of health or failure.
+ */
+export function operationReadbackCoverage({
+  requiredOperations = [], observations = [], now = Date.now(), maxAgeMs = 10 * 60_000
+} = {}) {
+  if (!Array.isArray(requiredOperations) || !Array.isArray(observations) ||
+      !Number.isFinite(now) || !Number.isFinite(maxAgeMs) || maxAgeMs < 0) {
+    throw new TypeError('invalid operation readback coverage input');
+  }
+  const names = [...new Set(requiredOperations)];
+  if (names.some(name => typeof name !== 'string' || name.trim() !== name || name === '')) {
+    throw new TypeError('required operation names must be nonblank');
+  }
+  const latest = new Map();
+  const required = new Set(names);
+  for (const entry of observations) {
+    if (entry === null || typeof entry !== 'object' ||
+        !required.has(entry.operation) || !['SUCCESS', 'FAILURE'].includes(entry.state) ||
+        typeof entry.at !== 'string' || !/^\d{4}-\d\d-\d\dT/.test(entry.at) ||
+        typeof entry.attemptId !== 'string' || entry.attemptId.trim() === '') continue;
+    const instant = Date.parse(entry.at);
+    if (!Number.isFinite(instant) || instant > now || now - instant > maxAgeMs) continue;
+    const prior = latest.get(entry.operation);
+    if (prior === undefined || instant > prior.at) {
+      latest.set(entry.operation, { at: instant, states: new Set([entry.state]), attempts: new Set([entry.attemptId]) });
+    } else if (instant === prior.at) {
+      prior.states.add(entry.state);
+      prior.attempts.add(entry.attemptId);
+    }
+  }
+  const operations = Object.freeze(Object.fromEntries(names.map(name => {
+    const record = latest.get(name);
+    const state = record === undefined ? 'UNKNOWN' : record.states.size > 1 ? 'CONTESTED' : [...record.states][0];
+    return [name, Object.freeze({ state,
+      ...(record === undefined ? {} : { observedAt: new Date(record.at).toISOString(), attempts: record.attempts.size })
+    })];
+  })));
+  const values = Object.values(operations);
+  const succeeded = values.filter(item => item.state === 'SUCCESS').length;
+  const failed = values.filter(item => item.state === 'FAILURE').length;
+  const contested = values.filter(item => item.state === 'CONTESTED').length;
+  const unknown = values.filter(item => item.state === 'UNKNOWN').length;
+  const state = names.length === 0 || unknown === names.length ? 'UNKNOWN'
+    : succeeded === names.length ? 'HEALTHY'
+    : succeeded > 0 ? 'DEGRADED'
+    : 'NO_CONFIRMED_SUCCESS';
+  return Object.freeze({ state, operations, total: names.length, succeeded, failed, contested, unknown });
+}
