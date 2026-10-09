@@ -4,7 +4,8 @@ import {
   nextCarrierRecoveryAction,
   assertFallbackNeverCanonical,
   assertEffectCustodyContinuity,
-  classifyMutationOutcome
+  classifyMutationOutcome,
+  operationReadbackCoverage
 } from '../src/carrier-recovery.mjs';
 
 const unavailable = () => classifyMutationOutcome({
@@ -216,4 +217,76 @@ test('accepted custody with canonical readback is valid', () => {
     receiverState: 'ACCEPTED',
     canonicalReadback: true
   }));
+});
+
+
+test('operation-specific readback sees partial MetroPlat availability without claiming total outage', () => {
+  const now = Date.parse('2026-10-09T18:00:00Z');
+  const result = operationReadbackCoverage({
+    now, requiredOperations: ['world-connect', 'world-command', 'compute_resources'],
+    observations: [
+      { operation: 'world-connect', at: '2026-10-09T17:56:00Z', state: 'FAILURE', attemptId: 'connect:1' },
+      { operation: 'world-command', at: '2026-10-09T17:57:00Z', state: 'SUCCESS', attemptId: 'command:1' },
+      { operation: 'compute_resources', at: '2026-10-09T17:56:10Z', state: 'FAILURE', attemptId: 'compute:1' }
+    ]
+  });
+  assert.equal(result.state, 'DEGRADED');
+  assert.equal(result.operations['world-connect'].state, 'FAILURE');
+  assert.equal(result.operations['world-command'].state, 'SUCCESS');
+  assert.equal(result.operations.compute_resources.state, 'FAILURE');
+  assert.deepEqual([result.succeeded, result.failed, result.unknown], [1, 2, 0]);
+});
+
+test('one successful sibling cannot close an unprobed service', () => {
+  const result = operationReadbackCoverage({
+    requiredOperations: ['world-connect', 'world-command'],
+    observations: [{ operation: 'world-command', at: '2026-10-09T17:58:00Z',
+      state: 'SUCCESS', attemptId: 'command:1' }],
+    now: Date.parse('2026-10-09T18:00:00Z')
+  });
+  assert.equal(result.state, 'DEGRADED');
+  assert.equal(result.operations['world-connect'].state, 'UNKNOWN');
+});
+
+test('stale, future, malformed, unrelated and anonymous observations cannot count as availability', () => {
+  const result = operationReadbackCoverage({
+    requiredOperations: ['world-connect'],
+    now: Date.parse('2026-10-09T18:00:00Z'), maxAgeMs: 60_000,
+    observations: [
+      { operation: 'world-connect', at: '2026-10-09T17:57:00Z', state: 'SUCCESS', attemptId: 'stale' },
+      { operation: 'world-connect', at: '2026-10-09T18:01:00Z', state: 'SUCCESS', attemptId: 'future' },
+      { operation: 'world-connect', at: '2026-10-09T17:59:00Z', state: 'SUCCESS' },
+      { operation: 'world-command', at: '2026-10-09T17:59:00Z', state: 'SUCCESS', attemptId: 'wrong' },
+      { operation: 'world-connect', at: 'malformed', state: 'SUCCESS', attemptId: 'bad' }
+    ]
+  });
+  assert.equal(result.state, 'UNKNOWN');
+  assert.equal(result.unknown, 1);
+});
+
+test('later same-operation successful readback supersedes earlier failure; reverse order is deterministic', () => {
+  const failure = { operation: 'world-connect', at: '2026-10-09T17:55:00Z', state: 'FAILURE', attemptId: 'old' };
+  const success = { operation: 'world-connect', at: '2026-10-09T17:59:00Z', state: 'SUCCESS', attemptId: 'new' };
+  for (const observations of [[failure, success], [success, failure]]) {
+    const result = operationReadbackCoverage({ requiredOperations: ['world-connect'],
+      now: Date.parse('2026-10-09T18:00:00Z'), observations });
+    assert.equal(result.state, 'HEALTHY');
+    assert.equal(result.operations['world-connect'].observedAt, success.at.replace('Z','.000Z'));
+  }
+});
+
+test('simultaneous contradictory provider observations remain contested', () => {
+  const x = { operation: 'world-connect', at: '2026-10-09T17:59:00Z', state: 'SUCCESS', attemptId: 'a' };
+  const y = { ...x, state: 'FAILURE', attemptId: 'b' };
+  const result = operationReadbackCoverage({ requiredOperations: ['world-connect'],
+    now: Date.parse('2026-10-09T18:00:00Z'), observations: [x, y] });
+  assert.equal(result.state, 'NO_CONFIRMED_SUCCESS');
+  assert.equal(result.operations['world-connect'].state, 'CONTESTED');
+  assert.equal(result.contested, 1);
+});
+
+test('no required operations is unknown, and invalid input fails closed', () => {
+  assert.equal(operationReadbackCoverage({}).state, 'UNKNOWN');
+  assert.throws(() => operationReadbackCoverage({ observations: null }), /invalid operation/);
+  assert.throws(() => operationReadbackCoverage({ requiredOperations: [''] }), /required operation/);
 });
