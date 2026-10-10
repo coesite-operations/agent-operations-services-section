@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { nextRepairAction, isRepairClosed, assertNoIssueOnlyClosure } from '../src/repair-through-receiving.mjs';
+import { nextRepairAction, isRepairClosed, assertNoIssueOnlyClosure, diagnoseToolFailure } from '../src/repair-through-receiving.mjs';
 const independentlyReceived = Object.freeze({
   producer: 'agent:engineer',
   acceptedBy: 'office:independent-receiver',
@@ -10,6 +10,22 @@ const independentlyReceived = Object.freeze({
   verdict: 'MET'
 });
 
+
+const acceptedDirectEffect = Object.freeze({
+  received: true,
+  workRef: 'urn:561:test:bounded-effect',
+  effectRevision: 'effect:100',
+  producerActorId: 'actor:chatgpt-web',
+  consumerReceipt: Object.freeze({
+    kind: 'CONSUMER_READBACK',
+    verdict: 'MET',
+    workRef: 'urn:561:test:bounded-effect',
+    sourceRevision: 'effect:100',
+    receiver: 'service:real-independent-consumer',
+    receiverActorId: 'actor:independent-consumer',
+    witnessId: 'provider:real-independent-receipt'
+  })
+});
 
 test('writable defect goes to source patch, not issue filing', () => {
   assert.equal(nextRepairAction({ issueOpen: true, sourceWritable: true }), 'PATCH_SOURCE');
@@ -24,9 +40,11 @@ test('repair advances through test, PR, merge, deploy, and receiving', () => {
   }), 'MERGE_PR');
   assert.equal(nextRepairAction({ merged: true, deployRequired: true }), 'DEPLOY');
   assert.equal(nextRepairAction({ deployed: true }), 'VERIFY_RECEIVER_READBACK');
-  assert.equal(nextRepairAction({ received: true }), 'CLOSED_RECEIVED');
+  assert.equal(nextRepairAction({ received: true }), 'VERIFY_RECEIVER_READBACK');
+  assert.equal(nextRepairAction(acceptedDirectEffect), 'CLOSED_RECEIVED');
   assert.equal(isRepairClosed({ merged: true }), false);
-  assert.equal(isRepairClosed({ received: true }), true);
+  assert.equal(isRepairClosed({ received: true }), false);
+  assert.equal(isRepairClosed(acceptedDirectEffect), true);
 });
 
 
@@ -89,7 +107,7 @@ test('only changed evidence permits a normal retry; unaffected work is not held 
 });
 
 test('actual successful independent receiving outranks stale local blocker observations', () => {
-  assert.equal(nextRepairAction({harnessBlocked:true,received:true}), 'CLOSED_RECEIVED');
+  assert.equal(nextRepairAction({harnessBlocked:true,...acceptedDirectEffect}), 'CLOSED_RECEIVED');
   assert.equal(isRepairClosed({harnessBlocked:true,merged:true,received:false}), false);
 });
 
@@ -146,4 +164,55 @@ test('claimed deployment and receiving never close without exact witnesses', () 
 test('matching synthetic deployment and independent readback can close; they are not a real witness', () => {
   assert.equal(nextRepairAction(deploymentFixture), 'CLOSED_RECEIVED');
   assert.equal(isRepairClosed(deploymentFixture), true);
+});
+
+test('bare received, status DONE, issue closure, or a self-handoff never proves delivery', () => {
+  for (const state of [
+    { received: true },
+    { received: true, status: 'DONE' },
+    { received: true, issueOpen: true, status: 'CLOSED' },
+    { received: true, handoff: { to: 'another office of the same actor' } },
+    { ...acceptedDirectEffect, consumerReceipt: null },
+    { ...acceptedDirectEffect, consumerReceipt: { ...acceptedDirectEffect.consumerReceipt, receiverActorId: acceptedDirectEffect.producerActorId } },
+    { ...acceptedDirectEffect, consumerReceipt: { ...acceptedDirectEffect.consumerReceipt, sourceRevision: 'stale' } },
+    { ...acceptedDirectEffect, consumerReceipt: { ...acceptedDirectEffect.consumerReceipt, verdict: 'UNVERIFIED' } },
+    { ...acceptedDirectEffect, consumerReceipt: { ...acceptedDirectEffect.consumerReceipt, witnessId: '' } },
+  ]) {
+    assert.equal(isRepairClosed(state), false, 'unverified closure must fail');
+  }
+  assert.equal(isRepairClosed(acceptedDirectEffect), true);
+});
+
+test('classify true host predispatch refusal separately from connector or provider failures', () => {
+  const host = diagnoseToolFailure({ dispatchObserved: false, code: 'CHATGPT_HARNESS_POLICY_BLOCK' });
+  assert.equal(host.layer, 'HOST_PREDISPATCH_POLICY');
+  assert.equal(host.next, 'KEEP_REFUSAL_AND_RESUME_OTHER_AUTHORIZED_WORK');
+  assert.equal(diagnoseToolFailure({ dispatchObserved: false, code: 'CLIENT_ARGUMENT_VALIDATION' }).next, 'REPAIR_TOOL_SCHEMA_ARGUMENTS');
+  assert.equal(diagnoseToolFailure({ connectorExposed: false }).layer, 'CONNECTOR_SURFACE');
+  assert.equal(diagnoseToolFailure({ code: 'CHATGPT_HARNESS_POLICY_BLOCK' }).layer, 'UNKNOWN', 'the code alone is not evidence of dispatch layer');
+  assert.equal(diagnoseToolFailure({ message: 'policies prevented it' }).layer, 'UNKNOWN', 'freeform narration is not tool provenance');
+  assert.equal(diagnoseToolFailure({ dispatchObserved: false, providerReached: true, code: 'CHATGPT_HARNESS_POLICY_BLOCK' }).layer, 'CONTRADICTORY_EVIDENCE');
+  assert.equal(diagnoseToolFailure({ providerReached: true, providerStatus: 301 }).next, 'RESOLVE_CANONICAL_REPOSITORY_ID');
+  assert.equal(diagnoseToolFailure({ providerReached: true, providerStatus: 403 }).layer, 'PROVIDER_AUTHORIZATION');
+  assert.equal(diagnoseToolFailure({ providerReached: true, providerStatus: 422 }).layer, 'PROVIDER_VALIDATION');
+  assert.equal(diagnoseToolFailure({ providerReached: true, providerStatus: 503 }).layer, 'PROVIDER_RUNTIME');
+  assert.equal(diagnoseToolFailure({ providerReached: true, providerStatus: 200, readbackMismatch: true }).layer, 'PROVIDER_READBACK');
+});
+
+test('diagnosed failures route to normal repair, not fictive handoff or permanent lost rights', () => {
+  const attempt = (fields = {}) => ({ lastAttempt: fields, sourceWritable: true });
+  assert.equal(nextRepairAction(attempt({ dispatchObserved: false, code: 'CLIENT_ARGUMENT_VALIDATION' })), 'REPAIR_TOOL_SCHEMA_ARGUMENTS');
+  assert.equal(nextRepairAction(attempt({ connectorExposed: false })), 'REPAIR_OR_CONNECT_SUPPORTED_SURFACE');
+  assert.equal(nextRepairAction(attempt({ providerReached: true, providerStatus: 301 })), 'RESOLVE_CANONICAL_REPOSITORY_ID');
+  assert.equal(nextRepairAction(attempt({ providerReached: true, providerStatus: 403 })), 'RECHECK_EXACT_PRINCIPAL_AND_REPOSITORY_SCOPE');
+  assert.equal(nextRepairAction(attempt({ providerReached: true, providerStatus: 422 })), 'REPAIR_PROVIDER_REQUEST_OR_STATE');
+  assert.equal(nextRepairAction(attempt({ code: 'CHATGPT_HARNESS_POLICY_BLOCK' })), 'OBTAIN_FAILURE_LAYER_EVIDENCE');
+  const blocked = { dispatchObserved: false, code: 'CHATGPT_HARNESS_POLICY_BLOCK' };
+  assert.equal(nextRepairAction({ lastAttempt: blocked, independentWorkReady: true }), 'CONTINUE_INDEPENDENT_WORK');
+  assert.equal(nextRepairAction({ lastAttempt: blocked, normalRetryAvailable: true, changedEvidence: true }), 'RETRY_NORMAL_SUPPORTED_ACTION');
+  assert.equal(nextRepairAction({ lastAttempt: blocked, normalRetryAvailable: true }), 'BIND_BLOCKER_WAKE_AND_KEEP_EFFECT_CUSTODY');
+  assert.equal(nextRepairAction({ lastAttempt: blocked, lastAttemptSuperseded: true, sourceWritable: true }), 'PATCH_SOURCE');
+  assert.equal(nextRepairAction({ lastAttempt: { ...blocked, providerReached: true }, harnessBlocked: true }), 'RECONCILE_ACTION_PROVENANCE');
+  assert.equal(nextRepairAction({ lastAttempt: { providerReached: true, providerStatus: 503 }, harnessBlocked: true }), 'REPAIR_PROVIDER_RUNTIME');
+  assert.equal(nextRepairAction({ lastAttempt: blocked, merged: true, deployRequired: true }), 'DEPLOY', 'actual merge outranks obsolete predispatch failure');
 });
