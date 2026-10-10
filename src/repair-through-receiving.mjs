@@ -36,6 +36,23 @@ function witnessedEffect(state, field, kind, principal) {
  * refusal was also attached to its work item. Missing evidence is UNKNOWN.
  */
 export function diagnoseToolFailure(attempt = {}) {
+  // A running provider's own source-acquisition gate is NOT a ChatGPT
+  // pre-dispatch safety refusal. Keep this causal layer separate even when
+  // a user-facing status has unfortunately called both things 'policy'.
+  const preflight = attempt.releasePreflight;
+  if (preflight?.kind === 'release-source-acquisition-refusal' &&
+      preflight.stage === 'pre-acquisition' &&
+      preflight.code === 'SOURCE_GRAPH_OR_TOOLCHAIN_UNQUALIFIED' &&
+      nonblank(preflight.evidenceRef) &&
+      nonblank(preflight.selectedRevision) &&
+      nonblank(preflight.observedAt) && !Number.isNaN(Date.parse(preflight.observedAt)) &&
+      attempt.providerReached === true &&
+      attempt.dispatchObserved !== false) {
+    return Object.freeze({
+      layer: 'SOURCE_ACQUISITION_GUARD',
+      next: 'QUALIFY_SOURCE_GRAPH_AND_PACKAGE_TOOLCHAIN'
+    });
+  }
   const providerReached = attempt.providerReached === true;
   const hostRejected = attempt.dispatchObserved === false && attempt.code === 'CHATGPT_HARNESS_POLICY_BLOCK';
   if (providerReached && hostRejected) return Object.freeze({
@@ -73,6 +90,16 @@ export function diagnoseToolFailure(attempt = {}) {
 }
 
 export function nextRepairAction(state) {
+  // A fresh, evidenced release preflight refusal blocks an already-merged
+  // source's DEPLOY attempt. Do not spin an identical denied release.
+  // After verified deployment, this older failure is superseded.
+  const releaseGate = state.lastAttemptSuperseded ? null :
+    diagnoseToolFailure(state.lastAttempt);
+  if (releaseGate?.layer === 'SOURCE_ACQUISITION_GUARD' &&
+      bool(state.deployRequired) && !bool(state.deployed) &&
+      !witnessedEffect(state, 'consumerReceipt', 'CONSUMER_READBACK', 'receiver')) {
+    return releaseGate.next;
+  }
   // Neither a merge nor a self-reported deployed/received flag is a live-service witness.
   if (bool(state.deployRequired)) {
     if ((bool(state.deployed) || bool(state.received)) && !bool(state.merged)) return 'RECONCILE_SOURCE_REVISION';

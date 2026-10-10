@@ -216,3 +216,51 @@ test('diagnosed failures route to normal repair, not fictive handoff or permanen
   assert.equal(nextRepairAction({ lastAttempt: { providerReached: true, providerStatus: 503 }, harnessBlocked: true }), 'REPAIR_PROVIDER_RUNTIME');
   assert.equal(nextRepairAction({ lastAttempt: blocked, merged: true, deployRequired: true }), 'DEPLOY', 'actual merge outranks obsolete predispatch failure');
 });
+
+test('owned source-acquisition gate is not misdiagnosed as ChatGPT platform policy', () => {
+  const preflight = {
+    kind: 'release-source-acquisition-refusal',
+    stage: 'pre-acquisition',
+    code: 'SOURCE_GRAPH_OR_TOOLCHAIN_UNQUALIFIED',
+    evidenceRef: 'https://github.com/emsenn/cold-red-gate/actions/runs/38083819898',
+    selectedRevision: 'a623e30cd2b7295a11bbea7e4884d9d1671cda36',
+    observedAt: '2026-10-10T20:28:08Z'
+  };
+  const attempt = {providerReached: true, dispatchObserved: true, releasePreflight: preflight};
+  assert.deepEqual(diagnoseToolFailure(attempt), {
+    layer: 'SOURCE_ACQUISITION_GUARD',
+    next: 'QUALIFY_SOURCE_GRAPH_AND_PACKAGE_TOOLCHAIN'
+  });
+  assert.equal(nextRepairAction({
+    merged: true, deployRequired: true, deployed: false, received: false, lastAttempt: attempt
+  }), 'QUALIFY_SOURCE_GRAPH_AND_PACKAGE_TOOLCHAIN', 'a preflight refusal outranks another identical release retry');
+  assert.equal(nextRepairAction({
+    merged: true, deployRequired: true, deployed: true, lastAttempt: attempt
+  }), 'VERIFY_DEPLOYMENT_WITNESS', 'actual later deployment supersedes an older preflight');
+  assert.equal(diagnoseToolFailure({
+    ...attempt, dispatchObserved: false, code: 'CHATGPT_HARNESS_POLICY_BLOCK'
+  }).layer, 'CONTRADICTORY_EVIDENCE', 'contradictory record cannot be classed a witnessed preflight');
+  assert.equal(diagnoseToolFailure({
+    ...attempt, releasePreflight: {...preflight, evidenceRef: ''}
+  }).layer, 'PROVIDER_OBSERVED', 'missing job evidence is not a qualified preflight');
+  assert.equal(diagnoseToolFailure({
+    ...attempt, providerReached: false
+  }).layer, 'UNKNOWN', 'host-only rejection cannot claim an observed provider preflight');
+  assert.equal(diagnoseToolFailure({
+    lastAttempt: 'Source acquisition refused: SQLite is declared.'
+  }).layer, 'UNKNOWN', 'narration alone proves no failure layer');
+});
+
+test('release preflight diagnosis does not allow a claimed receipt to close failed receiving', () => {
+  const preflight = {kind: 'release-source-acquisition-refusal',stage:'pre-acquisition',
+    code:'SOURCE_GRAPH_OR_TOOLCHAIN_UNQUALIFIED',evidenceRef:'job:controlled',
+    selectedRevision:'sha:source',observedAt:'2026-10-10T20:00:00Z'};
+  const attempt={providerReached:true,releasePreflight:preflight};
+  assert.equal(nextRepairAction({
+    ...acceptedDirectEffect, received:true, consumerReceipt:null,
+    deployRequired:true, merged:true, deployed:false, lastAttempt:attempt
+  }), 'QUALIFY_SOURCE_GRAPH_AND_PACKAGE_TOOLCHAIN');
+  assert.equal(isRepairClosed({
+    ...acceptedDirectEffect, consumerReceipt:null, lastAttempt:attempt
+  }), false);
+});
