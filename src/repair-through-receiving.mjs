@@ -95,8 +95,9 @@ export function nextRepairAction(state) {
   // After verified deployment, this older failure is superseded.
   const releaseGate = state.lastAttemptSuperseded ? null :
     diagnoseToolFailure(state.lastAttempt);
-  if (releaseGate.layer === 'SOURCE_ACQUISITION_GUARD' &&
-      bool(state.deployRequired) && !bool(state.deployed) && !bool(state.received)) {
+  if (releaseGate?.layer === 'SOURCE_ACQUISITION_GUARD' &&
+      bool(state.deployRequired) && !bool(state.deployed) &&
+      !witnessedEffect(state, 'consumerReceipt', 'CONSUMER_READBACK', 'receiver')) {
     return releaseGate.next;
   }
   // Neither a merge nor a self-reported deployed/received flag is a live-service witness.
