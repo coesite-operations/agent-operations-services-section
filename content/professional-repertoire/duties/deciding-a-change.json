@@ -1,0 +1,16 @@
+{
+  "id": "deciding-a-change",
+  "name": "deciding a change",
+  "authority": "emsenn",
+  "work": "deciding-a-change",
+  "claim": "configuration-manager",
+  "skills": [
+    "deciding-a-change-to-a-baseline"
+  ],
+  "delegation": false,
+  "x-provenance": {
+    "recorded-by": "claude/chief-of-staff",
+    "recorded-on": "2026-07-15",
+    "derived-from": "note-on-the-kernel-offices-of-a-software-node"
+  }
+}

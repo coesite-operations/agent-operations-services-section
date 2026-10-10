@@ -1,0 +1,16 @@
+{
+  "id": "delivering-a-charter",
+  "name": "delivering a charter",
+  "authority": "emsenn",
+  "work": "delivering-a-charter",
+  "claim": "integrated-portfolio-management-team",
+  "skills": [
+    "delivering-a-charter"
+  ],
+  "delegation": false,
+  "x-provenance": {
+    "recorded-by": "claude/chief-of-staff",
+    "recorded-on": "2026-07-15",
+    "derived-from": "note-on-the-kernel-offices-of-a-software-node"
+  }
+}

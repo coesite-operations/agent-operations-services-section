@@ -1,0 +1,44 @@
+{
+  "node": "union-officer-academy",
+  "offices": [
+    "content/offices/superintendent.json",
+    "content/offices/registrar.json",
+    "content/offices/formation-context-steward.json",
+    "content/offices/formation-practitioner.json",
+    "content/offices/independent-examiner.json"
+  ],
+  "incumbencies": [],
+  "duties": [
+    "content/duties/governing-the-academy.json",
+    "content/duties/keeping-the-formation-register.json",
+    "content/duties/maintaining-office-curricula.json",
+    "content/duties/examining-qualification-independently.json",
+    "content/duties/keeping-the-formation-doctrine-census.json",
+    "content/duties/arranging-customer-local-practicum.json",
+    "content/duties/controlling-formation-configuration.json",
+    "content/duties/compiling-office-formation-bundles.json",
+    "content/duties/conducting-officer-formation.json"
+  ],
+  "skills": [
+    "lib/management/skills/admitting-a-formation-request/skill.json",
+    "lib/management/skills/establishing-a-formation-baseline/skill.json",
+    "lib/management/skills/opening-a-cohort/skill.json",
+    "lib/management/skills/recording-candidate-formation/skill.json",
+    "lib/management/skills/assessing-a-candidate/skill.json",
+    "lib/management/skills/issuing-a-qualification/skill.json",
+    "lib/management/skills/maintaining-a-qualification/skill.json",
+    "lib/management/skills/deriving-a-requalification-gap/skill.json",
+    "lib/management/skills/recording-succession-practice/skill.json",
+    "lib/management/skills/censusing-formation-doctrine/skill.json",
+    "lib/management/skills/arranging-customer-local-practicum/skill.json",
+    "lib/management/skills/controlling-formation-configuration/skill.json",
+    "lib/management/skills/compiling-an-office-formation-bundle/skill.json",
+    "lib/management/skills/operating-academy-recursive-self-improvement/skill.json"
+  ],
+  "books": "content/books/academy-ledger.json",
+  "contracts": [
+    "content/contracts/character-officer-supply.json",
+    "content/contracts/academy-value-adjustment.json",
+    "content/contracts/procuring-liss-inference.json"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "keeping-the-anomaly-register",
+  "name": "keeping the anomaly register",
+  "authority": "emsenn",
+  "work": "keeping-the-anomaly-register",
+  "claim": "emsenn",
+  "skills": [
+    "reporting-an-anomaly",
+    "making-a-task",
+    "dispatching-a-task"
+  ],
+  "delegation": false,
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-16",
+    "derived-from": "user directive of 2026-07-16; the register is the huidu MAPE-K loop's Monitor feed, and routing is its Analyze-and-Plan"
+  }
+}

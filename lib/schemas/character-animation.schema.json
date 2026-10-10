@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "union-officer-academy/schema/character-animation",
+  "type": "object",
+  "required": ["type", "character", "cohort", "receiver", "office", "modelArtifact", "harnessDigest", "runtimeSession", "contextDigest", "capabilityDigest", "startedAt", "identityInheritance"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {"type": "string"},
+    "type": {"const": "CharacterAnimation"},
+    "character": {"type": "string"},
+    "cohort": {"type": "string"},
+    "receiver": {"type": "string"},
+    "office": {"type": "string"},
+    "modelArtifact": {"type": "string"},
+    "provider": {"type": "string"},
+    "harnessDigest": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+    "runtimeSession": {"type": "string"},
+    "contextDigest": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+    "capabilityDigest": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+    "startedAt": {"type": "string", "format": "date-time"},
+    "completedAt": {"type": "string", "format": "date-time"},
+    "resultDigest": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+    "cost": {"type": "object"},
+    "chronicleAdmission": {"enum": ["pending", "admitted", "refused"]},
+    "identityInheritance": {"const": false}
+  }
+}

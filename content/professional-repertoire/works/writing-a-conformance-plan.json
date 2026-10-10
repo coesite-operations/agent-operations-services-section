@@ -1,0 +1,12 @@
+{
+  "id": "writing-a-conformance-plan",
+  "name": "writing a conformance plan",
+  "from": "Conformance as labels: claims naming bodies instead of designations and editions, ambitions indistinguishable from achievements, and every new document re-inventing its own conformance matrix by hand.",
+  "to": "The standards program as one ladder: per family, the honest claim today — including 'nothing' — the named target, the gap, a path whose first step an office could take this quarter, and every category-mismatch warning stated plainly; the plan itself asserting no conformance, and auditable at every rung.",
+  "cost": "The embarrassment of writing 'nothing' in the honest-claim column, family after family, and keeping it there until the evidence exists — the ladder's credibility is bought entirely by its worst rungs.",
+  "otherwise": "The firm's relationship to public standards stays a mood: labels accrete, category errors ship in prose, stalled ambitions pose as plans, and the day an auditor asks, the answer is archaeology.",
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-15"
+  }
+}

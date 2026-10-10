@@ -1,0 +1,12 @@
+{
+  "id": "office-context-on-demand",
+  "name": "Office context and formation compilation on demand",
+  "provider": "union-officer-academy",
+  "customers": ["contracting sovereign settlement", "enrolled candidate", "authorized agent session"],
+  "office": "formation-context-steward",
+  "input": ["Academy professional office or exact receiver specialization snapshot", "Academy character and cohort membership or disjoint person enrollment", "current work scene", "complete relevant doctrine denominator", "target model, harness, animation, and context budget", "provider contracts"],
+  "products": ["ProfessionalContextBundle", "OfficeFormationBundle", "CharacterFormationLayer", "SkillPack", "ContextPlan", "CharacterAnimationPlan", "ExercisePack", "AssessmentSpec", "HarnessProjectionPlan"],
+  "rule": "The bundle animates or forms a persistent character for an exact office epoch. It is not the runtime call, receiver office, incumbency, capability grant, or receiver write.",
+  "carriers": ["doctrine-suit", "query-suit", "context-capsule", "orientation", "gap-bundle", "skill-pack", "character-surface"],
+  "refuses": ["unstated denominator", "concealed omission", "unresolved source digest", "persona treated as durable character", "model or runtime call treated as the character or office holder", "projector treated as authority"]
+}

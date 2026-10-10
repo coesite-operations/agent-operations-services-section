@@ -1,0 +1,10 @@
+{
+  "id": "admitting-leader-movement-team-capstone-evidence",
+  "kind": "inter-enterprise-evidence-import-contract",
+  "provider": "urn:ame:leader-movement-team",
+  "consumer": "urn:ame:union-officer-academy",
+  "admittedEvidence": "ExecutiveOfficerUnionMapeCapstoneReceipt",
+  "precondition": "receiver disposition is accepted and binds the exact Academy bundle candidate assembly provisional projection provider result causal MAPE stages knowledge commit and target delivery outcomes",
+  "use": "formation-practitioner may append one Academy-local observation of the customer practicum; independent examiner may later cite it",
+  "prohibitions": ["Academy writes customer receipt", "receipt self-qualifies candidate", "qualification appoints officer", "customer refusal is overwritten"]
+}

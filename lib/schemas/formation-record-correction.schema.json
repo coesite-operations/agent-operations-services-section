@@ -1,0 +1,12 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"union-officer-academy/schema/formation-record-correction",
+  "title":"Formation Record Correction",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["id","type","target","replacement","recordedAt","recordedBy","reason","invalidatesPriorForUse"],
+  "properties":{
+    "id":{"$ref":"#/$defs/id"},"type":{"const":"FormationRecordCorrection"},"target":{"$ref":"#/$defs/id"},"replacement":{"$ref":"#/$defs/id"},"recordedAt":{"type":"string","format":"date-time"},"recordedBy":{"type":"string","minLength":1},"reason":{"type":"string","minLength":1},"invalidatesPriorForUse":{"const":true}
+  },
+  "$defs":{"id":{"type":"string","pattern":"^urn:sha256:[a-f0-9]{64}$"}}
+}

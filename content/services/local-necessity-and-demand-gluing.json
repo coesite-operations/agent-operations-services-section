@@ -1,0 +1,16 @@
+{
+  "id": "local-necessity-and-demand-gluing",
+  "name": "Receiver-local officer-supply necessity and demand gluing",
+  "owner": "union-officer-academy",
+  "outcome": "Each sovereign receiver can prove from its own office and incumbency evidence whether it needs the provider-neutral officer-supply service category, tender that outcome, and let the Union observe agreement among proofs and awards without creating a central staffing authority.",
+  "accepts": "LocalOfficerSupplyNecessity authored and admitted by the receiver",
+  "returns": "LocallyGluedAcademyDemand preserving each receiver's standing",
+  "distinctions": [
+    "provider observation is not receiver-local necessity",
+    "receiver-local necessity selects a service category, not the Academy or another provider",
+    "necessity is not a tender; tender is not a bid; bid is not an award; award is not a contract unless receiver law admits it",
+    "a supply contract is not recognition, induction, incumbency, appointment, or authority",
+    "agreement among local proofs constitutes common demand without constituting a central personnel command"
+  ],
+  "offices": ["superintendent", "registrar", "formation-context-steward", "formation-practitioner", "independent-examiner"]
+}

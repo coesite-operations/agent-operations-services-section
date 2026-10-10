@@ -1,0 +1,16 @@
+{
+  "id": "carrying-a-decision-to-its-decider",
+  "name": "carrying a decision to its decider",
+  "from": "A decision reaching the Chairperson or another decider as a bare yes/no line in chat — no context, no motivation, no options weighed, no consequences stated — so the decider must already hold the repository's state to rule on it, or rules on vibes.",
+  "to": "A decision record the decider can rule on cold: the context forcing a choice, the options actually weighed, and the consequences of each, carrying nothing below the decider's own altitude. The decider does not have to open the repository to rule.",
+  "cost": "The carrier's attention, spent writing out the options and consequences that were already implicit in whoever made the choice's own head — spent whether or not the decider ultimately agrees, which is the same cost analysing-a-requirement pays and for the same reason.",
+  "otherwise": "Carriage happens ad hoc in chat, case by case, and the record of why a decision went one way lives nowhere a later reader can recover it.",
+  "needs": [
+    "carrying-a-decision-to-its-decider"
+  ],
+  "x-provenance": {
+    "recorded-by": "claude/requirements-implementation-team",
+    "recorded-on": "2026-07-16",
+    "derived-from": "emsenn/requirement/decisions-arrive-in-rulable-form"
+  }
+}

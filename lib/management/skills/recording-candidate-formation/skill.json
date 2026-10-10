@@ -1,0 +1,11 @@
+{
+  "type": "skill",
+  "name": "recording-candidate-formation",
+  "verb-phrase": "recording candidate formation",
+  "description": "Use after a bounded instructional, mentoring, practicum, reflection, or teaching-back event to preserve what the exact candidate attempted, demonstrated, failed, corrected, and witnessed.",
+  "preconditions": ["the enrollment and baseline resolve", "the candidate layer identities remain exact", "any practicum authority was granted by the receiving settlement and permits no Academy customer write"],
+  "postconditions": ["one TrainingEvent is appended with evidence and outcome", "instructor and mentor identities are explicit", "corrections and limitations remain visible"],
+  "witness": {"records": ["TrainingEvent", "evidence digests", "grant identity where practicum occurred"]},
+  "closure-kind": "procedure",
+  "install": ["codex"]
+}

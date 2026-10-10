@@ -1,0 +1,16 @@
+{
+  "id": "analysing-a-requirement",
+  "name": "analysing a requirement",
+  "authority": "integrated-portfolio-management-team",
+  "work": "analysing-a-requirement",
+  "claim": "requirements-management-team",
+  "skills": [
+    "writing-a-requirement",
+    "recalling-a-requirement"
+  ],
+  "delegation": false,
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-15"
+  }
+}

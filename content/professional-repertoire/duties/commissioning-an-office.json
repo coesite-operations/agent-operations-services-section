@@ -1,0 +1,15 @@
+{
+  "id": "commissioning-an-office",
+  "name": "commissioning an office",
+  "authority": "emsenn",
+  "work": "commissioning-an-office",
+  "claim": "emsenn",
+  "skills": [
+    "commissioning-an-office"
+  ],
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-15",
+    "derived-from": "duties/_archive/commissioning-an-office.md"
+  }
+}

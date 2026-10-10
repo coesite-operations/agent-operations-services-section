@@ -1,0 +1,15 @@
+{
+  "id": "writing-a-verification-and-validation-specification",
+  "name": "writing a verification and validation specification",
+  "authority": "integrated-portfolio-management-team",
+  "work": "writing-a-verification-and-validation-specification",
+  "claim": "product-quality-assurance",
+  "skills": [
+    "writing-a-verification-and-validation-specification"
+  ],
+  "delegation": true,
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-15"
+  }
+}

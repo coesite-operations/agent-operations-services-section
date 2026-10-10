@@ -1,0 +1,13 @@
+{
+  "id": "sweeping-the-standing-inventory",
+  "name": "sweeping the standing inventory",
+  "from": "A standing memory inventory grown noisy by correct forward passes alone — additions accumulating faster than retirements: orphaned index lines, dangling files, oversized append-shaped journals wearing memory's frontmatter, clusters of hooks that sound alike.",
+  "to": "The inventory matching its own rules: index and files agreeing one-to-one; append-shaped bodies moved to the research home with a one-fact pointer memory left in place under the same name; true duplicates merged only where one strictly subsumes the other; what was changed and what was deliberately left both reported. The sweep succeeds by making the inventory match its rules, not by shrinking it maximally.",
+  "cost": "An occasional bounded pass over the whole standing inventory — every several sessions, or when the operator says it feels noisy — spent reading memory bodies before merging anything, because hooks that sound alike are evidence of nothing.",
+  "otherwise": "The forward absorption step is not the same capacity as reconciling the backlog it leaves behind: each pass individually correct, the whole growing noisier, until recall degrades, real constraints get flattened into false duplicates, and the index approaches its truncation point silently.",
+  "x-provenance": {
+    "recorded-by": "claude/chief-of-staff",
+    "recorded-on": "2026-07-15",
+    "derived-from": "~/.claude/skills/chief-of-staff/SKILL.md — the standing-backlog sweep"
+  }
+}

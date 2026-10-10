@@ -1,0 +1,17 @@
+{
+  "id": "managing-a-glossary",
+  "name": "managing a glossary",
+  "authority": "emsenn",
+  "work": "managing-a-glossary",
+  "claim": "emsenn",
+  "skills": [
+    "recalling-a-term",
+    "writing-a-term",
+    "writing-a-note-about-research"
+  ],
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-15",
+    "derived-from": "duties/_archive/managing-a-glossary.md"
+  }
+}

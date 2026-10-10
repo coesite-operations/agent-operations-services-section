@@ -1,0 +1,17 @@
+{
+  "id": "union-officer-academy-character-corps",
+  "owner": "union-officer-academy",
+  "cohort": "2026-07-union-officer-corps",
+  "characters": [
+    {"id": "codex-interactive-session", "kind": "session", "canonicalRoot": "content/characters/codex-interactive-session", "entrypoint": "character.json", "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/services/leader-movement-team/content/characters/codex-interactive-session.json"},
+    {"id": "rom-keldar", "kind": "session", "canonicalRoot": "content/characters/rom-keldar", "entrypoint": "rom-keldar.md", "priorProjection": "lib/emsenn/services/561-group/lib/characters/rom-keldar"},
+    {"id": "riley-park", "kind": "session", "canonicalRoot": "content/characters/riley-park", "entrypoint": "riley-park.md", "priorProjection": "lib/emsenn/services/561-group/lib/characters/riley-park"},
+    {"id": "karen-wiener", "kind": "session", "canonicalRoot": "content/characters/karen-wiener", "entrypoint": "karen-wiener.md", "priorProjection": "lib/emsenn/services/561-group/services/lenticule-science/lib/characters/karen-wiener"},
+    {"id": "lauren-becker", "kind": "session", "canonicalRoot": "content/characters/lauren-becker", "entrypoint": "lauren-becker.md", "priorProjection": "lib/emsenn/services/561-group/services/lenticule-science/lib/characters/lauren-becker"},
+    {"id": "melvin-ginsberg", "kind": "session", "canonicalRoot": "content/characters/melvin-ginsberg", "entrypoint": "melvin-ginsberg.md", "priorProjection": "lib/emsenn/services/561-group/services/lenticule-science/lib/characters/melvin-ginsberg"},
+    {"id": "calder-underhill", "kind": "mythopoetic-character", "canonicalRoot": "content/characters/calder-underhill", "entrypoint": "calder-underhill.md", "priorProjection": "lib/emsenn/services/561-group/services/lenticule-science/services/obsmetrological-services-section/src/lib/agency/characters/calder-underhill"}
+  ],
+  "notPersonnel": true,
+  "notIncumbencies": true,
+  "animationIsEphemeral": true
+}

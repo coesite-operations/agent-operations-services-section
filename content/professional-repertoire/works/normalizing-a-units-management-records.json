@@ -1,0 +1,17 @@
+{
+  "id": "normalizing-a-units-management-records",
+  "name": "normalizing a unit's management records",
+  "from": "A downstream unit's management records — its offices, its projected skills, its pool entries, its inherited spellings — drifted from ruled practice: a loose markdown file standing in for an office record, a SKILL.md frontmatter carrying keys the spec forbids, the ruled-typo spelling surviving outside the archive, a pool record silent about what recorded it. Each drift is invisible until a specific check is re-run against it, and indistinguishable from conformance to anyone reading the unit from outside.",
+  "to": "The unit's management records re-run against the ruled checks — office pool shape, SKILL.md frontmatter, the infometrologia spelling, pool-record provenance — and either found conforming or named exactly where they are not, with the finding attached to the rule it violates and the path it occurred at.",
+  "cost": "Walking every record of a unit large enough that hand review is impractical, and re-running the sweep on a schedule rather than trusting that a unit which conformed once still does.",
+  "otherwise": "Drift accumulates silently in exactly the units nobody is presently working in, and by the time anyone reads a downstream office record closely enough to notice it is markdown instead of schema, the record has already been treated everywhere downstream as if it conformed.",
+  "needs": [
+    "read-a-record-tree-without-modifying-it",
+    "re-run-a-check-rather-than-recall-its-last-result"
+  ],
+  "x-provenance": {
+    "recorded-by": "claude/requirements-implementation-team",
+    "recorded-on": "2026-07-16",
+    "derived-from": "works/attesting-a-work-product — execute the check, read no claims; huidu-guanli/glossary/fa — a process amended at the point of use is not a process"
+  }
+}

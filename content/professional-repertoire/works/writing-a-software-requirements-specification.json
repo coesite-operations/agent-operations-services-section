@@ -1,0 +1,12 @@
+{
+  "id": "writing-a-software-requirements-specification",
+  "name": "writing a software requirements specification",
+  "from": "Requirement-shaped sentences scattered across designs, conversations, and heads — compound, sourceless, unverifiable — while the SAS answers to a baseline that does not exist and every design element traces into air.",
+  "to": "A requirements baseline per ISO/IEC/IEEE 29148: every requirement singular, unambiguous, and verifiable, carrying the citation that forced it or the ruling that chose it, an allocation, and a trace — with derived requirements distinguished from stakeholder requirements by what forces them, because the two carry different assurance.",
+  "cost": "The tedium of splitting every compound, sourcing every statement, and sending every unverifiable wish back to its owner for a measure — precision paid one requirement at a time, before any of it feels urgent.",
+  "otherwise": "The design set answers to nothing checkable, chosen constraints masquerade as forced ones and mint assurance the mathematics never issued, and 'the system meets its requirements' remains a sentence nobody can falsify.",
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-15"
+  }
+}

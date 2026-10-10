@@ -1,0 +1,11 @@
+{
+  "id": "officer-formation",
+  "name": "Officer formation",
+  "provider": "union-officer-academy",
+  "customers": "self-governing unions and sovereign settlements",
+  "operations": ["resolve Academy professional repertoire or admit a receiver specialization", "admit a character or person formation request", "census and admit complete relevant doctrine", "compile curriculum and OfficeFormationBundle", "establish content-addressed formation epoch", "open asynchronous character cohort", "conduct orientation and situated progressive practice", "coordinate current-practitioner lecturer and developmental mentor engagement roles", "assess independently", "qualify or refuse", "publish qualified character availability", "derive requalification gap", "exercise succession"],
+  "products": ["CharacterCohortMembership", "OfficeFormationBundle", "FormationBaseline", "Cohort", "Assessment", "Qualification", "CharacterOfficerSupplyOffer", "FormationRefusal", "RequalificationGap", "SuccessionExercise"],
+  "refuses": ["appointment authority", "customer writes", "identity inheritance", "trainer self-certification", "hidden egress", "unwitnessed competence", "automatic promotion"],
+  "contract": "ni:///sha-256;P75Y5UAiHjPSESVesIK8nBxwxst9CDmXR8bKw_9a64I",
+  "contractSource": "content/contracts/officer-formation-service.rml"
+}

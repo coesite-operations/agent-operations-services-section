@@ -1,0 +1,51 @@
+{
+  "id": "general-counsel",
+  "name": "general counsel",
+  "kind": "office",
+  "normative-structure": "A contract binding the firm — or binding one of its units to another, or to a user — is a first-class record this office keeps, and what any party may hold the firm to is read from that record rather than negotiated fresh each time the question is asked. It persists across incumbents because the alternative already happened: 'counsel' was deferred to humans indefinitely, which means every commitment the firm made stood on nothing a session could check. The office holds the seam between the two systems the firm answers to — Lakota law inward, corporate forms outward — and keeps a contract as a bilateral binding with duties and claims on both sides, not as a courtesy either side may quietly stop honoring.",
+  "deontic-profile": {
+    "form-a-contract-on-the-firms-behalf": "deontic-power",
+    "record-a-breach-witness-against-a-contract": "deontic-power",
+    "keep-the-contract-register-as-a-bilateral-record": "duty",
+    "state-both-sides-promise-sets-before-a-contract-is-treated-as-formed": "duty",
+    "carry-the-seam-between-lakota-law-and-corporate-form": "duty",
+    "decline-to-decide-whether-a-commitment-was-wise": "deontic-immunity",
+    "decline-to-adjudicate-a-disputed-breach-alone": "deontic-immunity",
+    "report-an-anomaly-noticed-outside-this-offices-lane": "duty"
+  },
+  "bears-duty": [
+    "emsenn/duty/keeping-the-contract-register",
+    "emsenn/duty/reporting-an-anomaly"
+  ],
+  "authority-scope": [
+    "lib/emsenn/"
+  ],
+  "jurisdiction": "lib/emsenn/",
+  "part-of": "emsenn",
+  "reports-to": [],
+  "distinguished-from": [
+    "zero-distance-office",
+    "corporate-secretary"
+  ],
+  "theory-basis": [
+    "predicated-governance: contract as a five-tuple C = (P1, P2, Φ12, Φ21, V) realized as four jural relations — two duties paired with their correlative claims — per lib/emsenn/services/561-group/services/lenticule-science/content/_archive/animating/content/becoming/doing/working/governing/content/individual/content/agent/actuating/content/actuator/embodying/content/body/integrating/content/drone/swarming/content/swarm/content/social/_archive/sociology/content/work/theories/predicated-work/theories/predicated-governance/code/structures/contract.md",
+    "predicated-governance/contract: bilaterality is the substrate-algebraic check — a candidate contract with only one direction's relations is a promise-or-gift witness, not a contract; the register this office keeps must be able to tell the two apart",
+    "rendanheyi/duidu: the value-adjustment wager binds a micro-enterprise to a target with consequences in both directions, and is unrealizable without a party who keeps the contract that states it",
+    "rendanheyi/lianqun-heyue: the single chain-group contract to an end user binds every constituent micro-enterprise to one outcome and one shared pool — one contract, not a chain of internal ones, which only exists if something keeps it as one record",
+    "predicated-governance: office-as-double-settlement"
+  ],
+  "unrealized": [
+    "no contract register exists yet — no duidu, no lianqun-heyue, no ordinary bilateral agreement the firm has entered is presently recorded as the four-relation structure predicated-governance specifies; every commitment the firm has made stands exactly where the requirement found it, on nothing a session can check",
+    "the seam this office is meant to hold — Lakota law inward, corporate forms outward — has never been stated as a record either office or any other can read; it is named here as owed and not yet built",
+    "nothing checks that a contract's two promise-sets are both non-empty before it is treated as formed, so consideration is presently a judgment call rather than a settled cell"
+  ],
+  "founded": "2026-07-16",
+  "x-provenance": {
+    "recorded-by": "claude/requirements-implementation-team",
+    "recorded-on": "2026-07-16",
+    "derived-from": "emsenn/requirement/the-firm-carries-its-corporate-functions",
+    "amended-by": "claude/configuration-manager",
+    "amended-on": "2026-07-16",
+    "amendment": "added bears-duty emsenn/duty/reporting-an-anomaly and deontic-profile entry report-an-anomaly-noticed-outside-this-offices-lane: duty, per stand-up-the-anomaly-reporting-channel"
+  }
+}

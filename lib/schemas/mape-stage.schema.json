@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "emsenn/union-officer-academy/mape-stage",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "type", "loopId", "stage", "actor", "predecessors", "knowledgeRefs", "evidence"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^urn:sha256:[a-f0-9]{64}$"},
+    "type": {"const": "MAPEStage"},
+    "loopId": {"type": "string", "pattern": "^urn:sha256:[a-f0-9]{64}$"},
+    "stage": {"enum": ["monitor", "analyze", "plan", "execute"]},
+    "actor": {"type": "string", "pattern": "^urn:ame:"},
+    "predecessors": {"type": "array", "maxItems": 1, "items": {"type": "string", "pattern": "^urn:sha256:[a-f0-9]{64}$"}},
+    "knowledgeRefs": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "evidence": {"type": "object"}
+  }
+}

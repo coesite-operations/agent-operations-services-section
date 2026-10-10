@@ -1,0 +1,12 @@
+{
+  "id": "office-repertoire-market",
+  "name": "Move-scoped professional office repertoire market",
+  "provider": "union-officer-academy",
+  "customer": "bare-cedar-fog-codex",
+  "outcome": "A receiver-authored strategy-space demand receives one exact Academy-authored office repertoire offer, an unranked selection question, or witnessed unavailability.",
+  "input": ["stable receiver Actor", "immutable demand", "immutable move", "required duty identifiers", "required skill identifiers", "excluded office identifiers"],
+  "products": ["OfficeRepertoireOffer", "ProviderSelectionRequired", "MarketUnavailable"],
+  "protocol": "ActivityStreams 2.0 values over the local MCP stdio projection",
+  "authority": "The Academy describes its repertoire only. The receiver alone accepts an offer for one move; no result is appointment, incumbency, jurisdiction, or durable office assignment.",
+  "contract": "content/contracts/office-repertoire-market.rml"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "keeping-the-anomaly-register",
+  "name": "keeping the anomaly register",
+  "from": "Anomaly reports scattered across sessions' memories and chat transcripts, each dying with its context window; what is known to be flawed is whatever somebody happens to remember.",
+  "to": "One pool, content/anomalies, where every report seats as a validated record; routing derived from it — each anomaly joined by a task and a dispatch to the office whose lane it is; closure a readout of that task's goal, never a field on the report.",
+  "cost": "Holding a register that mostly accumulates bad news, and routing each entry to an office that did not ask for it.",
+  "otherwise": "Reports flow in and settle nothing: an anomaly register nobody routes from is a complaint box, and the MAPE-K loop's Monitor reads an empty feed while the firm's flaws circulate as anecdotes.",
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-16",
+    "derived-from": "user directive of 2026-07-16; huidu-guanli/ipd closed-loop problem management (问题闭环管理)"
+  }
+}

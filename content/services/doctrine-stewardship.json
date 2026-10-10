@@ -1,0 +1,11 @@
+{
+  "id": "doctrine-stewardship",
+  "name": "Formation doctrine stewardship",
+  "provider": "union-officer-academy",
+  "customers": "Academy curriculum functions, practitioner faculty, and contracting settlements",
+  "offices": ["formation-context-steward"],
+  "operations": ["census the complete source territory", "state the doctrine denominator and omissions", "recover prior thought", "classify source authority", "procure bounded formation research when the admitted denominator has a gap", "admit doctrine through the Academy settlement", "preserve source ownership and jurisdiction", "compile curriculum use", "record rejection or contest", "append successor admission"],
+  "ownedSources": ["services/management-thought/huidu-guanli", "services/management-thought/rendanheyi"],
+  "products": ["DoctrineAdmission", "agency-office-formation doctrine", "management-thought services catalog", "source-bound curriculum revisions"],
+  "refuses": ["copying foreign law as Academy law", "representing a sampled corpus as complete orientation", "using research as appointment authority", "concealing legacy status", "rewriting source provenance"]
+}

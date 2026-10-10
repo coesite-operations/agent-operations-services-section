@@ -1,0 +1,15 @@
+{
+  "id": "collecting-an-idea",
+  "name": "collecting an idea",
+  "authority": "integrated-portfolio-management-team",
+  "work": "collecting-an-idea",
+  "claim": "zero-distance-office",
+  "skills": [
+    "raising-an-idea"
+  ],
+  "delegation": true,
+  "x-provenance": {
+    "recorded-by": "claude/module-developer",
+    "recorded-on": "2026-07-16"
+  }
+}

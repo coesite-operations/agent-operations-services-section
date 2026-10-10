@@ -1,0 +1,62 @@
+{
+  "id": "agency-office-formation",
+  "name": "Agency and office formation doctrine",
+  "owner": "union-officer-academy",
+  "adoptedOn": "2026-07-18",
+  "purpose": "Own the formation doctrine that relates persons, characters, models, sessions, agents, skills, duties, work, offices, cohorts, qualifications, incumbencies, and succession without copying the law of source settlements.",
+  "distinctions": {
+    "person": "a real human body; never inferred from a session or model",
+    "character": "the durable role-plus-disposition and dispositional nucleus through which a person or session becomes answerable; current Executive Office law keeps office membership and model identity elsewhere",
+    "persona": "a situated role and intention mask of a character for an audience, context, partner model, and work state; never the durable governor",
+    "actor": "a membrane-bounded public identity and affordance projection of a character and recorded session; an Agent Card advertises this surface rather than internal authority",
+    "model-artifact": "a versioned inference component; readiness evidence is not an officer qualification",
+    "runtime-session": "one ephemeral execution occurrence with exact context and resource history",
+    "agent-relation": "an inhabited runtime ecology over a recorded perceive-plan-act loop, persistent computable state, tools, context, and coordination; not a persona file",
+    "skill": "an invocable witnessed constructor with preconditions and postconditions, not a psychological trait",
+    "duty": "a standing obligation owed to a claim holder that passes whole across incumbents",
+    "work": "costly change that leaves the world different; not the skill used to perform it",
+    "office": "a durable normative body politic independent of its incumbent",
+    "cohort": "a branchable content-addressed formation epoch binding office, doctrine denominator, curriculum, exercises, assessment law, providers, and projectors while candidates progress asynchronously",
+    "qualification": "a scoped normal form over admitted evidence at one baseline and time, never authority",
+    "incumbency": "the receiving settlement's recognition-plus-induction act seating one character in one office",
+    "succession": "three distinct relations: incumbent handover, office replacement, and curriculum/baseline lineage"
+  },
+  "evidenceSettlement": {
+    "states": ["no-admitted-evidence", "demonstrated", "refuted", "contradictory"],
+    "rule": "closure and four-valued settlement apply to the admitted evidence set, not to a person's mind or a model's weights",
+    "qualificationRule": "qualified requires demonstrated evidence for every baseline competency; contradiction, refutation, or absent evidence produces gaps or refusal",
+    "historyRule": "later correction, suspension, revocation, expiry, supersession, or requalification appends an event and never rewrites historical evidence"
+  },
+  "formationLaw": [
+    "teach office, duty, work, skill, authority, capability, and appointment as non-equivalent relations",
+    "bind every customer overlay to exact owner, digest, jurisdiction, use grant, and egress terms",
+    "use situated progressive responsibility rather than attendance or task counts",
+    "require independent examination and negative controls",
+    "teach boundary refusal and succession, not only successful task performance",
+    "require clean-room context reconstruction for agent candidates so hidden session memory cannot substitute for curriculum",
+    "treat teaching-back as both learning evidence and an audit of whether practice is institutionally reproducible",
+    "derive learning evidence through observe, plan, evaluate, reflect, procedural memory, skill retrieval, and hook feedback",
+    "compose purpose-specific context carriers and record omissions instead of inventing a universal packet",
+    "treat current-practitioner lecturer and developmental mentor as engagement roles unless a distinct continuous Academy obligation later warrants an office"
+  ],
+  "authoritySources": [
+    {"identity": "emsenn/schema/character", "digest": "sha256:ef75e32776a41a6c290cfc1da5a49c00ffdffad5b94b564f0001a79217099a26", "owner": "executive-office", "authorityClass": "current-law", "reading": "binding-within-source-jurisdiction"},
+    {"identity": "emsenn/schema/office", "digest": "sha256:c176fd97803f0390c612a44b8476e87df152a2854bfdbda5fcd40ed1ede4c7a3", "owner": "executive-office", "authorityClass": "current-law", "reading": "binding-within-source-jurisdiction"},
+    {"identity": "emsenn/schema/duty", "digest": "sha256:138e2f958ce6d28aad3c98d07a026fb4ae166c0516ad6353e4392eb85dafe31e", "owner": "executive-office", "authorityClass": "current-law", "reading": "binding-within-source-jurisdiction"},
+    {"identity": "emsenn/schema/work", "digest": "sha256:74d88501065277343ac8d411b927124035742bb172beca6900c4777a18182408", "owner": "executive-office", "authorityClass": "current-law", "reading": "binding-within-source-jurisdiction"},
+    {"identity": "emsenn/schema/skill", "digest": "sha256:9319bfc65bcaf64cdfb6761ea2cd730f039bc5c2e94f83b5aed4f1d4e4a5e52d", "owner": "executive-office", "authorityClass": "current-law", "reading": "binding-within-source-jurisdiction"},
+    {"identity": "emsenn/schema/incumbency", "digest": "sha256:525827abe6ab787885f8d1e7f8f95822b9d6b6b8a1fa7940ad7a85e11ff4dabd", "owner": "executive-office", "authorityClass": "current-law", "reading": "binding-within-source-jurisdiction"},
+    {"identity": "metroplat/work/model", "digest": "sha256:4bae84ffab141868a06a1b40c8817180d8f510f696b0f22bf349b9fd3857a008", "owner": "red-cup-engineering", "authorityClass": "current-practice", "reading": "illustrative"},
+    {"identity": "metroplat/capability", "digest": "sha256:f7a282624671cbea0579a70297051b1762045854070ec1e72de648b0f406fe74", "owner": "red-cup-engineering", "authorityClass": "current-practice", "reading": "illustrative"},
+    {"identity": "metroplat/agents/characters", "digest": "sha256:6cd8ac3729b1e5b6c2667c6252e569d10cac1d87706e00122519c8cafb56d2ff", "owner": "red-cup-engineering", "authorityClass": "current-practice", "reading": "illustrative"},
+    {"identity": "voidfleet-academy/curriculum-design", "digest": "sha256:eb150ec3b0973e4762ad962ab159b1efbaa39245247789f1d3528bd4ccfbab9c", "owner": "legacy-red-cup-archive", "authorityClass": "legacy-prior-art", "reading": "illustrative"}
+  ],
+  "rejectedLegacyClaims": [
+    "training is literally monotone, extensive, or idempotent over a person or neural model",
+    "fixed-point competence is permanent",
+    "task counts or confidence thresholds automatically promote a candidate",
+    "certification authorizes or appoints an officer",
+    "automation of a traversal retires the durable office obligation",
+    "a model, prompt, provider, harness, or runtime inherits another candidate's qualification"
+  ]
+}

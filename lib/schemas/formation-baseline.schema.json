@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "union-officer-academy/schema/formation-baseline",
+  "title": "Formation Baseline",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["type", "request", "curriculum", "establishedAt", "office", "competencies", "assessmentLawDigest", "predecessors"],
+  "properties": {
+    "type": {"const": "FormationBaseline"},
+    "id": {"$ref": "#/$defs/id"},
+    "request": {"$ref": "#/$defs/id"},
+    "curriculum": {"$ref": "#/$defs/id"},
+    "establishedAt": {"type": "string", "format": "date-time"},
+    "office": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "digest", "deonticProfileDigest", "duties", "skills", "jurisdiction", "protectedContextDigest", "appointmentLawDigest", "succession"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "digest": {"$ref": "#/$defs/digest"},
+        "deonticProfileDigest": {"$ref": "#/$defs/digest"},
+        "duties": {"type": "array", "minItems": 1, "items": {"type": "object", "required": ["id", "digest", "authority", "claim", "work", "workDigest"], "additionalProperties": false, "properties": {"id": {"type": "string", "minLength": 1}, "digest": {"$ref": "#/$defs/digest"}, "authority": {"type": "string", "minLength": 1}, "claim": {"type": "string", "minLength": 1}, "work": {"type": "string", "minLength": 1}, "workDigest": {"$ref": "#/$defs/digest"}}}},
+        "skills": {"type": "array", "minItems": 1, "items": {"type": "object", "required": ["id", "specDigest", "bodyDigest", "closureKind", "requiresCapabilities"], "additionalProperties": false, "properties": {"id": {"type": "string", "minLength": 1}, "specDigest": {"$ref": "#/$defs/digest"}, "bodyDigest": {"$ref": "#/$defs/digest"}, "closureKind": {"enum": ["process", "derivation", "procedure", "inquiry"]}, "requiresCapabilities": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}}}}},
+        "jurisdiction": {"type": "string", "minLength": 1},
+        "protectedContextDigest": {"$ref": "#/$defs/digest"},
+        "appointmentLawDigest": {"$ref": "#/$defs/digest"},
+        "succession": {"type": "object", "additionalProperties": false, "required": ["predecessors", "successors"], "properties": {"predecessors": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}}, "successors": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}}}}
+      }
+    },
+    "competencies": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "assessmentLawDigest": {"$ref": "#/$defs/digest"},
+    "predecessors": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/id"}}
+  },
+  "$defs": {
+    "id": {"type": "string", "pattern": "^urn:sha256:[a-f0-9]{64}$"},
+    "digest": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"}
+  }
+}

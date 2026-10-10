@@ -1,0 +1,16 @@
+{
+  "id": "keeping-the-contract-register",
+  "name": "keeping the contract register",
+  "authority": "emsenn",
+  "work": "keeping-the-contract-register",
+  "claim": "emsenn",
+  "skills": [
+    "keeping-the-contract-register"
+  ],
+  "delegation": false,
+  "x-provenance": {
+    "recorded-by": "claude/requirements-implementation-team",
+    "recorded-on": "2026-07-16",
+    "derived-from": "emsenn/requirement/the-firm-carries-its-corporate-functions"
+  }
+}

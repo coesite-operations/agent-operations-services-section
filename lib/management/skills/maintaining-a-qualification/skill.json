@@ -1,0 +1,11 @@
+{
+  "type": "skill",
+  "name": "maintaining-a-qualification",
+  "verb-phrase": "maintaining a qualification",
+  "description": "Use when later evidence requires correction, suspension, revocation, expiry, reinstatement, or supersession of a qualification without editing the historical qualification carrier.",
+  "preconditions": ["the qualification resolves", "the later evidence has stable digests", "the registrar has authority to append the named Academy event"],
+  "postconditions": ["one QualificationStatusEvent is appended", "the old qualification remains byte-identical", "the event conveys no customer authority"],
+  "witness": {"records": ["QualificationStatusEvent", "qualification identity", "later evidence digests", "successor qualification for supersession"]},
+  "closure-kind": "procedure",
+  "install": ["codex"]
+}

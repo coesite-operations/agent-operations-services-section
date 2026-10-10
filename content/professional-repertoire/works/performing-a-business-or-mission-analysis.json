@@ -1,0 +1,15 @@
+{
+  "id": "performing-a-business-or-mission-analysis",
+  "name": "performing a business-or-mission-analysis",
+  "from": "No business-or-mission-analysis capability exists. A firm-level conceptualization needs to define the problem or opportunity space and characterize candidate solution classes before any organization-level ConOps commits to one of them, and nothing forces that naming into a checkable record — it happens as prose, if it happens at all, and a solution gets chosen with no record of the wider space it was chosen from.",
+  "to": "Each business-or-mission-analysis is a CloudEvents 1.0 envelope carrying a W3C DID-core identifier naming whose analysis it is, holding ISO/IEC/IEEE 15288:2023 §6.4.1-shaped content — a problem-or-opportunity space stated as claims that can fail, candidate solution classes each characterized with a condition that would disqualify it, traceability toward the organization-level ConOps, and stakeholder/environment context — validated by a mechanizable check before it is trusted.",
+  "cost": "The discipline of stating the problem space as falsifiable claims rather than vibes, of naming a would-be-disqualified-if for every candidate solution class instead of just the favorite, and of keeping the analysis apart from the ConOps it feeds rather than skipping straight to the ConOps.",
+  "otherwise": "The organization-level ConOps gets written directly against whichever solution a session already favored, with no record of the wider space it was chosen from, no record of why competitors were excluded, and no identifier or envelope a party outside the firm could check.",
+  "needs": [
+    "performing-a-business-or-mission-analysis"
+  ],
+  "x-provenance": {
+    "recorded-by": "claude/module-developer",
+    "recorded-on": "2026-07-16"
+  }
+}

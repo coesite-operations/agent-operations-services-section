@@ -1,0 +1,27 @@
+{
+  "id": "enterprise-formation-mape",
+  "provider": "union-officer-academy",
+  "customer": "a self-governing Union office or enterprise",
+  "outcome": "a causal, evidence-bound reading of current officer-formation readiness plus receiver-addressed intervention offers",
+  "contract": "ni:///sha-256;aZI-dnBuwFfBzsFyk4L0BNkKIyPm0FOPWpWz4DfsTuo",
+  "contractSource": "content/contracts/mapping-enterprise-formation-readiness.rml",
+  "chainGroupContract": "academy-formation-chain-group",
+  "boundary": {
+    "ingress": "ActivityStreams Offer<ServiceSolicitation> followed by Accept<ServiceContract>",
+    "authority": "OCap-shaped capability attenuated to provider-authored roots, request digest, effects, and CapTP invoke-service method",
+    "egress": "ActivityStreams Accept<EnterpriseFormationMapeResult> or Reject<Refusal>",
+    "notification": "CloudEvents 1.0",
+    "evidence": "node-local EAVT and content-addressed MAPE stages"
+  },
+  "internalProtocol": "A2A 1.0 SendMessage over urn:emsenn:binding:a2a-stdio-jsonrpc-v1",
+  "stages": [
+    {"stage":"monitor","provider":"formation-observation-xiaowei"},
+    {"stage":"analyze","provider":"formation-diagnosis-xiaowei"},
+    {"stage":"plan","provider":"formation-planning-xiaowei"},
+    {"stage":"execute","provider":"formation-execution-xiaowei"},
+    {"stage":"knowledge","provider":"formation-knowledge-xiaowei"}
+  ],
+  "refusals": ["malformed ActivityStreams contract", "missing or drifted request scope", "ungranted filesystem read", "legacy or malformed A2A carrier", "member refusal", "customer mutation request"],
+  "customerTerritoryMutation": false,
+  "appointmentAuthority": false
+}

@@ -1,0 +1,12 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"union-officer-academy/schema/assessment-challenge-reveal",
+  "title":"Assessment Challenge Reveal",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["id","type","commitment","revealedAt","cases","nonce","candidateArtifactDigest"],
+  "properties":{
+    "id":{"$ref":"#/$defs/id"},"type":{"const":"AssessmentChallengeReveal"},"commitment":{"$ref":"#/$defs/id"},"revealedAt":{"type":"string","format":"date-time"},"cases":{"type":"array","minItems":1,"uniqueItems":true,"items":{"type":"string","minLength":1}},"nonce":{"type":"string","minLength":1},"candidateArtifactDigest":{"$ref":"#/$defs/digest"}
+  },
+  "$defs":{"id":{"type":"string","pattern":"^urn:sha256:[a-f0-9]{64}$"},"digest":{"type":"string","pattern":"^sha256:[a-f0-9]{64}$"}}
+}

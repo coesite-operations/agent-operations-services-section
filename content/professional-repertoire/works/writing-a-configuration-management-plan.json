@@ -1,0 +1,12 @@
+{
+  "id": "writing-a-configuration-management-plan",
+  "name": "writing a configuration management plan",
+  "from": "Documents that version by accident: identifiers that renumber on reorganization and break every citation, drafts indistinguishable from baselines, changes entering wherever the editor happens to be, and nobody on record as having made any text binding.",
+  "to": "An IEEE 828-shaped plan: a stable identity per item that survives reorganization, a baselining rule with a named canonizing authority, one change path with no expedited lane and no deviation state between defect and amendment, status accounting somewhere findable, and audits that check the record against the plan.",
+  "cost": "The friction of routing every change through one path, felt precisely when a change is small and the path feels ceremonial — which is when the path is doing its work.",
+  "otherwise": "Every document manages its own configuration, section numbers serve as names until the first reorganization, expedited exceptions become the process, and 'which version is binding?' has as many answers as readers.",
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-15"
+  }
+}

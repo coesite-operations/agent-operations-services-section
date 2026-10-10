@@ -1,0 +1,11 @@
+{
+  "type": "skill",
+  "name": "opening-a-cohort",
+  "verb-phrase": "opening a cohort",
+  "description": "Use to create a formation generation against one immutable baseline, including branches and bridge cohorts, without imposing synchronized candidate progression.",
+  "preconditions": ["the FormationBaseline resolves and verifies", "any parent or bridge cohort resolves", "the admission epoch is named"],
+  "postconditions": ["one immutable Cohort is appended", "progression is asynchronous", "baseline, parents, and bridge lineage are explicit"],
+  "witness": {"records": ["Cohort", "FormationBaseline identity", "parent and bridge identities"]},
+  "closure-kind": "procedure",
+  "install": ["codex"]
+}

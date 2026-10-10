@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "union-officer-academy/schema/cohort",
+  "title": "Cohort",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["type", "baseline", "openedAt", "admissionEpoch", "progression", "formationConfiguration", "formationConfigurationDigest", "parents"],
+  "properties": {
+    "type": {"const": "Cohort"},
+    "id": {"$ref": "#/$defs/id"},
+    "baseline": {"$ref": "#/$defs/id"},
+    "openedAt": {"type": "string", "format": "date-time"},
+    "admissionEpoch": {"type": "string", "minLength": 1},
+    "progression": {"const": "asynchronous"},
+    "formationConfiguration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["officeDigest", "doctrineDenominatorDigest", "curriculumDigest", "exerciseRegimeDigest", "assessmentLawDigest", "providers", "projectors"],
+      "properties": {
+        "officeDigest": {"$ref": "#/$defs/digest"},
+        "doctrineDenominatorDigest": {"$ref": "#/$defs/digest"},
+        "curriculumDigest": {"$ref": "#/$defs/digest"},
+        "exerciseRegimeDigest": {"$ref": "#/$defs/digest"},
+        "assessmentLawDigest": {"$ref": "#/$defs/digest"},
+        "providers": {"type": "array", "uniqueItems": true, "items": {"type": "object", "additionalProperties": false, "required": ["id", "role", "digest", "contract"], "properties": {"id": {"type": "string", "minLength": 1}, "role": {"type": "string", "minLength": 1}, "digest": {"$ref": "#/$defs/digest"}, "contract": {"type": "string", "minLength": 1}}}},
+        "projectors": {"type": "array", "uniqueItems": true, "items": {"type": "object", "additionalProperties": false, "required": ["id", "digest", "contract"], "properties": {"id": {"type": "string", "minLength": 1}, "digest": {"$ref": "#/$defs/digest"}, "contract": {"type": "string", "minLength": 1}}}}
+      }
+    },
+    "formationConfigurationDigest": {"$ref": "#/$defs/digest"},
+    "parents": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/id"}},
+    "bridgeFrom": {"$ref": "#/$defs/id"}
+  },
+  "$defs": {
+    "id": {"type": "string", "pattern": "^urn:sha256:[a-f0-9]{64}$"},
+    "digest": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"}
+  }
+}

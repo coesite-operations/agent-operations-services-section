@@ -1,0 +1,16 @@
+{
+  "id": "holding-zero-distance-to-the-user",
+  "name": "holding zero distance to the user",
+  "authority": "emsenn",
+  "work": "holding-zero-distance-to-the-user",
+  "claim": "emsenn",
+  "skills": [
+    "holding-zero-distance-to-the-user"
+  ],
+  "delegation": false,
+  "x-provenance": {
+    "recorded-by": "claude/requirements-implementation-team",
+    "recorded-on": "2026-07-16",
+    "derived-from": "emsenn/requirement/the-firm-carries-its-corporate-functions"
+  }
+}

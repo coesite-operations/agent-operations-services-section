@@ -1,0 +1,24 @@
+{
+  "type": "skill",
+  "name": "controlling-formation-configuration",
+  "verb-phrase": "controlling formation configuration",
+  "description": "Use when identify every source item in an office-formation configuration and establish its content digest.",
+  "preconditions": [
+    "the exact customer, candidate, source, or Academy record in scope resolves",
+    "the acting office's authority and refusal boundary are explicit",
+    "required evidence is available or its absence is recorded"
+  ],
+  "postconditions": [
+    "one controlled successor configuration with explicit lineage and impact",
+    "no customer appointment, capability grant, or cross-settlement write is performed"
+  ],
+  "witness": {
+    "records": [
+      "one controlled successor configuration with explicit lineage and impact"
+    ]
+  },
+  "closure-kind": "procedure",
+  "install": [
+    "codex"
+  ]
+}

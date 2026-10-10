@@ -1,0 +1,32 @@
+{
+  "id": "superintendent",
+  "name": "superintendent",
+  "kind": "office",
+  "normative-structure": "The superintendent is the contestable xiaowei-zhu office that keeps Union Officer Academy a sovereign formation provider: it holds decision, personnel, and distribution rights inside the Academy against receiver-created value; admits or refuses contracts; operates the Academy's own RSI MAPE-K; procures inference and missing specialties; and answers for the boundary without becoming the human Leader, an appointed manager, a credential monopoly, appointment authority, shared agent pool, semantic examiner, or foreign writer.",
+  "deontic-profile": {"governing-the-academy": "duty", "appointing-a-customer-officer": "deontic-immunity", "silently-performing-a-missing-specialty": "deontic-immunity"},
+  "bears-duty": ["emsenn/duty/governing-the-academy"],
+  "provides-skill": ["admitting-a-formation-request", "operating-academy-recursive-self-improvement"],
+  "rendanheyi": {
+    "threeRights": ["decision", "personnel", "distribution"],
+    "zeroSignature": true,
+    "valueAdjustmentContract": "academy-value-adjustment",
+    "leadingGoal": "academy-leading-goal",
+    "contestable": true,
+    "positionIsTakenNotGiven": true,
+    "durableIncumbent": null,
+    "leadershipMarket": "academy-leadership-market",
+    "actingServiceIsNotIncumbency": true
+  },
+  "authority-scope": ["./"],
+  "jurisdiction": "union-officer-academy",
+  "part-of": "union-officer-academy",
+  "reports-to": "none",
+  "serves": ["561-group", "contracting-sovereign-settlement"],
+  "theory-basis": ["ANT-Colony settlement admission and non-write law", "Rendanheyi self-governing micro-enterprise", "knowledge sovereignty", "office-as-double-settlement and dignitas non moritur"],
+  "x-provenance": {
+    "recorded-by": "codex/executive-officer-to-the-leader",
+    "recorded-on": "2026-07-18",
+    "authority": "Leader formation warrant",
+    "derived-from": "Leader formation warrant and corpus-led Union Officer Academy institutional audit"
+  }
+}

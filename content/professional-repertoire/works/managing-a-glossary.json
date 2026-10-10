@@ -1,0 +1,13 @@
+{
+  "id": "managing-a-glossary",
+  "name": "managing a glossary",
+  "from": "Terms whose meaning every session re-derives from whatever it stumbles into, confidently and in a shape indistinguishable from a lookup, so the only thing that reliably knows what a word means is emsenn.",
+  "to": "A kept glossary, two motions on one object: a term written from the whole record — every occurrence in the tree, live and archived, in every submodule, collected before anything is inferred, completeness measured and stated as a count rather than asserted, disagreeing sources collapsed into one node with every earned fact drained out and pointers left where the sources were — and a term recalled from where the question stands: nearest match by filesystem distance, neighbours or upward only, never downward. Absence is a real answer of the same standing, never a licence to invent.",
+  "cost": "The collection across the whole tree before anything is inferred, the collapse proved fact-by-fact by a script before any source is removed, and the recall apparatus that answers from the asking point.",
+  "otherwise": "The glossary does not degrade into a worse glossary; it stops being consulted, and every session spends emsenn's attention re-explaining a map he already holds.",
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-15",
+    "derived-from": "duties/_archive/managing-a-glossary.md"
+  }
+}

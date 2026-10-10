@@ -1,0 +1,15 @@
+{
+  "id": "writing-a-system-operational-concept",
+  "name": "writing a system operational concept",
+  "authority": "integrated-portfolio-management-team",
+  "work": "writing-a-system-operational-concept",
+  "claim": "requirements-management-team",
+  "skills": [
+    "writing-a-system-operational-concept"
+  ],
+  "delegation": false,
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-15"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "id": "keeping-the-formation-register",
+  "name": "keeping the formation register",
+  "authority": "union-officer-academy",
+  "work": "keeping-the-formation-register",
+  "claim": "contracting-sovereign-settlement",
+  "skills": [
+    "opening-a-cohort",
+    "issuing-a-qualification",
+    "maintaining-a-qualification",
+    "deriving-a-requalification-gap"
+  ],
+  "delegation": false,
+  "x-provenance": {
+    "recorded-by": "codex/executive-officer-to-the-leader",
+    "recorded-on": "2026-07-18",
+    "derived-from": "corpus-led Union Officer Academy institutional audit"
+  }
+}

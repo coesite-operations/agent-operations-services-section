@@ -1,0 +1,37 @@
+{
+  "id": "character-officer-supply",
+  "provider": "union-officer-academy",
+  "customer": "any-admitted-sovereign-enterprise",
+  "transport": "ActivityStreams-2.0-Offer-Accept-Question-Reject",
+  "capability": {
+    "shape": "OCap",
+    "target": "urn:ame:union-officer-academy:service:character-officer-supply",
+    "methods": ["solicit-character", "prepare-animation", "record-animation-result"],
+    "attenuation": ["one receiver", "one office snapshot", "one character", "one cohort epoch", "no appointment", "no receiver write"]
+  },
+  "providerObligations": [
+    "fulfill only a provider-neutral officer-supply lot answered by an Academy bid and admitted by a receiver-authored award",
+    "resolve the character to an Academy canonical character store",
+    "resolve current cohort membership and qualification without identity inheritance",
+    "bind every professional context and skill carrier by digest",
+    "state every missing specialization and protected-context dependency",
+    "return appointment and receiver authority as explicitly withheld",
+    "record each session animation separately from persistent character identity"
+  ],
+  "receiverObligations": [
+    "publish provider-neutral outcome and selection criteria to an admitted market before awarding a provider",
+    "supply the exact lot, Academy bid, receiver award, and locally admitted contract with the vacancy demand",
+    "supply an immutable office snapshot and specialization overlay",
+    "make recognition and induction decisions under receiver law",
+    "attenuate and record capabilities locally",
+    "return outcome evidence without transferring protected context",
+    "never treat an Academy offer, qualification, model call, or runtime session as incumbency"
+  ],
+  "refusal": [
+    "direct requisition bypasses provider-neutral tender, Academy bid, or receiver-authored award",
+    "no qualified Academy character for the exact office epoch",
+    "unresolved or drifted character, cohort, qualification, context, skill, model, or harness",
+    "request asks the Academy to appoint, grant receiver authority, or write receiver records",
+    "request conflates a model, prompt, runtime session, person, character, office, or officer"
+  ]
+}

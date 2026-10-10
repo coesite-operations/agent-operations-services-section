@@ -1,0 +1,19 @@
+{
+  "id": "expediting-blocked-operations",
+  "name": "expediting blocked operations",
+  "from": "An admitted operation is unable to proceed because the mechanism or provider meant to carry one of its steps is absent, broken, stale, or incomplete; the obstruction remains visible, but nobody is assigned to bridge it without also claiming the owning office's authority.",
+  "to": "One bounded obstruction is either bridged by a manual surrogate that preserves the intended inputs, outputs, validations, record homes, and authority boundary, with downstream readiness re-established and the system failure recorded, or is refused with the exact missing decision, authority, or capability named. A recurring surrogate is returned to mechanism rather than normalized as permanent labor.",
+  "cost": "Interrupt-driven model attention, tool calls, and Leader-provided inference capacity spent reproducing mechanics the system should have supplied, plus the discipline of stopping before the bridge becomes a shadow runtime or a substitute decision-maker.",
+  "otherwise": "Early operations remain blocked behind known apparatus failures, or ad hoc sessions silently perform around them in incompatible ways; either the work does not move or the workaround hides the defect and becomes unowned infrastructure.",
+  "needs": [
+    "expediting-blocked-operations",
+    "listing-open-obligations",
+    "reporting-an-anomaly",
+    "bootstrapping-an-enterprise-with-rectification"
+  ],
+  "x-provenance": {
+    "recorded-by": "emsenn",
+    "recorded-on": "2026-07-18",
+    "derived-from": "Leader direction of 2026-07-18 to establish a free-agent Claude office that finds operations blocked by system failures and temporarily mechanical-Turks them during the enterprise's early days"
+  }
+}

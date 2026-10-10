@@ -1,0 +1,11 @@
+{
+  "type": "skill",
+  "name": "deriving-a-requalification-gap",
+  "verb-phrase": "deriving a requalification gap",
+  "description": "Use when an office, curriculum, assessment law, protected context, jurisdiction, model, harness, or agent construction changes and prior qualification must be compared with a successor baseline without rewriting history.",
+  "preconditions": ["both immutable formation baselines resolve", "any prior qualification belongs to the source baseline", "the comparison preserves exact candidate layers"],
+  "postconditions": ["one RequalificationGap names added and removed competencies and changed office facts", "jurisdiction or protected-context change forces full requalification", "otherwise only the witnessed gap is formed"],
+  "witness": {"records": ["RequalificationGap", "source baseline", "successor baseline", "prior qualification where supplied"]},
+  "closure-kind": "procedure",
+  "install": ["codex"]
+}

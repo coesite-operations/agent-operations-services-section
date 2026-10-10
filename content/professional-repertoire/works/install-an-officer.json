@@ -1,0 +1,13 @@
+{
+  "id": "install-an-officer",
+  "name": "installing an officer",
+  "from": "An incumbent whose capabilities accumulated by habit, inspectable only by asking the person who watched it get that way.",
+  "to": "An incumbent holding exactly its office's skills — all of them, and nothing else — and changing as the office's skills change. Commissioning seats an office; this seats someone in one.",
+  "cost": "The installation act at every seating, and again at every change to the office's skills — the second is the one that gets skipped.",
+  "otherwise": "Capability accumulates that no office records, so the record of the organization and the behavior of the organization are two different things and only one is readable. An incumbent still holding a skill its office retired is not an officer; it is a body carrying old habits under an office's name.",
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-15",
+    "derived-from": "duties/_archive/install-an-officer.md"
+  }
+}

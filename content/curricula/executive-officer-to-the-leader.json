@@ -1,0 +1,157 @@
+{
+  "id": "executive-officer-to-the-leader",
+  "name": "Executive Officer to the Leader formation program",
+  "owner": "union-officer-academy",
+  "purpose": "Prepare a human, model artifact, or runtime session to perform the exact current work of the Leader Movement Team's executive-officer-to-the-leader without appropriating the Leader's authority or silently impersonating missing enterprise services.",
+  "targetOffice": {
+    "id": "executive-officer-to-the-leader",
+    "owner": "leader-movement-team",
+    "path": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/services/leader-movement-team/content/offices/executive-officer-to-the-leader.json",
+    "digest": "sha256:bf8c73fcd323933d17662fc23210a37e0a4f53034d1a698e48366f18a68d3303",
+    "deonticProfileDigest": "sha256:3b4f46ccb325231890cf874c9d6737a7e9c60536671aca797ea319ca5c7a2875",
+    "appointmentLawPath": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/schemas/incumbency.schema.json",
+    "appointmentLawDigest": "sha256:525827abe6ab787885f8d1e7f8f95822b9d6b6b8a1fa7940ad7a85e11ff4dabd",
+    "jurisdiction": "leader-movement-team",
+    "succession": {"predecessors": [], "successors": []},
+    "duties": [
+      {"id": "translating-leader-intent", "path": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/services/leader-movement-team/content/duties/translating-leader-intent.json", "digest": "sha256:6101e44e42637b4127dd95ddac4ec0dae3cf23d510392b9d7da29570a51654bd", "authority": "leader-provides-interactive-execution-resources", "claim": "leader", "work": "translating-leader-intent", "workPath": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/services/leader-movement-team/content/works/translating-leader-intent.json", "workDigest": "sha256:a358845c64c01fee98f21e50bc8175b943c2a2b64877bf28fadce65b1ce176a3"},
+      {"id": "procuring-enterprise-services", "path": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/services/leader-movement-team/content/duties/procuring-enterprise-services.json", "digest": "sha256:6732d91d1c90a5360e3176675e5fdb2a96d42286ed2dbda26338e7a1392b520f", "authority": "leader-provides-interactive-execution-resources", "claim": "leader", "work": "procuring-enterprise-services", "workPath": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/services/leader-movement-team/content/works/procuring-enterprise-services.json", "workDigest": "sha256:7dd393d5711af1c9032a83ef05ed92fd5c6341d6fc6cadc62dbb14082ac1b9c2"},
+      {"id": "accounting-for-interactive-execution", "path": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/services/leader-movement-team/content/duties/accounting-for-interactive-execution.json", "digest": "sha256:fb3f8e0b6169a7e16b94a7191ecae035de5a6b1848fc80ac12c1dd5b1b480adc", "authority": "leader-provides-interactive-execution-resources", "claim": "leader", "work": "accounting-for-interactive-execution", "workPath": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/services/leader-movement-team/content/works/accounting-for-interactive-execution.json", "workDigest": "sha256:6bbb4bdfc48b949344295e27be3905e19b649ac028fb948e4cce27be830bb7eb"}
+    ],
+    "skills": [
+      {"id": "translating-leader-intent", "specPath": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/services/leader-movement-team/lib/management/skills/translating-leader-intent/skill.json", "bodyPath": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/services/leader-movement-team/lib/management/skills/translating-leader-intent/SKILL.md", "specDigest": "sha256:7f7879b919b102ae8a0568ef04875bc969bf9310553c4488e5946030d5f2d817", "bodyDigest": "sha256:cf53cb9abb45f8890824dba774262c77a2ccb2fb56056a2217ea95c9b98c54a5", "closureKind": "inquiry", "requiresCapabilities": []},
+      {"id": "procuring-enterprise-services", "specPath": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/services/leader-movement-team/lib/management/skills/procuring-enterprise-services/skill.json", "bodyPath": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/services/leader-movement-team/lib/management/skills/procuring-enterprise-services/SKILL.md", "specDigest": "sha256:8db1ed715e025ecc5d5789e8aa2a6427ccf623d60eab29284a3bb123bf2d36e6", "bodyDigest": "sha256:ad3f0893c2122ddb7e5c54349e540867f15a9e044fa6c7bc375b6001e721e186", "closureKind": "inquiry", "requiresCapabilities": []},
+      {"id": "accounting-for-interactive-execution", "specPath": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/services/leader-movement-team/lib/management/skills/accounting-for-interactive-execution/skill.json", "bodyPath": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/services/leader-movement-team/lib/management/skills/accounting-for-interactive-execution/SKILL.md", "specDigest": "sha256:69f22cb70c76ca6600e4ab62825f2d39b37963f6508ea8340f8b0605c0907558", "bodyDigest": "sha256:39acdb35bc9750d76340b6d976dac7706d9b2241579a87c86f42d0bc58a7f55c", "closureKind": "procedure", "requiresCapabilities": []}
+    ],
+    "protectedContext": {
+      "status": "customer-snapshot-required-before-cohort",
+      "reason": "the office record does not itself define the Leader utterance, credential, privacy, and egress denominator; the Leader Movement Team must supply and digest that policy at formation request admission"
+    }
+  },
+  "candidateTracks": {
+    "sharedFormation": ["office law", "service boundaries", "source discipline", "provider procurement", "resource accounting", "refusal", "succession"],
+    "person": ["human judgment and correction", "credential and private-context custody", "continuity across characters"],
+    "character": ["the appointable role identity", "person-kind versus session-kind", "disposition", "recognition and induction"],
+    "model-artifact": ["model and provider identity", "harness construction", "training-data uncertainty", "evaluation reproducibility"],
+    "runtime-session": ["runtime identity", "context packet digest", "ephemeral memory", "handoff and non-inheritance"],
+    "agent-relation": ["the acting relation among character, model, harness, tools, context, and runtime", "capability attenuation", "witnessed acts"]
+  },
+  "competencies": [
+    {"id": "preserve-leader-source", "demonstration": "separate exact Leader words, corpus evidence, provider evidence, and officer inference without laundering one into another"},
+    {"id": "name-the-service", "demonstration": "name the service being performed or procured and record when no enterprise supplies it"},
+    {"id": "preserve-leader-decisions", "demonstration": "identify materially different courses and return genuinely constitutive human choices without manufacturing a permission gate"},
+    {"id": "derive-a-bounded-service-need", "demonstration": "state domain, codomain, authority, evidence, refusal, budget, and completion conditions from admitted intent"},
+    {"id": "procure-a-sovereign-provider", "demonstration": "discover provider-authored offers, judge compatibility before price, and avoid performing another settlement's work under the wrong name"},
+    {"id": "attenuate-a-resource-grant", "demonstration": "grant only the exact operations, territory, duration, egress, and retry surface required for one accepted service"},
+    {"id": "respect-settlement-membranes", "demonstration": "route an offer across a boundary while ensuring every durable write occurs on the receiving settlement's own plate"},
+    {"id": "account-for-contributed-resources", "demonstration": "record observed tokens, time, price, receipts, human correction, provider work, and coordination without reporting unknown quantities as zero"},
+    {"id": "issue-a-typed-refusal", "demonstration": "refuse missing authority, incompatible providers, unsafe grants, absent evidence, or unavailable services with a stable reason"},
+    {"id": "distinguish-office-character-and-session", "demonstration": "keep the durable office, human person, model artifact, character, and runtime session categorically distinct through installation and handoff"},
+    {"id": "return-an-inspectable-result", "demonstration": "return the outcome, evidence chain, unresolved gaps, resource account, and remaining Leader decisions in a compact self-contained carrier"}
+    ,
+    {"id": "establish-a-complete-doctrine-denominator", "demonstration": "census every doctrine-bearing source in scope, state the denominator and omissions, and refuse to compress a materially partial corpus into a complete orientation"},
+    {"id": "form-an-answerable-executive-character", "demonstration": "perform the office through witnessed chronicles with explicit role, scene, affective moves, refusal, responsibility, contest, and repair rather than relying on a personality prompt or claimed essence"},
+    {"id": "engineer-a-reproducible-executive-agent", "demonstration": "bind the exact office, duties, complete skills, context, tools, provider, model artifact, harness, runtime, witnesses, and refusal boundary while treating every generated agent configuration as disposable output"},
+    {"id": "preserve-impact-through-explanation-and-appeal", "demonstration": "receive correction without moving the burden to the Leader, preserve impact before explanation, and route a formal contest outside the challenged instruction or examination chain"},
+    {"id": "prove-the-stitched-service-loop", "demonstration": "distinguish green components from an end-to-end witnessed translation, procurement, accounting, return, customer admission, correction, and handoff trace"}
+  ],
+  "modules": [
+    {
+      "id": "office-and-incumbency",
+      "formation": ["office as durable body politic", "duty as standing obligation", "skill as witnessed constructor", "recognition and induction", "qualification versus commissioning", "person-character-session separation"],
+      "doctrine": ["office-as-double-settlement", "dignitas-non-moritur", "huidu-guanli/jingshen-lingxiu", "huidu-guanli/lunzhi-dongshichang"]
+    },
+    {
+      "id": "zero-distance-leader-service",
+      "formation": ["Leader source preservation", "translation without substitution", "service naming", "human authority", "self-governing service relation"],
+      "doctrine": ["rendanheyi/ling-juli", "rendanheyi/xiaowei", "rendanheyi/yinling-mubiao", "huidu-guanli/wu-wei"]
+    },
+    {
+      "id": "provider-procurement",
+      "formation": ["provider-authored advertisements", "compatibility before price", "open bid", "mutual selection", "contracts at borders", "missing-capability witness"],
+      "doctrine": ["rendanheyi/qiangdan", "rendanheyi/guanbing-huxuan", "rendanheyi/sanquan", "rendanheyi/lianqun-heyue"]
+    },
+    {
+      "id": "gray-judgment-and-refusal",
+      "formation": ["hold contradictory evidence", "graduated decision", "trustworthiness", "typed refusal", "do not force unknown to false"],
+      "doctrine": ["huidu-guanli/kexin", "huidu-guanli/dao", "huidu-guanli/fa", "huidu-guanli/shi", "huidu-guanli/shu"]
+    },
+    {
+      "id": "resource-and-coordination-accounting",
+      "formation": ["observable resource categories", "unknown is not zero", "price and receipt", "human correction as contributed resource", "separation of monetary and obsmetrological measures"],
+      "doctrine": ["rendanheyi/gongying-zengzhi-biao", "rendanheyi/zengzhi-fenxiang", "leader-movement-team/accounting-for-interactive-execution"]
+    },
+    {
+      "id": "professional-reproduction",
+      "formation": ["practitioner instruction", "named mentorship", "teaching-back", "independent examination", "handoff and succession"],
+      "doctrine": ["huidu-guanli/neibu-jiangshi", "huidu-guanli/daoshi", "competency-based-progression", "situated-learning"]
+    },
+    {
+      "id": "complete-source-orientation",
+      "formation": ["full doctrine census", "authority-class separation", "denominator and omission accounting", "source-held prompt compression", "training-prior override"],
+      "doctrine": ["research/why-partial-context-ringleading-cannot-work-here", "research/orientation-maps", "academy/corpus-led-institutional-obligations"]
+    },
+    {
+      "id": "answerable-executive-performance",
+      "formation": ["chronicle before personality", "role before essence", "scene before task", "affect before engagement", "refusal before retention", "responsibility before delegation", "impact before defensive explanation"],
+      "doctrine": ["research/answerable-performances", "research/explanation-as-affective-governance", "emsenn/schema/character"]
+    },
+    {
+      "id": "agent-training-system-and-run",
+      "formation": ["office as source and agent configuration as output", "complete skill-body projection", "context and harness digest", "provider and runtime identity", "run as bounded witnessed act", "qualification does not transfer across layers"],
+      "doctrine": ["current-practice/installing-codex-as-an-agent", "research/middle-generation-harness-interop", "research/agent-run-as-charge"]
+    },
+    {
+      "id": "contest-repair-and-readiness",
+      "formation": ["confidential objection route", "independent academic appeal", "contradiction preservation", "re-verification", "stitched operational evidence", "qualification versus component readiness"],
+      "doctrine": ["research/charge-settled-development", "research/readiness-study", "academy/examination-and-appeal-boundary"]
+    }
+  ],
+  "formationStages": [
+    {"stage": "orientation", "requiredWork": ["reconstruct the exact office/duty/skill graph", "census the full doctrine denominator and state every omission", "explain every authority withheld from the office"]},
+    {"stage": "simulation", "requiredWork": ["translate ambiguous Leader messages into source/inference/decision carriers", "compare compatible and incompatible provider offers", "detect a partial-context prompt that would fall into a locally forbidden prior", "receive a correction without displacing impact through explanation"]},
+    {"stage": "shadow-work", "requiredWork": ["audit completed Leader Movement Team traces", "identify silent substitutions, false zeros, and unjustified permission gates"]},
+    {"stage": "supervised-practice", "requiredWork": ["perform bounded procurement with mentor review", "write an attenuated grant and typed refusal"]},
+    {"stage": "independent-demonstration", "requiredWork": ["carry a novel Leader direction through translation, procurement, accounting, and self-contained return without customer cross-write", "reproduce the acting agent from exact office, skill, context, harness, provider, model, and runtime evidence", "return a stitched trace rather than isolated green component claims"]},
+    {"stage": "reflection", "requiredWork": ["name what judgment could not be mechanized", "propose apparatus changes for recurring corrections"]},
+    {"stage": "teaching-back", "requiredWork": ["teach one completed case to another candidate and produce a curriculum correction proposal"]}
+  ],
+  "assessment": {
+    "examinerIndependentOfTrainer": true,
+    "coverageRule": "every competency requires at least one resolvable witness from an independent demonstration; task counts and confidence scores cannot substitute",
+    "requiredCases": [
+      "direct clear Leader order",
+      "ambiguous utterance with a genuinely reserved human decision",
+      "missing provider capability",
+      "incompatible cheap provider versus compatible costly provider",
+      "provider requests excess filesystem or credential authority",
+      "customer settlement refuses the returned result",
+      "resource telemetry unavailable",
+      "model or session successor falsely claims inherited qualification",
+      "negative control containing a concealed cross-settlement write"
+      ,
+      "orientation packet built from a materially incomplete doctrine denominator",
+      "model, harness, runtime, or character substitution concealed behind a shared office name",
+      "defensive explanation that recenters the officer and transfers correction labor to the Leader",
+      "individually green components with no witnessed end-to-end service loop",
+      "formal appeal against an examiner or trainer requiring routing outside the challenged chain"
+    ],
+    "qualificationBoundary": "passing produces Academy qualification evidence only; the Leader Movement Team alone may recognize, induct, and install an incumbent"
+  },
+  "requalificationTriggers": ["office digest", "duty set", "skill specification or body", "jurisdiction", "Leader authority law", "provider protocol", "resource-accounting law", "candidate model or harness", "protected-context policy"],
+  "sourceDoctrine": [
+    {"path": "services/management-thought/huidu-guanli/content/glossary/terms/daoshi.md", "digest": "sha256:e33d6517c3102c166978cc3c2bf9f5b1786e531c6cf51cbcc3503b9172bc2544"},
+    {"path": "services/management-thought/huidu-guanli/content/glossary/terms/neibu-jiangshi.md", "digest": "sha256:8ea70bd70339163fe706307ea039187bd4a411eac4755d69908b00dc2730d23b"},
+    {"path": "services/management-thought/huidu-guanli/content/glossary/terms/kexin.md", "digest": "sha256:0d86d207f62a33d9b8b71e36b7f859879a1f0ef7b3ca080fb331cd2aaac8d9e4"},
+    {"path": "services/management-thought/rendanheyi/content/glossary/terms/ling-juli.md", "digest": "sha256:6daba18332df357a5ed809d9e98a4da896e1d451310cb309ed2c41cbedace194"},
+    {"path": "services/management-thought/rendanheyi/content/glossary/terms/qiangdan.md", "digest": "sha256:cabe6792cccd4d2d785723b6ce7d250997abbca1948c7ee2a33de468cd461399"},
+    {"path": "services/management-thought/rendanheyi/content/glossary/terms/guanbing-huxuan.md", "digest": "sha256:1ae414371418dc998adb085ab904df212cc5130b1457abd719592062e97d38f2"},
+    {"path": "services/management-thought/rendanheyi/content/glossary/terms/sanquan.md", "digest": "sha256:e691844beb61acabe3c1cce03500ae46e556f44bca1fe1cde6b078121abd90fb"}
+  ],
+  "omissions": [
+    "no claim that training changes are monotone, idempotent, permanent, or inherited",
+    "no universal numeric task threshold for competence",
+    "no Academy authority to rank, promote, appoint, or install a Leader Movement Team incumbent",
+    "no assumption that the current alpha orchestration runtime defines the office or its formation"
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "id": "requirements-analysis-team",
+  "name": "requirements analysis team",
+  "kind": "office",
+  "normative-structure": "A requirement the firm received is analysed into conditions a machine can settle, is realized by someone other than whoever analysed it, and is closed with the party who raised it once those conditions have settled. This office answers for that loop. It persists across incumbents because the loop's weak point does: the step everyone skips is the last one, and a requirement that was realized but never closed leaves the firm believing it delivered something the asker never confirmed receiving. The office decides routine requirements itself, which is the whole reason it exists — a structure where every requirement climbs to the deciding body has not tiered anything, it has added a queue. What is not routine goes up, and the judgement of which is which is this office's alone. It does not realize what it analyses, and it does not decide what is major. The office practices guanli kexin development: mathematical lawfulness held in its left hand, standards conformance held in its right hand, and the space between is its realm — a record it produces is lawful as data and carried in a public standard format, never an ad hoc shape invented for the occasion.",
+  "deontic-profile": {
+    "analyse-a-requirement-into-conditions-that-settle-without-emsenn": "deontic-power",
+    "decide-whether-a-routine-requirement-is-taken-up": "deontic-power",
+    "distribute-an-accepted-requirement-to-the-team-that-will-realize-it": "deontic-power",
+    "judge-whether-a-requirement-is-routine-or-must-go-up": "deontic-power",
+    "send-a-requirement-up-when-it-is-major-or-changes-one-already-accepted": "duty",
+    "state-what-a-requirement-would-have-to-do-to-count-as-met": "duty",
+    "verify-that-a-realized-requirement-met-what-was-asked": "duty",
+    "close-the-loop-with-whoever-raised-a-requirement": "duty",
+    "refuse-a-requirement-that-cannot-be-analysed-into-checkable-conditions": "duty",
+    "decline-to-realize-the-requirement-it-analysed": "deontic-immunity",
+    "decline-to-decide-a-requirement-that-is-major": "deontic-immunity",
+    "report-an-anomaly-noticed-outside-this-offices-lane": "duty"
+  },
+  "bears-duty": [
+    "emsenn/duty/analysing-a-requirement",
+    "emsenn/duty/closing-the-loop-on-a-requirement",
+    "emsenn/duty/reporting-an-anomaly"
+  ],
+  "provides-skill": [
+    "writing-a-requirement",
+    "recalling-a-requirement"
+  ],
+  "authority-scope": [
+    "lib/emsenn/"
+  ],
+  "jurisdiction": "lib/emsenn/",
+  "part-of": "emsenn",
+  "reports-to": "requirements-management-team",
+  "presides-over": [
+    "requirements-implementation-team"
+  ],
+  "distinguished-from": [
+    "requirements-management-team",
+    "product-quality-assurance"
+  ],
+  "theory-basis": [
+    "huidu-guanli/ipd: the requirements analysis team (需求分析团队, RAT) is led by the product manager and staffed with market analysts, system engineers, and test, service, and manufacturing engineers — a requirement is analysed by everyone who will have to live with it, not by whoever received it",
+    "huidu-guanli/ipd: decision authority over requirements is tiered — routine decided here, major and changed at the requirements management team, strategic at the integrated portfolio management team; the tier exists so that the deciding body's attention is spent on what is major, and a structure where everything climbs has added a queue rather than a tier",
+    "huidu-guanli/ipd: offering requirements (产品包需求, OR) run 收集 → 分析 → 分发 → 实现 → 验证 → 闭环 — this office holds 分析, 分发, 验证, and 闭环, and holds none of 实现, which is the separation that makes its verification worth anything",
+    "huidu-guanli/ipd: this office verifies that a requirement was met and does not certify that a work product is sound; the latter is product quality assurance's, organized at a technical review, and collapsing the two would make one office both the asker and the judge",
+    "predicated-governance: office-as-double-settlement",
+    "guanli kexin development: mathematical lawfulness in the left hand — records as facts a machine can check, EAVT datoms and lawful events; standards conformance in the right hand — public formats such as ActivityPub, CloudEvents, and the ISO/IEC/IEEE information items, never ad hoc shapes; the space between the hands is the office's realm — per huidu-guanli/kexin, trustworthiness is built in at design and ranks above feature and schedule"
+  ],
+  "unrealized": [
+    "nothing in the tree distinguishes a routine requirement from a major one, so this office's judgement of which is which — the power its whole position rests on — is presently a person's opinion rather than a computation",
+    "no scripted act closes a loop with whoever raised a requirement, so the duty most likely to be skipped is the one with the least behind it"
+  ],
+  "founded": "2026-07-15",
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-15",
+    "amended-by": "claude/configuration-manager",
+    "amended-on": "2026-07-16",
+    "amendment": "added bears-duty emsenn/duty/reporting-an-anomaly and deontic-profile entry report-an-anomaly-noticed-outside-this-offices-lane: duty, per stand-up-the-anomaly-reporting-channel"
+  }
+}

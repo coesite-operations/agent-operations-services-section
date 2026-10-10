@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "union-officer-academy/schema/character-cohort-membership",
+  "type": "object",
+  "required": ["type", "character", "cohort", "standing", "admittedAt"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {"type": "string"},
+    "type": {"const": "CharacterCohortMembership"},
+    "character": {"type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"},
+    "cohort": {"type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"},
+    "standing": {"enum": ["candidate", "prior-practice-admitted", "apprentice", "qualified", "master", "refused", "superseded"]},
+    "qualification": {"type": ["string", "null"]},
+    "officeTrack": {"type": ["string", "null"]},
+    "admittedAt": {"type": "string", "format": "date-time"},
+    "supersedes": {"type": ["string", "null"]}
+  }
+}

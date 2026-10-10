@@ -1,0 +1,16 @@
+{
+  "id": "controlling-formation-configuration",
+  "name": "controlling formation configuration",
+  "authority": "ni:///sha-256;P75Y5UAiHjPSESVesIK8nBxwxst9CDmXR8bKw_9a64I",
+  "work": "controlling-formation-configuration",
+  "claim": "contracting-sovereign-settlement",
+  "skills": [
+    "controlling-formation-configuration"
+  ],
+  "delegation": false,
+  "x-provenance": {
+    "recorded-by": "codex/executive-officer-to-the-leader",
+    "recorded-on": "2026-07-18",
+    "derived-from": "corpus-led Union Officer Academy institutional audit"
+  }
+}

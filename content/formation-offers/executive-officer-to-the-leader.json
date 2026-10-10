@@ -1,0 +1,35 @@
+{
+  "id": "executive-officer-to-the-leader-office-formation-offer",
+  "provider": "union-officer-academy",
+  "customer": "leader-movement-team",
+  "service": "office-context-on-demand",
+  "curriculum": "content/curricula/executive-officer-to-the-leader.json",
+  "primaryProduct": "OfficeFormationBundle",
+  "formationLayers": {
+    "officeBaseline": "The current Leader Movement Team office, three duties, governed works, complete skill bodies, jurisdiction, deontic profile, and incumbency law.",
+    "characterFormation": "The codex interactive session character as bounded executive actuator, kept distinct from the human Leader, model, provider, harness, and runtime.",
+    "situatedPersona": "A scene-bound executive-officer mask derived from audience, current Leader movement, work state, and partner model; never substituted for the durable character.",
+    "contextPlan": "Complete relevant denominator with exact current law, Management Thought doctrine, actual character and agent carriers, answerable-performance research, operational orientation, explicit gaps, and full office skills.",
+    "exercisePack": "Leader-source preservation, service naming, provider procurement, attenuated grants, refusal, resource accounting, correction, customer refusal, handoff, and succession.",
+    "assessment": "witnessed performance across every competency and negative control.",
+    "projectionPlan": "The Executive Office's existing installing-codex-as-an-agent projector, executed by the customer after any recognition and induction."
+  },
+  "engagementRoles": ["Academy formation practitioner", "Leader Movement Team current-practitioner lecturer", "Leader Movement Team accountable developmental mentor", "independent Academy examiner", "Executive Office projector provider"],
+  "sourceDenominator": [
+    {"path": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/schemas/character.schema.json", "digest": "sha256:ef75e32776a41a6c290cfc1da5a49c00ffdffad5b94b564f0001a79217099a26", "authorityClass": "current-law", "purpose": "character and person-session distinction"},
+    {"path": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/schemas/office.schema.json", "digest": "sha256:c176fd97803f0390c612a44b8476e87df152a2854bfdbda5fcd40ed1ede4c7a3", "authorityClass": "current-law", "purpose": "office as normative source"},
+    {"path": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/schemas/incumbency.schema.json", "digest": "sha256:525827abe6ab787885f8d1e7f8f95822b9d6b6b8a1fa7940ad7a85e11ff4dabd", "authorityClass": "current-law", "purpose": "customer recognition and induction boundary"},
+    {"path": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/schemas/skill.schema.json", "digest": "sha256:9319bfc65bcaf64cdfb6761ea2cd730f039bc5c2e94f83b5aed4f1d4e4a5e52d", "authorityClass": "current-law", "purpose": "skill and closure law"},
+    {"path": "lib/emsenn/services/561-group/lib/agency/characters/rom-keldar/governance/skills/compiling-context/compiling-context.md", "digest": "sha256:9d28289aab1f9dddec88ff84b6b3e7bf0ee7c53edbf738d3c9eb63e23e9e1b38", "authorityClass": "legacy-prior-art", "purpose": "worked character context compilation lineage"},
+    {"path": ".agents/skills/installing-codex-as-an-agent/scripts/install-codex-as-an-agent.js", "digest": "sha256:ee479254eb7d2988c39f48eeaa4b3cac4032405a36be92880100761d40fa909b", "authorityClass": "current-practice", "purpose": "office-source to customer-executed harness projection"},
+    {"path": "lib/emsenn/services/561-group/services/board-of-directors/lib/agency/characters/emsenn/content/documents/articles/notes/2026/06/27/2026-06-27-research-on-answerable-performances.md", "digest": "sha256:5eb684622207c62ece3fd07a8b68c281e043343ba737c4124b8341f0be1bb38f", "authorityClass": "admitted-research", "purpose": "witnessed situated character and responsibility"},
+    {"path": "lib/emsenn/services/561-group/services/board-of-directors/lib/agency/characters/emsenn/content/documents/articles/notes/2026/07/04/2026-07-04-research-on-why-partial-context-ringleading-cannot-work-here.md", "digest": "sha256:fee41e25845e864ea24a5c3470c7acd85bd1fba9d628b18db8e17ba8b6aada5d", "authorityClass": "admitted-research", "purpose": "complete denominator before dispatch"},
+    {"path": "lib/emsenn/services/561-group/services/board-of-directors/lib/agency/characters/emsenn/content/documents/articles/notes/2026/07/01/2026-07-01-survey-of-middle-generation-harness-interop.md", "digest": "sha256:38f09f2b4039c9c3c7de47f2be2c249c50b3762d12fa2b83ff4002ebda643530", "authorityClass": "admitted-research", "purpose": "orientation cockpit and session chronicle lineage"},
+    {"path": "lib/emsenn/services/561-group/services/board-of-directors/lib/agency/characters/emsenn/content/documents/articles/notes/2026/07/04/2026-07-04-research-on-the-cognitive-architecture-reading-and-the-trl-cut.md", "digest": "sha256:535d92baea3a24c8f7681efda28d233981ccb844bbe99df4c0b760f0e055c950", "authorityClass": "admitted-research", "purpose": "settlement-carried intelligence and replaceable model boundary"},
+    {"path": "lib/emsenn/services/561-group/services/red-cup-engineering/src/content/assets/legacy/2026-06-17-archive.emsenn.net/content/emsenn-archive-org/old-archive/triage/engineering-archive/operations/command/commands/rsc-quiescent/triage/decision-making/analyses/academy-curriculum-design.md", "digest": "sha256:eb150ec3b0973e4762ad962ab159b1efbaa39245247789f1d3528bd4ccfbab9c", "authorityClass": "legacy-prior-art", "purpose": "competency, progressive responsibility, and qualification-card lineage"}
+  ],
+  "denominatorRule": "These sources supplement the exact target-office, duty, work, skill, Management Thought, and curriculum sources already digest-bound in the named curriculum. Any material omission changes the bundle completeness to bounded-with-gaps.",
+  "state": "general service and exact offer implemented; opening a candidate cohort requires the customer-provided protected-context digest, egress terms, candidate identity, and provider contracts",
+  "notAPilot": true,
+  "authorityBoundary": "The offer prepares and evidences; the Leader Movement Team alone recognizes, inducts, installs, grants capabilities, and may refuse the result."
+}

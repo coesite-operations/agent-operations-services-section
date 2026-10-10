@@ -1,0 +1,16 @@
+{
+  "id": "normalizing-a-units-management-records",
+  "name": "normalizing a unit's management records",
+  "authority": "emsenn",
+  "work": "normalizing-a-units-management-records",
+  "claim": "configuration-manager",
+  "skills": [
+    "normalizing-a-units-management-records"
+  ],
+  "delegation": false,
+  "x-provenance": {
+    "recorded-by": "claude/requirements-implementation-team",
+    "recorded-on": "2026-07-16",
+    "derived-from": "huidu-guanli/glossary/fa — process institutionalization; huawei ipd adoption from ibm; cmmi opf/epg; dod issuances review; haier rendanheyi platform standards"
+  }
+}

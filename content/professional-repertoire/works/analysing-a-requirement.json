@@ -1,0 +1,11 @@
+{
+  "id": "analysing-a-requirement",
+  "name": "analysing a requirement",
+  "from": "A requirement in whatever words the raiser used, which nothing can grade. Nobody can say whether it has been met, so whoever built something against it will say, and be believed.",
+  "to": "A requirement carrying conditions a machine settles, and a tier naming which body decides it. Anyone can now say whether it has been met, and the raiser does not have to be in the room to find out.",
+  "cost": "The analysis body's attention, spent up front and spent whether or not the requirement is ever taken up — including on requirements that get refused, which is most of the cost and all of the value.",
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-15"
+  }
+}

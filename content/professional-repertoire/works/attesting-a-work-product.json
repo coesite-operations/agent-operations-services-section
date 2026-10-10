@@ -1,0 +1,13 @@
+{
+  "id": "attesting-a-work-product",
+  "name": "attesting a work product",
+  "from": "A work product whose passing is its worker's report: the conditions of done asserted by the party paid for them being met, indistinguishable from evidence to everything downstream.",
+  "to": "The conditions of the work product's passing re-run by an office that did not make it and cannot repair it, each condition's settling a readout rather than a claim, and any condition that cannot be re-run reported as exactly that instead of assumed.",
+  "cost": "Executing every check rather than reading any report — slower than trust on every occasion, and the whole reason the attestation is worth anything on the occasion it disagrees.",
+  "otherwise": "A worker attesting its own work is the worker's opinion wearing evidence's shape; nothing downstream can tell a true attestation from a favourable one, and the first time schedule pressure meets an honest incumbent, favourable wins without anyone lying.",
+  "x-provenance": {
+    "recorded-by": "claude/chief-of-staff",
+    "recorded-on": "2026-07-15",
+    "derived-from": "offices/product-quality-assurance — execute the check, read no claims"
+  }
+}

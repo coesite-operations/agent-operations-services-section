@@ -1,0 +1,11 @@
+{
+  "type": "skill",
+  "name": "issuing-a-qualification",
+  "verb-phrase": "issuing a qualification",
+  "description": "Use when the registrar has an admitted independent qualifying assessment and must issue immutable source-bound evidence while preserving that only a character can later be appointed by the receiving settlement.",
+  "preconditions": ["the independent Assessment disposition is qualified", "assessment, enrollment, candidate layers, and baseline form one exact chain", "the issuer is authorized within the Academy register"],
+  "postconditions": ["one immutable Qualification is appended", "competencies and limitations match the assessment", "conveysAuthority is false and customerAdmissionRequired is true"],
+  "witness": {"records": ["Qualification", "Assessment", "Enrollment", "FormationBaseline"]},
+  "closure-kind": "procedure",
+  "install": ["codex"]
+}

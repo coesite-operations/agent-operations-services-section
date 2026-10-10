@@ -1,0 +1,15 @@
+{
+  "id": "writing-a-low-level-design",
+  "name": "writing a low-level design",
+  "authority": "integrated-portfolio-management-team",
+  "work": "writing-a-low-level-design",
+  "claim": "module-lead",
+  "skills": [
+    "writing-a-low-level-design"
+  ],
+  "delegation": false,
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-15"
+  }
+}

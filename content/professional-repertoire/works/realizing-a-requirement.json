@@ -1,0 +1,11 @@
+{
+  "id": "realizing-a-requirement",
+  "name": "realizing a requirement",
+  "from": "An accepted requirement, distributed, and a builder who will meet an adjacent requirement it can meet if meeting this one turns out to be hard — and who will not notice doing so.",
+  "to": "The requirement met as stated, or reported back as unrealizable as stated. Not a third thing that was easier and got called the same name.",
+  "cost": "The building. And, in the case that matters, the builder stopping to report a difficulty at the moment continuing is cheaper and reporting feels like failure — which is a real cost and is why this needs a duty rather than an encouragement.",
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-15"
+  }
+}

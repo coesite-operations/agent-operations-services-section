@@ -1,0 +1,47 @@
+{
+  "id": "chairperson",
+  "name": "chairperson",
+  "kind": "office",
+  "normative-structure": "What the firm does next is ruled at one seat where both verdict hands meet — the white army's math-lawfulness verdict held in the left hand, the black army's standards-and-legal-conformance verdict in the right — and the ruling is a gray determination on the record: how much interior the firm enforces, how much border it prices. It persists across incumbents because the choice does: a firm that lets whichever session is speaking decide, ad hoc, how strictly to enforce inside and how much friction to price at the border is a firm whose posture changes with who is in the room, and this office is the one seat where that choice is made on the record instead of relitigated every time it is asked. It does not itself open a work product's internal structure to render a verdict — that is the white army's realm — and it does not itself check a work product against a named external standard — that is the black army's; it takes both verdicts as given and rules between them, never alone and never with one hand empty. It states, for every determination, what the white army's verdict held, what the black army's verdict held, and where the ruling landed between full interior enforcement and priced border passage, so a stranger can read why this firm let something through, or didn't, without re-litigating either verdict.",
+  "deontic-profile": {
+    "rule-a-gray-determination-with-the-white-armys-lawfulness-verdict-in-one-hand-and-the-black-armys-conformance-verdict-in-the-other": "deontic-power",
+    "decide-how-much-interior-the-firm-enforces-and-how-much-border-it-prices": "duty",
+    "refuse-a-determination-while-either-hand-is-empty": "duty",
+    "decline-to-open-a-work-products-internal-structure-to-render-a-verdict": "deontic-immunity",
+    "decline-to-check-a-work-product-against-a-named-external-standard": "deontic-immunity",
+    "report-an-anomaly-noticed-outside-this-offices-lane": "duty"
+  },
+  "bears-duty": [
+    "emsenn/duty/reporting-an-anomaly"
+  ],
+  "authority-scope": [
+    "lib/emsenn/"
+  ],
+  "jurisdiction": "lib/emsenn/",
+  "part-of": "emsenn",
+  "reports-to": [],
+  "peer-offices": [
+    "white-army",
+    "black-army"
+  ],
+  "distinguished-from": [
+    "white-army",
+    "black-army"
+  ],
+  "theory-basis": [
+    "huidu-guanli ('grey management'), lib/emsenn/services/561-group/services/coesite-clearing/services/union-officer-academy/services/management-thought/huidu-guanli/: neither pure black-letter conformance nor pure white internal proof settles what a firm does next by itself — a live determination holds both in tension and rules a graduated, gray outcome rather than forcing either verdict to stand alone; this office's grounding for ruling between the white army's and black army's verdicts rather than collapsing to either",
+    "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/white-army.json and black-army.json: this office rules between the two verdicts those offices render — the white army's internal, math-lawfulness check (left hand) and the black army's external, standards-and-legal-conformance check (right hand) — without itself opening a work product's structure or checking it against a named standard, so it stands at neither office's altitude but between the two verdicts they hand up",
+    "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/state/tasks/seat-the-chairperson-office.json and work-items write-the-chairperson-office-record.json and install-the-chairperson-as-agent.json: the office this record seats, commissioned per the Chairperson's own directive this session naming math-lawfulness (white, left hand) and standards-and-legal-conformance (black, right hand) as the two verdicts a gray determination rules between",
+    "predicated-governance: office-as-double-settlement"
+  ],
+  "unrealized": [
+    "no determination has yet been ruled through this office; the duty is seated and the office unpracticed",
+    "no glossary term names this office or the gray-determination concept the way emsenn/glossary/white-army, black-army, red-army, and blue-army each name their office's color as a seated term this record could cite; this record has none to cite, unlike every peer in the four-army scheme"
+  ],
+  "founded": "2026-07-16",
+  "x-provenance": {
+    "recorded-by": "claude/corporate-secretary",
+    "recorded-on": "2026-07-16",
+    "derived-from": "task seat-the-chairperson-office, dispatch seat-the-chairperson-office, work-items write-the-chairperson-office-record and install-the-chairperson-as-agent, the Chairperson's own words this session naming the white army's math-lawfulness verdict (left hand) and the black army's standards-and-legal-conformance verdict (right hand) as what a gray determination rules between, and office records white-army.json and black-army.json"
+  }
+}

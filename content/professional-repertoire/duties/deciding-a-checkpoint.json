@@ -1,0 +1,16 @@
+{
+  "id": "deciding-a-checkpoint",
+  "name": "deciding a checkpoint",
+  "authority": "emsenn",
+  "work": "deciding-a-checkpoint",
+  "claim": "product-development-team-leader",
+  "skills": [
+    "deciding-a-decision-checkpoint"
+  ],
+  "delegation": false,
+  "x-provenance": {
+    "recorded-by": "claude/chief-of-staff",
+    "recorded-on": "2026-07-15",
+    "derived-from": "note-on-the-kernel-offices-of-a-software-node"
+  }
+}

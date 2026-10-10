@@ -1,0 +1,8 @@
+{
+  "id": "academy-ledger",
+  "name": "Union Officer Academy service ledger",
+  "unit": "contracted formation exchange",
+  "entries": [],
+  "rule": "Each priced boundary crossing is appended as a node-local book entry and reconciled to its contract and receipt; this lasting carrier names the ledger but does not claim unobserved value or payment."
+}
+

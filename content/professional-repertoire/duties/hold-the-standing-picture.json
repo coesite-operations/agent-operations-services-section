@@ -1,0 +1,16 @@
+{
+  "id": "hold-the-standing-picture",
+  "name": "holding the standing picture",
+  "authority": "emsenn",
+  "work": "hold-the-standing-picture",
+  "claim": "emsenn",
+  "skills": [
+    "rendering-a-dag-of-the-offices-of-a-firm",
+    "generating-a-briefing-about-an-enterprise"
+  ],
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-15",
+    "derived-from": "duties/_archive/hold-the-standing-picture.md"
+  }
+}

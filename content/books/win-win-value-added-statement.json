@@ -1,0 +1,32 @@
+{
+  "id": "academy-win-win-value-added-statement",
+  "type": "WinWinValueAddedStatement",
+  "microEnterprise": "union-officer-academy",
+  "basis": "academy-value-adjustment",
+  "asOf": "2026-07-18T23:59:59-05:00",
+  "currency": "unsettled",
+  "userValue": {
+    "receiverAcceptedOutcomes": 1,
+    "receiverRefusedOutcomes": 0,
+    "receiverUnresolvedOutcomes": 0,
+    "evidence": [
+      "Leader Movement Team ReceiverOutcomeReceipt for the independently qualified Executive Officer formation capstone"
+    ],
+    "monetaryValue": "unknown"
+  },
+  "resources": {
+    "supplierContributionUnits": "recorded in the formation-lianqun agreement and member value events",
+    "interactiveInferenceTokens": "unknown",
+    "providerInferenceTokens": "unknown",
+    "wallTime": "unknown",
+    "monetaryCost": "unknown",
+    "rule": "unobserved quantities are unknown, not zero and not free"
+  },
+  "distribution": {
+    "settled": false,
+    "reason": "no receiver price, x402 receipt, or Academy-level distribution agreement has been observed",
+    "shares": []
+  },
+  "shortfall": [],
+  "nextStatementRule": "append an AcademyValueEvent and project a successor statement after a receiver disposition; never edit an outcome or resource observation in place"
+}

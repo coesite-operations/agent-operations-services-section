@@ -1,0 +1,13 @@
+{
+  "id": "keeping-the-books",
+  "name": "keeping the books",
+  "from": "Value the firm's units create and capture, counted in no settled denomination, with no account distinguishing a transaction from a relationship.",
+  "to": "Books kept in a settled denomination, recording value created and value captured separately per unit, so an allocation the investment review board states is a number something can be checked against.",
+  "cost": "Settling a denomination no one has had to choose yet, and building an account — a win-win value-added statement — with line items no conventional ledger carries.",
+  "otherwise": "The investment review board's allocations remain scales with nothing to count them in, and 'accounts must match reality' has no accounts to check.",
+  "x-provenance": {
+    "recorded-by": "claude/requirements-implementation-team",
+    "recorded-on": "2026-07-16",
+    "derived-from": "emsenn/requirement/the-firm-carries-its-corporate-functions; emsenn/office/investment-review-board (unrealized): 'no allocation currency is defined'"
+  }
+}

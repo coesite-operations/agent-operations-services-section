@@ -1,0 +1,16 @@
+{
+  "id": "finalizing-work-in-git",
+  "name": "finalizing work in git",
+  "authority": "emsenn",
+  "work": "finalizing-work-in-git",
+  "claim": "emsenn",
+  "skills": [
+    "finalizing-work-in-git"
+  ],
+  "delegation": false,
+  "x-provenance": {
+    "recorded-by": "claude",
+    "recorded-on": "2026-07-16",
+    "derived-from": "user instruction of 2026-07-16 — doing git stuff is a duty, and it belongs to the office of the folk who finalize work"
+  }
+}

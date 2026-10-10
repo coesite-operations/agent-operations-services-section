@@ -1,0 +1,24 @@
+{
+  "type": "skill",
+  "name": "arranging-customer-local-practicum",
+  "verb-phrase": "arranging customer local practicum",
+  "description": "Use when contract for shadow work, supervised practice, or independent demonstration at the customer's boundary.",
+  "preconditions": [
+    "the exact customer, candidate, source, or Academy record in scope resolves",
+    "the acting office's authority and refusal boundary are explicit",
+    "required evidence is available or its absence is recorded"
+  ],
+  "postconditions": [
+    "one field placement whose practice is real and whose authority remains customer-owned",
+    "no customer appointment, capability grant, or cross-settlement write is performed"
+  ],
+  "witness": {
+    "records": [
+      "one field placement whose practice is real and whose authority remains customer-owned"
+    ]
+  },
+  "closure-kind": "procedure",
+  "install": [
+    "codex"
+  ]
+}

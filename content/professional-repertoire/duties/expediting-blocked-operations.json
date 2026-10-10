@@ -1,0 +1,16 @@
+{
+  "id": "expediting-blocked-operations",
+  "name": "expediting blocked operations",
+  "authority": "emsenn",
+  "work": "expediting-blocked-operations",
+  "claim": "director-of-the-executive-office-of-the-board-of-directors",
+  "skills": [
+    "expediting-blocked-operations"
+  ],
+  "delegation": false,
+  "x-provenance": {
+    "recorded-by": "emsenn",
+    "recorded-on": "2026-07-18",
+    "derived-from": "Leader direction of 2026-07-18 establishing a manual interactive Claude session to recover admitted operations blocked by failed or missing apparatus"
+  }
+}

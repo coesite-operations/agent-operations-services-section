@@ -1,0 +1,10 @@
+{
+  "id": "compiling-office-formation-bundles",
+  "name": "compiling office formation bundles",
+  "authority": "ni:///sha-256;P75Y5UAiHjPSESVesIK8nBxwxst9CDmXR8bKw_9a64I",
+  "work": "compiling-office-formation-bundles",
+  "claim": "contracting-sovereign-settlement",
+  "skills": ["compiling-an-office-formation-bundle"],
+  "delegation": true,
+  "x-provenance": {"recorded-by": "codex/executive-officer-to-the-leader", "recorded-on": "2026-07-18", "derived-from": "Leader correction that Academy provides office-specific context and educational forms on demand"}
+}

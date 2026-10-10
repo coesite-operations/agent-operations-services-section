@@ -1,0 +1,17 @@
+{
+  "id": "formation-practitioner",
+  "name": "formation practitioner",
+  "kind": "office",
+  "normative-structure": "The formation practitioner conducts orientation, rehearsal, supervised work, correction, reflection, and teaching-back. It casts qualified customer practitioners as internal lecturers and named developmental mentors for an engagement; those roles do not become permanent Academy offices.",
+  "deontic-profile": {"conducting-officer-formation": "duty", "arranging-customer-local-practicum": "duty", "examining-own-candidate": "deontic-immunity"},
+  "bears-duty": ["emsenn/duty/conducting-officer-formation", "emsenn/duty/arranging-customer-local-practicum"],
+  "provides-skill": ["recording-candidate-formation", "recording-succession-practice", "arranging-customer-local-practicum"],
+  "authority-scope": ["./data/training-events/", "./data/succession-exercises/"],
+  "jurisdiction": "union-officer-academy",
+  "part-of": "union-officer-academy",
+  "reports-to": "superintendent",
+  "serves": "enrolled-candidate",
+  "distinguished-from": ["independent-examiner"],
+  "theory-basis": ["answerable performances", "situated learning and progressive responsibility", "Huidu Guanli neibu jiangshi", "Huidu Guanli daoshi", "provider-authored witnessed character learning"],
+  "x-provenance": {"recorded-by": "codex/executive-officer-to-the-leader", "recorded-on": "2026-07-18", "derived-from": "correction distinguishing Academy organs from engagement roles"}
+}

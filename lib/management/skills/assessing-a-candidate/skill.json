@@ -1,0 +1,13 @@
+{
+  "type": "skill",
+  "name": "assessing-a-candidate",
+  "verb-phrase": "assessing a candidate",
+  "description": "Use when an independent examiner must judge complete witnessed competency coverage for one exact enrollment and baseline, without relying on task counts, confidence, reputation, model family, or the trainers' own verdict.",
+  "preconditions": ["the examiner did not instruct or mentor this candidate", "the baseline and all submitted witnesses resolve", "every baseline competency is in the assessment denominator"],
+  "postconditions": ["one Assessment records demonstrated or not-demonstrated for every competency", "limitations and missing witnesses are explicit", "qualified is possible only when every competency is independently demonstrated"],
+  "witness": {"records": ["Assessment", "examiner identity", "trainer and mentor exclusion set", "competency witness digests"]},
+  "closure-kind": "inquiry",
+  "models": ["academy-examination-capable-inference"],
+  "fuel": {"cap": 10, "unit": "turns"},
+  "install": ["codex"]
+}

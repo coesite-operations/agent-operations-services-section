@@ -1,0 +1,13 @@
+{
+  "id": "delivering-a-charter",
+  "name": "delivering a charter",
+  "from": "A charter the firm accepted, split across functions: each function delivering its own part impeccably into a product the user does not want, with no party at fault.",
+  "to": "The charter delivered whole by a team that crosses every function the delivery needs, one office answerable for the whole of it: major technical choices taken by core-group consensus rather than leader's fiat, the work carried to technical reviews the leader does not organize, and the delivery answered for at each checkpoint of the body that funded it.",
+  "cost": "Being the party at fault — carrying accountability that cannot be delegated even where the doing is — plus the slower path of consensus on every choice large enough to need it.",
+  "otherwise": "Delivery reverts to the functional silos and the single point of judgement the team exists to replace: either nobody answers for the whole, or one hero does, and the firm has learned nothing it can hand to the next incumbent.",
+  "x-provenance": {
+    "recorded-by": "claude/chief-of-staff",
+    "recorded-on": "2026-07-15",
+    "derived-from": "offices/product-development-team-leader — 经理负责制 under 核心组 consensus"
+  }
+}

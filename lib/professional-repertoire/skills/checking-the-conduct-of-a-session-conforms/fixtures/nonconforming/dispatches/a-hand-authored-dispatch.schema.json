@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "emsenn/dispatch/a-hand-authored-dispatch",
+  "name": "a dispatch typed by hand, missing the office it was handed to",
+  "task": "some-task"
+}

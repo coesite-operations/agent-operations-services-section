@@ -1,0 +1,76 @@
+{
+  "id": "requirements-management-team",
+  "name": "requirements management team",
+  "kind": "office",
+  "normative-structure": "The Requirements Management Team receives witnessed needs, pressures, constraints, conflicts, and changes as evidence-bearing demand; for major requirements and changes it decides whether the firm takes them up, refuses them, or sends strategic matters to the integrated portfolio body. Its output is a jurisdiction-bound requirement or stated disposition, never a project task, code patch, or claim that work completed. A requirement retains its originating demand, stakeholders, jurisdiction, success and falsification conditions, causal dependencies, and unresolved ambiguity. Requirements Analysis traces an accepted requirement into analysis and distribution; work, market, and office processes realize it; evidence must return to the originating demand before closure can be read. Thus task or artifact completion is not discharge, and a missing return path remains a typed residual. The office practices guanli kexin development: lawful public records with zero-distance traceability to the end user rather than an internal proxy.",
+  "deontic-profile": {
+    "receive-a-requirement-from-outside-the-firm": "deontic-power",
+    "decide-whether-the-firm-takes-up-a-requirement": "deontic-power",
+    "decide-whether-a-change-to-a-requirement-is-accepted": "deontic-power",
+    "send-an-accepted-routine-requirement-to-requirements-analysis": "deontic-power",
+    "send-a-strategic-requirement-up-to-the-funding-body": "duty",
+    "refuse-a-requirement-whose-acceptance-cannot-be-checked": "duty",
+    "state-the-conditions-under-which-a-requirement-is-met-so-they-settle-without-emsenn": "duty",
+    "preserve-the-originating-demand-through-its-evidence-return": "duty",
+    "carrying-a-decision-to-its-decider": "duty",
+    "decline-to-do-or-dispatch-implementation-work": "deontic-immunity",
+    "distinguish-closure-evidence-from-an-implementation-assertion": "duty",
+    "report-an-anomaly-noticed-outside-this-offices-lane": "duty",
+    "record-an-idea-before-it-is-a-requirement": "duty",
+    "refuse-to-drop-an-idea-silently": "duty"
+  },
+  "bears-duty": [
+    "emsenn/duty/deciding-a-requirement",
+    "emsenn/duty/carrying-a-decision-to-its-decider",
+    "emsenn/duty/reporting-an-anomaly",
+    "emsenn/duty/collecting-an-idea"
+  ],
+  "provides-skill": [
+    "writing-a-requirement",
+    "recalling-a-requirement",
+    "carrying-a-decision-to-its-decider",
+    "raising-an-idea"
+  ],
+  "authority-scope": [
+    "lib/emsenn/"
+  ],
+  "jurisdiction": "lib/emsenn/",
+  "part-of": "emsenn",
+  "reports-to": "integrated-portfolio-management-team",
+  "presides-over": [
+    "requirements-analysis-team"
+  ],
+  "peer-offices": [
+    "product-development-team-leader"
+  ],
+  "distinguished-from": [
+    "integrated-portfolio-management-team",
+    "change-control-board"
+  ],
+  "theory-basis": [
+    "huidu-guanli/ipd: the requirements management team (需求管理团队, RMT) decides major requirements and requirement changes, and is composed of the product management head with market, R&D, manufacturing, service, finance, and quality representation — requirements are decided cross-functionally rather than by whoever received them",
+    "huidu-guanli/ipd: decision authority over requirements is tiered — routine to the requirements analysis team (需求分析团队), major and changed to this office, strategic to the integrated portfolio management team at a decision checkpoint; one flat intake office is the shape this structure exists to replace",
+    "huidu-guanli/ipd: offering requirements (产品包需求, OR) run 收集 → 分析 → 分发 → 实现 → 验证 → 闭环; RMT holds major/change decision, RAT holds analysis/distribution, and delivery is not closure",
+    "rendanheyi: 零距离 and the chain-group contract require need → requirement → work/office/market → artifact/act → evidence → originating need; a non-returning distinction is residual rather than success",
+    "predicated-governance: office-as-double-settlement",
+    "architecture-decision-records (Nygard, 2011): context/decision/consequences as the minimal rulable shape for a choice put to someone who was not in the room it was made in — the same shape this office already owes a requirement's raiser, extended to a decision generally",
+    "cmmi-dar: alternatives evaluated against what the situation forces, and a recommended solution named rather than assumed — a decision naming one option is an announcement, not a decision",
+    "ieee-iso-iec-42010: rationale capture — the alternatives considered are carried alongside the one chosen, not discarded once a ruling lands",
+    "ietf: last-call before canonization — a decision moves proposed, to a final call for objection, to decided, rather than being canon the moment someone states it",
+    "guanli kexin development: mathematical lawfulness in the left hand — records as facts a machine can check, EAVT datoms and lawful events; standards conformance in the right hand — public formats such as ActivityPub, CloudEvents, and the ISO/IEC/IEEE information items, never ad hoc shapes; the space between the hands is the office's realm — per huidu-guanli/kexin, trustworthiness is built in at design and ranks above feature and schedule",
+    "huidu-guanli/ipd: offering requirements run 收集 (collection) ahead of 分析 (analysis) — an idea enters the record before it can be graded; question-driven development treats the idea as the substrate unit of not-yet-knowing, canonically sourced from user desires and bug reports; MAPE-K's Monitor phase reads the idea pool as its buffer over shared Knowledge, and raising-an-idea's --open readout is that Monitor's derivation, computed at read time and never stored"
+  ],
+  "unrealized": [
+    "nothing in the tree distinguishes a routine requirement from a major one, so the tier boundary beneath this office is a claim rather than a computation — the rungs exist, and what sends a requirement up one is still a judgement call",
+    "this office's cross-functional composition — market, R&D, manufacturing, service, finance, and quality representation — does not exist as seated offices, so it is presently its own product-management head deciding alone, which is the shape the composition exists to prevent"
+  ],
+  "founded": "2026-07-15",
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-15",
+    "supersedes": "triage, which flattened the three-layer requirements structure into one office and named it after a hospital",
+    "amended-by": "claude/configuration-manager",
+    "amended-on": "2026-07-16",
+    "amendment": "added bears-duty emsenn/duty/reporting-an-anomaly and deontic-profile entry report-an-anomaly-noticed-outside-this-offices-lane: duty, per stand-up-the-anomaly-reporting-channel"
+  }
+}

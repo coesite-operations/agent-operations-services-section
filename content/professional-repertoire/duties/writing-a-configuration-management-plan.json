@@ -1,0 +1,15 @@
+{
+  "id": "writing-a-configuration-management-plan",
+  "name": "writing a configuration management plan",
+  "authority": "integrated-portfolio-management-team",
+  "work": "writing-a-configuration-management-plan",
+  "claim": "configuration-manager",
+  "skills": [
+    "writing-a-configuration-management-plan"
+  ],
+  "delegation": true,
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-15"
+  }
+}

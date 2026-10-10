@@ -1,0 +1,13 @@
+{
+  "id": "absorbing-a-session",
+  "name": "absorbing a session",
+  "from": "A session's findings left as unabsorbed inventory at the moment it ends: conclusions alive only in a transcript, corrections nowhere durable, duplicate memories seeded beside their siblings, stale settled-claims unretired.",
+  "to": "The session's durable output settled into organizational state: what was learned, decided, or built named in a sentence or two; a correction, settled conclusion, or confirmed approach written as episodic memory in its home; a dead end appended to the lab notebook so no session re-attempts it; the memory index matching the files on disk. A session that produced nothing durable is recorded as exactly that — nothing is manufactured to justify the pass.",
+  "cost": "The closing minutes of the session that holds the context, spent by the incumbent that was there — a fresh reader reconstructing the session from its transcript pays more and loses more, which is why this work cannot be delegated whole.",
+  "otherwise": "Penrose's bottleneck: growth stalls not for lack of resources — research, proofs, code, agent output — but for lack of managerial capacity to absorb them into stable, reusable state. Every session that ends without the pass leaves duplicate memories, stale claims, and unflagged contradictions, and every future session pays the tax.",
+  "x-provenance": {
+    "recorded-by": "claude/chief-of-staff",
+    "recorded-on": "2026-07-15",
+    "derived-from": "~/.claude/skills/chief-of-staff/SKILL.md — the reconciliation pass, steps 1-6"
+  }
+}

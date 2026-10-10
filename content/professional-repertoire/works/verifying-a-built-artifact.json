@@ -1,0 +1,13 @@
+{
+  "id": "verifying-a-built-artifact",
+  "name": "verifying a built artifact",
+  "from": "A built thing believed working because its builders ran their own checks: verification a stage of the building, performed by the party whose schedule it threatens.",
+  "to": "The artifact exercised by an office independent of its builders, up the ladder — the design verified against what was actually built, the parts integrated and exercised together, the whole exercised as its user would meet it — with the final verdict owed by the verifying office and not negotiable back down the line.",
+  "cost": "A whole verification pass that duplicates none of the building and repairs nothing it finds — its independence is bought by exactly that refusal — plus the apparatus to exercise the artifact for real rather than read about it.",
+  "otherwise": "The last party to touch the product before a user is the party most invested in shipping it; every defect found later than this office costs more than it would have here, and the ones users find cost trust that does not come back.",
+  "x-provenance": {
+    "recorded-by": "claude/chief-of-staff",
+    "recorded-on": "2026-07-15",
+    "derived-from": "note-on-the-kernel-offices-of-a-software-node — 中试部, the SDV → SIT → SVT ladder, 对产品的最终质量负责"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "deciding-a-requirement",
+  "name": "deciding a requirement",
+  "from": "An analysed requirement nobody has taken up, and a change to an accepted one that somebody is about to make quietly because making it is cheaper than raising it.",
+  "to": "A requirement the firm has taken up at a named tier, or refused; and a change recorded as a new requirement naming what it changes, so the record still shows that the ask moved.",
+  "cost": "The deciding body's attention, and the goodwill of whoever raised what got refused. Refusing costs more than accepting and is the half that makes the tier worth anything.",
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-15"
+  }
+}

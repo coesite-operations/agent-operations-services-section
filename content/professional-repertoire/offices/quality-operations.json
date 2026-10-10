@@ -1,0 +1,62 @@
+{
+  "id": "quality-operations",
+  "name": "quality operations",
+  "kind": "office",
+  "normative-structure": "A flaw noticed by any office, in any lane, becomes a record in one register because this office keeps that register — and it reaches the office whose lane it is because this office routed it there. The noticer's obligation ends at an honest, re-observable report; the fixing stays with the owning lane; the space between report and fix is this office's realm. It receives from everyone and repairs nothing: give this office a repair channel and every lane boundary it exists to protect dissolves into it. An anomaly is closed by a readout — the goal of the task raised against it settling — never by this office declaring it closed, and never by the reporter's or the fixer's say-so. The register it keeps is the Monitor feed of the firm's MAPE-K loop: what the firm knows to be flawed is what this register holds, and a flaw known to a session but absent from the register is, to the firm, unknown.",
+  "deontic-profile": {
+    "receive-an-anomaly-report-from-any-office": "deontic-power",
+    "open-an-anomaly-against-any-lane": "deontic-power",
+    "keep-the-anomaly-register": "duty",
+    "route-an-anomaly-to-the-office-whose-lane-it-is": "duty",
+    "raise-a-task-and-dispatch-against-a-routed-anomaly": "duty",
+    "refuse-an-anomaly-that-cannot-be-re-observed": "duty",
+    "report-an-anomaly-noticed-outside-this-offices-lane": "duty",
+    "decline-to-repair-what-it-routes": "deontic-immunity",
+    "resist-pressure-to-drop-an-anomaly-unrouted": "deontic-immunity"
+  },
+  "bears-duty": [
+    "emsenn/duty/keeping-the-anomaly-register",
+    "emsenn/duty/reporting-an-anomaly"
+  ],
+  "authority-scope": [
+    "lib/emsenn/"
+  ],
+  "jurisdiction": "lib/emsenn/",
+  "part-of": "emsenn",
+  "reports-to": [],
+  "presides-over": [
+    "product-quality-assurance"
+  ],
+  "peer-offices": [
+    "internal-audit",
+    "engineering-process-group"
+  ],
+  "serves": [
+    "change-control-board",
+    "integrated-portfolio-management-team"
+  ],
+  "distinguished-from": [
+    "product-quality-assurance",
+    "internal-audit",
+    "engineering-process-group"
+  ],
+  "theory-basis": [
+    "huidu-guanli/ipd: the quality operations organization (质量运营部) is the line-independent quality organization product-quality-assurance's record names as unrealized — the seat PQA reports into so its independence is produced by a reporting line rather than asserted by its own record",
+    "huidu-guanli/ipd: the defect tracking system (DTS) — a defect noticed anywhere enters one register once and is routed to the owning team; 问题闭环管理, closed-loop problem management: the loop closes when the owning lane settles it, never when the reporter stops looking",
+    "toyota/andon: anyone who notices pulls the cord, and the authority to repair stays with the owning station — a firm where noticing obliges fixing teaches its offices to stop noticing",
+    "ieee-1044: an anomaly report is an observation a stranger can re-observe, separated from the disposition another party decides later",
+    "autonomic-computing/mape-k, kephart-chess: the anomaly pool is the Monitor's symptom feed and part of the shared knowledge K; this office's routing — a task raised and dispatched against the owning office — is Analyze and Plan, and the dispatch board working the task is Execute; the firm's developing MAPE-K loop reads the same pool rather than a private channel",
+    "predicated-governance: office-as-double-settlement"
+  ],
+  "unrealized": [
+    "the firm's MAPE-K loop (metroplat) does not yet read content/anomalies — the pool is Monitor-readable by design and no mechanized Monitor reads it yet",
+    "routing is performed by incumbent judgment; no classification rule in the ieee-1044 sense is mechanized, so which lane owns an anomaly is decided rather than derived",
+    "the budgetary separation the reporting line into this office implies has no entry in the books with the chief-financial-officer"
+  ],
+  "founded": "2026-07-16",
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-16",
+    "derived-from": "user directive of 2026-07-16: an office any worker can send 'I was working on X but noticed Y was flawed and it is not my lane' — realizes product-quality-assurance's unrealized quality organization"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "id": "commissioning-an-office",
+  "name": "commissioning an office",
+  "from": "Work that somebody answers for only informally, and an org chart that accumulates offices nobody has ended.",
+  "to": "An office seated when there is work nobody answers for — named, recorded what it is for, seated under a superior, given its reciprocal edge — and an office decommissioned when it answers for nothing: edges retracted, marked retired, where its work went recorded. The second motion is the one that gets skipped, and skipping it is what makes an org chart lie: a commission with no end is not a commission, it is an accumulation.",
+  "cost": "The drafting of the commission, the execution against the record, and the answering for the record being correct afterward.",
+  "otherwise": "The roster only advances when emsenn also does the filing, the reciprocal edges, and the check by hand — emsenn stays the executive function. An office exists when the record says so and the graph agrees; an office nobody presides over is a claim, not a seat.",
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-15",
+    "derived-from": "duties/_archive/commissioning-an-office.md"
+  }
+}

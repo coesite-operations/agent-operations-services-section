@@ -1,0 +1,16 @@
+{
+  "id": "sweeping-the-standing-inventory",
+  "name": "sweeping the standing inventory",
+  "authority": "emsenn",
+  "work": "sweeping-the-standing-inventory",
+  "claim": "emsenn",
+  "skills": [
+    "sweeping-the-standing-inventory"
+  ],
+  "delegation": false,
+  "x-provenance": {
+    "recorded-by": "claude/chief-of-staff",
+    "recorded-on": "2026-07-15",
+    "derived-from": "~/.claude/skills/chief-of-staff/SKILL.md"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "union-officer-academy/schema/requalification-gap",
+  "title": "Requalification Gap",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["type", "fromBaseline", "toBaseline", "derivedAt", "addedCompetencies", "removedCompetencies", "changedOfficeFacts", "fullRequalificationRequired"],
+  "properties": {
+    "type": {"const": "RequalificationGap"},
+    "id": {"$ref": "#/$defs/id"},
+    "fromBaseline": {"$ref": "#/$defs/id"},
+    "toBaseline": {"$ref": "#/$defs/id"},
+    "qualification": {"$ref": "#/$defs/id"},
+    "derivedAt": {"type": "string", "format": "date-time"},
+    "addedCompetencies": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "removedCompetencies": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "changedOfficeFacts": {"type": "array", "uniqueItems": true, "items": {"enum": ["office-digest", "duties", "skills", "jurisdiction", "protected-context", "assessment-law"]}},
+    "fullRequalificationRequired": {"type": "boolean"},
+    "reason": {"type": "string", "minLength": 1}
+  },
+  "$defs": {"id": {"type": "string", "pattern": "^urn:sha256:[a-f0-9]{64}$"}}
+}

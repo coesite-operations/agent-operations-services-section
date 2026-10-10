@@ -1,0 +1,9 @@
+{
+  "id": "qualification-and-requalification",
+  "name": "Independent qualification and requalification",
+  "provider": "union-officer-academy",
+  "offices": ["independent-examiner", "registrar"],
+  "products": ["Assessment", "Qualification", "FormationRefusal", "QualificationStatusEvent", "RequalificationGap", "FormationEpochGap"],
+  "rule": "Evidence is bound to candidate and formation epoch. Qualification conveys no authority and never advances an entire cohort together.",
+  "appeal": "An appeal is procured from a provider outside the challenged formation, examination, registration, and Academy executive chain."
+}
