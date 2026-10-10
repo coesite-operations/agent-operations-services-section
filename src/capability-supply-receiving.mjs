@@ -1,3 +1,4 @@
+import { validateCapabilityAcceptanceWitness } from './capability-pressure.mjs';
 export function classifyCapabilitySupply(state = {}) {
   const yes = (value) => value === true;
   if (yes(state.downstreamAccepted) && !yes(state.canonicalReadback)) {
@@ -13,7 +14,11 @@ export function classifyCapabilitySupply(state = {}) {
     throw new Error('deployment cannot be accepted without verified source supply');
   }
 
-  if (yes(state.downstreamAccepted)) return 'CAPABILITY_SUPPLY_ACCEPTED';
+  if (yes(state.downstreamAccepted)) {
+    const evidence = validateCapabilityAcceptanceWitness(state, state);
+    if (!evidence.ok) throw new Error('downstream acceptance lacks independent provider witness: ' + evidence.issues.join('; '));
+    return 'CAPABILITY_SUPPLY_ACCEPTED';
+  }
   if (yes(state.canonicalReadback)) return 'CANONICAL_READBACK_AWAITING_DOWNSTREAM_ACCEPTANCE';
   if (yes(state.canonicalEffectObserved)) return 'EFFECT_OBSERVED_AWAITING_CANONICAL_READBACK';
   if (yes(state.deployed)) return 'DEPLOYED_AWAITING_EFFECT_PROBE';
