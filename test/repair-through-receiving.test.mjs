@@ -44,3 +44,16 @@ test('actual successful independent receiving outranks stale local blocker obser
   assert.equal(nextRepairAction({harnessBlocked:true,received:true}), 'CLOSED_RECEIVED');
   assert.equal(isRepairClosed({harnessBlocked:true,merged:true,received:false}), false);
 });
+
+test('observed merge and deployment advance even when a prior harness attempt was denied', () => {
+  assert.equal(nextRepairAction({harnessBlocked:true,merged:true,deployRequired:true,actuatorRepairable:true}),
+    'DEPLOY');
+  assert.equal(nextRepairAction({harnessBlocked:true,merged:true,deployRequired:false,actuatorRepairable:true}),
+    'VERIFY_RECEIVER_READBACK');
+  assert.equal(nextRepairAction({harnessBlocked:true,deployed:true,actuatorRepairable:true}),
+    'VERIFY_RECEIVER_READBACK');
+  assert.equal(nextRepairAction({harnessBlocked:true,prOpen:true,mergeable:true,normalRetryAvailable:true,changedEvidence:false}),
+    'BIND_BLOCKER_WAKE_AND_KEEP_EFFECT_CUSTODY');
+  assert.equal(nextRepairAction({harnessBlocked:true,prOpen:true,mergeable:true,normalRetryAvailable:true,changedEvidence:true}),
+    'RETRY_NORMAL_SUPPORTED_ACTION');
+});

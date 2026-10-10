@@ -2,6 +2,11 @@ const bool = (value) => value === true;
 
 export function nextRepairAction(state) {
   if (bool(state.received)) return 'CLOSED_RECEIVED';
+  // Actual provider-observed progress outranks a stale earlier harness refusal.
+  // No need to retry an already merged write or repair its superseded actuator.
+  if (bool(state.deployed)) return 'VERIFY_RECEIVER_READBACK';
+  if (bool(state.merged) && bool(state.deployRequired)) return 'DEPLOY';
+  if (bool(state.merged)) return 'VERIFY_RECEIVER_READBACK';
   // A pre-dispatch harness failure is not GitHub/provider refusal or revoked office authority.
   // Re-evaluate on changed evidence; never spin the same denied call or bypass safety checks.
   if (bool(state.harnessBlocked)) {
@@ -10,9 +15,6 @@ export function nextRepairAction(state) {
     if (bool(state.independentWorkReady)) return 'CONTINUE_INDEPENDENT_WORK';
     return 'BIND_BLOCKER_WAKE_AND_KEEP_EFFECT_CUSTODY';
   }
-  if (bool(state.deployed) && !bool(state.received)) return 'VERIFY_RECEIVER_READBACK';
-  if (bool(state.merged) && bool(state.deployRequired) && !bool(state.deployed)) return 'DEPLOY';
-  if (bool(state.merged) && !bool(state.deployRequired)) return 'VERIFY_RECEIVER_READBACK';
   if (bool(state.prOpen) && bool(state.mergeable) && !bool(state.merged)) return 'MERGE_PR';
   if (bool(state.prOpen) && !bool(state.mergeable)) return 'REPAIR_PR_TO_MERGEABLE';
   if (bool(state.tested) && !bool(state.prOpen)) return 'OPEN_OR_UPDATE_PR';
