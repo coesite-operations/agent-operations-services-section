@@ -89,7 +89,7 @@ test('issue-only coordination cannot declare repair closed', () => {
 
 test('predispatch denial is an observed effect failure, never permanent source non-writability', () => {
   assert.equal(nextRepairAction({harnessBlocked:true,sourceWritable:true,actuatorRepairable:true}),
-    'REPAIR_WRITE_ACTUATOR');
+    'BIND_BLOCKER_WAKE_AND_KEEP_EFFECT_CUSTODY');
   assert.equal(nextRepairAction({harnessBlocked:true,sourceWritable:true,independentWorkReady:true}),
     'CONTINUE_INDEPENDENT_WORK');
   assert.equal(nextRepairAction({harnessBlocked:true,sourceWritable:true}),
@@ -263,4 +263,26 @@ test('release preflight diagnosis does not allow a claimed receipt to close fail
   assert.equal(isRepairClosed({
     ...acceptedDirectEffect, consumerReceipt:null, lastAttempt:attempt
   }), false);
+});
+
+test('verified host safety refusal never proposes actuator reconstruction to evade policy', () => {
+  const observed = {dispatchObserved:false, code:'CHATGPT_HARNESS_POLICY_BLOCK'};
+  assert.equal(nextRepairAction({
+    lastAttempt: observed, actuatorRepairable:true, sourceWritable:true
+  }), 'BIND_BLOCKER_WAKE_AND_KEEP_EFFECT_CUSTODY');
+  assert.equal(nextRepairAction({
+    lastAttempt: observed, actuatorRepairable:true, independentWorkReady:true
+  }), 'CONTINUE_INDEPENDENT_WORK');
+  assert.equal(nextRepairAction({
+    lastAttempt: observed, actuatorRepairable:true, changedEvidence:true, normalRetryAvailable:true
+  }), 'RETRY_NORMAL_SUPPORTED_ACTION');
+  assert.equal(nextRepairAction({
+    lastAttempt: {providerReached:true,providerStatus:422}, actuatorRepairable:true
+  }), 'REPAIR_PROVIDER_REQUEST_OR_STATE');
+});
+
+
+test('legacy harness boolean does not authorize low-level actuator workaround', () => {
+  assert.equal(nextRepairAction({harnessBlocked:true,actuatorRepairable:true,independentWorkReady:true}), 'CONTINUE_INDEPENDENT_WORK');
+  assert.equal(nextRepairAction({harnessBlocked:true,actuatorRepairable:true}), 'BIND_BLOCKER_WAKE_AND_KEEP_EFFECT_CUSTODY');
 });

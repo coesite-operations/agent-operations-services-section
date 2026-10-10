@@ -125,7 +125,9 @@ export function nextRepairAction(state) {
     if (observed.layer === 'CONTRADICTORY_EVIDENCE') return observed.next;
     if (observed.layer === 'HOST_PREDISPATCH_POLICY') {
       if (bool(state.changedEvidence) && bool(state.normalRetryAvailable)) return 'RETRY_NORMAL_SUPPORTED_ACTION';
-      if (bool(state.actuatorRepairable)) return 'REPAIR_WRITE_ACTUATOR';
+      // A verified host pre-dispatch policy refusal is not an actuator defect.
+      // Never propose rebuilding or rerouting an actuator to evade that refusal.
+      // A normal retry requires changed evidence and a supported action above.
       if (bool(state.independentWorkReady)) return 'CONTINUE_INDEPENDENT_WORK';
       return 'BIND_BLOCKER_WAKE_AND_KEEP_EFFECT_CUSTODY';
     }
@@ -135,8 +137,10 @@ export function nextRepairAction(state) {
   // Legacy boolean observations remain supported but never mean permanent
   // permission revocation or authority to route around a host safety refusal.
   if (bool(state.harnessBlocked)) {
+    // The legacy boolean does not prove whether the refusal was by host,
+    // connector or provider. Never infer that an alternate write actuator
+    // is an authorized repair just because a boolean names the harness.
     if (bool(state.changedEvidence) && bool(state.normalRetryAvailable)) return 'RETRY_NORMAL_SUPPORTED_ACTION';
-    if (bool(state.actuatorRepairable)) return 'REPAIR_WRITE_ACTUATOR';
     if (bool(state.independentWorkReady)) return 'CONTINUE_INDEPENDENT_WORK';
     return 'BIND_BLOCKER_WAKE_AND_KEEP_EFFECT_CUSTODY';
   }
