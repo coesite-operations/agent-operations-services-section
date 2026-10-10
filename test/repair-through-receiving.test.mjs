@@ -20,3 +20,27 @@ test('repair advances through test, PR, merge, deploy, and receiving', () => {
 test('issue-only coordination cannot declare repair closed', () => {
   assert.throws(() => assertNoIssueOnlyClosure({ issueOpen: true, status: 'DONE' }), /issue-only coordination cannot close/);
 });
+
+test('predispatch denial is an observed effect failure, never permanent source non-writability', () => {
+  assert.equal(nextRepairAction({harnessBlocked:true,sourceWritable:true,actuatorRepairable:true}),
+    'REPAIR_WRITE_ACTUATOR');
+  assert.equal(nextRepairAction({harnessBlocked:true,sourceWritable:true,independentWorkReady:true}),
+    'CONTINUE_INDEPENDENT_WORK');
+  assert.equal(nextRepairAction({harnessBlocked:true,sourceWritable:true}),
+    'BIND_BLOCKER_WAKE_AND_KEEP_EFFECT_CUSTODY');
+  assert.equal(nextRepairAction({sourceWritable:true}), 'PATCH_SOURCE');
+});
+
+test('only changed evidence permits a normal retry; unaffected work is not held captive', () => {
+  assert.equal(nextRepairAction({harnessBlocked:true,normalRetryAvailable:true,independentWorkReady:true}),
+    'CONTINUE_INDEPENDENT_WORK');
+  assert.equal(nextRepairAction({harnessBlocked:true,normalRetryAvailable:true,changedEvidence:true}),
+    'RETRY_NORMAL_SUPPORTED_ACTION');
+  assert.equal(nextRepairAction({harnessBlocked:true,normalRetryAvailable:true,changedEvidence:false}),
+    'BIND_BLOCKER_WAKE_AND_KEEP_EFFECT_CUSTODY');
+});
+
+test('actual successful independent receiving outranks stale local blocker observations', () => {
+  assert.equal(nextRepairAction({harnessBlocked:true,received:true}), 'CLOSED_RECEIVED');
+  assert.equal(isRepairClosed({harnessBlocked:true,merged:true,received:false}), false);
+});
