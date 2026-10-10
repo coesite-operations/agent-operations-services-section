@@ -4,6 +4,8 @@ import { readFileSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { CIRCUIT_TRACE_PROFILE } from "@lenticule-science/typed-circuit-residue-assay";
+import { CIRCUIT_ASSEMBLY_PROFILE, HIERARCHICAL_CIRCUIT_PROFILE, hierarchicalCircuitId } from "@red-cup-engineering/relation-model-notation-runtime/hierarchical-circuit";
+import { FOUR } from "@red-cup-engineering/relation-model-notation-runtime/four";
 import { seavt } from "@red-cup-engineering/witness-journal-entry-service";
 import { appendSeavt } from "@red-cup-engineering/witness-journal-log-service";
 import { EMPTY_WITNESS_ROOT, identifyJsonSemanticContent, sha256DigestFromNiUri } from "@red-cup-engineering/semantic-content-identify-service";
@@ -12,7 +14,7 @@ const contentSurface = (role, token) => `semantic-content.${role}.sha256.${Buffe
 
 const CUSTOMER = "urn:ame:union-officer-academy";
 const PROVIDER = "urn:ame:typed-circuit-residue-assay";
-const PROFILE = "org.emsenn.semiotic-graph-trace.v1";
+const PROFILE = CIRCUIT_TRACE_PROFILE;
 const ROOT = resolve(fileURLToPath(new URL("..", import.meta.url)));
 const DEFAULT_PROVIDER = resolve(ROOT, "../lenticule-science/services/obsmetrological-services-section/services/typed-circuit-residue-assay");
 
@@ -23,8 +25,8 @@ async function requestTypedCircuitResidueAssay(options) { return (await import("
 function fixture(account, label, changes = {}) {
   return {
     originatingSettlement: account, receiptId: niText(`uoa-rmn-v3-fixture:${label}`), receiptDigest: niText(`uoa-rmn-v3-fixture-bytes:${label}`),
-    chain: "eip155:31337", orientation: 1,
-    chu: { left: { positiveEvidence: true, negativeEvidence: true }, right: { positiveEvidence: true, negativeEvidence: true } },
+    chain: "eip155:31337", contract: niText("uoa:academy-seam"), orientation: 1,
+    chu: { left: FOUR.both, right: FOUR.both },
     connection: { frame: niText("uoa:ambient-frame"), quarterTurns: 0, translation: ["0", "0"] }, priceErasure: { unit: "uoa-erasure", irreversibleAmount: "1", priceAmount: "1" },
     economicCurrentAffinity: { current: ["1", "1"], affinity: ["2", "1"] }, ...changes
   };
@@ -32,23 +34,20 @@ function fixture(account, label, changes = {}) {
 
 function traceCircuit(account) {
   const pin = (name, direction) => ({ name, direction, mode: "par", predicate: niText("uoa:evidences"), carrier: niText("uoa:FOUR") });
-  const values = [
-    { positiveEvidence: false, negativeEvidence: false }, { positiveEvidence: true, negativeEvidence: false },
-    { positiveEvidence: false, negativeEvidence: true }, { positiveEvidence: true, negativeEvidence: true },
-  ];
+  const values = [FOUR.neither, FOUR.true, FOUR.false, FOUR.both];
   const child = {
-    profile: "org.emsenn.semiotic-graph.v1", law: niText("uoa:trace-child-law"),
+    profile: HIERARCHICAL_CIRCUIT_PROFILE, law: niText("uoa:trace-child-law"),
     ports: [pin("in", "input"), pin("out", "output")], instances: [], nets: [],
     behavior: { factors: [{ inputs: ["in"], outputs: ["out"], rows: values.map((value) => ({ input: [value], output: [value] })) }] },
   };
   const circuit = {
-    profile: "org.emsenn.semiotic-graph.v1", law: niText("uoa:trace-root-law"),
-    ports: [], instances: [{ name: "academy", component: contentId(child) }],
-    nets: [{ name: "academy-loop", driver: { instance: "academy", port: "out" }, sinks: [{ instance: "academy", port: "in" }], mode: "par", chain: "eip155:31337" }],
+    profile: HIERARCHICAL_CIRCUIT_PROFILE, law: niText("uoa:trace-root-law"),
+    ports: [], instances: [{ name: "academy", component: hierarchicalCircuitId(child) }],
+    nets: [{ name: "academy-loop", driver: { instance: "academy", port: "out" }, sinks: [{ instance: "academy", port: "in" }], mode: "par", chain: "eip155:31337", contract: niText("uoa:academy-seam") }],
     behavior: { factors: [] },
   };
   const membrane = (label) => ({ account, authority: niText(`uoa:${label}-authority`), custody: niText(`uoa:${label}-custody`), territory: niText(`uoa:${label}-territory`) });
-  const assembly = { profile: "org.emsenn.semiotic-graph-placement.v1", circuit: contentId(circuit), placements: [{ address: [], membrane: membrane("trace-root") }, { address: ["academy"], membrane: membrane("trace-child") }] };
+  const assembly = { profile: CIRCUIT_ASSEMBLY_PROFILE, circuit: hierarchicalCircuitId(circuit), placements: [{ address: [], membrane: membrane("trace-root") }, { address: ["academy"], membrane: membrane("trace-child") }] };
   return { circuit, components: [child], assembly };
 }
 
@@ -84,7 +83,7 @@ export async function exerciseRmnResidueProfile({ root = ROOT, providerRoot = DE
     try {
       const result = await requestResidue({ agentUrl, circuit, components, assembly, ...traceCase, signal: AbortSignal.timeout(30_000) });
       if (expectedDisposition !== "accepted" || result.receipt.disposition !== expectedResult) throw new Error(`${caseName}: expected ${expectedDisposition}/${expectedResult}, received accepted/${result.receipt.disposition}`);
-      vectors.push({ case: caseName, protocol: "A2A 1.0", disposition: "accepted", requestNi: result.receipt.request, witness: result.receipt.id, assay: result.receipt });
+      vectors.push({ case: caseName, protocol: "A2A 1.0", disposition: "accepted", requestNi: result.receipt.request, witness: result.receiptNi, assay: result.receipt });
     } catch (error) {
       const reason = String(error.message).match(/(?:^|:\s)([a-z]+(?:-[a-z]+)+)(?::|\s|$)/u)?.[1] ?? error.message;
       if (expectedDisposition !== "refused" || !String(error.message).includes(expectedResult)) throw error;
