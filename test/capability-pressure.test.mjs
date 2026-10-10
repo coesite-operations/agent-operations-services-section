@@ -1,6 +1,18 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { makeCapabilitySurface, surfaceDiagnosis, makeCapabilityDemand, receiveCapabilitySupply } from '../src/capability-pressure.mjs';
+import { makeCapabilitySurface, surfaceDiagnosis, makeCapabilityDemand, receiveCapabilitySupply, validateCapabilityAcceptanceWitness } from '../src/capability-pressure.mjs';
+
+function witnessFor(demand, supply, override = {}) {
+  return {
+    kind: 'CAPABILITY_CONSUMER_READBACK', verdict: 'MET',
+    demandId: demand.demandId, workRef: demand.workRef, capabilityId: demand.capabilityId,
+    supplyReceiptId: supply.supplyReceiptId, suppliedSurfaceId: supply.suppliedSurfaceId,
+    sourceRevision: supply.sourceRevision, acceptedBy: demand.demandingActor,
+    receiverActorId: 'actor:independent-consumer', witnessId: 'provider:witness:123',
+    providerReadbackRef: 'provider:verified-delivery:123',
+    observedAt: '2026-10-10T19:30:00Z', ...override
+  };
+}
 
 test('connector gap does not imply provider absence', () => {
   const surface = makeCapabilitySurface({
@@ -41,18 +53,18 @@ test('capability demand remains with the consumer until downstream acceptance', 
     capabilityId: demand.capabilityId,
     supplyReceiptId: 'receipt:adapter:1',
     suppliedSurfaceId: 'fastmail:red-cup-adapter:email.draft.update',
+    sourceRevision: 'adapter:sha:1', supplierActorId: 'actor:engineer',
     downstreamAccepted: false
   });
   assert.equal(supplied.state, 'SUPPLIED_AWAITING_DOWNSTREAM_ACCEPTANCE');
   assert.equal(supplied.effectCustodian, 'urn:561:office:cfo');
 
   const accepted = receiveCapabilitySupply(supplied, {
-    demandId: demand.demandId,
-    capabilityId: demand.capabilityId,
-    supplyReceiptId: 'receipt:adapter:1',
-    suppliedSurfaceId: 'fastmail:red-cup-adapter:email.draft.update',
-    downstreamAccepted: true,
-    acceptedBy: demand.demandingActor
+    demandId: demand.demandId, capabilityId: demand.capabilityId,
+    supplyReceiptId: supplied.supplyReceiptId, suppliedSurfaceId: supplied.suppliedSurfaceId,
+    sourceRevision: supplied.sourceRevision, supplierActorId: supplied.supplierActorId,
+    downstreamAccepted: true, acceptedBy: demand.demandingActor,
+    acceptanceWitness: witnessFor(demand, supplied)
   });
   assert.equal(accepted.state, 'ACCEPTED');
   assert.equal(accepted.supplyReceiptId, supplied.supplyReceiptId);
@@ -80,6 +92,7 @@ function stagedSupply() {
     capabilityId: demand.capabilityId,
     supplyReceiptId: 'receipt:publishing:1',
     suppliedSurfaceId: 'surface:new',
+    sourceRevision: 'sha:publishing:1', supplierActorId: 'actor:engineering',
     downstreamAccepted: false
   };
   return { demand, supply, pending: receiveCapabilitySupply(demand, supply) };
@@ -95,7 +108,8 @@ test('repeated pending supply preserves its identity and effect custody', () => 
 
 test('pending supply refuses a different demand, capability, receipt, surface or accepting actor', () => {
   const { demand, supply, pending } = stagedSupply();
-  const acceptance = { ...supply, downstreamAccepted: true, acceptedBy: demand.demandingActor };
+  const acceptance = { ...supply, downstreamAccepted: true, acceptedBy: demand.demandingActor,
+    acceptanceWitness: witnessFor(demand, supply) };
   for (const [change, message] of [
     [{ demandId: 'cap-demand:other' }, /does not answer this demand/],
     [{ capabilityId: 'provider.other' }, /capability does not match demand/],
@@ -113,7 +127,8 @@ test('pending supply refuses a different demand, capability, receipt, surface or
 
 test('one-step acceptance remains supported and terminal acceptance cannot be rewritten', () => {
   const { demand, supply } = stagedSupply();
-  const acceptance = { ...supply, downstreamAccepted: true, acceptedBy: demand.demandingActor };
+  const acceptance = { ...supply, downstreamAccepted: true, acceptedBy: demand.demandingActor,
+    acceptanceWitness: witnessFor(demand, supply) };
   const accepted = receiveCapabilitySupply(demand, acceptance);
   assert.equal(accepted.state, 'ACCEPTED');
   assert.throws(() => receiveCapabilitySupply(accepted, acceptance), /an OPEN demand or supply awaiting/);
@@ -197,4 +212,36 @@ test('Finance Science exact funding-history demand retains effect custody', () =
   assert.equal(demand.state, 'OPEN');
   assert.equal(demand.effectCustodian, actor);
   assert.equal(demand.capabilityId, 'market.crypto.funding.crossvenue.history.exact');
+});
+
+test('bare flag, self-handoff and stale provider receipts cannot close a demand', () => {
+  const {demand, supply, pending} = stagedSupply();
+  const acceptance = {...supply, downstreamAccepted: true, acceptedBy: demand.demandingActor,
+    acceptanceWitness: witnessFor(demand,supply)};
+  assert.equal(validateCapabilityAcceptanceWitness(demand, acceptance).ok, true);
+  assert.throws(() => receiveCapabilitySupply(pending, {...acceptance, acceptanceWitness: null}), /unverified/);
+  for(const patch of [
+    {verdict: 'UNKNOWN'},
+    {receiverActorId: supply.supplierActorId},
+    {providerReadbackRef: ''},
+    {witnessId: ''},
+    {sourceRevision: 'sha:obsolete'},
+    {workRef: 'work:wrong'},
+    {supplyReceiptId: 'receipt:different'},
+    {acceptedBy: 'urn:561:office:engineering'},
+    {observedAt: 'not a time'}
+  ]) assert.throws(()=>receiveCapabilitySupply(pending,{
+    ...acceptance, acceptanceWitness: witnessFor(demand,supply,patch)
+  }), /unverified/);
+  assert.equal(pending.state, 'SUPPLIED_AWAITING_DOWNSTREAM_ACCEPTANCE');
+  assert.equal(pending.effectCustodian, demand.demandingActor);
+});
+
+test('pending source revision and supplier identity are immutable before acceptance',()=>{
+  const {demand, supply, pending}=stagedSupply();
+  const acceptance={...supply,downstreamAccepted:true,acceptedBy:demand.demandingActor,
+    acceptanceWitness:witnessFor(demand,supply)};
+  assert.throws(()=>receiveCapabilitySupply(pending,{...acceptance,sourceRevision:'sha:changed'}),/supply identity/);
+  assert.throws(()=>receiveCapabilitySupply(pending,{...acceptance,supplierActorId:'actor:replacement'}),/supply identity/);
+  assert.equal(receiveCapabilitySupply(pending,acceptance).state,'ACCEPTED');
 });
