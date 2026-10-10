@@ -2,6 +2,14 @@ const bool = (value) => value === true;
 
 export function nextRepairAction(state) {
   if (bool(state.received)) return 'CLOSED_RECEIVED';
+  // A pre-dispatch harness failure is not GitHub/provider refusal or revoked office authority.
+  // Re-evaluate on changed evidence; never spin the same denied call or bypass safety checks.
+  if (bool(state.harnessBlocked)) {
+    if (bool(state.changedEvidence) && bool(state.normalRetryAvailable)) return 'RETRY_NORMAL_SUPPORTED_ACTION';
+    if (bool(state.actuatorRepairable)) return 'REPAIR_WRITE_ACTUATOR';
+    if (bool(state.independentWorkReady)) return 'CONTINUE_INDEPENDENT_WORK';
+    return 'BIND_BLOCKER_WAKE_AND_KEEP_EFFECT_CUSTODY';
+  }
   if (bool(state.deployed) && !bool(state.received)) return 'VERIFY_RECEIVER_READBACK';
   if (bool(state.merged) && bool(state.deployRequired) && !bool(state.deployed)) return 'DEPLOY';
   if (bool(state.merged) && !bool(state.deployRequired)) return 'VERIFY_RECEIVER_READBACK';
