@@ -236,10 +236,10 @@ test('owned source-acquisition gate is not misdiagnosed as ChatGPT platform poli
   }), 'QUALIFY_SOURCE_GRAPH_AND_PACKAGE_TOOLCHAIN', 'a preflight refusal outranks another identical release retry');
   assert.equal(nextRepairAction({
     merged: true, deployRequired: true, deployed: true, lastAttempt: attempt
-  }), 'VERIFY_DEPLOYMENT_RECEIPT', 'actual later deployment supersedes an older preflight');
+  }), 'VERIFY_DEPLOYMENT_WITNESS', 'actual later deployment supersedes an older preflight');
   assert.equal(diagnoseToolFailure({
     ...attempt, dispatchObserved: false, code: 'CHATGPT_HARNESS_POLICY_BLOCK'
-  }).layer, 'PROVIDER_OBSERVED', 'contradictory record cannot be classed a witnessed preflight');
+  }).layer, 'CONTRADICTORY_EVIDENCE', 'contradictory record cannot be classed a witnessed preflight');
   assert.equal(diagnoseToolFailure({
     ...attempt, releasePreflight: {...preflight, evidenceRef: ''}
   }).layer, 'PROVIDER_OBSERVED', 'missing job evidence is not a qualified preflight');
