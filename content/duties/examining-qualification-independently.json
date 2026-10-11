@@ -1,0 +1,16 @@
+{
+  "id": "examining-qualification-independently",
+  "name": "examining qualification independently",
+  "authority": "ni:///sha-256;P75Y5UAiHjPSESVesIK8nBxwxst9CDmXR8bKw_9a64I",
+  "work": "examining-qualification-independently",
+  "claim": "contracting-sovereign-settlement",
+  "skills": [
+    "assessing-a-candidate"
+  ],
+  "delegation": false,
+  "x-provenance": {
+    "recorded-by": "codex/executive-officer-to-the-leader",
+    "recorded-on": "2026-07-18",
+    "derived-from": "corpus-led Union Officer Academy institutional audit"
+  }
+}

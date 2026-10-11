@@ -1,0 +1,21 @@
+{
+  "id": "academy-officer-formation-lianqun",
+  "kind": "rendanheyi-lianqun-constitution",
+  "userOutcome": "leader-movement-team receiver accepts an exact Academy-formed and customer-projected Executive Officer that closes the held-out Union formation MAPE-K capstone",
+  "memberSelection": "provider-authored contestable bids followed by mutual acceptance",
+  "parallelWiring": "every member answers directly to the same receiver outcome; no internal handoff is a customer acceptance",
+  "valueRule": "receiver acceptance creates the pool; contribution bids determine contingent shares; every member shares shortfall",
+  "managementProhibitions": [
+    "no headquarters assignment of a member",
+    "no Academy override of a member refusal",
+    "no fixed equal split",
+    "no payment for internal handoff",
+    "no customer territory mutation"
+  ],
+  "protocolBoundary": {
+    "interEnterpriseValue": "ActivityStreams 2.0 Offer, Accept, Reject, and Create values",
+    "transport": "node-local stdio subprocess binding",
+    "authority": "attenuated object capability naming exact target, parent offer, lot digest, and method",
+    "pricedBoundary": "monetary price remains undecided by the Leader; no x402 deployment is claimed"
+  }
+}

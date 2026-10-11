@@ -1,0 +1,12 @@
+{
+  "id": "writing-a-high-level-design",
+  "name": "writing a high-level design",
+  "from": "A module the architecture names and requirements are allocated to, with nothing between that allocation and code: no unit structure, no interfaces, no data design. Two developers who must meet at a boundary have nowhere to look up what the boundary is.",
+  "to": "A high-level design: the module decomposed into units, every externally visible interface specified — operations, data, errors — and each unit carrying the requirements allocated to it. A developer can write a unit's low-level design against it without asking the lead what was meant.",
+  "cost": "The module lead's attention, and the negotiation with neighboring modules that fixing an interface on paper forces — a negotiation that is the work's value and feels like its overhead.",
+  "otherwise": "Interfaces get decided at the point of first collision, in code, by whichever side got there first — and every later reader takes the accident for a decision.",
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-15"
+  }
+}

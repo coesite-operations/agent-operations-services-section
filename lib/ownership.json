@@ -1,0 +1,22 @@
+{
+  "kind": "ownership-law-shadow",
+  "node": "union-officer-academy",
+  "owners": ["561-group"],
+  "effective-law": {
+    "direct-contracting": true,
+    "owner-gateway-required": false,
+    "rules": [
+      "owner law is included in descendant law",
+      "this node owns its lib, content, data, admission, refusal, contracts, and books",
+      "the 561 Group and sibling services receive no implicit runtime or write authority",
+      "the Academy owns the reusable professional repertoire and its session-character corps; historical consumer carriers are digest-bound projections",
+      "receiver settlements retain specialized overlays, appointment, recognition, induction, incumbency, protected context, jurisdiction, and capability-installation authority",
+      "an ephemeral model or API call animates a character for one act and never inherits character identity, cohort standing, qualification, or office",
+      "a person may be formed in a cohort but remains on a disjoint personnel roster and is never owned by the Academy",
+      "qualification evidence remains portable while admission remains receiver-local",
+      "curriculum overlays remain subject to the originating settlement's knowledge-sovereignty and egress terms",
+      "the Academy owns and maintains the Huidu Guanli and Rendanheyi management-thought services rehomed from Lenticule Science on 2026-07-18",
+      "the rehome preserves every source byte and provenance statement while moving future stewardship, correction, education, and curriculum use into the Academy membrane"
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "writing-a-software-architecture-specification",
+  "name": "writing a software architecture specification",
+  "authority": "integrated-portfolio-management-team",
+  "work": "writing-a-software-architecture-specification",
+  "claim": "product-development-team-leader",
+  "skills": [
+    "writing-a-software-architecture-specification",
+    "writing-an-ieee-42010-architecture-description"
+  ],
+  "delegation": false,
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-15"
+  }
+}

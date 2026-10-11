@@ -1,0 +1,13 @@
+{
+  "id": "finalizing-work-in-git",
+  "name": "finalizing work in git",
+  "from": "Finished work sitting in the working tree, indistinguishable from work in flight: nothing marks what settled, no history records when it settled, and closing a session loses the boundary between done and not.",
+  "to": "The settled work is a commit — staged deliberately, no more and no less than what settled, described by a message naming what was finalized and by what act, and pushed wherever the firm's copies live — so the repository history carries the boundary between finished and in-flight.",
+  "cost": "Attention at every close of work: reading the tree's actual state, staging exactly the settled files, writing the message, and refusing to sweep unfinished work in alongside.",
+  "otherwise": "Work finalizes by accident — whenever someone happens to commit — so the history records sessions rather than settlements, and nobody can read back what was finished, when, or by whose act.",
+  "x-provenance": {
+    "recorded-by": "claude",
+    "recorded-on": "2026-07-16",
+    "derived-from": "user instruction of 2026-07-16 — doing git stuff is a duty, and it belongs to the office of the folk who finalize work"
+  }
+}

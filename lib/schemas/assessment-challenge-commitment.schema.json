@@ -1,0 +1,12 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"union-officer-academy/schema/assessment-challenge-commitment",
+  "title":"Assessment Challenge Commitment",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["id","type","enrollment","bundle","committedAt","committedBy","caseBankDigest","selectionCommitment","concealed"],
+  "properties":{
+    "id":{"$ref":"#/$defs/id"},"type":{"const":"AssessmentChallengeCommitment"},"enrollment":{"$ref":"#/$defs/id"},"bundle":{"$ref":"#/$defs/id"},"committedAt":{"type":"string","format":"date-time"},"committedBy":{"type":"string","minLength":1},"caseBankDigest":{"$ref":"#/$defs/digest"},"selectionCommitment":{"$ref":"#/$defs/digest"},"concealed":{"const":true}
+  },
+  "$defs":{"id":{"type":"string","pattern":"^urn:sha256:[a-f0-9]{64}$"},"digest":{"type":"string","pattern":"^sha256:[a-f0-9]{64}$"}}
+}

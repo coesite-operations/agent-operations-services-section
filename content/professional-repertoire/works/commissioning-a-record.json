@@ -1,0 +1,13 @@
+{
+  "id": "commissioning-a-record",
+  "name": "commissioning a record",
+  "from": "A roster of offices, duties, and skills whose records may or may not still say what they claim, checked only by a careful reader choosing to be careful.",
+  "to": "A roster equal to the work actually answered for: a record commissioned when there is work nobody answers for, retired when it answers for nothing, and every seated record proved by machine — never by reading — to conform to its schema and resolve every reference.",
+  "cost": "The commissioning act's attention — the drafting, the filing, and the machine check — paid at every change to the roster rather than once.",
+  "otherwise": "The record drifts silently, and emsenn is the only instrument that detects it: a careful reader is exactly what is unavailable at 2am in a rushed session. Office, duty, and skill are one commissioning contract read three ways, which is why this is one work and not three.",
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-15",
+    "derived-from": "duties/_archive/commissioning-a-record.md"
+  }
+}

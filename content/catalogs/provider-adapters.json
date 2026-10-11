@@ -1,0 +1,13 @@
+{
+  "id": "formation-provider-adapters",
+  "owner": "union-officer-academy",
+  "catalogKind": "foreign-provider-adapters",
+  "notInternalRoster": true,
+  "providers": [
+    {"id": "corpus-management-team-prior-research-recovery", "owner": "executive-office", "provides": ["ContextualBundle", "GapBundle"], "admission": "explicit service contract required"},
+    {"id": "metroplat-context-and-character-readouts", "owner": "red-cup-engineering", "provides": ["Suit", "AgentDoctrineSuit", "orientation", "character-learning-loop", "repertoire", "readiness"], "admission": "explicit service contract required; never Academy implicit runtime"},
+    {"id": "rom-keldar-character-surfaces", "owner": "561-group", "provides": ["character surface precedent", "context compilation precedent"], "admission": "legacy/current status must be stated per carrier"},
+    {"id": "executive-office-codex-projector", "owner": "executive-office", "provides": ["office-to-Codex projection"], "admission": "customer or Academy procurement; customer executes installation"},
+    {"id": "executive-office-claude-projectors", "owner": "executive-office", "provides": ["character and office projections for Claude"], "admission": "customer or Academy procurement; customer executes installation"}
+  ]
+}

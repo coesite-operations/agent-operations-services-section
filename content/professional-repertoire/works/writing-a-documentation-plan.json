@@ -1,0 +1,12 @@
+{
+  "id": "writing-a-documentation-plan",
+  "name": "writing a documentation plan",
+  "from": "A document set grown by accretion: nobody can say which documents are in the controlled set, what shape each is supposed to have, who answers for it, or why content sits where it sits — and content moves between documents by being pasted.",
+  "to": "An ISO/IEC/IEEE 15289 information-item inventory: every document with its governing standard, cargo, and owning office; the shared identification scheme, held on loan until a CM plan takes it; a migration register for content in the wrong place; and a rule of entry, so the set changes on the record.",
+  "cost": "An afternoon of walking the actual set and admitting, row by row, which documents are shapeless, unowned, or carrying another document's content — findings that were cheaper not to know.",
+  "otherwise": "Documents keep entering the set by being written, migrations keep happening silently, and 'is this document authoritative?' stays a question answered differently by everyone who is asked.",
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-15"
+  }
+}

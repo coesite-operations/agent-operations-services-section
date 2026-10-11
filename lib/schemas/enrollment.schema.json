@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "union-officer-academy/schema/enrollment",
+  "title": "Enrollment",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["type", "cohort", "baseline", "admittedAt", "candidate"],
+  "properties": {
+    "type": {"const": "Enrollment"},
+    "id": {"$ref": "#/$defs/id"},
+    "cohort": {"$ref": "#/$defs/id"},
+    "baseline": {"$ref": "#/$defs/id"},
+    "admittedAt": {"type": "string", "format": "date-time"},
+    "candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "kind", "identityDigest", "appointmentLayer", "layerBindings"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "kind": {"enum": ["person", "character", "model-artifact", "runtime-session", "agent-relation"]},
+        "identityDigest": {"$ref": "#/$defs/digest"},
+        "appointmentLayer": {"const": "character-only"},
+        "layerBindings": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": false,
+          "properties": {
+            "person": {"$ref": "#/$defs/digest"},
+            "character": {"$ref": "#/$defs/digest"},
+            "modelArtifact": {"$ref": "#/$defs/digest"},
+            "runtimeSession": {"$ref": "#/$defs/digest"},
+            "harness": {"$ref": "#/$defs/digest"},
+            "agentRelation": {"$ref": "#/$defs/digest"}
+          }
+        },
+        "characterKind": {"enum": ["person", "session"]},
+        "model": {"type": "string", "minLength": 1},
+        "provider": {"type": "string", "minLength": 1},
+        "harnessDigest": {"$ref": "#/$defs/digest"}
+      }
+    }
+  },
+  "$defs": {
+    "id": {"type": "string", "pattern": "^urn:sha256:[a-f0-9]{64}$"},
+    "digest": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"}
+  }
+}

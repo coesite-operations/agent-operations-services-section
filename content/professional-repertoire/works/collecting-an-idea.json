@@ -1,0 +1,11 @@
+{
+  "id": "collecting-an-idea",
+  "name": "collecting an idea",
+  "from": "A thought with nowhere to go: a good idea sitting in someone's head, a bug report, a passing remark — real input the firm has no record for, because the only record type available (a requirement) demands conditions that settle before anything can be filed. Every idea not filed this way is an idea the requirements line never sees, dropped before analysis ever gets the chance to refuse it on the merits.",
+  "to": "An idea record in the pool, admissible on nothing more than who raised it and what they said. Filing costs the raiser nothing — no conditions to state, no committee to face — and whether it was ever taken up is a question anyone can answer afterward by scanning for a requirement or decision record that names it, rather than a question that depends on someone remembering to update a flag on the idea itself.",
+  "cost": "To whoever files: none beyond saying it in their own words. To whoever reads the pool: the discipline of treating an idea nobody has formalized yet as real input rather than noise, and of tracing what became of it through what downstream records say rather than trusting a claim the idea makes about itself.",
+  "x-provenance": {
+    "recorded-by": "claude/module-developer",
+    "recorded-on": "2026-07-16"
+  }
+}

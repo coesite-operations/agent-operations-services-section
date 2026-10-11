@@ -1,0 +1,15 @@
+{
+  "id": "settle-recurring-pattern-into-mechanism",
+  "name": "settling a recurring pattern into mechanism",
+  "authority": "emsenn",
+  "work": "settle-recurring-pattern-into-mechanism",
+  "claim": "emsenn",
+  "skills": [
+    "bootstrapping-an-enterprise-with-rectification"
+  ],
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-15",
+    "derived-from": "duties/_archive/settle-recurring-pattern-into-mechanism.md"
+  }
+}

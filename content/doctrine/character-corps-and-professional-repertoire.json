@@ -1,0 +1,21 @@
+{
+  "id": "character-corps-and-professional-repertoire",
+  "owner": "union-officer-academy",
+  "adoptedOn": "2026-07-18",
+  "amendsWithoutOverwriting": "content/doctrine/agency-office-formation.json",
+  "leaderCorrection": "An enterprise has an office with duties and skills; the Academy provides a cohort-formed character to fill that office as its officer. Humanized and agentic continuity is persistent character law; ephemeral data/model calls are animations under the hood.",
+  "constitutiveRelation": {
+    "office": "receiver-owned continuing seat of duties, skills, authority, and answerability",
+    "character": "Academy-formed persistent operating component and union of its dispositions, disciplines, skills, masks, and chronicles",
+    "appointment": "receiver-owned double settlement of recognition and induction",
+    "officer": "the incumbency relation joining one character to one office",
+    "animation": "one ephemeral model/provider/harness/context/tool call acting as the character under an exact grant; neither character nor officer"
+  },
+  "ownership": {
+    "academy": ["general professional repertoire", "session-character corps", "cohorts", "formation", "qualification", "animation and chronicle evidence", "executor projections"],
+    "receiver": ["specialized office overlays", "protected context", "selection", "recognition", "induction", "incumbency", "capability grants", "operational records"],
+    "person": ["self and personnel identity; enrollment never transfers ownership"]
+  },
+  "learning": "A character is improved by witnessed plays admitted into its chronicle and their closure into disciplines, skills, duties, and successor professional epochs—not by asserting that a prompt, policy stack, or model weight is the character.",
+  "temporality": "Cohort lineage versions formation and character standing independently of receiver office succession and independently of ephemeral provider iteration."
+}

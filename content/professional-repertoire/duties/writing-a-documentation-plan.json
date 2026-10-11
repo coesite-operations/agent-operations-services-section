@@ -1,0 +1,15 @@
+{
+  "id": "writing-a-documentation-plan",
+  "name": "writing a documentation plan",
+  "authority": "integrated-portfolio-management-team",
+  "work": "writing-a-documentation-plan",
+  "claim": "product-development-team-leader",
+  "skills": [
+    "writing-a-documentation-plan"
+  ],
+  "delegation": true,
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-15"
+  }
+}

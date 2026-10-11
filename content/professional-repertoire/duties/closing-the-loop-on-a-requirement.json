@@ -1,0 +1,16 @@
+{
+  "id": "closing-the-loop-on-a-requirement",
+  "name": "closing the loop on a requirement",
+  "authority": "integrated-portfolio-management-team",
+  "work": "closing-the-loop-on-a-requirement",
+  "claim": "requirements-management-team",
+  "skills": [
+    "recalling-a-requirement",
+    "writing-a-requirement"
+  ],
+  "delegation": false,
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-15"
+  }
+}

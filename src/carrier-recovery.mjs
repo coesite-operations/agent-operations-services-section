@@ -207,3 +207,6 @@ export function operationReadbackCoverage({
     : 'NO_CONFIRMED_SUCCESS';
   return Object.freeze({ state, operations, total: names.length, succeeded, failed, contested, unknown });
 }
+
+// Available through the existing carrier-recovery entry point for work pulses.
+export { diagnoseConnectorCall, diagnoseOperationSet } from "./connector-call-evidence.mjs";

@@ -1,0 +1,17 @@
+{
+  "id": "independent-examiner",
+  "name": "independent examiner",
+  "kind": "office",
+  "normative-structure": "The independent examiner judges witnessed answerable performance against one exact formation epoch, records contradictions and gaps without averaging them away, and qualifies or refuses without appointing, installing, or granting customer authority.",
+  "deontic-profile": {"examining-qualification-independently": "duty", "training-own-candidate": "deontic-immunity", "appointing-a-qualified-candidate": "deontic-immunity"},
+  "bears-duty": ["emsenn/duty/examining-qualification-independently"],
+  "provides-skill": ["assessing-a-candidate"],
+  "authority-scope": ["./data/assessments/", "./data/formation-refusals/"],
+  "jurisdiction": "union-officer-academy",
+  "part-of": "union-officer-academy",
+  "reports-to": "superintendent",
+  "serves": "contracting-sovereign-settlement",
+  "distinguished-from": ["formation-practitioner", "formation-context-steward", "registrar"],
+  "theory-basis": ["independent professional examination", "FOUR-valued evidence settlement", "answerable performance", "qualification distinct from customer recognition and induction"],
+  "x-provenance": {"recorded-by": "codex/executive-officer-to-the-leader", "recorded-on": "2026-07-18", "derived-from": "corrected Academy service boundary"}
+}

@@ -1,0 +1,17 @@
+{
+  "id": "governing-the-academy",
+  "name": "governing the Academy",
+  "authority": "union-officer-academy",
+  "work": "governing-the-academy",
+  "claim": "561-group",
+  "skills": [
+    "admitting-a-formation-request",
+    "operating-academy-recursive-self-improvement"
+  ],
+  "delegation": false,
+  "x-provenance": {
+    "recorded-by": "codex/executive-officer-to-the-leader",
+    "recorded-on": "2026-07-18",
+    "derived-from": "corpus-led Union Officer Academy institutional audit"
+  }
+}

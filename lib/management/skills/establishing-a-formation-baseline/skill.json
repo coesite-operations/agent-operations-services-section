@@ -1,0 +1,13 @@
+{
+  "type": "skill",
+  "name": "establishing-a-formation-baseline",
+  "verb-phrase": "establishing a formation baseline",
+  "description": "Use to compile admitted doctrine and an exact customer office request into a source-bound curriculum revision and immutable formation baseline with disclosed omissions and predecessor relations.",
+  "preconditions": ["an admitted FormationRequest exists", "every doctrine source has a stable identity and digest", "customer overlays have explicit use and egress terms"],
+  "postconditions": ["the curriculum covers every requested competency or the request is refused", "omissions and parent revisions are explicit", "the baseline exactly reproduces the admitted office snapshot and assessment law"],
+  "witness": {"records": ["CurriculumRevision", "FormationBaseline", "source doctrine digests", "omission list"]},
+  "closure-kind": "inquiry",
+  "models": ["academy-curriculum-capable-inference"],
+  "fuel": {"cap": 12, "unit": "turns"},
+  "install": ["codex"]
+}

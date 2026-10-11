@@ -1,0 +1,16 @@
+{
+  "id": "reporting-an-anomaly",
+  "name": "reporting an anomaly",
+  "authority": "emsenn",
+  "work": "reporting-an-anomaly",
+  "claim": "quality-operations",
+  "skills": [
+    "reporting-an-anomaly"
+  ],
+  "delegation": false,
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-16",
+    "derived-from": "user directive of 2026-07-16: every office bears this duty, so an out-of-lane flaw is reported rather than fixed, ignored, or allowed to derail the noticer's chartered work"
+  }
+}

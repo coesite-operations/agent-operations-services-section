@@ -1,0 +1,16 @@
+{
+  "id": "writing-a-concept-of-operations",
+  "name": "writing a concept of operations",
+  "authority": "integrated-portfolio-management-team",
+  "work": "writing-a-concept-of-operations",
+  "claim": "requirements-management-team",
+  "skills": [
+    "writing-a-concept-of-operations"
+  ],
+  "delegation": false,
+  "x-provenance": {
+    "recorded-by": "claude/module-developer",
+    "recorded-on": "2026-07-16",
+    "$comment": "Chartered per CCB decision conops-opscon-split-and-standard-protocols: the organization-level genre 29148 reserves the ConOps name for. Authority and claim are held as the prior (now-renamed) writing-a-system-operational-concept duty held them, unchanged, because whether the Strategy and Development Committee's office seating moves this duty's authority to investment-review-board is not yet decided — this record does not reach that question."
+  }
+}

@@ -6,9 +6,38 @@ const REQUIRED = (value, name) => {
 const TRI = new Set(['HELD', 'REFUTED', 'UNKNOWN', 'CONTESTED']);
 const HEALTH = new Set(['AVAILABLE', 'CONFIRMATION_GATED', 'RESERVED', 'UNSUPPORTED', 'DEGRADED', 'UNKNOWN']);
 
+const FOUR_BITS = Object.freeze({
+  HELD: Object.freeze({ positive: true, negative: false }),
+  REFUTED: Object.freeze({ positive: false, negative: true }),
+  UNKNOWN: Object.freeze({ positive: false, negative: false }),
+  CONTESTED: Object.freeze({ positive: true, negative: true })
+});
+
 function tri(value, name) {
   if (!TRI.has(value)) throw new TypeError(name + ' has invalid FOUR standing');
   return value;
+}
+
+function fromFourBits(positive, negative) {
+  if (positive) return negative ? 'CONTESTED' : 'HELD';
+  return negative ? 'REFUTED' : 'UNKNOWN';
+}
+
+export function fourNeg(value) {
+  const standing = tri(value, 'value');
+  const bits = FOUR_BITS[standing];
+  return fromFourBits(bits.negative, bits.positive);
+}
+
+export function fourAnd(left, right) {
+  const l = FOUR_BITS[tri(left, 'left')];
+  const r = FOUR_BITS[tri(right, 'right')];
+  return fromFourBits(l.positive && r.positive, l.negative || r.negative);
+}
+
+export function fourAll(values) {
+  if (!Array.isArray(values)) throw new TypeError('values must be an array');
+  return values.reduce((acc, value) => fourAnd(acc, value), 'HELD');
 }
 
 export function makeCapabilitySurface(input) {
@@ -36,15 +65,30 @@ export function makeCapabilitySurface(input) {
 
 export function surfaceDiagnosis(surface) {
   const s = makeCapabilitySurface(surface);
+  const connectorGapStanding = fourAnd(s.providerSupport, fourNeg(s.connectorExposure));
+  const providerAbsentStanding = fourNeg(s.providerSupport);
+  const executableStanding = fourAll([
+    s.providerSupport,
+    s.implementationSupport,
+    s.connectorExposure,
+    s.principalPermission,
+    s.harnessCallability
+  ]);
+  const receivedStanding = fourAll([executableStanding, s.providerEffect, s.readback]);
+
   const connectorGap = s.providerSupport !== 'REFUTED' && s.connectorExposure === 'REFUTED';
-  const executable = [s.providerSupport, s.implementationSupport, s.connectorExposure, s.principalPermission, s.harnessCallability]
-    .every((value) => value === 'HELD');
-  const received = executable && s.providerEffect === 'HELD' && s.readback === 'HELD';
+  const executable = executableStanding === 'HELD';
+  const received = receivedStanding === 'HELD';
+
   return Object.freeze({
     executable,
     received,
     connectorGap,
     providerAbsent: s.providerSupport === 'REFUTED',
+    connectorGapStanding,
+    providerAbsentStanding,
+    executableStanding,
+    receivedStanding,
     standing: received ? 'RECEIVED' : executable ? 'CALLABLE_UNRECEIVED' : connectorGap ? 'CONNECTOR_SURFACE_GAP' : s.health
   });
 }
@@ -69,6 +113,35 @@ export function makeCapabilityDemand(input) {
   });
 }
 
+/** Pure structural check only. The consumer/provider issuer must independently
+ * authenticate witnessId and providerReadbackRef; matching strings alone grant no rights. */
+export function validateCapabilityAcceptanceWitness(demand, supply) {
+  const w = supply?.acceptanceWitness;
+  const issues = [];
+  if (supply?.downstreamAccepted !== true || supply.acceptedBy !== demand?.demandingActor)
+    issues.push('acceptance must come from the exact demanding office');
+  if (w?.kind !== 'CAPABILITY_CONSUMER_READBACK' || w?.verdict !== 'MET')
+    issues.push('an independently received MET witness is required');
+  if (w?.demandId !== demand?.demandId || w?.workRef !== demand?.workRef ||
+      w?.capabilityId !== demand?.capabilityId ||
+      w?.supplyReceiptId !== supply?.supplyReceiptId ||
+      w?.suppliedSurfaceId !== supply?.suppliedSurfaceId)
+    issues.push('receiving witness must identify the exact work and supply');
+  if (typeof supply?.sourceRevision !== 'string' || !supply.sourceRevision.trim() ||
+      w?.sourceRevision !== supply.sourceRevision)
+    issues.push('receiving witness must bind the supplied source revision');
+  if (w?.acceptedBy !== demand?.demandingActor ||
+      typeof w?.receiverActorId !== 'string' || !w.receiverActorId.trim() ||
+      typeof supply?.supplierActorId !== 'string' || !supply.supplierActorId.trim() ||
+      w.receiverActorId === supply.supplierActorId)
+    issues.push('source supplier cannot self-accept as an independent receiving actor');
+  if (typeof w?.witnessId !== 'string' || !w.witnessId.trim() ||
+      typeof w?.providerReadbackRef !== 'string' || !w.providerReadbackRef.trim() ||
+      typeof w?.observedAt !== 'string' || !Number.isFinite(Date.parse(w.observedAt)))
+    issues.push('independent witness, provider readback and observation time required');
+  return Object.freeze({ok: issues.length === 0, issues: Object.freeze(issues)});
+}
+
 export function receiveCapabilitySupply(demand, supply) {
   const awaitingAcceptance = demand?.state === 'SUPPLIED_AWAITING_DOWNSTREAM_ACCEPTANCE';
   if (!demand || (demand.state !== 'OPEN' && !awaitingAcceptance)) {
@@ -79,7 +152,11 @@ export function receiveCapabilitySupply(demand, supply) {
   if (suppliedCapabilityId !== demand.capabilityId) throw new Error('supply capability does not match demand');
   const supplyReceiptId = REQUIRED(supply.supplyReceiptId, 'supply.supplyReceiptId');
   const suppliedSurfaceId = REQUIRED(supply.suppliedSurfaceId, 'supply.suppliedSurfaceId');
-  if (awaitingAcceptance && (supplyReceiptId !== demand.supplyReceiptId || suppliedSurfaceId !== demand.suppliedSurfaceId)) {
+  const sourceRevision = supply.sourceRevision ?? demand.sourceRevision ?? null;
+  const supplierActorId = supply.supplierActorId ?? demand.supplierActorId ?? null;
+  if (awaitingAcceptance && (supplyReceiptId !== demand.supplyReceiptId ||
+      suppliedSurfaceId !== demand.suppliedSurfaceId ||
+      sourceRevision !== demand.sourceRevision || supplierActorId !== demand.supplierActorId)) {
     throw new Error('supply identity does not match the supply awaiting downstream acceptance');
   }
 
@@ -88,6 +165,12 @@ export function receiveCapabilitySupply(demand, supply) {
   if (downstreamAccepted && acceptedBy !== demand.demandingActor) {
     throw new Error('only the demanding downstream actor may accept supply for closure');
   }
+  if (downstreamAccepted) {
+    const witnessed = validateCapabilityAcceptanceWitness(demand, {
+      ...supply, sourceRevision, supplierActorId
+    });
+    if (!witnessed.ok) throw new Error('capability acceptance unverified: ' + witnessed.issues.join('; '));
+  }
 
   return Object.freeze({
     ...demand,
@@ -95,7 +178,10 @@ export function receiveCapabilitySupply(demand, supply) {
     effectCustodian: downstreamAccepted ? acceptedBy : demand.effectCustodian,
     supplyReceiptId,
     suppliedSurfaceId,
+    sourceRevision,
+    supplierActorId,
     downstreamAccepted,
-    acceptedBy: downstreamAccepted ? acceptedBy : null
+    acceptedBy: downstreamAccepted ? acceptedBy : null,
+    acceptanceWitness: downstreamAccepted ? Object.freeze({...supply.acceptanceWitness}) : null
   });
 }

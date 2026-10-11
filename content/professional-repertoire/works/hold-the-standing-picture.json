@@ -1,0 +1,13 @@
+{
+  "id": "hold-the-standing-picture",
+  "name": "holding the standing picture",
+  "from": "An organization's shape stored in one person's head, shown only by that person explaining it — a dependency, not an institution.",
+  "to": "The shape readable off the record by someone who was not there: which offices exist, who holds each, who reports to whom, what serves what, and which named things do not exist yet — the picture includes its own holes. Both shapes are owed: the organization (the offices and their relations) and the going concern (which units are live or dark, working or broken, advancing or stalled, and where the firm's attention actually went). Rendered from the records by script, with dangling edges named rather than quietly omitted.",
+  "cost": "Keeping the record equal to the shape at every change, and the rendering apparatus that proves it can be shown without anyone narrating it.",
+  "otherwise": "An office chart with no unit states is an org that cannot say what it is doing; unit states with no office chart is work nobody answers for. If showing the shape requires emsenn to explain it, it has not been shown.",
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-15",
+    "derived-from": "duties/_archive/hold-the-standing-picture.md"
+  }
+}

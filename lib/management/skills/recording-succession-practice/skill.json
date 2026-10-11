@@ -1,0 +1,11 @@
+{
+  "type": "skill",
+  "name": "recording-succession-practice",
+  "verb-phrase": "recording succession practice",
+  "description": "Use to exercise and witness incumbent handover, office succession, or curriculum bridge practice while preserving open obligations, contradictions, protected-context custody, and the receiving settlement's sole authority to perform the real act.",
+  "preconditions": ["the enrollment and formation baseline resolve", "the exercise kind is distinguished from the other two succession kinds", "protected context is simulated or remains receiver-controlled"],
+  "postconditions": ["one SuccessionExercise is appended", "open obligations and contradictions remain visible", "customerMutation and performsReceiverAct are false"],
+  "witness": {"records": ["SuccessionExercise", "open obligation inventory", "contradiction inventory", "protected-context transfer witness"]},
+  "closure-kind": "procedure",
+  "install": ["codex"]
+}

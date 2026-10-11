@@ -1,0 +1,16 @@
+{
+  "id": "deciding-an-investment",
+  "name": "deciding an investment",
+  "authority": "emsenn",
+  "work": "deciding-an-investment",
+  "claim": "integrated-portfolio-management-team",
+  "skills": [
+    "deciding-an-investment"
+  ],
+  "delegation": false,
+  "x-provenance": {
+    "recorded-by": "claude/chief-of-staff",
+    "recorded-on": "2026-07-15",
+    "derived-from": "note-on-the-kernel-offices-of-a-software-node"
+  }
+}

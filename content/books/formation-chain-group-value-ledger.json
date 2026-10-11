@@ -1,0 +1,14 @@
+{
+  "id": "academy-formation-chain-group-value-ledger",
+  "kind": "win-win-value-ledger",
+  "unit": "academy-formation-chain-group",
+  "contract": "academy-formation-chain-group",
+  "entries": [],
+  "rules": [
+    "value created and value captured are separate",
+    "every member shares one receiver outcome rather than booking an internal handoff",
+    "no amount is booked from a member's own assertion",
+    "unknown receipts remain unknown rather than becoming zero",
+    "x402 settlement is admitted only after a real priced HTTP boundary and verifier exist"
+  ]
+}

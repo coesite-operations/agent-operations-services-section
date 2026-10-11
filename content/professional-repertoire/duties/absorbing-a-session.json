@@ -1,0 +1,16 @@
+{
+  "id": "absorbing-a-session",
+  "name": "absorbing a session",
+  "authority": "emsenn",
+  "work": "absorbing-a-session",
+  "claim": "emsenn",
+  "skills": [
+    "absorbing-a-session"
+  ],
+  "delegation": false,
+  "x-provenance": {
+    "recorded-by": "claude/chief-of-staff",
+    "recorded-on": "2026-07-15",
+    "derived-from": "~/.claude/skills/chief-of-staff/SKILL.md"
+  }
+}

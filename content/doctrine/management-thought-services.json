@@ -1,0 +1,27 @@
+{
+  "id": "management-thought-services",
+  "name": "Management Thought doctrine services",
+  "owner": "union-officer-academy",
+  "admittedOn": "2026-07-18",
+  "services": [
+    {
+      "id": "huidu-guanli",
+      "path": "services/management-thought/huidu-guanli",
+      "treeDigest": "sha256:190e72d88775c7edf0b6b57ae34bf1b59afd9f74052437a94edb1ecd47da8f41",
+      "educationalUses": ["holding graduated judgment without collapsing contradiction", "practitioner teaching", "situated mentorship", "trustworthiness before feature or schedule", "leadership succession", "action without managerial overreach"]
+    },
+    {
+      "id": "rendanheyi",
+      "path": "services/management-thought/rendanheyi",
+      "treeDigest": "sha256:6a5e3caaccd0330c172fe1c7401063dc6c422fc245f6d5559454c2c153ea9ebd",
+      "educationalUses": ["zero-distance service", "self-governing micro-enterprises", "open bidding", "mutual selection", "three rights", "chain-group contracts", "leading goals", "value-created and value-captured separation"]
+    }
+  ],
+  "doctrineLaw": [
+    "these services supply curriculum sources and professional vocabulary, not appointment authority",
+    "a curriculum cites exact source digests and discloses omissions",
+    "current practice can propose doctrine corrections but cannot rewrite an admitted source revision",
+    "source scholarship remains attributable while the Academy owns educational stewardship"
+  ]
+}
+

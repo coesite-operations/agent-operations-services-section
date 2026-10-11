@@ -1,0 +1,28 @@
+{
+  "id": "urn:emsenn:binding:a2a-stdio-jsonrpc-v1",
+  "kind": "a2a-custom-protocol-binding",
+  "a2aProtocolVersion": "1.0",
+  "scope": "local processes inside the Union Officer Academy enterprise",
+  "transport": {
+    "request": "one UTF-8 JSON-RPC 2.0 request on standard input followed by EOF",
+    "response": "one UTF-8 JSON-RPC 2.0 response on standard output followed by process exit",
+    "streaming": false,
+    "networkEndpointClaimed": false
+  },
+  "methodMapping": {
+    "SendMessage": "invoke one bounded formation MAPE contribution and return SendMessageResponse.task"
+  },
+  "serviceParameters": {
+    "A2A-Version": "fixed to 1.0 by this binding carrier and every AgentInterface",
+    "A2A-Extensions": []
+  },
+  "dataModel": {
+    "role": "ROLE_USER",
+    "partDiscriminator": "member presence; structured parts use data plus mediaType without legacy kind",
+    "terminalState": "TASK_STATE_COMPLETED",
+    "artifactMediaType": "application/json"
+  },
+  "errors": "invalid carriers terminate nonzero; the calling Academy boundary converts member failure into a typed ActivityStreams Reject",
+  "authority": "the binding conveys no authority; the enclosing chain-group contract and boundary capability do",
+  "notClaimed": ["HTTP JSON-RPC binding", "REST binding", "gRPC binding", "streaming", "remote discovery"]
+}

@@ -1,0 +1,13 @@
+{
+  "id": "auditing-the-firms-registers",
+  "name": "auditing the firm's registers",
+  "from": "Registers and books that assert their own completeness and correctness, checked by nobody but the office that keeps them and the reader who chooses to be careful.",
+  "to": "An independent re-derivation of each register and book against reality, delivered as a verdict that does not change with who would prefer a different one.",
+  "cost": "Re-running checks other offices have already claimed to have run, and reporting a drift to an office that would rather it not be found.",
+  "otherwise": "A register's claim about itself is the only check on that register, which is exactly the condition that let a twelve-office count and a fabricated officer attribution stand until an outside reading caught them.",
+  "x-provenance": {
+    "recorded-by": "claude/requirements-implementation-team",
+    "recorded-on": "2026-07-16",
+    "derived-from": "emsenn/requirement/the-firm-carries-its-corporate-functions; huidu-guanli 蓝军, 过程审计"
+  }
+}

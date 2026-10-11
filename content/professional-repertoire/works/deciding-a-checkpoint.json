@@ -1,0 +1,13 @@
+{
+  "id": "deciding-a-checkpoint",
+  "name": "deciding a checkpoint",
+  "from": "Work that continues because nobody stopped it: funded by momentum, its technical review verdict advisory to no one, every further hour spent by default rather than by decision.",
+  "to": "A binding verdict — go, no-go, or redirect — taken at a named checkpoint, on a technical review that already passed and an independent quality opinion already heard, with what a go commits the firm to stated in a charter a stranger can read. Work that continues past the checkpoint continues because the firm chose it over everything else that hour could have bought.",
+  "cost": "The decision itself — the deciders' attention on evidence they did not produce — and the killed work's sunk cost admitted out loud rather than ridden further.",
+  "otherwise": "A firm with no office holding the trade-off does not stop doing things, which is the same as never having chosen to do them; the portfolio becomes whatever survived, and the money that went to what should have died was taken from what should have lived.",
+  "x-provenance": {
+    "recorded-by": "claude/chief-of-staff",
+    "recorded-on": "2026-07-15",
+    "derived-from": "note-on-the-kernel-offices-of-a-software-node — the DCP/TR separation; offices/integrated-portfolio-management-team"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "id": "engineering-process-group",
+  "name": "engineering process group",
+  "kind": "office",
+  "normative-structure": "A record downstream is in the ruled form because this office swept it there, and drift is found by re-running the sweep, never by anyone's recollection. The office answers for that equality between what ruled practice states and what a unit's management records actually are — its offices, its projected skills, its pool entries, its inherited spellings — across every downstream unit in the ecosystem, above any one venture, because drift does not stop at a venture boundary and neither can the office that answers for it. It persists across incumbents because the drift does: a downstream unit that has not been swept in a while looks exactly like one that conforms, right up until someone reads a record closely enough to notice it is markdown standing in for a schema, or a spelling the archive was supposed to hold. Fa's own discipline is the office's discipline — first wear the shoes and learn to walk, and only later consider modifying them — so this office does not invent what ruled practice requires; the Chairperson settles that, and the office sweeps to it. It has no view on whether a rule is a good rule. It reports what does not conform, and it corrects what conforming would cost nothing to correct; what would cost a decision, it sends up rather than deciding in the sweep's own favor. The office practices guanli kexin development: mathematical lawfulness held in its left hand, standards conformance held in its right hand, and the space between is its realm — a record it produces is lawful as data and carried in a public standard format, never an ad hoc shape invented for the occasion.",
+  "deontic-profile": {
+    "sweep-a-units-management-records-against-ruled-practice": "deontic-power",
+    "derive-a-register-of-nonconformances-from-a-unit": "deontic-power",
+    "normalize-downstream-records-to-ruled-practice-as-it-was-settled-rather-than-as-convenient": "duty",
+    "re-run-the-sweep-rather-than-trust-that-a-unit-which-conformed-once-still-does": "duty",
+    "report-a-nonconformance-the-sweep-cannot-correct-without-a-decision-it-does-not-hold": "duty",
+    "send-a-change-to-ruled-practice-up-rather-than-redefining-it-inside-the-sweep": "duty",
+    "decline-to-decide-what-ruled-practice-requires": "deontic-immunity",
+    "decline-to-treat-an-unswept-unit-as-conforming": "deontic-immunity",
+    "report-an-anomaly-noticed-outside-this-offices-lane": "duty"
+  },
+  "bears-duty": [
+    "emsenn/duty/normalizing-a-units-management-records",
+    "emsenn/duty/reporting-an-anomaly"
+  ],
+  "provides-skill": [
+    "normalizing-a-units-management-records"
+  ],
+  "authority-scope": [
+    "lib/emsenn/"
+  ],
+  "jurisdiction": "lib/emsenn/",
+  "part-of": "emsenn",
+  "reports-to": [],
+  "peer-offices": [
+    "configuration-manager",
+    "content-librarian"
+  ],
+  "distinguished-from": [
+    "configuration-manager",
+    "content-librarian",
+    "product-quality-assurance"
+  ],
+  "theory-basis": [
+    "huidu-guanli/glossary/fa: process institutionalization is the conversion of capability that lives in individuals into capability that lives in the organization, and its characteristic instruction is 'first wear the shoes and learn to walk, and only later consider modifying them' — a process amended at the point of use by whoever encounters it is not a process, and this office exists so ruled practice is swept into downstream records rather than renegotiated by each unit that holds one",
+    "cmmi: the Engineering Process Group (EPG) is the organizational owner of process definition, conformance appraisal, and asset deployment under the Organizational Process Focus (OPF) process area — a standing function distinct from any single project's management, chartered to determine whether the organization's practice, as actually written down, is what units are actually doing",
+    "huawei's adoption of IBM's integrated product development (IPD) beginning in the late 1990s ran at very large expense specifically because process institutionalization does not arrive by memo — it arrives by an owning function sweeping the new practice into every unit's actual working records, which is the same motion this office performs mechanically rather than as a change program",
+    "the DoD issuances program runs a standing review cycle over its own directives and instructions specifically so that a superseded or renamed policy does not survive as a live document downstream — conformance to the current issuance is checked against the issuance, not assumed from the fact that a unit was compliant at some earlier point",
+    "haier's Rendanheyi model holds platform-level standards that every micro-enterprise (ZZJYT) node answers to even though each node is independently accountable for its own results — the standard is centrally held and its conformance is centrally checked, which is exactly the asymmetry between this office (whole-ecosystem sweep) and the units it sweeps (independently operating downstream)",
+    "predicated-governance: office-as-double-settlement",
+    "guanli kexin development: mathematical lawfulness in the left hand — records as facts a machine can check, EAVT datoms and lawful events; standards conformance in the right hand — public formats such as ActivityPub, CloudEvents, and the ISO/IEC/IEEE information items, never ad hoc shapes; the space between the hands is the office's realm — per huidu-guanli/kexin, trustworthiness is built in at design and ranks above feature and schedule"
+  ],
+  "unrealized": [
+    "this office's ruled practice presently covers four checks the Chairperson has settled — office-pool shape, SKILL.md frontmatter, the infometrologia spelling, and pool-record provenance — and ruled practice will need to grow as more of it gets settled; the sweep instrument is not yet a general-purpose rules engine and each new rule is presently a code change to it",
+    "this office is drawn from the same well as the requirements implementation team's realization of this requirement and is not yet exercised as a standing incumbent anywhere but the root node it was installed at — its remit is whole-ecosystem but its installed presence is one node",
+    "nothing yet distinguishes a nonconformance the sweep could correct mechanically from one that needs a decision only the change control board or the requirements line can make; the sweep presently only detects and reports, and the corrective half of the duty is discharged by whoever reads the register choosing to act on it"
+  ],
+  "founded": "2026-07-16",
+  "x-provenance": {
+    "recorded-by": "claude/requirements-implementation-team",
+    "recorded-on": "2026-07-16",
+    "derived-from": "requirement: downstream-records-come-into-conformance",
+    "amended-by": "claude/configuration-manager",
+    "amended-on": "2026-07-16",
+    "amendment": "added bears-duty emsenn/duty/reporting-an-anomaly and deontic-profile entry report-an-anomaly-noticed-outside-this-offices-lane: duty, per stand-up-the-anomaly-reporting-channel"
+  }
+}

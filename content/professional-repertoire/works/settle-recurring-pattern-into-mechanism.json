@@ -1,0 +1,13 @@
+{
+  "id": "settle-recurring-pattern-into-mechanism",
+  "name": "settling a recurring pattern into mechanism",
+  "from": "Correct behaviour held by attention rather than by apparatus — someone remembering to do it — surviving only as long as someone chooses to be careful.",
+  "to": "The behaviour pushed down the settlement path to the lowest layer that can hold it faithfully, the superseded copy retired so one claim has one home, and the mechanism recognised as sufficient: by emsenn settling that it is, or by it demonstrably passing against a case that would have failed. The end state is that the mechanism does it and nobody has to be good.",
+  "cost": "The settlement work itself: building the mechanism so it exists and fires, retiring the superseded copy, and demonstrating sufficiency — a note is not a mechanism, it is a record of an intention.",
+  "otherwise": "The correction stops at 'I will remember better', which changes nothing, and emsenn pays for the same correction again in the next session.",
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-15",
+    "derived-from": "duties/_archive/settle-recurring-pattern-into-mechanism.md"
+  }
+}

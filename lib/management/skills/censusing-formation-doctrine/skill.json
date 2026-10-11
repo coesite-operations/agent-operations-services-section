@@ -1,0 +1,24 @@
+{
+  "type": "skill",
+  "name": "censusing-formation-doctrine",
+  "verb-phrase": "censusing formation doctrine",
+  "description": "Use when census the entire source territory named by a formation question before compressing it into curriculum.",
+  "preconditions": [
+    "the exact customer, candidate, source, or Academy record in scope resolves",
+    "the acting office's authority and refusal boundary are explicit",
+    "required evidence is available or its absence is recorded"
+  ],
+  "postconditions": [
+    "one replayable doctrine census with omissions counted rather than hidden",
+    "no customer appointment, capability grant, or cross-settlement write is performed"
+  ],
+  "witness": {
+    "records": [
+      "one replayable doctrine census with omissions counted rather than hidden"
+    ]
+  },
+  "closure-kind": "procedure",
+  "install": [
+    "codex"
+  ]
+}

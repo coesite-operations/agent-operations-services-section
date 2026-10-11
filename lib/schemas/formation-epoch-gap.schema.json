@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "union-officer-academy/schema/formation-epoch-gap",
+  "title": "Formation Epoch Gap",
+  "description": "The exact difference between two cohort formation configurations, kept separate from a change to customer office law.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["type", "fromCohort", "toCohort", "derivedAt", "changedComponents", "sameOfficeBaseline", "automaticAdvancement", "customerReviewRequired"],
+  "properties": {
+    "type": {"const": "FormationEpochGap"},
+    "id": {"$ref": "#/$defs/id"},
+    "fromCohort": {"$ref": "#/$defs/id"},
+    "toCohort": {"$ref": "#/$defs/id"},
+    "derivedAt": {"type": "string", "format": "date-time"},
+    "changedComponents": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"enum": ["officeDigest", "doctrineDenominatorDigest", "curriculumDigest", "exerciseRegimeDigest", "assessmentLawDigest", "providers", "projectors"]}},
+    "sameOfficeBaseline": {"type": "boolean"},
+    "automaticAdvancement": {"const": false},
+    "customerReviewRequired": {"const": true}
+  },
+  "$defs": {"id": {"type": "string", "pattern": "^urn:sha256:[a-f0-9]{64}$"}}
+}

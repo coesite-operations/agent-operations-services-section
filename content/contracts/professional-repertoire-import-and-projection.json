@@ -1,0 +1,15 @@
+{
+  "id": "professional-repertoire-import-and-projection",
+  "owner": "union-officer-academy",
+  "sourceSettlements": ["executive-office", "561-group", "lenticule-science", "leader-movement-team"],
+  "admittedAssets": ["reusable professional offices", "reusable duties and work forms", "executable skill packages and scripts", "session-character stores and chronicles"],
+  "canonicalTerritory": ["content/professional-repertoire", "lib/professional-repertoire", "content/characters"],
+  "transition": "Existing source paths remain read-compatible projections only where the projection ledger proves digest equality. The Academy carrier is the source of future general amendments. Consumer-specific divergence requires an explicit specialization overlay.",
+  "prohibitions": [
+    "no source occurrence is treated as ownership evidence",
+    "no projection may be amended independently",
+    "no specialized service law is generalized merely because another service could imagine using it",
+    "no character chronicle is confused with a runtime session or model state",
+    "no import conveys appointment, protected context, or operational authority"
+  ]
+}

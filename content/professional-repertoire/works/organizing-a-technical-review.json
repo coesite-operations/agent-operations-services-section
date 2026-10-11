@@ -1,0 +1,13 @@
+{
+  "id": "organizing-a-technical-review",
+  "name": "organizing a technical review",
+  "from": "A work product carried toward a funding decision on its author's confidence: reviewers unnamed, entry criteria unstated, the checkpoint about to rule on soundness it has no verdict about.",
+  "to": "A review that happened: the work product named against its baseline, the reviewers named and none of them its author, the entry conditions checked before anyone's time was spent, and a verdict on the record — pass, pass-with-risk, or fail — that is advisory input to the checkpoint and binding on no one.",
+  "cost": "The organizing itself — scope, reviewers, entry check, the record of the verdict — spent by an office that gains nothing either way the verdict lands.",
+  "otherwise": "The decision checkpoint opens on nothing: the funding body either judges soundness itself, which collapses the separation, or funds unsound work, which the separation exists to prevent.",
+  "x-provenance": {
+    "recorded-by": "claude/chief-of-staff",
+    "recorded-on": "2026-07-15",
+    "derived-from": "note-on-the-kernel-offices-of-a-software-node — PDT authors, TR teams organized by PQA check, IPMT decides; offices/product-quality-assurance"
+  }
+}

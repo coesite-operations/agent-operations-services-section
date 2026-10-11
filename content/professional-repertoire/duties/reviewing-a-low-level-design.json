@@ -1,0 +1,16 @@
+{
+  "id": "reviewing-a-low-level-design",
+  "name": "reviewing a low-level design",
+  "authority": "integrated-portfolio-management-team",
+  "work": "reviewing-a-low-level-design",
+  "claim": "module-lead",
+  "skills": [
+    "writing-a-low-level-design"
+  ],
+  "delegation": false,
+  "x-provenance": {
+    "recorded-by": "codex/engineering-process-group",
+    "recorded-on": "2026-07-17",
+    "derived-from": "senior-software-engineer deontic-profile: review-a-low-level-design-and-answer-for-what-the-review-passed; SAS to HLD to LLD design chain"
+  }
+}

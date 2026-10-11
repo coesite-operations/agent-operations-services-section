@@ -1,0 +1,51 @@
+{
+  "id": "internal-audit",
+  "name": "internal audit",
+  "kind": "office",
+  "normative-structure": "The registers, the books, and the offices' own conduct get independently re-derived by this office against reality, and it answers to the top rather than to the line whose work it checks. It persists across incumbents because a firm that only reads its own registers' claims about themselves has no way to learn a register has drifted from what is true — which is exactly how a fixed twelve-office count and a fabricated officer attribution stood unnoticed until an outside reading caught them. The office never reads a claim where it can re-run the check that would settle it, and its verdict is delivered the same regardless of which office it audits or who would prefer a different one.",
+  "deontic-profile": {
+    "re-derive-a-register-independently-of-what-it-claims": "deontic-power",
+    "open-an-adversarial-review-of-a-units-conduct": "deontic-power",
+    "audit-the-firms-registers-against-reality": "duty",
+    "re-run-a-check-rather-than-read-a-report-of-it": "duty",
+    "report-a-drift-between-a-register-and-what-it-claims": "duty",
+    "decline-to-repair-a-register-it-finds-drifted": "deontic-immunity",
+    "decline-to-attest-a-single-workers-work-product": "deontic-immunity",
+    "report-an-anomaly-noticed-outside-this-offices-lane": "duty"
+  },
+  "bears-duty": [
+    "emsenn/duty/auditing-the-firms-registers",
+    "emsenn/duty/reporting-an-anomaly"
+  ],
+  "authority-scope": [
+    "lib/emsenn/"
+  ],
+  "jurisdiction": "lib/emsenn/",
+  "part-of": "emsenn",
+  "reports-to": [],
+  "distinguished-from": [
+    "product-quality-assurance",
+    "configuration-manager"
+  ],
+  "theory-basis": [
+    "huidu-guanli: 蓝军 — the blue army adversarial cell exists to argue against the firm's own strategy and find what the firm's own offices would not find looking at themselves",
+    "huidu-guanli: 过程审计 (process audit) — an independent re-derivation of whether a process was followed, distinct from the quality opinion given at a checkpoint, per lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/characters/emsenn/content/documents/articles/notes/2026/07/15/2026-07-15-note-on-the-kernel-offices-of-a-software-node.md",
+    "huidu-guanli: 刑名, 循名責實 — performance must match title at the level of the register itself, not only at the level of a single worker's claim",
+    "emsenn/office/content-librarian (unrealized): 'nothing checks that a term is defined in exactly one place' — the same absence recurs at every register this office answers for and is the reason none of them can presently be trusted unaudited",
+    "predicated-governance: office-as-double-settlement"
+  ],
+  "unrealized": [
+    "no register exists yet for this office to audit — corporate-secretary's register, the chief financial officer's books, and the personnel register are none of them built, so this office's first audits have nothing independent to check against",
+    "no adversarial review has ever been opened against any office's conduct; the 蓝军 function is named here and has not been exercised",
+    "this office answers to 'the top' in name only — no funding or investment body has yet received a report from it, so the reporting line this office's independence depends on is asserted and not yet exercised"
+  ],
+  "founded": "2026-07-16",
+  "x-provenance": {
+    "recorded-by": "claude/requirements-implementation-team",
+    "recorded-on": "2026-07-16",
+    "derived-from": "emsenn/requirement/the-firm-carries-its-corporate-functions",
+    "amended-by": "claude/configuration-manager",
+    "amended-on": "2026-07-16",
+    "amendment": "added bears-duty emsenn/duty/reporting-an-anomaly and deontic-profile entry report-an-anomaly-noticed-outside-this-offices-lane: duty, per stand-up-the-anomaly-reporting-channel"
+  }
+}

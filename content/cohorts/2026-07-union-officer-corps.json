@@ -1,0 +1,24 @@
+{
+  "id": "2026-07-union-officer-corps",
+  "kind": "character-cohort",
+  "owner": "union-officer-academy",
+  "openedAt": "2026-07-18T00:00:00-05:00",
+  "progression": "asynchronous",
+  "lineage": {"parents": [], "successors": []},
+  "formationEpoch": "union-officer-character-corps-generation-1",
+  "members": [
+    {"character": "codex-interactive-session", "standing": "candidate", "qualification": null, "officeTrack": "executive-officer-to-the-leader"},
+    {"character": "rom-keldar", "standing": "prior-practice-admitted", "qualification": null, "officeTrack": "founding-assistant"},
+    {"character": "riley-park", "standing": "prior-practice-admitted", "qualification": null, "officeTrack": null},
+    {"character": "karen-wiener", "standing": "prior-practice-admitted", "qualification": null, "officeTrack": null},
+    {"character": "lauren-becker", "standing": "prior-practice-admitted", "qualification": null, "officeTrack": null},
+    {"character": "melvin-ginsberg", "standing": "prior-practice-admitted", "qualification": null, "officeTrack": null},
+    {"character": "calder-underhill", "standing": "prior-practice-admitted", "qualification": null, "officeTrack": null}
+  ],
+  "law": [
+    "membership is character membership, not Academy employment or receiver incumbency",
+    "prior practice is evidence admitted for formation and never silently rounded to qualification",
+    "each material repertoire or animation-law change opens a successor cohort",
+    "persons may enroll on a disjoint personnel identity but are never owned by the Academy"
+  ]
+}

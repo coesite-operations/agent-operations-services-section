@@ -1,0 +1,12 @@
+{
+  "id": "writing-a-software-architecture-specification",
+  "name": "writing a software architecture specification",
+  "from": "A system whose architecture exists — every built system has one — but exists only as the sum of decisions nobody recorded, held in the heads of whoever made each one. A module designer who needs to know the system's shape asks a person, and gets the shape as that person remembers deciding it.",
+  "to": "An architecture description a stranger can conform to: stakeholders and concerns identified, each concern framed by a declared viewpoint, decisions recorded with the rationale and the alternatives that lost. A high-level design can now be checked against the architecture instead of against someone's recollection of it.",
+  "cost": "The architect's attention, spent before any code exists to prove the decisions right — which is the only time the decisions are still cheap to change, and the time when spending attention on documents feels least defensible.",
+  "otherwise": "The architecture still gets decided, one module-local choice at a time, by whoever hits each question first — and is recoverable afterward only as archaeology, by reading everything ever built.",
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-15"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "id": "reporting-an-anomaly",
+  "name": "reporting an anomaly",
+  "from": "An office that notices, mid-work, that something outside its lane is flawed, and has only bad moves: fix it and abandon its own lane, ignore it and let the flaw stand, or derail its chartered work into work nobody chartered.",
+  "to": "The observation seated in the anomaly register as a record a stranger can re-observe — who noticed, while doing what, what was seen, where — and the noticer back at its own work, the routing owed by quality operations rather than by whoever happened to look.",
+  "cost": "Writing the report at the moment of noticing, when the noticer is nearest the evidence and most tempted to fix it or forget it.",
+  "otherwise": "Every office quietly becomes a general handyman: lanes dissolve, fixes land unreviewed in other offices' jurisdictions, and the flaws nobody fixed die with the session that saw them — the loop has no Monitor, so nothing upstream ever learns.",
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-16",
+    "derived-from": "user directive of 2026-07-16: anyone who works with stuff needs a duty to do the skillful work of reporting out-of-lane flaws, so they flow into the developing huidu MAPE-K loop"
+  }
+}

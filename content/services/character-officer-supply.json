@@ -1,0 +1,25 @@
+{
+  "id": "character-officer-supply",
+  "name": "Character officer supply",
+  "owner": "union-officer-academy",
+  "outcome": "A receiving enterprise can obtain a qualified Academy character and exact animation/context evidence for a vacancy, then independently recognize, induce, grant, or refuse that character under receiver law.",
+  "accepts": "ActivityStreams Offer<OfficeVacancyDemand> carrying exact OfficerSupplyLot, AcademyOfficerSupplyBid, receiver OfficerSupplyAward, and admitted contract",
+  "returns": "ActivityStreams Offer<CharacterOfficerSupplyOffer>|Question|Reject",
+  "offices": ["superintendent", "registrar", "formation-context-steward", "formation-practitioner", "independent-examiner"],
+  "products": ["CharacterOfficerSupplyOffer", "ProfessionalContextBundle", "CharacterAnimationPlan", "QualificationEvidence", "TypedRefusal"],
+  "constitutiveRelation": "office + character + receiver recognition + receiver induction = officer",
+  "authorityWithheld": ["receiver-recognition", "receiver-induction", "incumbency", "capability-grant", "protected-context-admission", "operational-finalization"],
+  "animationLaw": [
+    "a runtime call animates one character for one bounded act",
+    "the call is not the character, office, incumbency, or officer",
+    "the model and runtime inherit no character identity or qualification",
+    "the character chronicle may admit a witnessed result only through Academy learning law"
+  ],
+  "marketLaw": [
+    "local necessity selects the officer-supply service category but no provider",
+    "the receiver tenders a provider-neutral lot",
+    "the Academy discloses recursively contracted capacity in its bid",
+    "only the receiver's award admits the Academy to fulfill",
+    "award and fulfillment convey no office authority"
+  ]
+}

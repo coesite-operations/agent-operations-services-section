@@ -1,0 +1,8 @@
+{
+  "type": "AcademyCivicActivityPulseContract",
+  "id": "urn:ame:union-officer-academy:contract:bare-cedar-fog-colony-civic-activity-pulse-v1",
+  "provider": "urn:ame:union-officer-academy:civic-activity-pulse-provider",
+  "customer": "urn:ame:bare-cedar-fog-colony:colony-report-team",
+  "scope": "Project the Academy's own timestamped CloudEvents journal into exact interval formation, contract, work, A2A, ActivityStreams, economic, and operational flows.",
+  "forbids": ["territorial recensus", "customer mutation", "untimestamped A2A inference", "appointment inference"]
+}

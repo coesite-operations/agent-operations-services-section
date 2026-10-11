@@ -1,0 +1,24 @@
+{
+  "id": "market-mediated-character-officer-supply",
+  "name": "Market-mediated character officer supply",
+  "owner": "union-officer-academy",
+  "outcome": "A receiver publishes a provider-neutral officer-supply lot, qualified providers compete, the Academy discloses the sovereign supplier contracts that make its bid feasible, and only the receiver may award and admit the resulting contract.",
+  "flow": [
+    "receiver derives LocalOfficerSupplyNecessity",
+    "receiver offers OfficerSupplyLot to an admitted market",
+    "Academy and other capable providers author competing bids",
+    "Academy recursively procures missing capacity from voluntary sovereign suppliers",
+    "receiver compares bids and may Accept, Reject, Question, or leave the lot open",
+    "winning provider fulfills the contract; receiver separately decides recognition and induction"
+  ],
+  "academyBidRequires": [
+    "exact office lot and receiver-local necessity",
+    "qualified character or an explicitly conditional formation plan",
+    "content-addressed qualification and context evidence",
+    "provider-authored supplier bids and commitments",
+    "disclosed contribution, shortfall, authority, and refusal terms",
+    "no claim that bid, award, supply, or animation is appointment"
+  ],
+  "recursiveImprovement": "Supplier outcomes, refusals, witnessed execution, and receiver receipts enter the Academy's knowledge loop; the next cohort, repertoire epoch, provider configuration, and bid can improve independently without an imperial release line.",
+  "offices": ["superintendent", "registrar", "formation-context-steward", "formation-practitioner", "independent-examiner"]
+}

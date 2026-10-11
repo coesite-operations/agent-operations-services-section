@@ -1,0 +1,15 @@
+{
+  "id": "writing-a-conformance-plan",
+  "name": "writing a conformance plan",
+  "authority": "integrated-portfolio-management-team",
+  "work": "writing-a-conformance-plan",
+  "claim": "product-quality-assurance",
+  "skills": [
+    "writing-a-conformance-plan"
+  ],
+  "delegation": true,
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-15"
+  }
+}

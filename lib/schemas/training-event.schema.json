@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "union-officer-academy/schema/training-event",
+  "title": "Training Event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["type", "enrollment", "baseline", "bundle", "candidateAssemblyDigest", "producerIdentity", "occurredAt", "stage", "instructor", "evidence", "outcome", "customerMutation"],
+  "properties": {
+    "type": {"const": "TrainingEvent"},
+    "id": {"$ref": "#/$defs/id"},
+    "enrollment": {"$ref": "#/$defs/id"},
+    "baseline": {"$ref": "#/$defs/id"},
+    "bundle": {"$ref": "#/$defs/id"},
+    "candidateAssemblyDigest": {"$ref": "#/$defs/digest"},
+    "producerIdentity": {"$ref": "#/$defs/actorBinding"},
+    "occurredAt": {"type": "string", "format": "date-time"},
+    "stage": {"enum": ["orientation", "simulation", "shadow-work", "supervised-practice", "independent-demonstration", "reflection", "teaching-back"]},
+    "instructor": {"type": "string", "minLength": 1},
+    "mentor": {"type": "string", "minLength": 1},
+    "competencies": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "evidence": {"type": "array", "minItems": 1, "items": {"type": "object", "required": ["kind", "digest", "artifact"], "additionalProperties": false, "properties": {"kind": {"type": "string", "minLength": 1}, "digest": {"$ref": "#/$defs/digest"}, "artifact": {"type": "object", "required": ["enrollment", "bundle", "candidateAssemblyDigest", "caseIds", "witnessKind"]}}}},
+    "outcome": {"enum": ["demonstrated", "developing", "not-demonstrated", "refused"]},
+    "corrections": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "customerMutation": {"const": false}
+  },
+  "$defs": {
+    "id": {"type": "string", "pattern": "^urn:sha256:[a-f0-9]{64}$"},
+    "digest": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+    "actorBinding": {"type": "object", "required": ["office", "characterDigest", "runtimeSessionDigest", "agentRelationDigest", "providerEngagement"], "properties": {"office": {"type": "string", "minLength": 1}, "characterDigest": {"$ref": "#/$defs/digest"}, "runtimeSessionDigest": {"$ref": "#/$defs/digest"}, "agentRelationDigest": {"$ref": "#/$defs/digest"}, "providerEngagement": {"type": "string", "minLength": 1}}}
+  }
+}

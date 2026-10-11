@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "union-officer-academy/schema/formation-request",
+  "title": "Formation Request",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["type", "customer", "receivedAt", "office", "candidatePolicy", "trainingGrant", "competencies", "assessmentLaw"],
+  "properties": {
+    "type": {"const": "FormationRequest"},
+    "id": {"$ref": "#/$defs/id"},
+    "customer": {"type": "string", "minLength": 1},
+    "receivedAt": {"type": "string", "format": "date-time"},
+    "office": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "digest", "deonticProfileDigest", "duties", "skills", "jurisdiction", "protectedContextDigest", "appointmentLawDigest", "succession"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "digest": {"$ref": "#/$defs/digest"},
+        "deonticProfileDigest": {"$ref": "#/$defs/digest"},
+        "duties": {"type": "array", "minItems": 1, "items": {"type": "object", "required": ["id", "digest", "authority", "claim", "work", "workDigest"], "additionalProperties": false, "properties": {"id": {"type": "string", "minLength": 1}, "digest": {"$ref": "#/$defs/digest"}, "authority": {"type": "string", "minLength": 1}, "claim": {"type": "string", "minLength": 1}, "work": {"type": "string", "minLength": 1}, "workDigest": {"$ref": "#/$defs/digest"}}}},
+        "skills": {"type": "array", "minItems": 1, "items": {"type": "object", "required": ["id", "specDigest", "bodyDigest", "closureKind", "requiresCapabilities"], "additionalProperties": false, "properties": {"id": {"type": "string", "minLength": 1}, "specDigest": {"$ref": "#/$defs/digest"}, "bodyDigest": {"$ref": "#/$defs/digest"}, "closureKind": {"enum": ["process", "derivation", "procedure", "inquiry"]}, "requiresCapabilities": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}}}}},
+        "jurisdiction": {"type": "string", "minLength": 1},
+        "protectedContextDigest": {"$ref": "#/$defs/digest"},
+        "appointmentLawDigest": {"$ref": "#/$defs/digest"},
+        "succession": {"type": "object", "additionalProperties": false, "required": ["predecessors", "successors"], "properties": {"predecessors": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}}, "successors": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}}}}
+      }
+    },
+    "candidatePolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kinds", "identityInheritance"],
+      "properties": {
+        "kinds": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"enum": ["person", "character", "model-artifact", "runtime-session", "agent-relation"]}},
+        "identityInheritance": {"const": false}
+      }
+    },
+    "trainingGrant": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["operations", "customerMutation", "egress"],
+      "properties": {
+        "operations": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "customerMutation": {"const": false},
+        "egress": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+      }
+    },
+    "competencies": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "assessmentLaw": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["requiredWitnessKinds", "independentExaminer"],
+      "properties": {
+        "requiredWitnessKinds": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "independentExaminer": {"const": true}
+      }
+    },
+    "price": {"type": "object"}
+  },
+  "$defs": {
+    "id": {"type": "string", "pattern": "^urn:sha256:[a-f0-9]{64}$"},
+    "digest": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"}
+  }
+}

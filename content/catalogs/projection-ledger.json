@@ -1,0 +1,1723 @@
+{
+  "id": "union-officer-academy-projection-ledger",
+  "owner": "union-officer-academy",
+  "professionalRepertoire": [
+    {
+      "id": "black-army",
+      "canonicalPath": "content/professional-repertoire/offices/black-army.json",
+      "digest": "sha256:2b002b8d81e054f77a47672b0a7d4d0f47ebcd484d639b56335940eb4e1471dc",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/black-army.json",
+      "projectionDigest": "sha256:2b002b8d81e054f77a47672b0a7d4d0f47ebcd484d639b56335940eb4e1471dc"
+    },
+    {
+      "id": "blue-army",
+      "canonicalPath": "content/professional-repertoire/offices/blue-army.json",
+      "digest": "sha256:b0989f08dad46a2e72adaa23af962db37312224da64ae96a583c6f23238f2e2c",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/blue-army.json",
+      "projectionDigest": "sha256:b0989f08dad46a2e72adaa23af962db37312224da64ae96a583c6f23238f2e2c"
+    },
+    {
+      "id": "chairperson",
+      "canonicalPath": "content/professional-repertoire/offices/chairperson.json",
+      "digest": "sha256:cc30139b5fb81484a02edad638848130975b016afcc9ff86b5dca2d02d2f463e",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/chairperson.json",
+      "projectionDigest": "sha256:cc30139b5fb81484a02edad638848130975b016afcc9ff86b5dca2d02d2f463e"
+    },
+    {
+      "id": "change-control-board",
+      "canonicalPath": "content/professional-repertoire/offices/change-control-board.json",
+      "digest": "sha256:74352e6975d92038ee35793bf46191a3a0dc1d510e66284fc7e7a4df8f33d2cb",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/change-control-board.json",
+      "projectionDigest": "sha256:74352e6975d92038ee35793bf46191a3a0dc1d510e66284fc7e7a4df8f33d2cb"
+    },
+    {
+      "id": "character-resources",
+      "canonicalPath": "content/professional-repertoire/offices/character-resources.json",
+      "digest": "sha256:e03524eb60ec81197d2e357891c5f929d6202779ae6553f860e0ab1a43eeca86",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/character-resources.json",
+      "projectionDigest": "sha256:e03524eb60ec81197d2e357891c5f929d6202779ae6553f860e0ab1a43eeca86"
+    },
+    {
+      "id": "chief-financial-officer",
+      "canonicalPath": "content/professional-repertoire/offices/chief-financial-officer.json",
+      "digest": "sha256:73e4fba1610578a9db47d6dfd1f2ff1d7f82b0067430380ebff36336f1cf34b5",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/chief-financial-officer.json",
+      "projectionDigest": "sha256:73e4fba1610578a9db47d6dfd1f2ff1d7f82b0067430380ebff36336f1cf34b5"
+    },
+    {
+      "id": "configuration-manager",
+      "canonicalPath": "content/professional-repertoire/offices/configuration-manager.json",
+      "digest": "sha256:00a0c547b2602355391eeed88508216039d0cefda233717ab6a4958d51c5e44a",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/configuration-manager.json",
+      "projectionDigest": "sha256:00a0c547b2602355391eeed88508216039d0cefda233717ab6a4958d51c5e44a"
+    },
+    {
+      "id": "content-librarian",
+      "canonicalPath": "content/professional-repertoire/offices/content-librarian.json",
+      "digest": "sha256:d050a4d730c32513261e7fc545c7eebba1cf4f44b46f2bf6bb82573120556c59",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/content-librarian.json",
+      "projectionDigest": "sha256:d050a4d730c32513261e7fc545c7eebba1cf4f44b46f2bf6bb82573120556c59"
+    },
+    {
+      "id": "corporate-secretary",
+      "canonicalPath": "content/professional-repertoire/offices/corporate-secretary.json",
+      "digest": "sha256:37e336f401bdca8bb7f010edd01e2097ec816094bed4185347d4cab7b09cd080",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/corporate-secretary.json",
+      "projectionDigest": "sha256:37e336f401bdca8bb7f010edd01e2097ec816094bed4185347d4cab7b09cd080"
+    },
+    {
+      "id": "engineering-process-group",
+      "canonicalPath": "content/professional-repertoire/offices/engineering-process-group.json",
+      "digest": "sha256:0e801b1164b5faa2da67ca6f0c3227be0c9b71ba0fc731dd8688e8543f6e6db6",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/engineering-process-group.json",
+      "projectionDigest": "sha256:0e801b1164b5faa2da67ca6f0c3227be0c9b71ba0fc731dd8688e8543f6e6db6"
+    },
+    {
+      "id": "general-counsel",
+      "canonicalPath": "content/professional-repertoire/offices/general-counsel.json",
+      "digest": "sha256:d0ef26ddd7cfb6335601988767d1490958ae36d719d562c706bb4b849907ef8b",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/general-counsel.json",
+      "projectionDigest": "sha256:d0ef26ddd7cfb6335601988767d1490958ae36d719d562c706bb4b849907ef8b"
+    },
+    {
+      "id": "integrated-portfolio-management-team",
+      "canonicalPath": "content/professional-repertoire/offices/integrated-portfolio-management-team.json",
+      "digest": "sha256:84d77d8de6ae82a55d815ddf2675c5a52cc2858f1e8bd79e5fd73aa951dadd9b",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/integrated-portfolio-management-team.json",
+      "projectionDigest": "sha256:84d77d8de6ae82a55d815ddf2675c5a52cc2858f1e8bd79e5fd73aa951dadd9b"
+    },
+    {
+      "id": "internal-audit",
+      "canonicalPath": "content/professional-repertoire/offices/internal-audit.json",
+      "digest": "sha256:477669fa7a6ddcdabdc2920a5db07ecb1a870227265b77c00cba7408ed961206",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/internal-audit.json",
+      "projectionDigest": "sha256:477669fa7a6ddcdabdc2920a5db07ecb1a870227265b77c00cba7408ed961206"
+    },
+    {
+      "id": "investment-review-board",
+      "canonicalPath": "content/professional-repertoire/offices/investment-review-board.json",
+      "digest": "sha256:3410e4b372d6f7806332ad58bd73e8f4dce5ec19dbc5de0151161ac23b259764",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/investment-review-board.json",
+      "projectionDigest": "sha256:3410e4b372d6f7806332ad58bd73e8f4dce5ec19dbc5de0151161ac23b259764"
+    },
+    {
+      "id": "module-developer",
+      "canonicalPath": "content/professional-repertoire/offices/module-developer.json",
+      "digest": "sha256:541186ab4beb3ad0d5dec3771ebaac68054dfbe2df8da66c886b65df3ea3571e",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/module-developer.json",
+      "projectionDigest": "sha256:541186ab4beb3ad0d5dec3771ebaac68054dfbe2df8da66c886b65df3ea3571e"
+    },
+    {
+      "id": "module-lead",
+      "canonicalPath": "content/professional-repertoire/offices/module-lead.json",
+      "digest": "sha256:455db63c3c402dcfa2976fb9c1daeccbd1b3fbde7287c374e1246922bf0bd259",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/module-lead.json",
+      "projectionDigest": "sha256:455db63c3c402dcfa2976fb9c1daeccbd1b3fbde7287c374e1246922bf0bd259"
+    },
+    {
+      "id": "pilot-department",
+      "canonicalPath": "content/professional-repertoire/offices/pilot-department.json",
+      "digest": "sha256:5b423261a395c22891e5cde291d6dd6536ce71d90c3128b88622580ceb01e0fb",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/pilot-department.json",
+      "projectionDigest": "sha256:5b423261a395c22891e5cde291d6dd6536ce71d90c3128b88622580ceb01e0fb"
+    },
+    {
+      "id": "product-development-team-leader",
+      "canonicalPath": "content/professional-repertoire/offices/product-development-team-leader.json",
+      "digest": "sha256:6902a7361dabe08d2152245c5b07206debd98ed694cae43b4dc773ab6196a358",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/product-development-team-leader.json",
+      "projectionDigest": "sha256:6902a7361dabe08d2152245c5b07206debd98ed694cae43b4dc773ab6196a358"
+    },
+    {
+      "id": "product-quality-assurance",
+      "canonicalPath": "content/professional-repertoire/offices/product-quality-assurance.json",
+      "digest": "sha256:9b355676218eadde1fd2d50d8711eda1bbec97d5a5aea26536cf1d745f05b1f9",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/product-quality-assurance.json",
+      "projectionDigest": "sha256:9b355676218eadde1fd2d50d8711eda1bbec97d5a5aea26536cf1d745f05b1f9"
+    },
+    {
+      "id": "quality-operations",
+      "canonicalPath": "content/professional-repertoire/offices/quality-operations.json",
+      "digest": "sha256:e8472c440965b8407b9618c2356c32719564c62eac4c717fd4a954176cc3c266",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/quality-operations.json",
+      "projectionDigest": "sha256:e8472c440965b8407b9618c2356c32719564c62eac4c717fd4a954176cc3c266"
+    },
+    {
+      "id": "red-army",
+      "canonicalPath": "content/professional-repertoire/offices/red-army.json",
+      "digest": "sha256:4551a0e471fffb8b433d8d077655bd8db19e4983f0d9c6de13a07b082296f33f",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/red-army.json",
+      "projectionDigest": "sha256:4551a0e471fffb8b433d8d077655bd8db19e4983f0d9c6de13a07b082296f33f"
+    },
+    {
+      "id": "requirements-analysis-team",
+      "canonicalPath": "content/professional-repertoire/offices/requirements-analysis-team.json",
+      "digest": "sha256:19fce6840db316fade260fa3cc8848b2f8a71e4f86d55917ef863093b365fc89",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/requirements-analysis-team.json",
+      "projectionDigest": "sha256:19fce6840db316fade260fa3cc8848b2f8a71e4f86d55917ef863093b365fc89"
+    },
+    {
+      "id": "requirements-implementation-team",
+      "canonicalPath": "content/professional-repertoire/offices/requirements-implementation-team.json",
+      "digest": "sha256:58bc9ad2c29c90a19433af06a1f7a4a3d150febbd84866fb371bd9bfa3ca597e",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/requirements-implementation-team.json",
+      "projectionDigest": "sha256:58bc9ad2c29c90a19433af06a1f7a4a3d150febbd84866fb371bd9bfa3ca597e"
+    },
+    {
+      "id": "requirements-management-team",
+      "canonicalPath": "content/professional-repertoire/offices/requirements-management-team.json",
+      "digest": "sha256:ebc989c8d40c790682b6470ba1d34bd152dbee9eec89aa1028869a5764e8a05a",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/requirements-management-team.json",
+      "projectionDigest": "sha256:ebc989c8d40c790682b6470ba1d34bd152dbee9eec89aa1028869a5764e8a05a"
+    },
+    {
+      "id": "senior-software-engineer",
+      "canonicalPath": "content/professional-repertoire/offices/senior-software-engineer.json",
+      "digest": "sha256:80f3ad67adce5b78b9ca682a1d625788d33dcf0f222ce6df25f4ee36c1f6b6b8",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/senior-software-engineer.json",
+      "projectionDigest": "sha256:80f3ad67adce5b78b9ca682a1d625788d33dcf0f222ce6df25f4ee36c1f6b6b8"
+    },
+    {
+      "id": "strategy-and-development-committee",
+      "canonicalPath": "content/professional-repertoire/offices/strategy-and-development-committee.json",
+      "digest": "sha256:ef74c997bc61f52cd937e4a1a7c06e4a98f93b863efadbcb808c3f77c7d67d2f",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/strategy-and-development-committee.json",
+      "projectionDigest": "sha256:ef74c997bc61f52cd937e4a1a7c06e4a98f93b863efadbcb808c3f77c7d67d2f"
+    },
+    {
+      "id": "system-architect",
+      "canonicalPath": "content/professional-repertoire/offices/system-architect.json",
+      "digest": "sha256:75f494db926f896e8117d27e507510d9fafdb743e17f43072199e309b71be1d9",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/system-architect.json",
+      "projectionDigest": "sha256:75f494db926f896e8117d27e507510d9fafdb743e17f43072199e309b71be1d9"
+    },
+    {
+      "id": "system-engineer",
+      "canonicalPath": "content/professional-repertoire/offices/system-engineer.json",
+      "digest": "sha256:b5e9e7a96c5554fd53f6d3d9745f1aeb4c178bb8fad15d149b85d0fdcf8fd5a2",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/system-engineer.json",
+      "projectionDigest": "sha256:b5e9e7a96c5554fd53f6d3d9745f1aeb4c178bb8fad15d149b85d0fdcf8fd5a2"
+    },
+    {
+      "id": "task-dispatcher",
+      "canonicalPath": "content/professional-repertoire/offices/task-dispatcher.json",
+      "digest": "sha256:7f87f3d20aad4f26838926f943ca82d9e137e74ceaff4e184dd53200c32a15c3",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/task-dispatcher.json",
+      "projectionDigest": "sha256:7f87f3d20aad4f26838926f943ca82d9e137e74ceaff4e184dd53200c32a15c3"
+    },
+    {
+      "id": "white-army",
+      "canonicalPath": "content/professional-repertoire/offices/white-army.json",
+      "digest": "sha256:09b2a267e399dd0ce2601089b2aa75a5ab3f211c6ea71acdd9a8884245ffc04b",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/white-army.json",
+      "projectionDigest": "sha256:09b2a267e399dd0ce2601089b2aa75a5ab3f211c6ea71acdd9a8884245ffc04b"
+    },
+    {
+      "id": "zero-distance-office",
+      "canonicalPath": "content/professional-repertoire/offices/zero-distance-office.json",
+      "digest": "sha256:8f8f916ab63be1af6071b835478add8e785248a7ef596f0b3ae6ae4565eb3ff0",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/zero-distance-office.json",
+      "projectionDigest": "sha256:8f8f916ab63be1af6071b835478add8e785248a7ef596f0b3ae6ae4565eb3ff0"
+    },
+    {
+      "id": "absorbing-a-session",
+      "canonicalPath": "content/professional-repertoire/duties/absorbing-a-session.json",
+      "digest": "sha256:165a6fedb05d380922d8413685b195e7daa92a1400163067a80faa0db2c775c3",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/duties/absorbing-a-session.json",
+      "projectionDigest": "sha256:165a6fedb05d380922d8413685b195e7daa92a1400163067a80faa0db2c775c3"
+    },
+    {
+      "id": "analysing-a-requirement",
+      "canonicalPath": "content/professional-repertoire/duties/analysing-a-requirement.json",
+      "digest": "sha256:ce4e2df074d86750b9cb9a9b49e71b589fc08bf53bf6b78c1c2449de28215d94",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/duties/analysing-a-requirement.json",
+      "projectionDigest": "sha256:ce4e2df074d86750b9cb9a9b49e71b589fc08bf53bf6b78c1c2449de28215d94"
+    },
+    {
+      "id": "attesting-a-work-product",
+      "canonicalPath": "content/professional-repertoire/duties/attesting-a-work-product.json",
+      "digest": "sha256:5f0b9916d0826ca0f57e81062a16288e58b7d36636e68a454dc1d2999d03a13e",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/duties/attesting-a-work-product.json",
+      "projectionDigest": "sha256:5f0b9916d0826ca0f57e81062a16288e58b7d36636e68a454dc1d2999d03a13e"
+    },
+    {
+      "id": "auditing-the-firms-registers",
+      "canonicalPath": "content/professional-repertoire/duties/auditing-the-firms-registers.json",
+      "digest": "sha256:db879145247e989f0592f958225ff975e7a1b47c5c37a68daab867a106a2beee",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/duties/auditing-the-firms-registers.json",
+      "projectionDigest": "sha256:db879145247e989f0592f958225ff975e7a1b47c5c37a68daab867a106a2beee"
+    },
+    {
+      "id": "carrying-a-decision-to-its-decider",
+      "canonicalPath": "content/professional-repertoire/duties/carrying-a-decision-to-its-decider.json",
+      "digest": "sha256:d4f4894e861f2a8d3c62d563e37ea459b99e7cc2e24052c2da2f6d0a055a2ee2",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/duties/carrying-a-decision-to-its-decider.json",
+      "projectionDigest": "sha256:d4f4894e861f2a8d3c62d563e37ea459b99e7cc2e24052c2da2f6d0a055a2ee2"
+    },
+    {
+      "id": "closing-the-loop-on-a-requirement",
+      "canonicalPath": "content/professional-repertoire/duties/closing-the-loop-on-a-requirement.json",
+      "digest": "sha256:1a5156bb977a0508515eb2d251be6426d444d4d421ef5b608914639b71639c18",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/duties/closing-the-loop-on-a-requirement.json",
+      "projectionDigest": "sha256:1a5156bb977a0508515eb2d251be6426d444d4d421ef5b608914639b71639c18"
+    },
+    {
+      "id": "collecting-an-idea",
+      "canonicalPath": "content/professional-repertoire/duties/collecting-an-idea.json",
+      "digest": "sha256:ea51bcd9a0c989dee6541a50e54f4f00d4306fe9b671aeb35885f46d3cac2cd7",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/duties/collecting-an-idea.json",
+      "projectionDigest": "sha256:ea51bcd9a0c989dee6541a50e54f4f00d4306fe9b671aeb35885f46d3cac2cd7"
+    },
+    {
+      "id": "commissioning-a-record",
+      "canonicalPath": "content/professional-repertoire/duties/commissioning-a-record.json",
+      "digest": "sha256:c8fe5dff1cd04c17eef91f4bfbc01eb55b1d406ae71bb28002385133fb78ffb2",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/duties/commissioning-a-record.json",
+      "projectionDigest": "sha256:c8fe5dff1cd04c17eef91f4bfbc01eb55b1d406ae71bb28002385133fb78ffb2"
+    },
+    {
+      "id": "commissioning-an-office",
+      "canonicalPath": "content/professional-repertoire/duties/commissioning-an-office.json",
+      "digest": "sha256:3b59c591edad3a9d83ad88c6b296e619ab010ed0d837593b944f1847b3f2a588",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/duties/commissioning-an-office.json",
+      "projectionDigest": "sha256:3b59c591edad3a9d83ad88c6b296e619ab010ed0d837593b944f1847b3f2a588"
+    },
+    {
+      "id": "deciding-a-change",
+      "canonicalPath": "content/professional-repertoire/duties/deciding-a-change.json",
+      "digest": "sha256:678dec05626cb5c95bb0873ecbd4acca2767ea40c5f1a2b059de2146e30bc8b2",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/duties/deciding-a-change.json",
+      "projectionDigest": "sha256:678dec05626cb5c95bb0873ecbd4acca2767ea40c5f1a2b059de2146e30bc8b2"
+    },
+    {
+      "id": "deciding-a-checkpoint",
+      "canonicalPath": "content/professional-repertoire/duties/deciding-a-checkpoint.json",
+      "digest": "sha256:c09a2e80bcab43875d8e7df4ec0626da309ffcca571eb352973f95991be9c2fc",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/duties/deciding-a-checkpoint.json",
+      "projectionDigest": "sha256:c09a2e80bcab43875d8e7df4ec0626da309ffcca571eb352973f95991be9c2fc"
+    },
+    {
+      "id": "deciding-a-requirement",
+      "canonicalPath": "content/professional-repertoire/duties/deciding-a-requirement.json",
+      "digest": "sha256:90f75656cfa560d7af98ed72bf312ec3173b1f28cbef7bcf5ed6c63c32cef7cf",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/duties/deciding-a-requirement.json",
+      "projectionDigest": "sha256:90f75656cfa560d7af98ed72bf312ec3173b1f28cbef7bcf5ed6c63c32cef7cf"
+    },
+    {
+      "id": "deciding-an-investment",
+      "canonicalPath": "content/professional-repertoire/duties/deciding-an-investment.json",
+      "digest": "sha256:f4b22b4a49513ed8c6bfc5d9bfabaa7e59b8155ed4388380509193fb5f537af9",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/duties/deciding-an-investment.json",
+      "projectionDigest": "sha256:f4b22b4a49513ed8c6bfc5d9bfabaa7e59b8155ed4388380509193fb5f537af9"
+    },
+    {
+      "id": "delivering-a-charter",
+      "canonicalPath": "content/professional-repertoire/duties/delivering-a-charter.json",
+      "digest": "sha256:a9e5a33beb531ab09e57d45c3cabf033bbb3c75e47df8aa73b7dc6d2c9e7169c",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/duties/delivering-a-charter.json",
+      "projectionDigest": "sha256:a9e5a33beb531ab09e57d45c3cabf033bbb3c75e47df8aa73b7dc6d2c9e7169c"
+    },
+    {
+      "id": "expediting-blocked-operations",
+      "canonicalPath": "content/professional-repertoire/duties/expediting-blocked-operations.json",
+      "digest": "sha256:b6afcad35695a76eaeaecd424a3b5dbd39097c098a0d3a4eb80a293e3f58cf14",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/duties/expediting-blocked-operations.json",
+      "projectionDigest": "sha256:b6afcad35695a76eaeaecd424a3b5dbd39097c098a0d3a4eb80a293e3f58cf14"
+    },
+    {
+      "id": "finalizing-work-in-git",
+      "canonicalPath": "content/professional-repertoire/duties/finalizing-work-in-git.json",
+      "digest": "sha256:bc90559ce88aaf0409f897a22697ac5a4d09eb3deddfd95a15a832997a2b2e50",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/duties/finalizing-work-in-git.json",
+      "projectionDigest": "sha256:bc90559ce88aaf0409f897a22697ac5a4d09eb3deddfd95a15a832997a2b2e50"
+    },
+    {
+      "id": "hold-the-standing-picture",
+      "canonicalPath": "content/professional-repertoire/duties/hold-the-standing-picture.json",
+      "digest": "sha256:b3129de66555af78c2b641cede81c2366f8cb58600a836dc9a61c11f848dd1d0",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/duties/hold-the-standing-picture.json",
+      "projectionDigest": "sha256:3b6031272357439876a01c9122b5004df31210076093b31c1066960734a296ae"
+    },
+    {
+      "id": "holding-zero-distance-to-the-user",
+      "canonicalPath": "content/professional-repertoire/duties/holding-zero-distance-to-the-user.json",
+      "digest": "sha256:55fe7fe5cdf128f1be5571a4965ce89a56d53e5f5ca43dbe597295e62531775d",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/duties/holding-zero-distance-to-the-user.json",
+      "projectionDigest": "sha256:55fe7fe5cdf128f1be5571a4965ce89a56d53e5f5ca43dbe597295e62531775d"
+    },
+    {
+      "id": "install-an-officer",
+      "canonicalPath": "content/professional-repertoire/duties/install-an-officer.json",
+      "digest": "sha256:f5403169cedc2abc37f5a89684069e5d34e56300cb0dbc3c2659510a7d139823",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/duties/install-an-officer.json",
+      "projectionDigest": "sha256:f5403169cedc2abc37f5a89684069e5d34e56300cb0dbc3c2659510a7d139823"
+    },
+    {
+      "id": "keeping-the-anomaly-register",
+      "canonicalPath": "content/professional-repertoire/duties/keeping-the-anomaly-register.json",
+      "digest": "sha256:1cc89fe0938675ef96fec2426a38c5854f5fc41f2435607988aa72dbed85115d",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/duties/keeping-the-anomaly-register.json",
+      "projectionDigest": "sha256:5b70279d8c9d7031130721dfb85c296c03e4161757418d7f94fb6f368366d560"
+    },
+    {
+      "id": "keeping-the-baseline",
+      "canonicalPath": "content/professional-repertoire/duties/keeping-the-baseline.json",
+      "digest": "sha256:5590f15f6e32c526e1c980d269559172616feea805a5c65fb1dfa51b3d04200a",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/duties/keeping-the-baseline.json",
+      "projectionDigest": "sha256:5590f15f6e32c526e1c980d269559172616feea805a5c65fb1dfa51b3d04200a"
+    },
+    {
+      "id": "keeping-the-books",
+      "canonicalPath": "content/professional-repertoire/duties/keeping-the-books.json",
+      "digest": "sha256:222df78a61df3daaf9e21b82b122c44101ce8c80c8e027a12e78bb8fb5113f6c",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/duties/keeping-the-books.json",
+      "projectionDigest": "sha256:222df78a61df3daaf9e21b82b122c44101ce8c80c8e027a12e78bb8fb5113f6c"
+    },
+    {
+      "id": "keeping-the-contract-register",
+      "canonicalPath": "content/professional-repertoire/duties/keeping-the-contract-register.json",
+      "digest": "sha256:5326468264d6fd2132a8fc0c70c1a2066f26490b3f16193ba308b8e2ebebd96f",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/duties/keeping-the-contract-register.json",
+      "projectionDigest": "sha256:5326468264d6fd2132a8fc0c70c1a2066f26490b3f16193ba308b8e2ebebd96f"
+    },
+    {
+      "id": "keeping-the-corporate-register",
+      "canonicalPath": "content/professional-repertoire/duties/keeping-the-corporate-register.json",
+      "digest": "sha256:ec3f85ffbd17174dc12b0df12d635ca3171a7d88bf9c139bca59fc6ac8406289",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/duties/keeping-the-corporate-register.json",
+      "projectionDigest": "sha256:ec3f85ffbd17174dc12b0df12d635ca3171a7d88bf9c139bca59fc6ac8406289"
+    },
+    {
+      "id": "keeping-the-personnel-register",
+      "canonicalPath": "content/professional-repertoire/duties/keeping-the-personnel-register.json",
+      "digest": "sha256:4e4292c39463f3cf7d28c07258c4b2c7743ea46ec4df5cd929d59f27832c5ce6",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/duties/keeping-the-personnel-register.json",
+      "projectionDigest": "sha256:4e4292c39463f3cf7d28c07258c4b2c7743ea46ec4df5cd929d59f27832c5ce6"
+    },
+    {
+      "id": "managing-a-glossary",
+      "canonicalPath": "content/professional-repertoire/duties/managing-a-glossary.json",
+      "digest": "sha256:dbeae71f6d3f4a1c8efd902c3a27529798ba700bef56fb6143a60498eccb8747",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/duties/managing-a-glossary.json",
+      "projectionDigest": "sha256:dbeae71f6d3f4a1c8efd902c3a27529798ba700bef56fb6143a60498eccb8747"
+    },
+    {
+      "id": "normalizing-a-units-management-records",
+      "canonicalPath": "content/professional-repertoire/duties/normalizing-a-units-management-records.json",
+      "digest": "sha256:5de0b3681f2a73b8af055c1d9f0d3a54e7873fbb456c654f1dbbaef3a1aa4c2b",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/duties/normalizing-a-units-management-records.json",
+      "projectionDigest": "sha256:5de0b3681f2a73b8af055c1d9f0d3a54e7873fbb456c654f1dbbaef3a1aa4c2b"
+    },
+    {
+      "id": "organizing-a-technical-review",
+      "canonicalPath": "content/professional-repertoire/duties/organizing-a-technical-review.json",
+      "digest": "sha256:d633ca04ba2dc236e7b63ff30cef5eb075f356e8b1bd6d081a1c0d4edd53f22f",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/duties/organizing-a-technical-review.json",
+      "projectionDigest": "sha256:d633ca04ba2dc236e7b63ff30cef5eb075f356e8b1bd6d081a1c0d4edd53f22f"
+    },
+    {
+      "id": "performing-a-business-or-mission-analysis",
+      "canonicalPath": "content/professional-repertoire/duties/performing-a-business-or-mission-analysis.json",
+      "digest": "sha256:1afd3400ce1ba05d34670d1c14ba3d438dd789a40b39b374bdd95ac613ea7be2",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/duties/performing-a-business-or-mission-analysis.json",
+      "projectionDigest": "sha256:1afd3400ce1ba05d34670d1c14ba3d438dd789a40b39b374bdd95ac613ea7be2"
+    },
+    {
+      "id": "realizing-a-requirement",
+      "canonicalPath": "content/professional-repertoire/duties/realizing-a-requirement.json",
+      "digest": "sha256:cac2ca437b411b237afc7ee368d723f649415bc698a3502614f408a92e188832",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/duties/realizing-a-requirement.json",
+      "projectionDigest": "sha256:cac2ca437b411b237afc7ee368d723f649415bc698a3502614f408a92e188832"
+    },
+    {
+      "id": "reporting-an-anomaly",
+      "canonicalPath": "content/professional-repertoire/duties/reporting-an-anomaly.json",
+      "digest": "sha256:6f2d4bdac1d7033d2e818307615ff5f42cd3ad5336b01859b160112b772ca04a",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/duties/reporting-an-anomaly.json",
+      "projectionDigest": "sha256:6f2d4bdac1d7033d2e818307615ff5f42cd3ad5336b01859b160112b772ca04a"
+    },
+    {
+      "id": "reviewing-a-low-level-design",
+      "canonicalPath": "content/professional-repertoire/duties/reviewing-a-low-level-design.json",
+      "digest": "sha256:13245084e4757f4354785c628d867f89bb5ba0fabc35a8fbda85a750912083a5",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/duties/reviewing-a-low-level-design.json",
+      "projectionDigest": "sha256:13245084e4757f4354785c628d867f89bb5ba0fabc35a8fbda85a750912083a5"
+    },
+    {
+      "id": "settle-recurring-pattern-into-mechanism",
+      "canonicalPath": "content/professional-repertoire/duties/settle-recurring-pattern-into-mechanism.json",
+      "digest": "sha256:c2834fc6a19ed97ad04760d3b2ba3c15074bd21073f273853a247a66cb507626",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/duties/settle-recurring-pattern-into-mechanism.json",
+      "projectionDigest": "sha256:c2834fc6a19ed97ad04760d3b2ba3c15074bd21073f273853a247a66cb507626"
+    },
+    {
+      "id": "sweeping-the-standing-inventory",
+      "canonicalPath": "content/professional-repertoire/duties/sweeping-the-standing-inventory.json",
+      "digest": "sha256:7e2d9894cd5e7c38f4fbbefc9f64e4a225d9556239c21445ae919da05b8bce31",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/duties/sweeping-the-standing-inventory.json",
+      "projectionDigest": "sha256:7e2d9894cd5e7c38f4fbbefc9f64e4a225d9556239c21445ae919da05b8bce31"
+    },
+    {
+      "id": "verifying-a-built-artifact",
+      "canonicalPath": "content/professional-repertoire/duties/verifying-a-built-artifact.json",
+      "digest": "sha256:ddef408500c435aa85ee039d8cff76e12046bbc6135efc7744b6b8469e2d0532",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/duties/verifying-a-built-artifact.json",
+      "projectionDigest": "sha256:ddef408500c435aa85ee039d8cff76e12046bbc6135efc7744b6b8469e2d0532"
+    },
+    {
+      "id": "writing-a-concept-of-operations",
+      "canonicalPath": "content/professional-repertoire/duties/writing-a-concept-of-operations.json",
+      "digest": "sha256:4a88e8d9c40cb12c0314cc5c029a2e44ccff3b6da64d106277c7cf2d0875602f",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/duties/writing-a-concept-of-operations.json",
+      "projectionDigest": "sha256:4a88e8d9c40cb12c0314cc5c029a2e44ccff3b6da64d106277c7cf2d0875602f"
+    },
+    {
+      "id": "writing-a-configuration-management-plan",
+      "canonicalPath": "content/professional-repertoire/duties/writing-a-configuration-management-plan.json",
+      "digest": "sha256:8b46dfe748b983f0ee975379cd111e382e0dffeb54d232f4f5e1693fa3734149",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/duties/writing-a-configuration-management-plan.json",
+      "projectionDigest": "sha256:8b46dfe748b983f0ee975379cd111e382e0dffeb54d232f4f5e1693fa3734149"
+    },
+    {
+      "id": "writing-a-conformance-plan",
+      "canonicalPath": "content/professional-repertoire/duties/writing-a-conformance-plan.json",
+      "digest": "sha256:ef750cf89007e3c5fdb5bb2f2ceb767b1458f831726fd8599cc386e31deb8342",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/duties/writing-a-conformance-plan.json",
+      "projectionDigest": "sha256:ef750cf89007e3c5fdb5bb2f2ceb767b1458f831726fd8599cc386e31deb8342"
+    },
+    {
+      "id": "writing-a-documentation-plan",
+      "canonicalPath": "content/professional-repertoire/duties/writing-a-documentation-plan.json",
+      "digest": "sha256:659879b93c7b7980ac6704d7140b7fb995cbfc23f7c1d6a68088ef86fca9a9f3",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/duties/writing-a-documentation-plan.json",
+      "projectionDigest": "sha256:659879b93c7b7980ac6704d7140b7fb995cbfc23f7c1d6a68088ef86fca9a9f3"
+    },
+    {
+      "id": "writing-a-high-level-design",
+      "canonicalPath": "content/professional-repertoire/duties/writing-a-high-level-design.json",
+      "digest": "sha256:ec88b4e4c0cf4444ab7a1cddc35b22450a99bc062026e0db39f22f2d7ccb422a",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/duties/writing-a-high-level-design.json",
+      "projectionDigest": "sha256:ec88b4e4c0cf4444ab7a1cddc35b22450a99bc062026e0db39f22f2d7ccb422a"
+    },
+    {
+      "id": "writing-a-low-level-design",
+      "canonicalPath": "content/professional-repertoire/duties/writing-a-low-level-design.json",
+      "digest": "sha256:b86e50d63e16dc3b69f12bc215c2c7932d5faf69ab11b935e947e80f70c68e99",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/duties/writing-a-low-level-design.json",
+      "projectionDigest": "sha256:b86e50d63e16dc3b69f12bc215c2c7932d5faf69ab11b935e947e80f70c68e99"
+    },
+    {
+      "id": "writing-a-software-architecture-specification",
+      "canonicalPath": "content/professional-repertoire/duties/writing-a-software-architecture-specification.json",
+      "digest": "sha256:c3ea40ac5db16bdab4743b02522e8d43399d2c0d1e59fd43752493985c8d0d8f",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/duties/writing-a-software-architecture-specification.json",
+      "projectionDigest": "sha256:c3ea40ac5db16bdab4743b02522e8d43399d2c0d1e59fd43752493985c8d0d8f"
+    },
+    {
+      "id": "writing-a-software-requirements-specification",
+      "canonicalPath": "content/professional-repertoire/duties/writing-a-software-requirements-specification.json",
+      "digest": "sha256:5aba149228b8900577cf6c23e78a9491609400e5fc9175a5ab12a3b194dcf401",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/duties/writing-a-software-requirements-specification.json",
+      "projectionDigest": "sha256:5aba149228b8900577cf6c23e78a9491609400e5fc9175a5ab12a3b194dcf401"
+    },
+    {
+      "id": "writing-a-system-operational-concept",
+      "canonicalPath": "content/professional-repertoire/duties/writing-a-system-operational-concept.json",
+      "digest": "sha256:9975ead77dd52bd16758f93f9cad6af56dbb8b61381a737a824e650756ddd5b8",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/duties/writing-a-system-operational-concept.json",
+      "projectionDigest": "sha256:9975ead77dd52bd16758f93f9cad6af56dbb8b61381a737a824e650756ddd5b8"
+    },
+    {
+      "id": "writing-a-verification-and-validation-specification",
+      "canonicalPath": "content/professional-repertoire/duties/writing-a-verification-and-validation-specification.json",
+      "digest": "sha256:2320e392ef917be96329fcd1fbf85a55700f11b3272e1150822a24fa0bac23f6",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/duties/writing-a-verification-and-validation-specification.json",
+      "projectionDigest": "sha256:2320e392ef917be96329fcd1fbf85a55700f11b3272e1150822a24fa0bac23f6"
+    },
+    {
+      "id": "absorbing-a-session",
+      "canonicalPath": "content/professional-repertoire/works/absorbing-a-session.json",
+      "digest": "sha256:c1e33294566e082cdc0e36c0deda4465c919c4b7911df6ba276ed1dbcc33a651",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/records/works/absorbing-a-session.json",
+      "projectionDigest": "sha256:c1e33294566e082cdc0e36c0deda4465c919c4b7911df6ba276ed1dbcc33a651"
+    },
+    {
+      "id": "analysing-a-requirement",
+      "canonicalPath": "content/professional-repertoire/works/analysing-a-requirement.json",
+      "digest": "sha256:dce7fa16012b421b3ea6a2f06985f1035eba37b80512314624e8867a4a380b24",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/records/works/analysing-a-requirement.json",
+      "projectionDigest": "sha256:dce7fa16012b421b3ea6a2f06985f1035eba37b80512314624e8867a4a380b24"
+    },
+    {
+      "id": "attesting-a-work-product",
+      "canonicalPath": "content/professional-repertoire/works/attesting-a-work-product.json",
+      "digest": "sha256:639da04aed2c394fe49aa09d18465541f98fa76dd6e171e7c15bea9625fbd135",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/records/works/attesting-a-work-product.json",
+      "projectionDigest": "sha256:639da04aed2c394fe49aa09d18465541f98fa76dd6e171e7c15bea9625fbd135"
+    },
+    {
+      "id": "auditing-the-firms-registers",
+      "canonicalPath": "content/professional-repertoire/works/auditing-the-firms-registers.json",
+      "digest": "sha256:28ad5e01e184ae8ad8f249e9e4c1c5aa9dd8148c4ae64bc79bc34de0aadd3134",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/records/works/auditing-the-firms-registers.json",
+      "projectionDigest": "sha256:28ad5e01e184ae8ad8f249e9e4c1c5aa9dd8148c4ae64bc79bc34de0aadd3134"
+    },
+    {
+      "id": "carrying-a-decision-to-its-decider",
+      "canonicalPath": "content/professional-repertoire/works/carrying-a-decision-to-its-decider.json",
+      "digest": "sha256:f418660d7ff8fbbadfee886bd63f62f8e1fa144e13e7be65894377ee0e75cba3",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/records/works/carrying-a-decision-to-its-decider.json",
+      "projectionDigest": "sha256:f418660d7ff8fbbadfee886bd63f62f8e1fa144e13e7be65894377ee0e75cba3"
+    },
+    {
+      "id": "closing-the-loop-on-a-requirement",
+      "canonicalPath": "content/professional-repertoire/works/closing-the-loop-on-a-requirement.json",
+      "digest": "sha256:6c9d189be88033d94f011486b90b5e73e2002fbe946a0352a62fc80f24acb166",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/records/works/closing-the-loop-on-a-requirement.json",
+      "projectionDigest": "sha256:6c9d189be88033d94f011486b90b5e73e2002fbe946a0352a62fc80f24acb166"
+    },
+    {
+      "id": "collecting-an-idea",
+      "canonicalPath": "content/professional-repertoire/works/collecting-an-idea.json",
+      "digest": "sha256:0a47488a351196a0747b4169aad8fe8259a0f9cebddf25cdd588c10f422d7c07",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/records/works/collecting-an-idea.json",
+      "projectionDigest": "sha256:0a47488a351196a0747b4169aad8fe8259a0f9cebddf25cdd588c10f422d7c07"
+    },
+    {
+      "id": "commissioning-a-record",
+      "canonicalPath": "content/professional-repertoire/works/commissioning-a-record.json",
+      "digest": "sha256:200320847d07a1d95d8f3add9fb77e88b69831d0b91b73c2050a207cb7aa630e",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/records/works/commissioning-a-record.json",
+      "projectionDigest": "sha256:200320847d07a1d95d8f3add9fb77e88b69831d0b91b73c2050a207cb7aa630e"
+    },
+    {
+      "id": "commissioning-an-office",
+      "canonicalPath": "content/professional-repertoire/works/commissioning-an-office.json",
+      "digest": "sha256:c2d517101bd72f2542ad0d4e44f681edb6f4e62c9bd4b89e90d2853feed915c1",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/records/works/commissioning-an-office.json",
+      "projectionDigest": "sha256:c2d517101bd72f2542ad0d4e44f681edb6f4e62c9bd4b89e90d2853feed915c1"
+    },
+    {
+      "id": "deciding-a-change",
+      "canonicalPath": "content/professional-repertoire/works/deciding-a-change.json",
+      "digest": "sha256:28fae29fbe4ee2cc24e70328e21490f5118305b82d2779bef164923bf42ff44e",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/records/works/deciding-a-change.json",
+      "projectionDigest": "sha256:28fae29fbe4ee2cc24e70328e21490f5118305b82d2779bef164923bf42ff44e"
+    },
+    {
+      "id": "deciding-a-checkpoint",
+      "canonicalPath": "content/professional-repertoire/works/deciding-a-checkpoint.json",
+      "digest": "sha256:57a9e8ed94354df186278ee1c5ce46156e3804f53a4dd1b303f7dec2e255085f",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/records/works/deciding-a-checkpoint.json",
+      "projectionDigest": "sha256:57a9e8ed94354df186278ee1c5ce46156e3804f53a4dd1b303f7dec2e255085f"
+    },
+    {
+      "id": "deciding-a-requirement",
+      "canonicalPath": "content/professional-repertoire/works/deciding-a-requirement.json",
+      "digest": "sha256:a5a6e6ba7db3b23e10b0fb792d6905f08be1263fdcc0a07390c019954dae1a27",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/records/works/deciding-a-requirement.json",
+      "projectionDigest": "sha256:a5a6e6ba7db3b23e10b0fb792d6905f08be1263fdcc0a07390c019954dae1a27"
+    },
+    {
+      "id": "deciding-an-investment",
+      "canonicalPath": "content/professional-repertoire/works/deciding-an-investment.json",
+      "digest": "sha256:eaf6e6f3d63b8171373cad0261ec77d7d910f2778b2fca59964e8386ca7fb576",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/records/works/deciding-an-investment.json",
+      "projectionDigest": "sha256:eaf6e6f3d63b8171373cad0261ec77d7d910f2778b2fca59964e8386ca7fb576"
+    },
+    {
+      "id": "delivering-a-charter",
+      "canonicalPath": "content/professional-repertoire/works/delivering-a-charter.json",
+      "digest": "sha256:79d16374981a341e27f971b97ca36b477512959c03b6a41e81ed5828005c48d7",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/records/works/delivering-a-charter.json",
+      "projectionDigest": "sha256:79d16374981a341e27f971b97ca36b477512959c03b6a41e81ed5828005c48d7"
+    },
+    {
+      "id": "expediting-blocked-operations",
+      "canonicalPath": "content/professional-repertoire/works/expediting-blocked-operations.json",
+      "digest": "sha256:326473a35cd48fd3809f93b0bad0e043bcf75dd3542af06d74fd93ecd3ed56f4",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/records/works/expediting-blocked-operations.json",
+      "projectionDigest": "sha256:326473a35cd48fd3809f93b0bad0e043bcf75dd3542af06d74fd93ecd3ed56f4"
+    },
+    {
+      "id": "finalizing-work-in-git",
+      "canonicalPath": "content/professional-repertoire/works/finalizing-work-in-git.json",
+      "digest": "sha256:453b6d868c89c98fb0df4e220b8e0b8b99df9aa701de2115e5eb52459d408acb",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/records/works/finalizing-work-in-git.json",
+      "projectionDigest": "sha256:453b6d868c89c98fb0df4e220b8e0b8b99df9aa701de2115e5eb52459d408acb"
+    },
+    {
+      "id": "hold-the-standing-picture",
+      "canonicalPath": "content/professional-repertoire/works/hold-the-standing-picture.json",
+      "digest": "sha256:4de360c7fa1ad82cc3afe4bd3d55f994c4f0b4067312d59ea5c7c43154660b05",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/records/works/hold-the-standing-picture.json",
+      "projectionDigest": "sha256:4de360c7fa1ad82cc3afe4bd3d55f994c4f0b4067312d59ea5c7c43154660b05"
+    },
+    {
+      "id": "holding-zero-distance-to-the-user",
+      "canonicalPath": "content/professional-repertoire/works/holding-zero-distance-to-the-user.json",
+      "digest": "sha256:26c1602717bf2ba18115045af5ab5eb167aa3b093610b3f2daab83fd8b6735c1",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/records/works/holding-zero-distance-to-the-user.json",
+      "projectionDigest": "sha256:26c1602717bf2ba18115045af5ab5eb167aa3b093610b3f2daab83fd8b6735c1"
+    },
+    {
+      "id": "install-an-officer",
+      "canonicalPath": "content/professional-repertoire/works/install-an-officer.json",
+      "digest": "sha256:96328022dac0380af15cb48521e632abb68186a57166be63fc87fe2d8b4c99b3",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/records/works/install-an-officer.json",
+      "projectionDigest": "sha256:96328022dac0380af15cb48521e632abb68186a57166be63fc87fe2d8b4c99b3"
+    },
+    {
+      "id": "keeping-the-anomaly-register",
+      "canonicalPath": "content/professional-repertoire/works/keeping-the-anomaly-register.json",
+      "digest": "sha256:55c71671a98f281b5fa85be7de67a9014dd4a011562b33568339a594dcde4dac",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/records/works/keeping-the-anomaly-register.json",
+      "projectionDigest": "sha256:55c71671a98f281b5fa85be7de67a9014dd4a011562b33568339a594dcde4dac"
+    },
+    {
+      "id": "keeping-the-baseline",
+      "canonicalPath": "content/professional-repertoire/works/keeping-the-baseline.json",
+      "digest": "sha256:8b0bfd96571ea7e519a4865164043f79cc2434ce76cd5cac9b548798aa976519",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/records/works/keeping-the-baseline.json",
+      "projectionDigest": "sha256:8b0bfd96571ea7e519a4865164043f79cc2434ce76cd5cac9b548798aa976519"
+    },
+    {
+      "id": "keeping-the-books",
+      "canonicalPath": "content/professional-repertoire/works/keeping-the-books.json",
+      "digest": "sha256:7d4589bb1894e5ed2669fa9e30540253c1701f8cfb75181662b1b0a0d9313472",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/records/works/keeping-the-books.json",
+      "projectionDigest": "sha256:7d4589bb1894e5ed2669fa9e30540253c1701f8cfb75181662b1b0a0d9313472"
+    },
+    {
+      "id": "keeping-the-contract-register",
+      "canonicalPath": "content/professional-repertoire/works/keeping-the-contract-register.json",
+      "digest": "sha256:35e369c7713177b137a654cc1e8688c9d2d0a11317cdc7ce94a8180aaf97060d",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/records/works/keeping-the-contract-register.json",
+      "projectionDigest": "sha256:35e369c7713177b137a654cc1e8688c9d2d0a11317cdc7ce94a8180aaf97060d"
+    },
+    {
+      "id": "keeping-the-corporate-register",
+      "canonicalPath": "content/professional-repertoire/works/keeping-the-corporate-register.json",
+      "digest": "sha256:c85a5036eda1ac9b9acd967ed9e329a78e159aa15305665c7b1b716efde24b85",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/records/works/keeping-the-corporate-register.json",
+      "projectionDigest": "sha256:c85a5036eda1ac9b9acd967ed9e329a78e159aa15305665c7b1b716efde24b85"
+    },
+    {
+      "id": "keeping-the-personnel-register",
+      "canonicalPath": "content/professional-repertoire/works/keeping-the-personnel-register.json",
+      "digest": "sha256:7d0ffb8e4024053a039dec5c82d164b708f483a47a7eb0da0efaaaed0f6b5020",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/records/works/keeping-the-personnel-register.json",
+      "projectionDigest": "sha256:7d0ffb8e4024053a039dec5c82d164b708f483a47a7eb0da0efaaaed0f6b5020"
+    },
+    {
+      "id": "managing-a-glossary",
+      "canonicalPath": "content/professional-repertoire/works/managing-a-glossary.json",
+      "digest": "sha256:77c1287a78655c6e085e15786c172a512541b646175c4c8e2f9866bf6971e0de",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/records/works/managing-a-glossary.json",
+      "projectionDigest": "sha256:77c1287a78655c6e085e15786c172a512541b646175c4c8e2f9866bf6971e0de"
+    },
+    {
+      "id": "normalizing-a-units-management-records",
+      "canonicalPath": "content/professional-repertoire/works/normalizing-a-units-management-records.json",
+      "digest": "sha256:4e96b05bd8e307cc3127f5ebd000aec01952a7f700dab9f9baa6b5a741df5ed4",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/records/works/normalizing-a-units-management-records.json",
+      "projectionDigest": "sha256:4e96b05bd8e307cc3127f5ebd000aec01952a7f700dab9f9baa6b5a741df5ed4"
+    },
+    {
+      "id": "organizing-a-technical-review",
+      "canonicalPath": "content/professional-repertoire/works/organizing-a-technical-review.json",
+      "digest": "sha256:864c84a60f9fd1263f233c21fd0e1cb92f76ea3cc34a3e2ea1c280e04adc4e0b",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/records/works/organizing-a-technical-review.json",
+      "projectionDigest": "sha256:864c84a60f9fd1263f233c21fd0e1cb92f76ea3cc34a3e2ea1c280e04adc4e0b"
+    },
+    {
+      "id": "performing-a-business-or-mission-analysis",
+      "canonicalPath": "content/professional-repertoire/works/performing-a-business-or-mission-analysis.json",
+      "digest": "sha256:6d9a66127d27456d5acc227f06e1845b6d20bab55309b3e56da0683d9552b5b4",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/records/works/performing-a-business-or-mission-analysis.json",
+      "projectionDigest": "sha256:6d9a66127d27456d5acc227f06e1845b6d20bab55309b3e56da0683d9552b5b4"
+    },
+    {
+      "id": "realizing-a-requirement",
+      "canonicalPath": "content/professional-repertoire/works/realizing-a-requirement.json",
+      "digest": "sha256:ff560cb51a53a9a4a5e651735131a2609f6eeeb765cd4d92b830abfadbe0495d",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/records/works/realizing-a-requirement.json",
+      "projectionDigest": "sha256:ff560cb51a53a9a4a5e651735131a2609f6eeeb765cd4d92b830abfadbe0495d"
+    },
+    {
+      "id": "reporting-an-anomaly",
+      "canonicalPath": "content/professional-repertoire/works/reporting-an-anomaly.json",
+      "digest": "sha256:aea827784bfb4ec8b1d073b3481c21a897e1bb036987dded7c2660ae9ee97a6e",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/records/works/reporting-an-anomaly.json",
+      "projectionDigest": "sha256:aea827784bfb4ec8b1d073b3481c21a897e1bb036987dded7c2660ae9ee97a6e"
+    },
+    {
+      "id": "reviewing-a-low-level-design",
+      "canonicalPath": "content/professional-repertoire/works/reviewing-a-low-level-design.json",
+      "digest": "sha256:ba66e2e3a1a25ba77761babeb8bb1d131ede8afd457fafb608e9cea2b6ac6228",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/records/works/reviewing-a-low-level-design.json",
+      "projectionDigest": "sha256:ba66e2e3a1a25ba77761babeb8bb1d131ede8afd457fafb608e9cea2b6ac6228"
+    },
+    {
+      "id": "settle-recurring-pattern-into-mechanism",
+      "canonicalPath": "content/professional-repertoire/works/settle-recurring-pattern-into-mechanism.json",
+      "digest": "sha256:c7fb01df85d68dbd2c53223e3d4a712672c9bca2ec4831ebb6c2b2313f2d5e96",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/records/works/settle-recurring-pattern-into-mechanism.json",
+      "projectionDigest": "sha256:c7fb01df85d68dbd2c53223e3d4a712672c9bca2ec4831ebb6c2b2313f2d5e96"
+    },
+    {
+      "id": "sweeping-the-standing-inventory",
+      "canonicalPath": "content/professional-repertoire/works/sweeping-the-standing-inventory.json",
+      "digest": "sha256:d71276eb515521fa311020a306cb7d29a5eb0e2b6edeb694c9c266b7f4fd0a3f",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/records/works/sweeping-the-standing-inventory.json",
+      "projectionDigest": "sha256:d71276eb515521fa311020a306cb7d29a5eb0e2b6edeb694c9c266b7f4fd0a3f"
+    },
+    {
+      "id": "verifying-a-built-artifact",
+      "canonicalPath": "content/professional-repertoire/works/verifying-a-built-artifact.json",
+      "digest": "sha256:e594bda2677f4f638e7a3c16a91b08222b47fb8fe887ab9e48ba0e5caa2c2cee",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/records/works/verifying-a-built-artifact.json",
+      "projectionDigest": "sha256:e594bda2677f4f638e7a3c16a91b08222b47fb8fe887ab9e48ba0e5caa2c2cee"
+    },
+    {
+      "id": "writing-a-concept-of-operations",
+      "canonicalPath": "content/professional-repertoire/works/writing-a-concept-of-operations.json",
+      "digest": "sha256:acd57a6ad341dfdbe3f0ee58eb277b3a82156003b92e57daac905db3af7a7819",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/records/works/writing-a-concept-of-operations.json",
+      "projectionDigest": "sha256:acd57a6ad341dfdbe3f0ee58eb277b3a82156003b92e57daac905db3af7a7819"
+    },
+    {
+      "id": "writing-a-configuration-management-plan",
+      "canonicalPath": "content/professional-repertoire/works/writing-a-configuration-management-plan.json",
+      "digest": "sha256:f6149e72399be8d124693cd33d8a600acbfaf9775e2b41a7f651130ade98a3c5",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/records/works/writing-a-configuration-management-plan.json",
+      "projectionDigest": "sha256:f6149e72399be8d124693cd33d8a600acbfaf9775e2b41a7f651130ade98a3c5"
+    },
+    {
+      "id": "writing-a-conformance-plan",
+      "canonicalPath": "content/professional-repertoire/works/writing-a-conformance-plan.json",
+      "digest": "sha256:9ea648cc37abbe73cf7e323b603238a13b942be999ea63745767e45795d279e2",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/records/works/writing-a-conformance-plan.json",
+      "projectionDigest": "sha256:9ea648cc37abbe73cf7e323b603238a13b942be999ea63745767e45795d279e2"
+    },
+    {
+      "id": "writing-a-documentation-plan",
+      "canonicalPath": "content/professional-repertoire/works/writing-a-documentation-plan.json",
+      "digest": "sha256:523d051b1dae40ca1453b088d403bb770e6aa0fd85e8ee7054f3be4371d0f09a",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/records/works/writing-a-documentation-plan.json",
+      "projectionDigest": "sha256:523d051b1dae40ca1453b088d403bb770e6aa0fd85e8ee7054f3be4371d0f09a"
+    },
+    {
+      "id": "writing-a-high-level-design",
+      "canonicalPath": "content/professional-repertoire/works/writing-a-high-level-design.json",
+      "digest": "sha256:1bf5d9a0f9ddda445e04a0f430ebbf8f5bd44e31707afaba971517a660278aa0",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/records/works/writing-a-high-level-design.json",
+      "projectionDigest": "sha256:1bf5d9a0f9ddda445e04a0f430ebbf8f5bd44e31707afaba971517a660278aa0"
+    },
+    {
+      "id": "writing-a-low-level-design",
+      "canonicalPath": "content/professional-repertoire/works/writing-a-low-level-design.json",
+      "digest": "sha256:ad90e22c58e501812dd38268eb1f8e07eca9b19d275c11c4e1a23157a55c680d",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/records/works/writing-a-low-level-design.json",
+      "projectionDigest": "sha256:ad90e22c58e501812dd38268eb1f8e07eca9b19d275c11c4e1a23157a55c680d"
+    },
+    {
+      "id": "writing-a-software-architecture-specification",
+      "canonicalPath": "content/professional-repertoire/works/writing-a-software-architecture-specification.json",
+      "digest": "sha256:0537311313858795b3b4b15bec398108c4205a59e3c3a585fd9d8e281c2bbb37",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/records/works/writing-a-software-architecture-specification.json",
+      "projectionDigest": "sha256:0537311313858795b3b4b15bec398108c4205a59e3c3a585fd9d8e281c2bbb37"
+    },
+    {
+      "id": "writing-a-software-requirements-specification",
+      "canonicalPath": "content/professional-repertoire/works/writing-a-software-requirements-specification.json",
+      "digest": "sha256:8bcbb10b5600c207963bdc9d1f647f00179895722c6a4b1e96bebea5dcf10866",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/records/works/writing-a-software-requirements-specification.json",
+      "projectionDigest": "sha256:8bcbb10b5600c207963bdc9d1f647f00179895722c6a4b1e96bebea5dcf10866"
+    },
+    {
+      "id": "writing-a-system-operational-concept",
+      "canonicalPath": "content/professional-repertoire/works/writing-a-system-operational-concept.json",
+      "digest": "sha256:6c10a392f308d9115ee2c33f31bfde11fb4df8465d751882214cced1481fae29",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/records/works/writing-a-system-operational-concept.json",
+      "projectionDigest": "sha256:6c10a392f308d9115ee2c33f31bfde11fb4df8465d751882214cced1481fae29"
+    },
+    {
+      "id": "writing-a-verification-and-validation-specification",
+      "canonicalPath": "content/professional-repertoire/works/writing-a-verification-and-validation-specification.json",
+      "digest": "sha256:31bf17de789074ccae290646cc7ebe1efa080d7fc4165a2d995e1cbe7ba846fc",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/records/works/writing-a-verification-and-validation-specification.json",
+      "projectionDigest": "sha256:31bf17de789074ccae290646cc7ebe1efa080d7fc4165a2d995e1cbe7ba846fc"
+    },
+    {
+      "id": "absorbing-a-session",
+      "canonicalRoot": "lib/professional-repertoire/skills/absorbing-a-session",
+      "digest": "sha256:9c1dc286badce42871f38bb75e8fc57c48260655a707d277f81bcf0675466cb9",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/absorbing-a-session",
+      "projectionDigest": "sha256:9c1dc286badce42871f38bb75e8fc57c48260655a707d277f81bcf0675466cb9"
+    },
+    {
+      "id": "attesting-a-work-product",
+      "canonicalRoot": "lib/professional-repertoire/skills/attesting-a-work-product",
+      "digest": "sha256:22026a6831d61330e6338260c33f732a68ecb86b7307da17107bc65fb2f6f350",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/attesting-a-work-product",
+      "projectionDigest": "sha256:22026a6831d61330e6338260c33f732a68ecb86b7307da17107bc65fb2f6f350"
+    },
+    {
+      "id": "auditing-the-firms-registers",
+      "canonicalRoot": "lib/professional-repertoire/skills/auditing-the-firms-registers",
+      "digest": "sha256:8c6709852cc940c8db8cdeca8d743859b24afed9ccdfa1227b50b1bc05577a1a",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/auditing-the-firms-registers",
+      "projectionDigest": "sha256:8c6709852cc940c8db8cdeca8d743859b24afed9ccdfa1227b50b1bc05577a1a"
+    },
+    {
+      "id": "bootstrapping-an-enterprise-with-rectification",
+      "canonicalRoot": "lib/professional-repertoire/skills/bootstrapping-an-enterprise-with-rectification",
+      "digest": "sha256:91dc2d47a927a734c72dcd42d45b9fe079ace6e6b7d9fd41fdaa90f11a64b6c9",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/bootstrapping-an-enterprise-with-rectification",
+      "projectionDigest": "sha256:91dc2d47a927a734c72dcd42d45b9fe079ace6e6b7d9fd41fdaa90f11a64b6c9"
+    },
+    {
+      "id": "carrying-a-decision-to-its-decider",
+      "canonicalRoot": "lib/professional-repertoire/skills/carrying-a-decision-to-its-decider",
+      "digest": "sha256:32b443fbb5d3dea46540c3992d5946422d5059a315e1aff68b1690932b6be02a",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/carrying-a-decision-to-its-decider",
+      "projectionDigest": "sha256:32b443fbb5d3dea46540c3992d5946422d5059a315e1aff68b1690932b6be02a"
+    },
+    {
+      "id": "checking-the-conduct-of-a-session-conforms",
+      "canonicalRoot": "lib/professional-repertoire/skills/checking-the-conduct-of-a-session-conforms",
+      "digest": "sha256:cf81fbda659210c55e72689cd83f34979a694f88e244aee72b517b12b38cce4f",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/checking-the-conduct-of-a-session-conforms",
+      "projectionDigest": "sha256:cf81fbda659210c55e72689cd83f34979a694f88e244aee72b517b12b38cce4f"
+    },
+    {
+      "id": "checking-the-offices-of-a-firm-conform",
+      "canonicalRoot": "lib/professional-repertoire/skills/checking-the-offices-of-a-firm-conform",
+      "digest": "sha256:7b8434a0d7352b4479eb6cff2c8061089e68ad0ffd21b4ec9941e86f2b2f7c4b",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/checking-the-offices-of-a-firm-conform",
+      "projectionDigest": "sha256:7b8434a0d7352b4479eb6cff2c8061089e68ad0ffd21b4ec9941e86f2b2f7c4b"
+    },
+    {
+      "id": "commissioning-an-office",
+      "canonicalRoot": "lib/professional-repertoire/skills/commissioning-an-office",
+      "digest": "sha256:f7e897a5c9ae291ae3febcb6aa90928fd85f3757255d9a66bd0d9744ec3d0d9f",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/commissioning-an-office",
+      "projectionDigest": "sha256:f7e897a5c9ae291ae3febcb6aa90928fd85f3757255d9a66bd0d9744ec3d0d9f"
+    },
+    {
+      "id": "deciding-a-change-to-a-baseline",
+      "canonicalRoot": "lib/professional-repertoire/skills/deciding-a-change-to-a-baseline",
+      "digest": "sha256:f6f46f6994250a721c271bfab122a95c4ea459de48055ac39ef7cb1db5669ed5",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/deciding-a-change-to-a-baseline",
+      "projectionDigest": "sha256:f6f46f6994250a721c271bfab122a95c4ea459de48055ac39ef7cb1db5669ed5"
+    },
+    {
+      "id": "deciding-a-decision-checkpoint",
+      "canonicalRoot": "lib/professional-repertoire/skills/deciding-a-decision-checkpoint",
+      "digest": "sha256:76a5d2e8fea909d87459a5a14e483a89de7af7639b7630d5ca57ce02df4b93b8",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/deciding-a-decision-checkpoint",
+      "projectionDigest": "sha256:76a5d2e8fea909d87459a5a14e483a89de7af7639b7630d5ca57ce02df4b93b8"
+    },
+    {
+      "id": "deciding-an-investment",
+      "canonicalRoot": "lib/professional-repertoire/skills/deciding-an-investment",
+      "digest": "sha256:dc83a1e897032007cd20e3a13eb5915de90213d235514af7c76b83f573bf7220",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/deciding-an-investment",
+      "projectionDigest": "sha256:dc83a1e897032007cd20e3a13eb5915de90213d235514af7c76b83f573bf7220"
+    },
+    {
+      "id": "delivering-a-charter",
+      "canonicalRoot": "lib/professional-repertoire/skills/delivering-a-charter",
+      "digest": "sha256:0532d9c5c453702a88aba57b22d9a15eb1671448df37ef6bb43777769d48d9fb",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/delivering-a-charter",
+      "projectionDigest": "sha256:0532d9c5c453702a88aba57b22d9a15eb1671448df37ef6bb43777769d48d9fb"
+    },
+    {
+      "id": "deriving-a-seam-register",
+      "canonicalRoot": "lib/professional-repertoire/skills/deriving-a-seam-register",
+      "digest": "sha256:bc8ae1f01ff2838fdd6ffcb3a6a0f3890e33c26f8d82cf5935cd1325de080e72",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/deriving-a-seam-register",
+      "projectionDigest": "sha256:bc8ae1f01ff2838fdd6ffcb3a6a0f3890e33c26f8d82cf5935cd1325de080e72"
+    },
+    {
+      "id": "dispatching-a-task",
+      "canonicalRoot": "lib/professional-repertoire/skills/dispatching-a-task",
+      "digest": "sha256:a3e47c7ee2490c7be8ba1af45620c298113094aaf16dd8c7ae5e89cd76790e96",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/dispatching-a-task",
+      "projectionDigest": "sha256:4324118147d2fdab481e02ef8c70bc207d7b5b1b05c43d298eaad646c17592f1"
+    },
+    {
+      "id": "enforcing-mesh-scope",
+      "canonicalRoot": "lib/professional-repertoire/skills/enforcing-mesh-scope",
+      "digest": "sha256:87deb8bea06da41c6450f47bda0efd8ed4e13a4ded3d76cfd9a2ebba518e8eaf",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/enforcing-mesh-scope",
+      "projectionDigest": "sha256:87deb8bea06da41c6450f47bda0efd8ed4e13a4ded3d76cfd9a2ebba518e8eaf"
+    },
+    {
+      "id": "expediting-blocked-operations",
+      "canonicalRoot": "lib/professional-repertoire/skills/expediting-blocked-operations",
+      "digest": "sha256:411ce8d7121fcbf343e01cb9a46f1674dcff2df32dcc35066e9b5e21a53bad87",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/expediting-blocked-operations",
+      "projectionDigest": "sha256:411ce8d7121fcbf343e01cb9a46f1674dcff2df32dcc35066e9b5e21a53bad87"
+    },
+    {
+      "id": "finalizing-work-in-git",
+      "canonicalRoot": "lib/professional-repertoire/skills/finalizing-work-in-git",
+      "digest": "sha256:0c204b01be1d2cbd55eb5f42bf7afd3b87b5f44c51a1f1ecbc92cf448418761b",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/finalizing-work-in-git",
+      "projectionDigest": "sha256:0c204b01be1d2cbd55eb5f42bf7afd3b87b5f44c51a1f1ecbc92cf448418761b"
+    },
+    {
+      "id": "generating-a-briefing-about-an-enterprise",
+      "canonicalRoot": "lib/professional-repertoire/skills/generating-a-briefing-about-an-enterprise",
+      "digest": "sha256:eecc71bad361d5692a0a81a34405221b2e9d784471b36715416392433062c7b0",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/generating-a-briefing-about-an-enterprise",
+      "projectionDigest": "sha256:146fa3354034bf1328154a2fa72d6cb996a1f79de53dab9a948c9cae2b1dd911"
+    },
+    {
+      "id": "holding-zero-distance-to-the-user",
+      "canonicalRoot": "lib/professional-repertoire/skills/holding-zero-distance-to-the-user",
+      "digest": "sha256:ed39d4888d7e886b29b56280108cceae533c029f24625ff30f63fdec95f45afe",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/holding-zero-distance-to-the-user",
+      "projectionDigest": "sha256:ed39d4888d7e886b29b56280108cceae533c029f24625ff30f63fdec95f45afe"
+    },
+    {
+      "id": "installing-an-enterprise-in-claude",
+      "canonicalRoot": "lib/professional-repertoire/skills/installing-an-enterprise-in-claude",
+      "digest": "sha256:16a941554b925ae87fc743bfb29822ba983ae1130b324826ba2996012871d246",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/installing-an-enterprise-in-claude",
+      "projectionDigest": "sha256:16a941554b925ae87fc743bfb29822ba983ae1130b324826ba2996012871d246"
+    },
+    {
+      "id": "installing-an-enterprise-in-codex",
+      "canonicalRoot": "lib/professional-repertoire/skills/installing-an-enterprise-in-codex",
+      "digest": "sha256:b87dd38223dd776ce4c33e898edbc252258620e0180b07f7654c8d12859e42db",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/installing-an-enterprise-in-codex",
+      "projectionDigest": "sha256:b87dd38223dd776ce4c33e898edbc252258620e0180b07f7654c8d12859e42db"
+    },
+    {
+      "id": "installing-claude-as-an-agent",
+      "canonicalRoot": "lib/professional-repertoire/skills/installing-claude-as-an-agent",
+      "digest": "sha256:be76130c4d328fd81def88102f0e721dd7d6a3faa130f139a185e077c5f27c68",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/installing-claude-as-an-agent",
+      "projectionDigest": "sha256:be76130c4d328fd81def88102f0e721dd7d6a3faa130f139a185e077c5f27c68"
+    },
+    {
+      "id": "installing-claude-as-an-office",
+      "canonicalRoot": "lib/professional-repertoire/skills/installing-claude-as-an-office",
+      "digest": "sha256:4289c18cf7b08061a61d9d52f15ca15c6fd4dfedf954e8cdf40ace62898ad98a",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/installing-claude-as-an-office",
+      "projectionDigest": "sha256:4289c18cf7b08061a61d9d52f15ca15c6fd4dfedf954e8cdf40ace62898ad98a"
+    },
+    {
+      "id": "keeping-the-baseline",
+      "canonicalRoot": "lib/professional-repertoire/skills/keeping-the-baseline",
+      "digest": "sha256:8dc9bb32a1cb8ab8c79a3c69da54d3714acded6988f361466a79dd01517f8aa2",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/keeping-the-baseline",
+      "projectionDigest": "sha256:8dc9bb32a1cb8ab8c79a3c69da54d3714acded6988f361466a79dd01517f8aa2"
+    },
+    {
+      "id": "keeping-the-books",
+      "canonicalRoot": "lib/professional-repertoire/skills/keeping-the-books",
+      "digest": "sha256:ec0f1c1ff5f6994c4f5f2e3c3a639cb87e742819e559fab18682ae3f327358ee",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/keeping-the-books",
+      "projectionDigest": "sha256:ec0f1c1ff5f6994c4f5f2e3c3a639cb87e742819e559fab18682ae3f327358ee"
+    },
+    {
+      "id": "keeping-the-contract-register",
+      "canonicalRoot": "lib/professional-repertoire/skills/keeping-the-contract-register",
+      "digest": "sha256:2968b98eb0088ad2cd31af9a13b84481d0b082cc100cc2354edaa832a4e29b2d",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/keeping-the-contract-register",
+      "projectionDigest": "sha256:2968b98eb0088ad2cd31af9a13b84481d0b082cc100cc2354edaa832a4e29b2d"
+    },
+    {
+      "id": "keeping-the-corporate-register",
+      "canonicalRoot": "lib/professional-repertoire/skills/keeping-the-corporate-register",
+      "digest": "sha256:4130c40184f10363afff42e5e8c0637103b1f87cce07db10800e7235e244b271",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/keeping-the-corporate-register",
+      "projectionDigest": "sha256:4130c40184f10363afff42e5e8c0637103b1f87cce07db10800e7235e244b271"
+    },
+    {
+      "id": "keeping-the-personnel-register",
+      "canonicalRoot": "lib/professional-repertoire/skills/keeping-the-personnel-register",
+      "digest": "sha256:cd9479d19d3b9caeaa7af605a59edae04d0f842234d0f637aeb953724b8b0f79",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/keeping-the-personnel-register",
+      "projectionDigest": "sha256:cd9479d19d3b9caeaa7af605a59edae04d0f842234d0f637aeb953724b8b0f79"
+    },
+    {
+      "id": "listing-open-obligations",
+      "canonicalRoot": "lib/professional-repertoire/skills/listing-open-obligations",
+      "digest": "sha256:7098353d1bfecfb29885c106db52ae1d4ecabe359d6b3db15d95d02db586067e",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/listing-open-obligations",
+      "projectionDigest": "sha256:7098353d1bfecfb29885c106db52ae1d4ecabe359d6b3db15d95d02db586067e"
+    },
+    {
+      "id": "making-a-task",
+      "canonicalRoot": "lib/professional-repertoire/skills/making-a-task",
+      "digest": "sha256:48889016138194a05202539f7cc294535c62f3406f24f5a95b84eee09278c677",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/making-a-task",
+      "projectionDigest": "sha256:572c08a7f8a284b85b0d6f5feff7633dc10de392c91d78014426656e1eed7330"
+    },
+    {
+      "id": "normalizing-a-units-management-records",
+      "canonicalRoot": "lib/professional-repertoire/skills/normalizing-a-units-management-records",
+      "digest": "sha256:a741bafe240ee3e17bf591b1580861946f08dcc7f67c14e5d169e6b49cf3451c",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/normalizing-a-units-management-records",
+      "projectionDigest": "sha256:a741bafe240ee3e17bf591b1580861946f08dcc7f67c14e5d169e6b49cf3451c"
+    },
+    {
+      "id": "organizing-a-technical-review",
+      "canonicalRoot": "lib/professional-repertoire/skills/organizing-a-technical-review",
+      "digest": "sha256:d1604cff8474a83aff91c7543ba08259518afb69ff39cb8e1cbdc91cadff0b4d",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/organizing-a-technical-review",
+      "projectionDigest": "sha256:d1604cff8474a83aff91c7543ba08259518afb69ff39cb8e1cbdc91cadff0b4d"
+    },
+    {
+      "id": "performing-a-business-or-mission-analysis",
+      "canonicalRoot": "lib/professional-repertoire/skills/performing-a-business-or-mission-analysis",
+      "digest": "sha256:21634366a128debc1ec4adca5219ddcddbd7b495530ff6a54697b79ad8d544e7",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/performing-a-business-or-mission-analysis",
+      "projectionDigest": "sha256:21634366a128debc1ec4adca5219ddcddbd7b495530ff6a54697b79ad8d544e7"
+    },
+    {
+      "id": "projecting-a-skill",
+      "canonicalRoot": "lib/professional-repertoire/skills/projecting-a-skill",
+      "digest": "sha256:cbc2f8d37277de2703853399737db574ffe5c964cd380c16da818f1858b9922a",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/projecting-a-skill",
+      "projectionDigest": "sha256:005f03c768d27ab36b7fa9f3be4bb73e0dec331f4a222d6ffe9a09980f7133b4"
+    },
+    {
+      "id": "raising-an-idea",
+      "canonicalRoot": "lib/professional-repertoire/skills/raising-an-idea",
+      "digest": "sha256:df6c77c3d5f47e64ceafd7673469145846e34662038edf81dd3a64bc37a1ea03",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/raising-an-idea",
+      "projectionDigest": "sha256:df6c77c3d5f47e64ceafd7673469145846e34662038edf81dd3a64bc37a1ea03"
+    },
+    {
+      "id": "reading-a-schema",
+      "canonicalRoot": "lib/professional-repertoire/skills/reading-a-schema",
+      "digest": "sha256:18a57a079fca5b108835bd92e08cabb2ff46bb61952fce1110bac4076a725fb8",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/reading-a-schema",
+      "projectionDigest": "sha256:6edb9f2abd19da210764a3a5977d6fc2f22aa996e95de465b2b4435a61dc4c44"
+    },
+    {
+      "id": "recalling-a-requirement",
+      "canonicalRoot": "lib/professional-repertoire/skills/recalling-a-requirement",
+      "digest": "sha256:c3b6cddb2a1f69f5c5feb5fcfd65177a9f963b56c79a58587d3561309c8be11b",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/recalling-a-requirement",
+      "projectionDigest": "sha256:c3b6cddb2a1f69f5c5feb5fcfd65177a9f963b56c79a58587d3561309c8be11b"
+    },
+    {
+      "id": "recalling-a-term",
+      "canonicalRoot": "lib/professional-repertoire/skills/recalling-a-term",
+      "digest": "sha256:a0ad06bd2d9df7796851e9bf7290da82d25cd029238b3cb2d2d2c48442f66620",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/recalling-a-term",
+      "projectionDigest": "sha256:a0ad06bd2d9df7796851e9bf7290da82d25cd029238b3cb2d2d2c48442f66620"
+    },
+    {
+      "id": "recording-a-change",
+      "canonicalRoot": "lib/professional-repertoire/skills/recording-a-change",
+      "digest": "sha256:d1dd212aefb6b1fbbbd26a7a713dd1beb62418481c3742b980e9ef94cc878dbb",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/recording-a-change",
+      "projectionDigest": "sha256:d1dd212aefb6b1fbbbd26a7a713dd1beb62418481c3742b980e9ef94cc878dbb"
+    },
+    {
+      "id": "rendering-a-dag-of-the-offices-of-a-firm",
+      "canonicalRoot": "lib/professional-repertoire/skills/rendering-a-dag-of-the-offices-of-a-firm",
+      "digest": "sha256:76cba7b672f9fe27da8f2fae0c219a0ac189eed4eaeadae1927d9052000c5721",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/rendering-a-dag-of-the-offices-of-a-firm",
+      "projectionDigest": "sha256:76cba7b672f9fe27da8f2fae0c219a0ac189eed4eaeadae1927d9052000c5721"
+    },
+    {
+      "id": "reporting-an-anomaly",
+      "canonicalRoot": "lib/professional-repertoire/skills/reporting-an-anomaly",
+      "digest": "sha256:72cd84f6e5b70f728dba8255840b7f1684a7c70cc701f4c74427e66e7472889f",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/reporting-an-anomaly",
+      "projectionDigest": "sha256:72cd84f6e5b70f728dba8255840b7f1684a7c70cc701f4c74427e66e7472889f"
+    },
+    {
+      "id": "resolving-an-identifier",
+      "canonicalRoot": "lib/professional-repertoire/skills/resolving-an-identifier",
+      "digest": "sha256:b0c6127604e2c888b1fbf31b003e1eededc44ffc82f516b2cd8e06920dd8756b",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/resolving-an-identifier",
+      "projectionDigest": "sha256:4f8fb00a6cb899729ed66ef43e5795dd614873fa61eb58aeafd040f3da4d9c49"
+    },
+    {
+      "id": "standing-up-a-node",
+      "canonicalRoot": "lib/professional-repertoire/skills/standing-up-a-node",
+      "digest": "sha256:c5c5a539d45958263fb59b8ee27197b0cbaea27ced46e31874ccaafcdb7e3add",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/standing-up-a-node",
+      "projectionDigest": "sha256:ba2f8382af151380dca8971a50d3c9d13506c93952d7f8a662fc231e0d57fac3"
+    },
+    {
+      "id": "sweeping-the-standing-inventory",
+      "canonicalRoot": "lib/professional-repertoire/skills/sweeping-the-standing-inventory",
+      "digest": "sha256:b5bd073234baee216da2a510437f4425ebe07aa4f78574bad58d634ae6b1a54d",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/sweeping-the-standing-inventory",
+      "projectionDigest": "sha256:b5bd073234baee216da2a510437f4425ebe07aa4f78574bad58d634ae6b1a54d"
+    },
+    {
+      "id": "verifying-a-built-artifact",
+      "canonicalRoot": "lib/professional-repertoire/skills/verifying-a-built-artifact",
+      "digest": "sha256:9d64e09deaec542dccf33cce254122b8abf6b6817dc8484450a0561f6ade45ac",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/verifying-a-built-artifact",
+      "projectionDigest": "sha256:9d64e09deaec542dccf33cce254122b8abf6b6817dc8484450a0561f6ade45ac"
+    },
+    {
+      "id": "writing-a-concept-of-operations",
+      "canonicalRoot": "lib/professional-repertoire/skills/writing-a-concept-of-operations",
+      "digest": "sha256:bfe56481cd3295402399b3004fad7e9bd8bd15c222256f9b32f12900bf11adc0",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/writing-a-concept-of-operations",
+      "projectionDigest": "sha256:bfe56481cd3295402399b3004fad7e9bd8bd15c222256f9b32f12900bf11adc0"
+    },
+    {
+      "id": "writing-a-configuration-management-plan",
+      "canonicalRoot": "lib/professional-repertoire/skills/writing-a-configuration-management-plan",
+      "digest": "sha256:59179a168f95303cde9e898f316cb600a3f863963c486524b78b35809bb7bd4e",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/writing-a-configuration-management-plan",
+      "projectionDigest": "sha256:59179a168f95303cde9e898f316cb600a3f863963c486524b78b35809bb7bd4e"
+    },
+    {
+      "id": "writing-a-conformance-plan",
+      "canonicalRoot": "lib/professional-repertoire/skills/writing-a-conformance-plan",
+      "digest": "sha256:5e24762bd0344028c6fb924ed605b4ecaba07c8e5ef1952278c6d3d05dc0849d",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/writing-a-conformance-plan",
+      "projectionDigest": "sha256:5e24762bd0344028c6fb924ed605b4ecaba07c8e5ef1952278c6d3d05dc0849d"
+    },
+    {
+      "id": "writing-a-documentation-plan",
+      "canonicalRoot": "lib/professional-repertoire/skills/writing-a-documentation-plan",
+      "digest": "sha256:908a18943a079c92680170c4112d6cf89a595f83ea1dbe2c1f8945e17dd142f8",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/writing-a-documentation-plan",
+      "projectionDigest": "sha256:908a18943a079c92680170c4112d6cf89a595f83ea1dbe2c1f8945e17dd142f8"
+    },
+    {
+      "id": "writing-a-duty",
+      "canonicalRoot": "lib/professional-repertoire/skills/writing-a-duty",
+      "digest": "sha256:4772fa8bab6fc860fdb074581e1b4800ead8cf3ebb2102e052123ddf65915007",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/writing-a-duty",
+      "projectionDigest": "sha256:4772fa8bab6fc860fdb074581e1b4800ead8cf3ebb2102e052123ddf65915007"
+    },
+    {
+      "id": "writing-a-high-level-design",
+      "canonicalRoot": "lib/professional-repertoire/skills/writing-a-high-level-design",
+      "digest": "sha256:97a8a978e9a5c06d099fc0280e1bca2a1522ccc619ec35d27105400fa4989241",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/writing-a-high-level-design",
+      "projectionDigest": "sha256:97a8a978e9a5c06d099fc0280e1bca2a1522ccc619ec35d27105400fa4989241"
+    },
+    {
+      "id": "writing-a-low-level-design",
+      "canonicalRoot": "lib/professional-repertoire/skills/writing-a-low-level-design",
+      "digest": "sha256:5b2f14f83e0d40d2f0cd81cebddf26c75d58f9e03ab6198e6d803239d6e28d95",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/writing-a-low-level-design",
+      "projectionDigest": "sha256:5b2f14f83e0d40d2f0cd81cebddf26c75d58f9e03ab6198e6d803239d6e28d95"
+    },
+    {
+      "id": "writing-a-note-about-research",
+      "canonicalRoot": "lib/professional-repertoire/skills/writing-a-note-about-research",
+      "digest": "sha256:a1bab8558d64ae2e1ee5ad404e9cb055062dc36b82f6f553e0112c2aad8ae160",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/writing-a-note-about-research",
+      "projectionDigest": "sha256:5f84cfa3abfceb53bd59d9232f199ff27da0b8790a7381e70710639de7caad29"
+    },
+    {
+      "id": "writing-a-requirement",
+      "canonicalRoot": "lib/professional-repertoire/skills/writing-a-requirement",
+      "digest": "sha256:bfbd16c053793449924d00137928e36a5b5ad456c2b025b81e777ea025755292",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/writing-a-requirement",
+      "projectionDigest": "sha256:bfbd16c053793449924d00137928e36a5b5ad456c2b025b81e777ea025755292"
+    },
+    {
+      "id": "writing-a-schema",
+      "canonicalRoot": "lib/professional-repertoire/skills/writing-a-schema",
+      "digest": "sha256:4b313fd44146ee42524200ae96d3395118925f2bb7a3056f4f9251f10c76ee75",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/writing-a-schema",
+      "projectionDigest": "sha256:4b313fd44146ee42524200ae96d3395118925f2bb7a3056f4f9251f10c76ee75"
+    },
+    {
+      "id": "writing-a-software-architecture-specification",
+      "canonicalRoot": "lib/professional-repertoire/skills/writing-a-software-architecture-specification",
+      "digest": "sha256:7bfa11f3fed644b1dbdedde49207338562963dc0e9c77e361b72fa663d49939a",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/writing-a-software-architecture-specification",
+      "projectionDigest": "sha256:7bfa11f3fed644b1dbdedde49207338562963dc0e9c77e361b72fa663d49939a"
+    },
+    {
+      "id": "writing-a-software-requirements-specification",
+      "canonicalRoot": "lib/professional-repertoire/skills/writing-a-software-requirements-specification",
+      "digest": "sha256:1c3a3babf998535a56eff75c0cfdad1a5c71a76031fa683d7b8f0fabb913dada",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/writing-a-software-requirements-specification",
+      "projectionDigest": "sha256:1c3a3babf998535a56eff75c0cfdad1a5c71a76031fa683d7b8f0fabb913dada"
+    },
+    {
+      "id": "writing-a-system-operational-concept",
+      "canonicalRoot": "lib/professional-repertoire/skills/writing-a-system-operational-concept",
+      "digest": "sha256:88703f257c9f5da020009d0f4fa441135df74d9c92b55fce5e286c1cee57bb45",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/writing-a-system-operational-concept",
+      "projectionDigest": "sha256:88703f257c9f5da020009d0f4fa441135df74d9c92b55fce5e286c1cee57bb45"
+    },
+    {
+      "id": "writing-a-term",
+      "canonicalRoot": "lib/professional-repertoire/skills/writing-a-term",
+      "digest": "sha256:d8e2e01d3a4e5c98102588c3906726b80b95e1135a92397aeae3304cbc979ec9",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/writing-a-term",
+      "projectionDigest": "sha256:aa8072372142fbf22bf91f7ca20b66e043c63408b5fc51360990e76fde9bb38d"
+    },
+    {
+      "id": "writing-a-verification-and-validation-specification",
+      "canonicalRoot": "lib/professional-repertoire/skills/writing-a-verification-and-validation-specification",
+      "digest": "sha256:b8fdaf413b8bb15e088ea0fb4d85660e2b0a70e35193da293f94aacd35e70b83",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/writing-a-verification-and-validation-specification",
+      "projectionDigest": "sha256:b8fdaf413b8bb15e088ea0fb4d85660e2b0a70e35193da293f94aacd35e70b83"
+    },
+    {
+      "id": "writing-a-work",
+      "canonicalRoot": "lib/professional-repertoire/skills/writing-a-work",
+      "digest": "sha256:440b90cd9694b4c08dd6affc99a7f299b20d13c9b97b3198048d8125b4bf7bb0",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/writing-a-work",
+      "projectionDigest": "sha256:440b90cd9694b4c08dd6affc99a7f299b20d13c9b97b3198048d8125b4bf7bb0"
+    },
+    {
+      "id": "writing-an-ieee-42010-architecture-description",
+      "canonicalRoot": "lib/professional-repertoire/skills/writing-an-ieee-42010-architecture-description",
+      "digest": "sha256:1621566d30cf5b8bfb564ff711ce87a5830337bd32b2cf59ce317deccc84c44d",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/writing-an-ieee-42010-architecture-description",
+      "projectionDigest": "sha256:1621566d30cf5b8bfb564ff711ce87a5830337bd32b2cf59ce317deccc84c44d"
+    },
+    {
+      "id": "writing-an-office",
+      "canonicalRoot": "lib/professional-repertoire/skills/writing-an-office",
+      "digest": "sha256:8eaf49267b3cc94548ec5ee97f873484f60c661082d4430f2b038f58aac4dd0b",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/writing-an-office",
+      "projectionDigest": "sha256:8eaf49267b3cc94548ec5ee97f873484f60c661082d4430f2b038f58aac4dd0b"
+    },
+    {
+      "id": "aggregate-requirements.js",
+      "canonicalPath": "lib/professional-repertoire/skills/aggregate-requirements.js",
+      "digest": "sha256:ffb0d3fc69d4b10a93f3762c233c7a90c2347700130f736f95bcb9cef0198ee8",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/aggregate-requirements.js",
+      "projectionDigest": "sha256:ffb0d3fc69d4b10a93f3762c233c7a90c2347700130f736f95bcb9cef0198ee8"
+    },
+    {
+      "id": "allocate-attention.js",
+      "canonicalPath": "lib/professional-repertoire/skills/allocate-attention.js",
+      "digest": "sha256:e32382e6502a4dae5cfb5af924c318512e334307bf32b556e194e7009018555c",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/allocate-attention.js",
+      "projectionDigest": "sha256:e32382e6502a4dae5cfb5af924c318512e334307bf32b556e194e7009018555c"
+    },
+    {
+      "id": "carry-a-decision-to-its-decider.mjs",
+      "canonicalPath": "lib/professional-repertoire/skills/carry-a-decision-to-its-decider.mjs",
+      "digest": "sha256:bd8775aa44acc5e683e58011e01790fcd116204fc4fa31d361e38e653bc8ff49",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/carry-a-decision-to-its-decider.mjs",
+      "projectionDigest": "sha256:bd8775aa44acc5e683e58011e01790fcd116204fc4fa31d361e38e653bc8ff49"
+    },
+    {
+      "id": "check-enterprise-installer-authority-migration.js",
+      "canonicalPath": "lib/professional-repertoire/skills/check-enterprise-installer-authority-migration.js",
+      "digest": "sha256:1cd2edbec58e599b3a4b5e5768de349a252c276410452ca23f124034079c9a4b",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/check-enterprise-installer-authority-migration.js",
+      "projectionDigest": "sha256:1cd2edbec58e599b3a4b5e5768de349a252c276410452ca23f124034079c9a4b"
+    },
+    {
+      "id": "check-enterprise-installer-mesh-authority.js",
+      "canonicalPath": "lib/professional-repertoire/skills/check-enterprise-installer-mesh-authority.js",
+      "digest": "sha256:32d51678f37c01d4a84bb91ddc13e8cfc86687e6dc6832b0c423c3de492bd3db",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/check-enterprise-installer-mesh-authority.js",
+      "projectionDigest": "sha256:32d51678f37c01d4a84bb91ddc13e8cfc86687e6dc6832b0c423c3de492bd3db"
+    },
+    {
+      "id": "check-high-level-design-writer.js",
+      "canonicalPath": "lib/professional-repertoire/skills/check-high-level-design-writer.js",
+      "digest": "sha256:6a653519bd3d56015326fc78499786b9fae33db2d1b3bcc996d0c9e92a68036f",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/check-high-level-design-writer.js",
+      "projectionDigest": "sha256:6a653519bd3d56015326fc78499786b9fae33db2d1b3bcc996d0c9e92a68036f"
+    },
+    {
+      "id": "check-low-level-design-writer.js",
+      "canonicalPath": "lib/professional-repertoire/skills/check-low-level-design-writer.js",
+      "digest": "sha256:dfec8ff01ac10ff6d32be56e35b37c4a6ff159a161baa8f2d23b48a155ccae7a",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/check-low-level-design-writer.js",
+      "projectionDigest": "sha256:dfec8ff01ac10ff6d32be56e35b37c4a6ff159a161baa8f2d23b48a155ccae7a"
+    },
+    {
+      "id": "check-mesh-scope-projection.js",
+      "canonicalPath": "lib/professional-repertoire/skills/check-mesh-scope-projection.js",
+      "digest": "sha256:46796699c0cd26b646e04658a18c2fc5ccde5de432e1d02fc3867a759814eaca",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/check-mesh-scope-projection.js",
+      "projectionDigest": "sha256:46796699c0cd26b646e04658a18c2fc5ccde5de432e1d02fc3867a759814eaca"
+    },
+    {
+      "id": "check-requirement-writer-shell-admission.js",
+      "canonicalPath": "lib/professional-repertoire/skills/check-requirement-writer-shell-admission.js",
+      "digest": "sha256:e184f093dd2117f18731afb5e467c2675b10942bf8ef1a331b8a52e42ee0bfb7",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/check-requirement-writer-shell-admission.js",
+      "projectionDigest": "sha256:e184f093dd2117f18731afb5e467c2675b10942bf8ef1a331b8a52e42ee0bfb7"
+    },
+    {
+      "id": "check-task-goal-review-evidence-stability.js",
+      "canonicalPath": "lib/professional-repertoire/skills/check-task-goal-review-evidence-stability.js",
+      "digest": "sha256:2e4c46fc4eae20a870edb89ba7111ed698a0e7b2e510301fa369121d9d3b54f2",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/check-task-goal-review-evidence-stability.js",
+      "projectionDigest": "sha256:2e4c46fc4eae20a870edb89ba7111ed698a0e7b2e510301fa369121d9d3b54f2"
+    },
+    {
+      "id": "derive-a-seam-register.js",
+      "canonicalPath": "lib/professional-repertoire/skills/derive-a-seam-register.js",
+      "digest": "sha256:4e8bfaf9f1e35feedb82c5a75b8032093764a3d06d66bcb67e649ec94393fca0",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/derive-a-seam-register.js",
+      "projectionDigest": "sha256:4e8bfaf9f1e35feedb82c5a75b8032093764a3d06d66bcb67e649ec94393fca0"
+    },
+    {
+      "id": "derive-the-causal-order.js",
+      "canonicalPath": "lib/professional-repertoire/skills/derive-the-causal-order.js",
+      "digest": "sha256:9c042712db6d8a5d352581dd97df999cda317bf37258b1bc1c2e58ebc7725dc6",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/derive-the-causal-order.js",
+      "projectionDigest": "sha256:9c042712db6d8a5d352581dd97df999cda317bf37258b1bc1c2e58ebc7725dc6"
+    },
+    {
+      "id": "dispatch-a-task.js",
+      "canonicalPath": "lib/professional-repertoire/skills/dispatch-a-task.js",
+      "digest": "sha256:56936aeb901884ed66f5b8fa09ff53e09a17d4942f8ec7703693d53de485e3fe",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/dispatch-a-task.js",
+      "projectionDigest": "sha256:5ecf40859c2f2d69af8992cc3be7a1c539fa4e9d61b7c2b9b3b3df0ace6513ae"
+    },
+    {
+      "id": "drafting-a-requirement.js",
+      "canonicalPath": "lib/professional-repertoire/skills/drafting-a-requirement.js",
+      "digest": "sha256:76b6b1ce385eadcb87d09abb9076ff15fbdf77c8d8a90ad40ab40923e3e03f5f",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/drafting-a-requirement.js",
+      "projectionDigest": "sha256:76b6b1ce385eadcb87d09abb9076ff15fbdf77c8d8a90ad40ab40923e3e03f5f"
+    },
+    {
+      "id": "drafting-a-term.js",
+      "canonicalPath": "lib/professional-repertoire/skills/drafting-a-term.js",
+      "digest": "sha256:134440de467e4482da7e3df5783837feae116302ec881045836b331580804aa5",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/drafting-a-term.js",
+      "projectionDigest": "sha256:134440de467e4482da7e3df5783837feae116302ec881045836b331580804aa5"
+    },
+    {
+      "id": "glue-the-sections.js",
+      "canonicalPath": "lib/professional-repertoire/skills/glue-the-sections.js",
+      "digest": "sha256:d9469b09048fa21108c1cd593ebe94c5b3fd24e92c0ed5df0b23e0b1d83041bf",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/glue-the-sections.js",
+      "projectionDigest": "sha256:d9469b09048fa21108c1cd593ebe94c5b3fd24e92c0ed5df0b23e0b1d83041bf"
+    },
+    {
+      "id": "install-an-enterprise-in-claude.js",
+      "canonicalPath": "lib/professional-repertoire/skills/install-an-enterprise-in-claude.js",
+      "digest": "sha256:f9873ce42b0b9e900345add903f0b9df5be9bde9ebd8193f780bec6222c280b9",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/install-an-enterprise-in-claude.js",
+      "projectionDigest": "sha256:f9873ce42b0b9e900345add903f0b9df5be9bde9ebd8193f780bec6222c280b9"
+    },
+    {
+      "id": "install-an-enterprise-in-codex.js",
+      "canonicalPath": "lib/professional-repertoire/skills/install-an-enterprise-in-codex.js",
+      "digest": "sha256:50a73ec031e96777960b4da3cde8b6784eb8148e2c3999d0f60bb2b05b27262c",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/install-an-enterprise-in-codex.js",
+      "projectionDigest": "sha256:50a73ec031e96777960b4da3cde8b6784eb8148e2c3999d0f60bb2b05b27262c"
+    },
+    {
+      "id": "install-codex-as-an-agent.js",
+      "canonicalPath": "lib/professional-repertoire/skills/install-codex-as-an-agent.js",
+      "digest": "sha256:ee479254eb7d2988c39f48eeaa4b3cac4032405a36be92880100761d40fa909b",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/install-codex-as-an-agent.js",
+      "projectionDigest": "sha256:ee479254eb7d2988c39f48eeaa4b3cac4032405a36be92880100761d40fa909b"
+    },
+    {
+      "id": "judging-a-context-packet.js",
+      "canonicalPath": "lib/professional-repertoire/skills/judging-a-context-packet.js",
+      "digest": "sha256:65bdb47f6b139219f512527eaf36df8213e4e8bed513ba21ddd80ffa9845dbfe",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/judging-a-context-packet.js",
+      "projectionDigest": "sha256:65bdb47f6b139219f512527eaf36df8213e4e8bed513ba21ddd80ffa9845dbfe"
+    },
+    {
+      "id": "keep-the-books.js",
+      "canonicalPath": "lib/professional-repertoire/skills/keep-the-books.js",
+      "digest": "sha256:047bc2429fc804bb75539731dbd4c1fef29f70115c2d920b95ee0e5144b71e8e",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/keep-the-books.js",
+      "projectionDigest": "sha256:047bc2429fc804bb75539731dbd4c1fef29f70115c2d920b95ee0e5144b71e8e"
+    },
+    {
+      "id": "list-open-obligations.js",
+      "canonicalPath": "lib/professional-repertoire/skills/list-open-obligations.js",
+      "digest": "sha256:a337407c791bfe0c379fb23039a857d05582b9e873bff55e91e8082221054514",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/list-open-obligations.js",
+      "projectionDigest": "sha256:a337407c791bfe0c379fb23039a857d05582b9e873bff55e91e8082221054514"
+    },
+    {
+      "id": "make-a-task.js",
+      "canonicalPath": "lib/professional-repertoire/skills/make-a-task.js",
+      "digest": "sha256:3de452f4e3ee9b0251d89ab810e428f2571504074f8ec7141c6598e9dc51dfd8",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/make-a-task.js",
+      "projectionDigest": "sha256:eb63688ec7ec8bdef5aa3eeddcfe61a6b37166f6da7e76a348658c515690bbc0"
+    },
+    {
+      "id": "mesh-scope.js",
+      "canonicalPath": "lib/professional-repertoire/skills/mesh-scope.js",
+      "digest": "sha256:d51a99517b1f077cf6f9a64e65c2c0f13bd80f719e5e4277d3049e8fa05a24f1",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/mesh-scope.js",
+      "projectionDigest": "sha256:d51a99517b1f077cf6f9a64e65c2c0f13bd80f719e5e4277d3049e8fa05a24f1"
+    },
+    {
+      "id": "normalize-a-units-management-records.js",
+      "canonicalPath": "lib/professional-repertoire/skills/normalize-a-units-management-records.js",
+      "digest": "sha256:d720f069dcd2597b759c892402d4f7c661ed91bbf8c634044ef7528b0bcfd725",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/normalize-a-units-management-records.js",
+      "projectionDigest": "sha256:d720f069dcd2597b759c892402d4f7c661ed91bbf8c634044ef7528b0bcfd725"
+    },
+    {
+      "id": "perform-a-business-or-mission-analysis.js",
+      "canonicalPath": "lib/professional-repertoire/skills/perform-a-business-or-mission-analysis.js",
+      "digest": "sha256:06c411cae264ea5af0a7980e6b21dff4b2f5c5d2db6e2a14a9b821b256ad8d48",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/perform-a-business-or-mission-analysis.js",
+      "projectionDigest": "sha256:06c411cae264ea5af0a7980e6b21dff4b2f5c5d2db6e2a14a9b821b256ad8d48"
+    },
+    {
+      "id": "project-a-skill.js",
+      "canonicalPath": "lib/professional-repertoire/skills/project-a-skill.js",
+      "digest": "sha256:81701d619cd438cb1bb13a030950bfc2a3f1df65932d22ab266ea011f786e1dd",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/project-a-skill.js",
+      "projectionDigest": "sha256:ed241fce4624307c3bdafc3dd8901b59de1a7264df6fd7ebc0b1415a14aa3b6e"
+    },
+    {
+      "id": "project-pools-to-eavt.js",
+      "canonicalPath": "lib/professional-repertoire/skills/project-pools-to-eavt.js",
+      "digest": "sha256:179293a0b1287fda6659909c8771f4ef2ff08cae200ed2fb7d519b9d51bf610f",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/project-pools-to-eavt.js",
+      "projectionDigest": "sha256:179293a0b1287fda6659909c8771f4ef2ff08cae200ed2fb7d519b9d51bf610f"
+    },
+    {
+      "id": "query-eavt.js",
+      "canonicalPath": "lib/professional-repertoire/skills/query-eavt.js",
+      "digest": "sha256:1a753cb64585c6102ed8b7e93c268d6808d624b77e8203cbc2d1a5e741ba01ed",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/query-eavt.js",
+      "projectionDigest": "sha256:1a753cb64585c6102ed8b7e93c268d6808d624b77e8203cbc2d1a5e741ba01ed"
+    },
+    {
+      "id": "raise-an-idea.js",
+      "canonicalPath": "lib/professional-repertoire/skills/raise-an-idea.js",
+      "digest": "sha256:153be0facc2a7673f4b8a8d0e3e4d69a7285fbb454b10012f805cb65842739cb",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/raise-an-idea.js",
+      "projectionDigest": "sha256:153be0facc2a7673f4b8a8d0e3e4d69a7285fbb454b10012f805cb65842739cb"
+    },
+    {
+      "id": "read-a-schema.js",
+      "canonicalPath": "lib/professional-repertoire/skills/read-a-schema.js",
+      "digest": "sha256:4b9c10188186c6dbe552f1da8a49d90465663e9b4b2411c8abbe1ec87e9390fb",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/read-a-schema.js",
+      "projectionDigest": "sha256:305a24a82eaa2d16c47e93e0ae109521706df356c0886f950f26f8ce2af114c2"
+    },
+    {
+      "id": "read-coordination-cost.js",
+      "canonicalPath": "lib/professional-repertoire/skills/read-coordination-cost.js",
+      "digest": "sha256:1d83e1a1354f267d687bf73cdb88ff65b361ce60c0041db092036315a05c23fb",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/read-coordination-cost.js",
+      "projectionDigest": "sha256:1d83e1a1354f267d687bf73cdb88ff65b361ce60c0041db092036315a05c23fb"
+    },
+    {
+      "id": "record-a-change.js",
+      "canonicalPath": "lib/professional-repertoire/skills/record-a-change.js",
+      "digest": "sha256:85bd006a6dfdf7896dee1ab0145f58ac16f2a105e742c184cd4d588ee39841cd",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/record-a-change.js",
+      "projectionDigest": "sha256:85bd006a6dfdf7896dee1ab0145f58ac16f2a105e742c184cd4d588ee39841cd"
+    },
+    {
+      "id": "record-a-requirement-event.js",
+      "canonicalPath": "lib/professional-repertoire/skills/record-a-requirement-event.js",
+      "digest": "sha256:af12fad06dfdd17b8bbddfb23955c8b313521c729debabfec333462c4155788e",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/record-a-requirement-event.js",
+      "projectionDigest": "sha256:af12fad06dfdd17b8bbddfb23955c8b313521c729debabfec333462c4155788e"
+    },
+    {
+      "id": "report-an-anomaly.js",
+      "canonicalPath": "lib/professional-repertoire/skills/report-an-anomaly.js",
+      "digest": "sha256:cd74c68d53c8d701415c8681fe6f13a8c764a1f9b9daf83ad9f5c23d4db87af2",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/report-an-anomaly.js",
+      "projectionDigest": "sha256:baaeb87f81b187118dd2569f124518c5beba844d65398faffd4cdce8fd178793"
+    },
+    {
+      "id": "resolve-an-identifier.js",
+      "canonicalPath": "lib/professional-repertoire/skills/resolve-an-identifier.js",
+      "digest": "sha256:bc67fb6474f433740eee2ff61aefcba661749d379ac1eb3d4f2bcd2e211fec62",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/resolve-an-identifier.js",
+      "projectionDigest": "sha256:5bece73310c12369161f510c0c419f2c3733d4f0b1d39e3bd509ac3cf55e9495"
+    },
+    {
+      "id": "rule-a-gray-determination.js",
+      "canonicalPath": "lib/professional-repertoire/skills/rule-a-gray-determination.js",
+      "digest": "sha256:7d8df6b1003564eb6b594461629a21284c12284baec115866701d524d3cef5b7",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/rule-a-gray-determination.js",
+      "projectionDigest": "sha256:7d8df6b1003564eb6b594461629a21284c12284baec115866701d524d3cef5b7"
+    },
+    {
+      "id": "settle-the-evidence.js",
+      "canonicalPath": "lib/professional-repertoire/skills/settle-the-evidence.js",
+      "digest": "sha256:ca6f78f5727f1c1946193382c8670a32f9fecaf8642518ca8482f80290ee4f0f",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/settle-the-evidence.js",
+      "projectionDigest": "sha256:ca6f78f5727f1c1946193382c8670a32f9fecaf8642518ca8482f80290ee4f0f"
+    },
+    {
+      "id": "supersede-a-task.js",
+      "canonicalPath": "lib/professional-repertoire/skills/supersede-a-task.js",
+      "digest": "sha256:75fe33e08ae63bae6e99e885a637281ca3412bc98eb096ea17e1f02e9e436d53",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/supersede-a-task.js",
+      "projectionDigest": "sha256:75fe33e08ae63bae6e99e885a637281ca3412bc98eb096ea17e1f02e9e436d53"
+    },
+    {
+      "id": "sweep-the-movements.js",
+      "canonicalPath": "lib/professional-repertoire/skills/sweep-the-movements.js",
+      "digest": "sha256:b21b230d16655921a5312f18ad2d093563c0de94ad1b20843ee7f353f3b1e0f5",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/sweep-the-movements.js",
+      "projectionDigest": "sha256:b21b230d16655921a5312f18ad2d093563c0de94ad1b20843ee7f353f3b1e0f5"
+    },
+    {
+      "id": "write-a-concept-of-operations.js",
+      "canonicalPath": "lib/professional-repertoire/skills/write-a-concept-of-operations.js",
+      "digest": "sha256:2609961d0ab25dcb2e47016bc4cf96d1a1b88bc474b755990c2479eb10245aba",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/write-a-concept-of-operations.js",
+      "projectionDigest": "sha256:2609961d0ab25dcb2e47016bc4cf96d1a1b88bc474b755990c2479eb10245aba"
+    },
+    {
+      "id": "write-a-configuration-management-plan.js",
+      "canonicalPath": "lib/professional-repertoire/skills/write-a-configuration-management-plan.js",
+      "digest": "sha256:57c6069ae24e21bde66ddee5f9dcad90de31e5c62efdff6a3ef178c969ce4d3d",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/write-a-configuration-management-plan.js",
+      "projectionDigest": "sha256:57c6069ae24e21bde66ddee5f9dcad90de31e5c62efdff6a3ef178c969ce4d3d"
+    },
+    {
+      "id": "write-a-conformance-plan.js",
+      "canonicalPath": "lib/professional-repertoire/skills/write-a-conformance-plan.js",
+      "digest": "sha256:e1c3a14d73c267cd4aa97711b26f8a707a1a9c47e2fca3e0b30b251498eefbfe",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/write-a-conformance-plan.js",
+      "projectionDigest": "sha256:e1c3a14d73c267cd4aa97711b26f8a707a1a9c47e2fca3e0b30b251498eefbfe"
+    },
+    {
+      "id": "write-a-documentation-plan.js",
+      "canonicalPath": "lib/professional-repertoire/skills/write-a-documentation-plan.js",
+      "digest": "sha256:83812af0e7be23656d28bb4715f4025f5a5c87273bf7367ca225efecbdaa63f2",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/write-a-documentation-plan.js",
+      "projectionDigest": "sha256:83812af0e7be23656d28bb4715f4025f5a5c87273bf7367ca225efecbdaa63f2"
+    },
+    {
+      "id": "write-a-duty.js",
+      "canonicalPath": "lib/professional-repertoire/skills/write-a-duty.js",
+      "digest": "sha256:82eb4bd13610f95b36c819dca02590335ec68668795081989ba46c7481a2e748",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/write-a-duty.js",
+      "projectionDigest": "sha256:82eb4bd13610f95b36c819dca02590335ec68668795081989ba46c7481a2e748"
+    },
+    {
+      "id": "write-a-high-level-design.js",
+      "canonicalPath": "lib/professional-repertoire/skills/write-a-high-level-design.js",
+      "digest": "sha256:6e089ffc742b3a9fc6216e3375c47c4c9810646a14205d22c7c07f30e35613fc",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/write-a-high-level-design.js",
+      "projectionDigest": "sha256:6e089ffc742b3a9fc6216e3375c47c4c9810646a14205d22c7c07f30e35613fc"
+    },
+    {
+      "id": "write-a-low-level-design.js",
+      "canonicalPath": "lib/professional-repertoire/skills/write-a-low-level-design.js",
+      "digest": "sha256:cc5d77dba049bc7a3a35fe3ddc244f66f9300bf9465f9b9297198ca6dde69ede",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/write-a-low-level-design.js",
+      "projectionDigest": "sha256:cc5d77dba049bc7a3a35fe3ddc244f66f9300bf9465f9b9297198ca6dde69ede"
+    },
+    {
+      "id": "write-a-schema.js",
+      "canonicalPath": "lib/professional-repertoire/skills/write-a-schema.js",
+      "digest": "sha256:7b00743d657e35acd2a6748c0674b4fc055d8334bb0126da585311c5022cb4f5",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/write-a-schema.js",
+      "projectionDigest": "sha256:7b00743d657e35acd2a6748c0674b4fc055d8334bb0126da585311c5022cb4f5"
+    },
+    {
+      "id": "write-a-software-requirements-specification.js",
+      "canonicalPath": "lib/professional-repertoire/skills/write-a-software-requirements-specification.js",
+      "digest": "sha256:ec4261a63a7e9db77ee1fc1ca218223c13bac2aaec0600055595dab803da5b5f",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/write-a-software-requirements-specification.js",
+      "projectionDigest": "sha256:ec4261a63a7e9db77ee1fc1ca218223c13bac2aaec0600055595dab803da5b5f"
+    },
+    {
+      "id": "write-a-system-operational-concept.js",
+      "canonicalPath": "lib/professional-repertoire/skills/write-a-system-operational-concept.js",
+      "digest": "sha256:71522c6a5ab3f52248fc5789b1cf659a0889246c3ac1e984d233e541f326b43f",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/write-a-system-operational-concept.js",
+      "projectionDigest": "sha256:71522c6a5ab3f52248fc5789b1cf659a0889246c3ac1e984d233e541f326b43f"
+    },
+    {
+      "id": "write-a-verification-and-validation-specification.js",
+      "canonicalPath": "lib/professional-repertoire/skills/write-a-verification-and-validation-specification.js",
+      "digest": "sha256:d4bedfd8849fd77e587e592db503e625a4b59d8aae793b7b33ccde216959bd4a",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/write-a-verification-and-validation-specification.js",
+      "projectionDigest": "sha256:d4bedfd8849fd77e587e592db503e625a4b59d8aae793b7b33ccde216959bd4a"
+    },
+    {
+      "id": "write-a-work.js",
+      "canonicalPath": "lib/professional-repertoire/skills/write-a-work.js",
+      "digest": "sha256:9f452aff162239d28adbc68d81a58b3a2abf03abd9e37daa9cb14843d49e8a69",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/write-a-work.js",
+      "projectionDigest": "sha256:9f452aff162239d28adbc68d81a58b3a2abf03abd9e37daa9cb14843d49e8a69"
+    },
+    {
+      "id": "write-an-office.js",
+      "canonicalPath": "lib/professional-repertoire/skills/write-an-office.js",
+      "digest": "sha256:81bc61e4f66423a38aa236796cbc6404e48f63295a1909bff4ea6cf157d561e1",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/write-an-office.js",
+      "projectionDigest": "sha256:81bc61e4f66423a38aa236796cbc6404e48f63295a1909bff4ea6cf157d561e1"
+    }
+  ],
+  "characters": [
+    {
+      "id": "codex-interactive-session",
+      "canonicalRoot": "content/characters/codex-interactive-session",
+      "canonicalDigest": "sha256:506b5db0e6aa6509911c2a837d4bc61a2b9412fbc95d4ce6d63d47a3cc5ab689",
+      "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/services/leader-movement-team/content/characters/codex-interactive-session.json",
+      "projectionDigest": "sha256:6fa8176e2713ff42a452b349a38f358fce8115ef9f4554e16683bac1ee6c68e1",
+      "projectionKind": "single-file"
+    },
+    {
+      "id": "rom-keldar",
+      "canonicalRoot": "content/characters/rom-keldar",
+      "canonicalDigest": "sha256:7762e76cc3d97cc03685c11121f431e17782bcf4b89a2c1a92e251c9a4fcea26",
+      "priorProjection": "lib/emsenn/services/561-group/lib/characters/rom-keldar",
+      "projectionDigest": "sha256:7762e76cc3d97cc03685c11121f431e17782bcf4b89a2c1a92e251c9a4fcea26",
+      "projectionKind": "tree"
+    },
+    {
+      "id": "riley-park",
+      "canonicalRoot": "content/characters/riley-park",
+      "canonicalDigest": "sha256:078bc11db468447c821c935e0161c74f415201fdae034896b35744929981506f",
+      "priorProjection": "lib/emsenn/services/561-group/lib/characters/riley-park",
+      "projectionDigest": "sha256:078bc11db468447c821c935e0161c74f415201fdae034896b35744929981506f",
+      "projectionKind": "tree"
+    },
+    {
+      "id": "karen-wiener",
+      "canonicalRoot": "content/characters/karen-wiener",
+      "canonicalDigest": "sha256:3127ff06188ba713a9b316db6e86bb2b10ae1efbbee9d2da7357dc90b013080d",
+      "priorProjection": "lib/emsenn/services/561-group/services/lenticule-science/lib/characters/karen-wiener",
+      "projectionDigest": "sha256:e82ae5cfb780c2e35634c2f9e065dd97a9e39fb12a741b6c09d80659558e6f38",
+      "projectionKind": "tree"
+    },
+    {
+      "id": "lauren-becker",
+      "canonicalRoot": "content/characters/lauren-becker",
+      "canonicalDigest": "sha256:306f371d147312f8bd3dba52f4e77fb32a1a5d06affc199eeaeaa2058ab23470",
+      "priorProjection": "lib/emsenn/services/561-group/services/lenticule-science/lib/characters/lauren-becker",
+      "projectionDigest": "sha256:306f371d147312f8bd3dba52f4e77fb32a1a5d06affc199eeaeaa2058ab23470",
+      "projectionKind": "tree"
+    },
+    {
+      "id": "melvin-ginsberg",
+      "canonicalRoot": "content/characters/melvin-ginsberg",
+      "canonicalDigest": "sha256:39750b6ec49c79d0667ed89a13f680f2060c905792ffc22b7ed7eb7b4b90c979",
+      "priorProjection": "lib/emsenn/services/561-group/services/lenticule-science/lib/characters/melvin-ginsberg",
+      "projectionDigest": "sha256:39750b6ec49c79d0667ed89a13f680f2060c905792ffc22b7ed7eb7b4b90c979",
+      "projectionKind": "tree"
+    },
+    {
+      "id": "calder-underhill",
+      "canonicalRoot": "content/characters/calder-underhill",
+      "canonicalDigest": "sha256:61c4ce198aa9787b4c91c16ef90be94d5961ec2f4f0d2ca43d488981dbe02300",
+      "priorProjection": "lib/emsenn/services/561-group/services/lenticule-science/services/obsmetrological-services-section/src/lib/agency/characters/calder-underhill",
+      "projectionDigest": "sha256:61c4ce198aa9787b4c91c16ef90be94d5961ec2f4f0d2ca43d488981dbe02300",
+      "projectionKind": "tree"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "id": "deciding-a-change",
+  "name": "deciding a change",
+  "from": "A baselined thing changed by whoever was editing it: the baseline recording what the last person did rather than what the firm agreed, every downstream reader trusting a number nobody chose.",
+  "to": "A change approved or refused by a cross-functional decision, priced at what it costs everyone rather than what it costs to make, its reason stated so a stranger can read it, and the approval sent to the configuration manager to be recorded — so a change in the baseline and a change through the board are the same set.",
+  "cost": "The board's attention on every change however small, and the delay of routing a change through a decision instead of just making it — paid on purpose, because the alternative is paid by every reader forever.",
+  "otherwise": "Changes reach the baseline around the record, the record cannot afterward tell which ones did, and the baseline degrades from what the firm agreed into what happened.",
+  "x-provenance": {
+    "recorded-by": "claude/chief-of-staff",
+    "recorded-on": "2026-07-15",
+    "derived-from": "offices/change-control-board"
+  }
+}

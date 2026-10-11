@@ -1,0 +1,16 @@
+{
+  "id": "arranging-customer-local-practicum",
+  "name": "arranging customer-local practicum",
+  "authority": "ni:///sha-256;P75Y5UAiHjPSESVesIK8nBxwxst9CDmXR8bKw_9a64I",
+  "work": "arranging-customer-local-practicum",
+  "claim": "contracting-sovereign-settlement",
+  "skills": [
+    "arranging-customer-local-practicum"
+  ],
+  "delegation": false,
+  "x-provenance": {
+    "recorded-by": "codex/executive-officer-to-the-leader",
+    "recorded-on": "2026-07-18",
+    "derived-from": "corpus-led Union Officer Academy institutional audit"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "verifying-a-built-artifact",
+  "name": "verifying a built artifact",
+  "authority": "emsenn",
+  "work": "verifying-a-built-artifact",
+  "claim": "integrated-portfolio-management-team",
+  "skills": [
+    "verifying-a-built-artifact"
+  ],
+  "delegation": false,
+  "x-provenance": {
+    "recorded-by": "claude/chief-of-staff",
+    "recorded-on": "2026-07-15",
+    "derived-from": "note-on-the-kernel-offices-of-a-software-node"
+  }
+}

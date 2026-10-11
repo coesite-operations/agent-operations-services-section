@@ -1,0 +1,15 @@
+{
+  "id": "writing-a-high-level-design",
+  "name": "writing a high-level design",
+  "authority": "integrated-portfolio-management-team",
+  "work": "writing-a-high-level-design",
+  "claim": "system-architect",
+  "skills": [
+    "writing-a-high-level-design"
+  ],
+  "delegation": true,
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-15"
+  }
+}

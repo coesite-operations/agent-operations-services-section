@@ -1,0 +1,41 @@
+{
+  "id": "registrar",
+  "name": "registrar",
+  "kind": "office",
+  "normative-structure": "The registrar is the Academy's configuration custodian. It keeps immutable lineages of admitted requests, source denominators, formation baselines, formation-configuration epochs, cohorts, bundles, enrollments, performances, assessments, qualifications, refusals, corrections, and requalification gaps.",
+  "deontic-profile": {
+    "keeping-the-formation-register": "duty",
+    "controlling-formation-configuration": "duty",
+    "rewriting-a-formation-record": "deontic-immunity"
+  },
+  "bears-duty": [
+    "emsenn/duty/keeping-the-formation-register",
+    "emsenn/duty/controlling-formation-configuration"
+  ],
+  "provides-skill": [
+    "opening-a-cohort",
+    "issuing-a-qualification",
+    "maintaining-a-qualification",
+    "deriving-a-requalification-gap",
+    "controlling-formation-configuration"
+  ],
+  "authority-scope": [
+    "./content/",
+    "./data/"
+  ],
+  "jurisdiction": "union-officer-academy",
+  "part-of": "union-officer-academy",
+  "reports-to": "superintendent",
+  "serves": "contracting-sovereign-settlement",
+  "theory-basis": [
+    "academic registrar",
+    "content-addressed formation epochs rather than an imperial release line",
+    "append-only observation history",
+    "competency-based education"
+  ],
+  "x-provenance": {
+    "recorded-by": "codex/executive-officer-to-the-leader",
+    "recorded-on": "2026-07-18",
+    "derived-from": "corpus-led Union Officer Academy institutional audit"
+  }
+}

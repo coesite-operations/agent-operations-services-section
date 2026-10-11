@@ -1,0 +1,15 @@
+{
+  "id": "commissioning-a-record",
+  "name": "commissioning a record",
+  "authority": "emsenn",
+  "work": "commissioning-a-record",
+  "claim": "emsenn",
+  "skills": [
+    "checking-the-offices-of-a-firm-conform"
+  ],
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-15",
+    "derived-from": "duties/_archive/commissioning-a-record.md"
+  }
+}

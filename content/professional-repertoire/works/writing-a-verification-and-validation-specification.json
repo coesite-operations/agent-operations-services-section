@@ -1,0 +1,12 @@
+{
+  "id": "writing-a-verification-and-validation-specification",
+  "name": "writing a verification and validation specification",
+  "from": "Verification as folklore: checks that exist but cite no requirement, green runs read as proof of correctness, and coverage gaps known to individuals and recorded nowhere.",
+  "to": "An ISO/IEC/IEEE 29119-shaped register: every case naming the requirement or element it verifies, its measure, and its kind; a coverage statement listing the requirements no case yet reaches; and the honesty rule in force — a green run that reports its own blind spots.",
+  "cost": "The discipline of writing down, next to every passing check, what it does not cover — subtracting confidence at exactly the moment the green invites it.",
+  "otherwise": "Green means whatever the reader hopes: the mechanizable fraction passes, the rule is assumed to hold, and the gap between them is discovered by the failure it was hiding.",
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-15"
+  }
+}

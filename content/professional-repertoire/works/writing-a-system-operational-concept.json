@@ -1,0 +1,12 @@
+{
+  "id": "writing-a-system-operational-concept",
+  "name": "writing a system operational concept",
+  "from": "A system whose identity lives scattered — a boast in a README, a hedge in a specification, ambition smuggled into conformance-bearing documents that cannot afford it or hedged out of existence everywhere. What the system is for is something everyone senses and no document says.",
+  "to": "One operational-concept information item (OpsCon), per ISO/IEC/IEEE 29148's system level, where identity and ambition are stated plainly on the record: who operates the system and on what unit of deployment, the scenarios walked in prose, the boundaries drawn with their reasons — binding nobody, and forward-referencing the SRS and conformance plan that will bind.",
+  "cost": "The owner's nerve, spent saying plainly what the system is before any requirement protects the claim — the moment a plain sentence feels most like overreach is the moment this document exists for.",
+  "otherwise": "The ambition keeps leaking into the SRS and SAS as unverifiable requirements and hedged scope clauses, and every reader reconstructs what the system is for from documents built to say only what it must do.",
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-15"
+  }
+}

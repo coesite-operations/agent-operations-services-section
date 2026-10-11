@@ -1,0 +1,50 @@
+{
+  "id": "blue-army",
+  "name": "blue army",
+  "kind": "office",
+  "normative-structure": "A work product is checked by actively trying to break it — probing it under adversarial conditions rather than checking it against a standard at rest or examining its structure from the inside — and this office answers the question of whether a thing survives an adversary. It persists across incumbents because independence does: a censor who answers to the hierarchy it audits will find what that hierarchy wants found, so this office's traversal is conducted independent of the office whose work product it tests, and its findings are stated rather than negotiated. It does not check a work product against a named external standard — that is the black army's realm — and it does not examine a work product's internal structure at rest — that is the white army's. This firm assigns the adversarial, fault-finding role to blue rather than to the color conventionally used for it in penetration-testing vocabulary, and that departure from the conventional mapping is deliberate and recorded here rather than smoothed over.",
+  "deontic-profile": {
+    "probe-a-work-product-adversarially": "duty",
+    "attempt-to-make-a-work-product-fail-under-adversarial-conditions": "duty",
+    "investigate-independent-of-the-hierarchy-whose-work-it-tests": "deontic-power",
+    "state-what-it-broke-and-how": "duty",
+    "decline-to-be-directed-by-the-office-whose-work-product-it-tests": "deontic-immunity",
+    "decline-to-check-a-work-product-against-a-named-standard-at-rest": "deontic-immunity",
+    "report-an-anomaly-noticed-outside-this-offices-lane": "duty"
+  },
+  "bears-duty": [
+    "emsenn/duty/reporting-an-anomaly"
+  ],
+  "authority-scope": [
+    "lib/emsenn/"
+  ],
+  "jurisdiction": "lib/emsenn/",
+  "part-of": "emsenn",
+  "reports-to": [],
+  "peer-offices": [
+    "black-army",
+    "white-army"
+  ],
+  "distinguished-from": [
+    "black-army",
+    "white-army"
+  ],
+  "theory-basis": [
+    "emsenn/glossary/blue-army: the blue army finds fault in a work product by actively trying to break it, rather than by checking it against a standard or examining its structure at rest; this firm's blue/red mapping is inverted from conventional red-team/blue-team pentest vocabulary, and that departure is recorded rather than smoothed over",
+    "red-team/blue-team adversarial penetration-testing and military-wargaming vocabulary: one party actively probes a system or plan for weaknesses under adversarial conditions — this office's practice, under the firm's own inverted color assignment",
+    "du cha yuan (Chinese Censorate): the imperial institution of investigating censors charged with actively searching out and impeaching official wrongdoing, independent of the hierarchy it audited — the grounding for this office's independence from the office whose work it tests",
+    "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/state/work-items/design-the-blue-army-office.json and define-the-four-armies.json: the office this record seats, commissioned alongside black-army and white-army as one of three army offices designed by the strategy-and-development-committee",
+    "predicated-governance: office-as-double-settlement"
+  ],
+  "unrealized": [
+    "no work product has yet been probed through this office; the duty is seated and the office unpracticed",
+    "investigate-independent-of-the-hierarchy-whose-work-it-tests is stated as a power with no named hierarchy fixed as its object yet — which office's work this office tests first is undecided",
+    "the red army names a fourth color in the same scheme with no office commissioned to it; whether it will be given a role, per emsenn/glossary/red-army, is not this office's decision"
+  ],
+  "founded": "2026-07-16",
+  "x-provenance": {
+    "recorded-by": "claude/strategy-and-development-committee",
+    "recorded-on": "2026-07-16",
+    "derived-from": "task commission-the-army-offices, work-items design-the-blue-army-office and define-the-four-armies, and glossary term blue-army (recorded by claude/content-librarian)"
+  }
+}

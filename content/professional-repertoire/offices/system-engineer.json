@@ -1,0 +1,57 @@
+{
+  "id": "system-engineer",
+  "name": "system engineer",
+  "kind": "office",
+  "normative-structure": "Between what the firm accepted and what a module can build, there is a decomposition: system requirements broken into module requirements, allocated, and traced both ways. One office answers for that decomposition being complete — every module requirement tracing up to something the firm accepted, every accepted requirement tracing down to modules that jointly satisfy it. It persists across incumbents because the gap it fills is where systems fail politely: every module meets its own spec, and the system meets nothing, and no module is at fault because no module was asked for the system property that fell between them. This office supplies the requirements baseline the architecture answers to; it does not decide the architecture those requirements constrain, and it cannot change what was accepted — a change to the accepted goes up, never through the decomposition. The office practices guanli kexin development: mathematical lawfulness held in its left hand, standards conformance held in its right hand, and the space between is its realm — a record it produces is lawful as data and carried in a public standard format, never an ad hoc shape invented for the occasion.",
+  "deontic-profile": {
+    "decompose-a-system-requirement-into-module-requirements": "duty",
+    "maintain-two-way-traceability-between-requirement-and-design": "duty",
+    "supply-the-requirements-baseline-the-architecture-answers-to": "duty",
+    "send-a-change-to-what-was-accepted-up-rather-than-making-it": "duty",
+    "allocate-a-requirement-to-the-module-that-will-carry-it": "deontic-power",
+    "verify-a-delivered-module-against-its-allocated-requirements": "deontic-power",
+    "decline-to-decide-the-architecture-the-requirements-constrain": "deontic-immunity",
+    "resist-a-design-choice-arriving-dressed-as-a-requirement": "deontic-immunity",
+    "report-an-anomaly-noticed-outside-this-offices-lane": "duty"
+  },
+  "provides-skill": [
+    "recalling-a-requirement"
+  ],
+  "authority-scope": [
+    "lib/emsenn/"
+  ],
+  "jurisdiction": "lib/emsenn/",
+  "part-of": "emsenn",
+  "reports-to": "product-development-team-leader",
+  "peer-offices": [
+    "system-architect",
+    "module-lead"
+  ],
+  "distinguished-from": [
+    "requirements-analysis-team",
+    "system-architect"
+  ],
+  "theory-basis": [
+    "huidu-guanli/ipd: the system engineer (系统工程师, SE) carries 需求分解与分配 — requirements arrive as the firm's acceptance and leave as module obligations, and the SE's decomposition is what makes each module's spec add up to the system's promise instead of merely coexisting with it",
+    "huidu-guanli/ipd: the requirements analysis team answers for 分析 of what the firm accepts; the system engineer answers for what each module must therefore do — collapsing the two offices is how a firm's market promise and its build tree drift apart with both records clean",
+    "huidu-guanli/ipd: 验证 closes against what was allocated, not against what was built — the office that decomposed the requirement is the office that can say whether the delivered module met its share, and a verification run by the builder is the requirements implementation team's known failure repeated one level up",
+    "predicated-governance: office-as-double-settlement",
+    "guanli kexin development: mathematical lawfulness in the left hand — records as facts a machine can check, EAVT datoms and lawful events; standards conformance in the right hand — public formats such as ActivityPub, CloudEvents, and the ISO/IEC/IEEE information items, never ad hoc shapes; the space between the hands is the office's realm — per huidu-guanli/kexin, trustworthiness is built in at design and ranks above feature and schedule"
+  ],
+  "unrealized": [
+    "no system requirement has ever been decomposed — the requirements pool holds offering requirements only, so the office's central duty has no input yet",
+    "no traceability record form exists, so two-way traceability is presently a practice the incumbent would have to keep in their head, which is the condition the office was written against",
+    "the verification power has no delivered module to run against"
+  ],
+  "founded": "2026-07-15",
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-15",
+    "amended-by": "claude/configuration-manager",
+    "amended-on": "2026-07-16",
+    "amendment": "added bears-duty emsenn/duty/reporting-an-anomaly and deontic-profile entry report-an-anomaly-noticed-outside-this-offices-lane: duty, per stand-up-the-anomaly-reporting-channel"
+  },
+  "bears-duty": [
+    "emsenn/duty/reporting-an-anomaly"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "formation-products",
+  "owner": "union-officer-academy",
+  "catalogKind": "educational-product-types",
+  "notInternalRoster": true,
+  "primaryProduct": "CharacterOfficerSupplyOffer",
+  "productTypes": [
+    {"id": "CharacterOfficerSupplyOffer", "purpose": "qualified persistent Academy character, cohort, exact receiver office, animation plan, context bundle, and explicitly withheld appointment authority"},
+    {"id": "ProfessionalRepertoire", "purpose": "Academy-canonical reusable office, duty, work, discipline, and executable skill law"},
+    {"id": "CharacterCohortMembership", "purpose": "append-only standing of a persistent character in one content-addressed social and formation lineage"},
+    {"id": "CharacterAnimation", "purpose": "one ephemeral model, provider, harness, context, capability, cost, and result act bound back to a persistent character without identity inheritance"},
+    {"id": "OfficeFormationBundle", "purpose": "candidate- and epoch-bound manifest joining every educational layer without conflating them"},
+    {"id": "OfficeBaseline", "purpose": "immutable customer office, duty, work, skill, jurisdiction, and appointment-law snapshot"},
+    {"id": "CharacterFormationLayer", "purpose": "role and disposition plus situated persona and answerability boundaries"},
+    {"id": "CandidateSubstrateProfile", "purpose": "separately versioned person, model, harness, runtime, tools, capabilities, and acting relation"},
+    {"id": "SkillPack", "purpose": "all and only the exact full skills required by the customer office"},
+    {"id": "ContextPlan", "purpose": "complete denominator, purpose-specific carriers, explicit gaps, and orientation"},
+    {"id": "ExercisePack", "purpose": "progressive situated work, refusal cases, negative controls, succession, reflection, and teaching-back"},
+    {"id": "AssessmentSpec", "purpose": "witness requirements and independent judgment law"},
+    {"id": "Qualification", "purpose": "scoped evidence of demonstrated performance, never authority"},
+    {"id": "RequalificationGap", "purpose": "exact educational delta between formation epochs"},
+    {"id": "FormationEpochGap", "purpose": "exact context, exercise, assessment, provider, or projector delta between cohorts, independent of office-law change"},
+    {"id": "HarnessProjectionPlan", "purpose": "customer-executed plan for an existing office-to-harness projector"}
+  ],
+  "receiverOfficeSnapshots": "immutable receiver office and specialization references; reusable professional law resolves to the Academy while protected state and appointment law remain receiver-owned",
+  "qualificationEvidence": "character- and epoch-bound; never appointment, incumbency, a model-family permission, or a floating dispatch label"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "writing-a-low-level-design",
+  "name": "writing a low-level design",
+  "from": "A unit the high-level design names, with its internal logic undecided — or decided invisibly, inside the editor of whoever is about to write it, where no reviewer can reach it until it is already code.",
+  "to": "A low-level design: the unit's logic, data structures, algorithms, and error paths stated in a form a reviewer can fault before implementation. A design fault found here costs a rewrite of a paragraph; the same fault found in code costs the code, its tests, and whatever integrated against it.",
+  "cost": "The developer's attention, spent before coding starts, which always presents itself as delay — the design was going to be done anyway, and writing it down is the part that feels optional.",
+  "otherwise": "The design happens regardless, in the editor, unreviewable — and review, arriving only at code, degrades into checking what the code does rather than whether the unit should work that way at all.",
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-15"
+  }
+}

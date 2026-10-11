@@ -1,0 +1,16 @@
+{
+  "id": "organizing-a-technical-review",
+  "name": "organizing a technical review",
+  "authority": "emsenn",
+  "work": "organizing-a-technical-review",
+  "claim": "product-development-team-leader",
+  "skills": [
+    "organizing-a-technical-review"
+  ],
+  "delegation": false,
+  "x-provenance": {
+    "recorded-by": "claude/chief-of-staff",
+    "recorded-on": "2026-07-15",
+    "derived-from": "note-on-the-kernel-offices-of-a-software-node"
+  }
+}

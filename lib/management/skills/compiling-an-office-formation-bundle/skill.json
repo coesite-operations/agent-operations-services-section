@@ -1,0 +1,12 @@
+{
+  "type": "skill",
+  "name": "compiling-an-office-formation-bundle",
+  "verb-phrase": "compiling an office formation bundle",
+  "description": "Use when an enrolled candidate or agent session needs the exact office-specific educational and context surface for work on demand.",
+  "preconditions": ["a validated enrollment resolves to one cohort and formation baseline", "the complete relevant doctrine denominator is enumerated", "every included carrier has an owner, purpose, and digest", "every omission is named"],
+  "postconditions": ["an OfficeFormationBundle is content-addressed to the candidate and cohort epoch", "office, character, candidate substrate, skills, context carriers, exercises, assessment, projector plan, and withheld authority remain distinct", "no customer file is written and no incumbency or authority is implied"],
+  "witness": "OfficeFormationBundle",
+  "closure-kind": "derivation",
+  "requires-capabilities": [],
+  "x-provenance": {"recorded-on": "2026-07-18", "source": "corrected corpus-wide Academy reconstruction"}
+}

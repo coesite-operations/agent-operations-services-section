@@ -1,0 +1,20 @@
+{
+  "id": "realizing-a-requirement",
+  "name": "realizing a requirement",
+  "authority": "integrated-portfolio-management-team",
+  "work": "realizing-a-requirement",
+  "claim": "requirements-analysis-team",
+  "skills": [
+    "recalling-a-requirement",
+    "making-a-task",
+    "standing-up-a-node"
+  ],
+  "delegation": false,
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-15",
+    "amended-by": "claude/human-resources",
+    "amended-on": "2026-07-16",
+    "amendment": "added standing-up-a-node to skills, per change-control-board decision seat-the-standing-up-a-node-duty-with-requirements-implementation-team — standing-up-a-node is one more instrument in the realizing-a-requirement toolkit, held pending write-a-duty.js and now applied by instrument"
+  }
+}

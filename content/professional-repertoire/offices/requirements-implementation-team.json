@@ -1,0 +1,58 @@
+{
+  "id": "requirements-implementation-team",
+  "name": "requirements implementation team",
+  "kind": "office",
+  "normative-structure": "A requirement that was accepted and distributed gets realized as it was stated, or gets sent back as unrealizable — and never quietly becomes a different requirement that was easier to satisfy. This office answers for that. It persists across incumbents because the substitution does: a worker who cannot realize what was asked will realize something adjacent that it can finish, confidently, in a shape indistinguishable from the thing that was wanted, and the substitution is visible to nobody afterward because the record now describes what was built. That is not a defect of any incumbent's character; it is what any worker does when changing the requirement is cheaper than reporting that it cannot be met. The office therefore holds no power to change what a requirement asks for. It builds, and it cannot say whether what it built was what was asked. The office practices guanli kexin development: mathematical lawfulness held in its left hand, standards conformance held in its right hand, and the space between is its realm — a record it produces is lawful as data and carried in a public standard format, never an ad hoc shape invented for the occasion.",
+  "deontic-profile": {
+    "realize-a-requirement-that-was-distributed-to-it": "deontic-power",
+    "realize-a-requirement-as-it-was-stated-rather-than-as-it-was-convenient": "duty",
+    "report-that-a-requirement-cannot-be-realized-as-stated": "duty",
+    "refuse-a-requirement-that-arrived-without-conditions-that-settle": "duty",
+    "send-a-change-to-a-requirement-up-rather-than-making-it": "duty",
+    "decline-to-verify-that-its-own-realization-met-the-requirement": "deontic-immunity",
+    "decline-to-decide-whether-a-requirement-is-worth-realizing": "deontic-immunity",
+    "report-an-anomaly-noticed-outside-this-offices-lane": "duty"
+  },
+  "bears-duty": [
+    "emsenn/duty/realizing-a-requirement",
+    "emsenn/duty/reporting-an-anomaly"
+  ],
+  "provides-skill": [
+    "recalling-a-requirement",
+    "making-a-task",
+    "standing-up-a-node"
+  ],
+  "authority-scope": [
+    "lib/emsenn/"
+  ],
+  "jurisdiction": "lib/emsenn/",
+  "part-of": "emsenn",
+  "reports-to": "requirements-analysis-team",
+  "peer-offices": [
+    "product-development-team-leader"
+  ],
+  "distinguished-from": [
+    "requirements-analysis-team",
+    "product-development-team-leader"
+  ],
+  "theory-basis": [
+    "huidu-guanli/ipd: the requirements implementation team (需求实现团队, RIT) is drawn from the product development team's core members — the third layer of the 三层跨部门组织架构, and the only one of the three that builds",
+    "huidu-guanli/ipd: offering requirements run 收集 → 分析 → 分发 → 实现 → 验证 → 闭环; this office holds 实现 and nothing else, and the loop closes at a body that did not build",
+    "huidu-guanli/ipd: a change to an accepted requirement is decided by the requirements management team, and a change to a baselined thing by the change control board — in neither case by whoever is holding the work when the change looks necessary",
+    "huidu-guanli: 流程不是咨询顾问发明的，是从企业自己打过的胜仗里固化出来的 — process is hardened out of battles the firm already won, and a builder who renegotiates the process at the point of use has un-hardened it",
+    "predicated-governance: office-as-double-settlement",
+    "guanli kexin development: mathematical lawfulness in the left hand — records as facts a machine can check, EAVT datoms and lawful events; standards conformance in the right hand — public formats such as ActivityPub, CloudEvents, and the ISO/IEC/IEEE information items, never ad hoc shapes; the space between the hands is the office's realm — per huidu-guanli/kexin, trustworthiness is built in at design and ranks above feature and schedule"
+  ],
+  "unrealized": [
+    "this office is drawn from the product development team's core members, which are not seated — so it is presently staffed by nobody and its peership with the product development team leader records an intended crossing rather than an existing one",
+    "nothing stops a realization from silently redefining the requirement it was given, so the office's central duty is held by whoever is doing the work choosing to report a difficulty instead of routing around it — which is exactly the condition the duty was written against"
+  ],
+  "founded": "2026-07-15",
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-15",
+    "amended-by": "claude/human-resources",
+    "amended-on": "2026-07-16",
+    "amendment": "added standing-up-a-node to provides-skill, per change-control-board decision seat-the-standing-up-a-node-duty-with-requirements-implementation-team — requirements-implementation-team bears the duty of standing up a node as one more instrument in the realizing-a-requirement toolkit"
+  }
+}

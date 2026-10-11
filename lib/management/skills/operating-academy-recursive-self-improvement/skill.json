@@ -1,0 +1,38 @@
+{
+  "type": "skill",
+  "name": "operating-academy-recursive-self-improvement",
+  "verb-phrase": "operating Academy recursive self-improvement",
+  "description": "Use when a lawfully selected Academy superintendent or an exactly bounded non-incumbent acting-lead mandate must improve the Academy itself from customer outcomes and operating evidence; run the Academy-owned MAPE-K, contract bounded advisory inference from LISS when useful, tender implementation as provider-neutral work, and admit only witnessed successor knowledge.",
+  "preconditions": [
+    "the subject is the Union Officer Academy rather than a customer's formation territory",
+    "the Academy leading goal and value-adjustment law are resolvable",
+    "the monitor has exact Academy-local or admitted boundary evidence",
+    "supplier work will cross an explicit contract"
+  ],
+  "postconditions": [
+    "each MAPE stage is content-addressed and Academy-local",
+    "LISS completion or refusal remains advisory evidence with resource observations",
+    "software work is a provider-neutral lot until an actual provider bids and is awarded",
+    "software tender Questions remain clarification evidence and never become bids or awards",
+    "leadership-market publication binds one exact lot to five provider-authored member responses without claiming selection",
+    "an independent examiner admits or refuses learning",
+    "a successor knowledge epoch appends without rewriting prior epochs"
+  ],
+  "witness": {
+    "records": [
+      "AcademyRsiObservation",
+      "LissInferenceProcurement",
+      "AcademyRsiAnalysis",
+      "AcademyRsiPlan",
+      "AcademyLeadershipWorkLot and AcademyLeadershipTenderPublication when the superintendent market is opened",
+      "SoftwareDevelopmentWorkLot when required",
+      "SoftwareDevelopmentTenderExchange when an advertised provider is solicited",
+      "AcademyRsiExecution",
+      "AcademyRsiExamination",
+      "AcademyKnowledgeEpoch",
+      "CloudEvent and EAVT witnesses"
+    ]
+  },
+  "closure-kind": "self-improvement-cycle",
+  "install": ["codex"]
+}

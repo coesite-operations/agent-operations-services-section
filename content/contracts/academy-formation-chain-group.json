@@ -1,0 +1,47 @@
+{
+  "kind": "rendanheyi.chain-group-contract",
+  "id": "academy-formation-chain-group",
+  "endUser": "the self-governing Union office whose work must remain answerable across changing agent cohorts",
+  "userOutcome": "an exact office can obtain a digest-bound context bundle, practice regime, qualification evidence, and later reformation offers through a replayable MAPE-K service",
+  "leadingGoal": {
+    "measure": "receiver-accepted office formation interventions divided by contracted formation interventions",
+    "target": "all contracted interventions receive an explicit receiver Accept, Reject, or Question; none disappear into an internal handoff",
+    "benchmark": "zero-distance and closure against the receiver's own executable acceptance conditions"
+  },
+  "parties": [
+    "formation-observation-xiaowei",
+    "formation-diagnosis-xiaowei",
+    "formation-planning-xiaowei",
+    "formation-execution-xiaowei",
+    "formation-knowledge-xiaowei"
+  ],
+  "parallelWiring": "every party is exposed to the same receiver outcome; no member is paid merely for satisfying the next member",
+  "valueAddedPool": {
+    "source": "receiver-authored completion receipts only",
+    "split": {
+      "formation-observation-xiaowei": "20%",
+      "formation-diagnosis-xiaowei": "20%",
+      "formation-planning-xiaowei": "20%",
+      "formation-execution-xiaowei": "20%",
+      "formation-knowledge-xiaowei": "20%"
+    },
+    "shortfall": "shared symmetrically when the receiver outcome does not settle",
+    "unpricedState": "unknown rather than zero"
+  },
+  "membership": {
+    "voluntary": true,
+    "selection": "provider bids state a target and accept this contract; no Academy manager assigns membership",
+    "contestability": "qiangdan bids and guanbing-huxuan removal are recorded by the provider market"
+  },
+  "threeRights": ["decision", "personnel", "distribution"],
+  "approvalFromAbove": false,
+  "protocols": {
+    "intraEnterprise": "A2A 1.0 SendMessage over urn:emsenn:binding:a2a-stdio-jsonrpc-v1",
+    "interEnterprise": "ActivityStreams 2.0 values at the local process boundary and ActivityPub when deployed server-to-server",
+    "authority": "OCap-shaped Capability with CapTP target/method attenuation",
+    "notification": "CloudEvents 1.0",
+    "sourceLog": "EAVT/Datom-compatible JSONL",
+    "pricedBoundary": "x402 only when a real priced HTTP boundary and receipt verifier exist"
+  },
+  "customerTerritoryMutation": false
+}

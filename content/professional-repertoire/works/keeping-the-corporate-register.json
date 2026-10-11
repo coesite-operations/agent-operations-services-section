@@ -1,0 +1,13 @@
+{
+  "id": "keeping-the-corporate-register",
+  "name": "keeping the corporate register",
+  "from": "Constitutional facts about the firm — what offices exist, who is incumbent, what units and ships the firm carries — living only in prose that any session may repeat without checking, so a fixed office count or a wrongly-attributed officer stands unnoticed.",
+  "to": "A validated, machine-checkable register of those facts, so asking what the firm's structure is returns the register's answer and a stale or fabricated claim in prose is contradicted rather than repeated.",
+  "cost": "Building and maintaining a record set nobody has needed to consult carefully before, and correcting prose that has stood long enough to feel like history.",
+  "otherwise": "Every session inherits whatever the last session's prose happened to say, and a fabrication that reads confidently is indistinguishable from a fact.",
+  "x-provenance": {
+    "recorded-by": "claude/requirements-implementation-team",
+    "recorded-on": "2026-07-16",
+    "derived-from": "emsenn/requirement/the-firm-carries-its-corporate-functions — the 561-group glossary term carried a fixed 'twelve offices' count and a character wrongly recorded as First Officer"
+  }
+}

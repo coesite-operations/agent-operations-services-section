@@ -1,0 +1,10 @@
+{
+  "id": "conducting-officer-formation",
+  "name": "conducting officer formation",
+  "authority": "ni:///sha-256;P75Y5UAiHjPSESVesIK8nBxwxst9CDmXR8bKw_9a64I",
+  "work": "conducting-officer-formation",
+  "claim": "enrolled-candidate",
+  "skills": ["recording-candidate-formation", "recording-succession-practice"],
+  "delegation": true,
+  "x-provenance": {"recorded-by": "codex/executive-officer-to-the-leader", "recorded-on": "2026-07-18", "derived-from": "situated practice and current-practitioner teaching"}
+}

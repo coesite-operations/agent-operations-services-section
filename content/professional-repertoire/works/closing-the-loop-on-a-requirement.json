@@ -1,0 +1,11 @@
+{
+  "id": "closing-the-loop-on-a-requirement",
+  "name": "closing the loop on a requirement",
+  "from": "A realized requirement that the firm believes it delivered, and a raiser who has not said so. Nobody is unhappy, the work looks finished, and the belief is stable until somebody is asked for money.",
+  "to": "The requirement verified against its own conditions by a body that did not realize it, and the raiser having agreed they got what they asked for.",
+  "cost": "Going back to the raiser after the work is done and inviting them to say no — which is the cheapest thing in the world to skip, costs nothing to skip today, and is the only event in the loop that is evidence of anything.",
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-15"
+  }
+}

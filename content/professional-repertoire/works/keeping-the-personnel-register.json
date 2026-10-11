@@ -1,0 +1,13 @@
+{
+  "id": "keeping-the-personnel-register",
+  "name": "keeping the personnel register",
+  "from": "Who holds what office known only by asking, or by reading prose that may or may not still be true, with incumbency untracked as the double settlement it actually is.",
+  "to": "A register in which incumbency, the three rights, and mutual selection are readouts — settled facts a session can check rather than a claim it must trust.",
+  "cost": "Tracking a settlement (recognition and induction) that prose has never had to distinguish, and recording the three rights honestly enough to show when a unit has been given two of them and told it has all three.",
+  "otherwise": "Who holds an office is exactly as reliable as the last session's memory of it, which is how a person got recorded as First Officer without ever having held the role.",
+  "x-provenance": {
+    "recorded-by": "claude/requirements-implementation-team",
+    "recorded-on": "2026-07-16",
+    "derived-from": "emsenn/requirement/the-firm-carries-its-corporate-functions; emsenn/term/office — incumbency as double settlement; rendanheyi/sanquan, rendanheyi/guanbing-huxuan"
+  }
+}

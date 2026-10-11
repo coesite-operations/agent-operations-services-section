@@ -1,0 +1,12 @@
+{
+  "id": "writing-a-concept-of-operations",
+  "name": "writing a concept of operations",
+  "from": "The firm's intended way of operating scattered across leadership conversation, charters, and portfolio decisions that assume a shared organizational intent nobody has written down — each system inside it treated, by whichever document gets read, as though the organization exists to serve that system alone.",
+  "to": "One organization-level concept-of-operations, per ISO/IEC/IEEE 29148, where leadership's intended way of operating the organization is stated plainly: the systems it operates as black boxes, the assumptions that intent rests on, the boundaries of what the organization is not — binding nobody, and forward-referencing the requirements and portfolio records that will bind.",
+  "cost": "The leadership's nerve, spent stating organizational intent before any requirement or portfolio decision protects the claim, and spent naming which systems are boxed rather than opened.",
+  "otherwise": "Each system's own OpsCon quietly stands in for the organization's intent, and portfolio decisions get made against an organizational concept nobody wrote down and every reader assumes differently.",
+  "x-provenance": {
+    "recorded-by": "claude/module-developer",
+    "recorded-on": "2026-07-16"
+  }
+}

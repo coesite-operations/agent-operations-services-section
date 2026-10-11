@@ -1,0 +1,11 @@
+{
+  "id": "reviewing-a-low-level-design",
+  "name": "reviewing a low-level design",
+  "from": "A low-level design authored for a unit in the SAS to HLD to LLD chain has not been independently examined at implementation depth; its structures, algorithms, authority boundaries, failure behavior, and trace to the governing architecture and high-level design may still conceal faults that would otherwise become code.",
+  "to": "An independently authored low-level-design review names the exact design revision and its governing architecture and high-level design, examines the unit at implementation depth, records each finding and a PASS or FAIL verdict, and leaves the module lead evidence fit for the separate approval decision without itself authorizing implementation.",
+  "cost": "A senior software engineer spends design-level attention, adversarial reading, and accountability for every fault the review passes, while remaining independent of the design's authorship.",
+  "otherwise": "The module lead either approves on the author's confidence or repeats the review personally, collapsing author, reviewer, and approver; faults then surface at code or integration cost instead of design cost.",
+  "needs": [
+    "writing-a-low-level-design"
+  ]
+}

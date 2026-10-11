@@ -1,0 +1,29 @@
+{
+  "id": "formation-context-steward",
+  "name": "formation context steward",
+  "kind": "office",
+  "normative-structure": "The formation context steward recovers the complete relevant source denominator, preserves authority and omissions, and compiles a foreign office's law, skills, character surfaces, situated persona, context carriers, practice regime, and projection plan into an Academy-owned educational bundle without copying the foreign office into the Academy roster.",
+  "deontic-profile": {
+    "maintaining-office-curricula": "duty",
+    "keeping-the-formation-doctrine-census": "duty",
+    "compiling-office-formation-bundles": "duty",
+    "declaring-a-partial-orientation-complete": "deontic-immunity"
+  },
+  "bears-duty": [
+    "emsenn/duty/maintaining-office-curricula",
+    "emsenn/duty/keeping-the-formation-doctrine-census",
+    "emsenn/duty/compiling-office-formation-bundles"
+  ],
+  "provides-skill": [
+    "censusing-formation-doctrine",
+    "establishing-a-formation-baseline",
+    "compiling-an-office-formation-bundle"
+  ],
+  "authority-scope": ["./content/curricula/", "./content/catalogs/", "./data/office-formation-bundles/"],
+  "jurisdiction": "union-officer-academy",
+  "part-of": "union-officer-academy",
+  "reports-to": "superintendent",
+  "serves": ["contracting-sovereign-settlement", "enrolled-candidate"],
+  "theory-basis": ["Rom Keldar context compilation and character surfaces", "provider-authored doctrine, orientation, character learning, and repertoire", "complete doctrine denominator before dispatch", "office as source and harness as projection"],
+  "x-provenance": {"recorded-by": "codex/executive-officer-to-the-leader", "recorded-on": "2026-07-18", "derived-from": "corrected corpus-wide character, agent, context, office, and learning audit"}
+}

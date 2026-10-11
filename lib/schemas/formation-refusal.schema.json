@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "union-officer-academy/schema/formation-refusal",
+  "title": "Formation Refusal",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["type", "refusedAt", "code", "reason", "authorityNotGranted"],
+  "properties": {
+    "type": {"const": "FormationRefusal"},
+    "id": {"$ref": "#/$defs/id"},
+    "request": {"$ref": "#/$defs/id"},
+    "cohort": {"$ref": "#/$defs/id"},
+    "enrollment": {"$ref": "#/$defs/id"},
+    "refusedAt": {"type": "string", "format": "date-time"},
+    "code": {"enum": ["E_REQUEST_BOUNDARY", "E_BASELINE_UNRESOLVED", "E_CANDIDATE_IDENTITY", "E_TRAINING_GRANT", "E_PROTECTED_CONTEXT", "E_ASSESSOR_NOT_INDEPENDENT", "E_COMPETENCY_GAP", "E_WITNESS_MISSING", "E_PRICE_UNSETTLED", "E_AUTHORITY_REQUESTED"]},
+    "reason": {"type": "string", "minLength": 1},
+    "residualCompetencies": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "authorityNotGranted": {"const": true}
+  },
+  "$defs": {"id": {"type": "string", "pattern": "^urn:sha256:[a-f0-9]{64}$"}}
+}
+

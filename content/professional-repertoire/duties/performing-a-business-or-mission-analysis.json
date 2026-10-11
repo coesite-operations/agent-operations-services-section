@@ -1,0 +1,15 @@
+{
+  "id": "performing-a-business-or-mission-analysis",
+  "name": "performing a business-or-mission-analysis",
+  "authority": "integrated-portfolio-management-team",
+  "work": "performing-a-business-or-mission-analysis",
+  "claim": "product-quality-assurance",
+  "skills": [
+    "performing-a-business-or-mission-analysis"
+  ],
+  "delegation": false,
+  "x-provenance": {
+    "recorded-by": "claude/module-developer",
+    "recorded-on": "2026-07-16"
+  }
+}

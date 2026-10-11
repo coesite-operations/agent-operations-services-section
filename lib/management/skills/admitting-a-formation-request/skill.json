@@ -1,0 +1,11 @@
+{
+  "type": "skill",
+  "name": "admitting-a-formation-request",
+  "verb-phrase": "admitting a formation request",
+  "description": "Use when a sovereign settlement offers an exact office for professional formation; verify its identity, snapshot, candidate policy, protected context, assessment law, price, and bounded grant before admitting it to the Academy.",
+  "preconditions": ["the offer has crossed the Academy boundary as a receiver-local carrier", "the customer and office snapshot are resolvable", "the requested grant withholds customer-territory mutation"],
+  "postconditions": ["one FormationRequest is appended or one typed FormationRefusal is appended", "the admitted request binds exact office and protected-context digests", "no appointment or customer mutation authority is inferred"],
+  "witness": {"records": ["FormationRequest or FormationRefusal", "source offer identity", "admission evidence"]},
+  "closure-kind": "procedure",
+  "install": ["codex"]
+}

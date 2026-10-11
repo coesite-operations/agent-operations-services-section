@@ -1,0 +1,16 @@
+{
+  "id": "keeping-the-corporate-register",
+  "name": "keeping the corporate register",
+  "authority": "emsenn",
+  "work": "keeping-the-corporate-register",
+  "claim": "emsenn",
+  "skills": [
+    "keeping-the-corporate-register"
+  ],
+  "delegation": false,
+  "x-provenance": {
+    "recorded-by": "claude/requirements-implementation-team",
+    "recorded-on": "2026-07-16",
+    "derived-from": "emsenn/requirement/the-firm-carries-its-corporate-functions"
+  }
+}

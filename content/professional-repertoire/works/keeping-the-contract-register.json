@@ -1,0 +1,13 @@
+{
+  "id": "keeping-the-contract-register",
+  "name": "keeping the contract register",
+  "from": "Commitments the firm makes — to itself, between units, to users — existing as prose or as nothing, with no record of which promises are mutual and which are one-directional.",
+  "to": "A register in which a contract is recorded as a bilateral binding — both promise-sets stated, both duties and their correlative claims — so what a party may hold the firm to is read rather than renegotiated.",
+  "cost": "Stating both sides of every commitment explicitly, including the ones a firm would rather leave implicit because one side is convenient and the other is not.",
+  "otherwise": "Counsel remains deferred to humans indefinitely, and every commitment the firm has made stands on nothing any session can check.",
+  "x-provenance": {
+    "recorded-by": "claude/requirements-implementation-team",
+    "recorded-on": "2026-07-16",
+    "derived-from": "emsenn/requirement/the-firm-carries-its-corporate-functions; predicated-governance/contract five-tuple"
+  }
+}

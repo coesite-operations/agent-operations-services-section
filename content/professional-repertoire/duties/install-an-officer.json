@@ -1,0 +1,16 @@
+{
+  "id": "install-an-officer",
+  "name": "installing an officer",
+  "authority": "emsenn",
+  "work": "install-an-officer",
+  "claim": "emsenn",
+  "skills": [
+    "installing-claude-as-an-office",
+    "installing-claude-as-an-agent"
+  ],
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-15",
+    "derived-from": "duties/_archive/install-an-officer.md"
+  }
+}
