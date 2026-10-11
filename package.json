@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@harmonious-union/resolving-an-identifier": "0.1.0",
-    "@lenticule-science/typed-circuit-residue-assay": "0.0.0",
+    "@lenticule-science/typed-circuit-residue-assay": "1.1.2",
     "@modelcontextprotocol/sdk": "1.29.0",
     "@red-cup-engineering/json-schema-services-section": "0.1.2",
     "@red-cup-engineering/markdown-file-reading-service": "0.1.0",
@@ -42,7 +42,8 @@
     "@union-officer-academy/independent-examination-xiaowei": "0.1.2",
     "@union-officer-academy/qualification-registry-xiaowei": "0.1.2",
     "@union-officer-academy/situated-practice-xiaowei": "0.1.2",
-    "zod": "4.3.6"
+    "zod": "4.3.6",
+    "@red-cup-engineering/relation-model-notation-runtime": "0.12.1"
   },
   "license": "UNLICENSED",
   "exports": {
