@@ -1,0 +1,127 @@
+{
+  "id": "pulse-operating-cell-formation",
+  "name": "Pulse-derived operating cell formation",
+  "provider": "coesite-operations",
+  "customers": [
+    "561 Group office",
+    "Causeway Services operating owner",
+    "Lenticule Science service",
+    "Red Cup Engineering service"
+  ],
+  "outcome": "A recurring pulse pattern becomes a reusable parameterized operating cell with named offices, duties, skills, staffing demand, endeavor/campaign parameters, cadence, engineering capability dependencies, independent receiving, and explicit decommission criteria.",
+  "consumes": [
+    "leader-or-board-authorized demand or an already-admitted service obligation",
+    "current office/service identity and principal",
+    "repeated pulse evidence showing the work recurs or requires coordination",
+    "existing professional repertoire and Academy formation services",
+    "current Engineering capability receipts"
+  ],
+  "composes": {
+    "offices": [
+      "corporate-secretary",
+      "configuration-manager",
+      "character-resources",
+      "task-dispatcher",
+      "quality-operations",
+      "pilot-department"
+    ],
+    "services": [
+      "enterprise-formation-mape",
+      "officer-formation",
+      "character-officer-supply",
+      "office-context-on-demand"
+    ],
+    "roles": {
+      "corporate-secretary": "preserve enterprise identity, authority chain, principal, and provenance",
+      "configuration-manager": "own parameterization revision and configuration baselines",
+      "character-resources": "form staffing demand, qualification, succession, and vacancy records",
+      "task-dispatcher": "release only work whose required capabilities are admitted and available",
+      "pilot-department": "run first bounded operational delivery without converting a prototype into production authority",
+      "quality-operations": "independently assay delivered effect against receiver acceptance"
+    }
+  },
+  "parameterization": {
+    "required": [
+      "work_ref",
+      "principal",
+      "consumer",
+      "authorized-demand-ref",
+      "service-id",
+      "endeavor-id",
+      "objective",
+      "intake-contract",
+      "office-bundle",
+      "duty-bundle",
+      "skill-bundle",
+      "engineering-capabilities",
+      "staffing-demand",
+      "cadence",
+      "capacity-rule",
+      "acceptance-test",
+      "assayer",
+      "residue-rule",
+      "decommission-rule"
+    ],
+    "optional": [
+      "campaigns",
+      "pricing-model",
+      "billing-model",
+      "service-level",
+      "supplier-policy",
+      "external-channel"
+    ],
+    "forbiddenDefaults": [
+      "inventing a new product requirement without authorized Group/Board demand",
+      "treating a scheduled prompt as office authority",
+      "treating the same persistent actor changing office focus as an independent handoff",
+      "assuming missing engineering capability exists",
+      "assuming unverified staffing capacity",
+      "closing on source merge without operating receiver acceptance"
+    ]
+  },
+  "operatingLaw": [
+    "Operations defines the repeatable work form and consumes Engineering capabilities; it does not own bespoke capability implementations.",
+    "Repeated missing software capability becomes a provider-neutral capability demand to Red Cup Engineering with executable acceptance criteria.",
+    "A single persistent character may execute across offices it actually holds; handoff exists only when an independent endpoint, principal, or system receives.",
+    "Every operating cell exposes parameterizable endeavors; campaigns are repeatable bounded sequences inside an endeavor, not scheduler identities.",
+    "Staffing is an explicit demand with qualification and capacity evidence, not a model-session count.",
+    "The first delivery is a pilot; production status requires independent receiving and a durable capacity/cadence plan.",
+    "Cells with no continuing demand, payer, consumer, or institutional obligation are decommissioned rather than accumulated."
+  ],
+  "products": [
+    "OperatingCellParameterization",
+    "OfficeBundle",
+    "DutyBundle",
+    "SkillBundle",
+    "StaffingDemand",
+    "EndeavorParameterization",
+    "CampaignParameterization",
+    "EngineeringCapabilityDemand",
+    "PilotReceipt",
+    "ReceiverAcceptance",
+    "DecommissionRecord"
+  ],
+  "authorityWithheld": [
+    "Board decision",
+    "new Group product requirement",
+    "external contract",
+    "spend",
+    "public representation",
+    "Engineering implementation authority",
+    "receiver acceptance",
+    "staffing capacity invention"
+  ],
+  "sourceEvidence": {
+    "pulseExamples": [
+      "XrkNwQVp Personal Scent Foundry",
+      "pJ_EiO2u Sensory Materials Engineering",
+      "q4bvnQOO Olfactory Experience Systems",
+      "hri1yyTO Olfactory Metrology",
+      "JDnVt9Ne shared CSM research substrate",
+      "1Fg_7a0Z Leader-originated Public micro-enterprise formation",
+      "wsmOASEf Land Relations and Title Intelligence"
+    ],
+    "observedOn": "2026-10-11",
+    "note": "These are current Work Arena obligations observed by ChatGPT-Web; they motivate a reusable formation service rather than seven bespoke operating implementations."
+  }
+}
