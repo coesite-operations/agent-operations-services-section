@@ -279,3 +279,21 @@ and not permission to bypass actual host safety. Verification executes
 `test/connector-call-evidence.test.mjs` as part of this package's tests.
 The exact, still-unresolved live connector catalog/actor binding demand lives
 at `red-cup-engineering/engineering-services-section#5`.
+
+## Allocation census source guard
+
+`./allocation-readiness` (`src/allocation-readiness.mjs`) checks a complete set
+of dated `metroplat.work.allocation-candidates` pages before summarizing the
+reported allocation states. Pass each response with the cursor used to request
+it, and pass `expectedDate` when the caller requires a particular calendar
+date. The guard rejects impossible dates, sparse lists, duplicate scopes,
+incoherent page counts and non-object candidates. Its candidate boundary
+follows the wire contract's object type; it does not introduce a provider-id
+or admission schema. Existing work/skill reasons and choice-required,
+already-allocated and incomplete outcomes remain distinct.
+
+The package check, test and verify commands enroll the guard regression suite.
+Passing these source checks does not establish deployed wiring, current
+provider admission, operational capacity, institutional qualification or
+receiver acceptance. The guard only summarizes the supplied observation; it
+does not authorize, allocate, seat or dispatch a worker.
