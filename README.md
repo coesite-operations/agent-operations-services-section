@@ -255,3 +255,27 @@ value terms. The Academy neither preselects the section nor writes its territory
     academy-rsi publish-leadership-lot --lot <urn>
     academy-rsi solicit-software-tender --lot <urn>
     academy-rsi verify
+
+## Operation-scoped ChatGPT connector triage
+
+`./connector-call-evidence` (`src/connector-call-evidence.mjs`) now gives
+executive/scheduled work a deterministic read-first failure classifier and
+an exact-operation coverage readout. Feed it issuer-observed dispatch,
+provider reach, HTTP status, actual safety decision and readback witnesses;
+never infer those facts from the English text of `The tool failed internally.`
+For example, a denied GitHub PR operation cannot erase the successful GitHub
+file commit, and a successful GitHub file read cannot certify PR or merge
+capability. A host pre-dispatch safety refusal is a HOLD for the *same exact
+effect*; it is not a GitHub ACL problem or an invitation to issue the same
+mutation via a lower-level route. Repair independent permitted work instead.
+An unlocated internal Cold Red Gate tool error is not proof of a native
+service outage: preserve UNKNOWN and test each advertised read operation
+independently before drawing a provider-wide conclusion. Read back uncertain
+writes using the original object/work reference before any replay.
+
+The classifier is a pure source-level method, **not a live connector adapter**,
+not evidence that the Cold Red Gate world, L-Space, or compute tool now works,
+and not permission to bypass actual host safety. Verification executes
+`test/connector-call-evidence.test.mjs` as part of this package's tests.
+The exact, still-unresolved live connector catalog/actor binding demand lives
+at `red-cup-engineering/engineering-services-section#5`.
