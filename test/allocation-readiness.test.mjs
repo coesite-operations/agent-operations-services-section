@@ -236,13 +236,20 @@ test('Hall deficiency is an explicit market/supply hole not an invented job allo
   assert.equal(r.hallDeficiency.receivingStatus,'source-verified-by-caller-not-market-supplied');
   assert.equal(r.hallDeficiency.kind,'hall-deficiency-witness');
 });
-test('Hall shortage exposes all unmatched disconnected demand, including zero-provider scopes',()=>{
-  const r=plan([page(0,[scopeFor('A',['x']),scopeFor('B',['x']),scopeFor('C',[])],0)],
+test('Hall shortage distinguishes unidentified candidate from an empty invalid census row',()=>{
+  // Native allocation-candidates requires a nonempty candidate list when a
+  // scope is labeled allocatable. An unidentifiable candidate can be observed
+  // without inventing a Character. A genuinely empty list fails the census.
+  const unknown={scope:'C',state:'allocatable',reasons:[],candidates:[{office:'unverified-provider'}]};
+  const r=plan([page(0,[scopeFor('A',['x']),scopeFor('B',['x']),unknown],0)],
     {expectedDate:DATE});
   assert.equal(r.hallDeficiency.deficit,2);
   assert.deepEqual(r.hallDeficiency.demandingScopes,['A','B','C']);
   assert.deepEqual(r.hallDeficiency.eligibleCharacters,['x']);
+  assert.deepEqual(r.unidentifiedCandidateScopes,['C']);
   assert.equal(r.matchingPressure,undefined);
+  assert.equal(plan([page(0,[scopeFor('A',['x']),scopeFor('C',[])],0)],
+    {expectedDate:DATE}).state,'UNKNOWN');
 });
 test('full matching has no Hall obstruction and keeps exact ordinary provider evidence',()=>{
   const r=plan([page(0,[scopeFor('A',['x','y']),scopeFor('B',['x'])],0)],
