@@ -144,7 +144,7 @@ export function planNonoverlappingAllocations(pages, { expectedDate, maxScopes =
     });
   }
   return Object.freeze({
-    kind:'metroplat.allocation-pressure-readout.v1',state:unmatched.length?'CAPACITY_GAP':'MAXIMAL_MATCHING',
+    kind:'metroplat.allocation-pressure-readout.v1',state:unmatched.length?'CAPACITY_GAP':'MAXIMUM_MATCHING',
     observedDate:expectedDate,readiness:assay.state,totalAllocatableScopes:rows.length,
     qualifiedCharacterCount:uniqueCharacterCount(edges),
     candidateEdges:nEdges,matchedCount:assignments.length,
