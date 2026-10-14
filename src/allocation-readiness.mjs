@@ -77,6 +77,7 @@ export function planNonoverlappingAllocations(pages, { expectedDate, maxScopes =
   // Iterative alternating-path BFS: no recursive stack exhaustion even on
   // dense enterprise frontiers. Each augmentation grows cardinality by one.
   for(const start of edges.keys()){
+    if(assigned.has(start))continue;
     const queue=[start],queued=new Set([start]),visited=new Set(),fromProvider=new Map();
     let free;
     for(let index=0;index<queue.length&&free===undefined;index++){
