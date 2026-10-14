@@ -225,6 +225,32 @@ test('plan is stable under valid page permutation and candidate permutations, an
   assert.equal(a.matchedCount,2);
   assert.equal(JSON.stringify([first,last]),saved);
 });
+test('Hall deficiency is an explicit market/supply hole not an invented job allocation',()=>{
+  const r=plan([page(0,[scopeFor('A',['shared']),scopeFor('B',['shared'])],0)],
+    {expectedDate:DATE});
+  assert.equal(r.state,'CAPACITY_GAP');
+  assert.deepEqual(r.hallDeficiency.demandingScopes,['A','B']);
+  assert.deepEqual(r.hallDeficiency.eligibleCharacters,['shared']);
+  assert.equal(r.hallDeficiency.deficit,1);
+  assert.equal(r.hallDeficiency.marketPurchaseAuthorized,false);
+  assert.equal(r.hallDeficiency.receivingStatus,'source-verified-by-caller-not-market-supplied');
+  assert.equal(r.hallDeficiency.kind,'hall-deficiency-witness');
+});
+test('Hall shortage exposes all unmatched disconnected demand, including zero-provider scopes',()=>{
+  const r=plan([page(0,[scopeFor('A',['x']),scopeFor('B',['x']),scopeFor('C',[])],0)],
+    {expectedDate:DATE});
+  assert.equal(r.hallDeficiency.deficit,2);
+  assert.deepEqual(r.hallDeficiency.demandingScopes,['A','B','C']);
+  assert.deepEqual(r.hallDeficiency.eligibleCharacters,['x']);
+  assert.equal(r.matchingPressure,undefined);
+});
+test('full matching has no Hall obstruction and keeps exact ordinary provider evidence',()=>{
+  const r=plan([page(0,[scopeFor('A',['x','y']),scopeFor('B',['x'])],0)],
+    {expectedDate:DATE});
+  assert.equal(r.state,'MAXIMAL_MATCHING');
+  assert.equal(r.hallDeficiency,null);
+  assert.equal(r.unmatched.length,0);
+});
 test('source package exposes the maximal matching without adding a new dispatch provider',()=>{
   const pkg=JSON.parse(readFileSync(new URL('../package.json',import.meta.url),'utf8'));
   assert.equal(pkg.exports['./allocation-readiness'],'./src/allocation-readiness.mjs');
