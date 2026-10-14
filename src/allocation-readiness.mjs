@@ -106,12 +106,49 @@ export function planNonoverlappingAllocations(pages, { expectedDate, maxScopes =
   const unmatched=Object.freeze(rows.filter(row=>!assigned.has(row.scope))
     .map(row=>Object.freeze({scope:row.scope,reason:edges.get(row.scope).length?
       'qualified-characters-already-needed-elsewhere':'no-grounded-eligible-character'})));
+
+  // The market "hole" has a mathematical certificate: in a maximum matching
+  // M, start from ALL unmatched work scopes, follow every eligible edge to a
+  // candidate character and every M-assignment back to its occupied scope.
+  // The reachable demanding scopes S and their complete neighbor set N(S)
+  // witness |S|>|N(S)|, Hall's obstruction to a full matching. The deficit
+  // is exactly the unmatched count. This is a finite combinatorial sourcing
+  // need, NOT a proof of GPU/CPU availability, solvency or market prices.
+  let hallDeficiency=null;
+  if(unmatched.length){
+    const demanded=new Set(unmatched.map(row=>row.scope));
+    const neighbors=new Set();
+    const queue=[...demanded];
+    for(let i=0;i<queue.length;i++){
+      for(const id of edges.get(queue[i])){
+        if(neighbors.has(id))continue;
+        neighbors.add(id);
+        const occupied=owner.get(id);
+        if(occupied!==undefined&&!demanded.has(occupied)){
+          demanded.add(occupied);queue.push(occupied);
+        }
+      }
+    }
+    const deficit=demanded.size-neighbors.size;
+    if(deficit!==unmatched.length)
+      throw new TypeError('allocation matching dual certificate differs from unmatched work');
+    hallDeficiency=Object.freeze({
+      kind:'hall-deficiency-witness',
+      demandingScopes:Object.freeze([...demanded].sort()),
+      eligibleCharacters:Object.freeze([...neighbors].sort()),
+      deficit,
+      receivingStatus:'source-verified-by-caller-not-market-supplied',
+      // This is a candidate sourcing requirement, never an authorization to
+      // hire a character or to spend the group's cash.
+      marketPurchaseAuthorized:false
+    });
+  }
   return Object.freeze({
     kind:'metroplat.allocation-pressure-readout.v1',state:unmatched.length?'CAPACITY_GAP':'MAXIMAL_MATCHING',
     observedDate:expectedDate,readiness:assay.state,totalAllocatableScopes:rows.length,
     qualifiedCharacterCount:uniqueCharacterCount(edges),
     candidateEdges:nEdges,matchedCount:assignments.length,
-    assignments,unmatched,unidentifiedCandidateScopes:Object.freeze(unknownIdentity),
+    assignments,unmatched,hallDeficiency,unidentifiedCandidateScopes:Object.freeze(unknownIdentity),
     excludedCandidateCount:excludedCandidateCount.n,
     executionAuthorized:false,independentReceivingClaimAllowed:false
   });
