@@ -178,7 +178,7 @@ test('alternate-path allocation increases actual possible concurrency over greed
   // reassigns A to spare capacity so the uniquely constrained B also fits.
   const pages=[page(0,[scopeFor('A',['shared','spare']),scopeFor('B',['shared'])],0)];
   const r=plan(pages,{expectedDate:DATE});
-  assert.equal(r.state,'MAXIMAL_MATCHING');
+  assert.equal(r.state,'MAXIMUM_MATCHING');
   assert.equal(r.matchedCount,2);
   assert.deepEqual(r.assignments.map(x=>[x.scope,x.characterId]),[
     ['A','spare'],['B','shared']
@@ -254,7 +254,7 @@ test('Hall shortage distinguishes unidentified candidate from an empty invalid c
 test('full matching has no Hall obstruction and keeps exact ordinary provider evidence',()=>{
   const r=plan([page(0,[scopeFor('A',['x','y']),scopeFor('B',['x'])],0)],
     {expectedDate:DATE});
-  assert.equal(r.state,'MAXIMAL_MATCHING');
+  assert.equal(r.state,'MAXIMUM_MATCHING');
   assert.equal(r.hallDeficiency,null);
   assert.equal(r.unmatched.length,0);
 });
