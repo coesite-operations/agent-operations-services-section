@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { assessAllocationReadiness as assess } from '../src/allocation-readiness.mjs';
+import { assessAllocationReadiness as assess, planNonoverlappingAllocations as plan } from '../src/allocation-readiness.mjs';
 const DATE = '2026-10-10';
 const row = (i, state='obstructed', reasons=['no-current-provider-admission']) => ({scope:`task:${i}`,state,reasons,candidates:state==='allocatable'?[{character:{id:'real-carrier'}}]:[]});
 const page = (cursor,items,remaining,date=DATE) => ({cursor,result:{kind:'metroplat.work.allocation-candidates',date,items,remaining,...(remaining>0?{nextCursor:cursor+items.length}:{})}});
@@ -166,4 +166,67 @@ test('package exposes the guard and enrolls its source and tests in existing com
   assert.ok(pkg.scripts.check.split(' && ').includes('node --check test/allocation-readiness.test.mjs'));
   assert.ok(pkg.scripts.test.split(/\s+/).includes('test/allocation-readiness.test.mjs'));
   assert.equal((await import('@union-officer-academy/union-officer-academy/allocation-readiness')).assessAllocationReadiness, assess);
+});
+
+const scopeFor=(name,candidates)=>({
+  scope:name,state:'allocatable',reasons:[],candidates:candidates.map(id=>
+    ({office:'office:allocated',duty:'duty:qualified',
+      character:{id},evidence:['witness:admitted-provider'],load:[],reasons:[]}))
+});
+test('alternate-path allocation increases actual possible concurrency over greedy first choice',()=>{
+  // Greedy A->shared, B->shared would place only one. The lawful matching
+  // reassigns A to spare capacity so the uniquely constrained B also fits.
+  const pages=[page(0,[scopeFor('A',['shared','spare']),scopeFor('B',['shared'])],0)];
+  const r=plan(pages,{expectedDate:DATE});
+  assert.equal(r.state,'MAXIMAL_MATCHING');
+  assert.equal(r.matchedCount,2);
+  assert.deepEqual(r.assignments.map(x=>[x.scope,x.characterId]),[
+    ['A','spare'],['B','shared']
+  ]);
+  assert.equal(r.executionAuthorized,false);
+  assert.equal(r.independentReceivingClaimAllowed,false);
+});
+test('capacity competition exposes the exact unmatched demand rather than pretending unlimited agent copies',()=>{
+  const r=plan([page(0,[scopeFor('A',['shared']),scopeFor('B',['shared']),scopeFor('C',['shared'])],0)],
+    {expectedDate:DATE});
+  assert.equal(r.state,'CAPACITY_GAP');
+  assert.equal(r.qualifiedCharacterCount,1);
+  assert.equal(r.matchedCount,1);
+  assert.equal(r.unmatched.length,2);
+  assert(r.unmatched.every(x=>x.reason==='qualified-characters-already-needed-elsewhere'));
+  assert.deepEqual(r.assignments.map(x=>x.characterId),['shared']);
+});
+test('missing or contested candidate identity creates no allocation, even if upstream declares scope allocatable',()=>{
+  const invalid={scope:'A',state:'allocatable',reasons:[],candidates:[
+    {office:'office:A'}, {character:{id:' '}},
+    {character:{id:'claimed'},reasons:['permission-contested']}
+  ]};
+  const r=plan([page(0,[invalid],0)],{expectedDate:DATE});
+  assert.equal(r.state,'CAPACITY_GAP');
+  assert.deepEqual(r.assignments,[]);
+  assert.deepEqual(r.unidentifiedCandidateScopes,['A']);
+  assert.equal(r.excludedCandidateCount,3);
+});
+test('census completeness, date and actual prior authorization remain necessary',()=>{
+  assert.equal(plan([page(0,[scopeFor('A',['a'])],1)],{expectedDate:DATE}).state,'UNKNOWN');
+  assert.equal(plan([page(0,[scopeFor('A',['a'])],0,'2026-10-09')],{expectedDate:DATE}).state,'UNKNOWN');
+  assert.equal(plan([page(0,[scopeFor('A',['a'])],0)]).reason,'date-not-independently-fixed');
+  const v=plan([page(0,[scopeFor('A',['a'])],0)],{expectedDate:DATE,maxScopes:0});
+  assert.equal(v.state,'BOUNDED');
+  assert.equal(v.executionAuthorized,false);
+});
+test('plan is stable under valid page permutation and candidate permutations, and does not mutate source',()=>{
+  const first=page(0,[scopeFor('C',['x','y'])],2);
+  const last=page(1,[scopeFor('A',['y']),scopeFor('B',['x'])],0);
+  const saved=JSON.stringify([first,last]);
+  const a=plan([last,first],{expectedDate:DATE});
+  const b=plan([first,last],{expectedDate:DATE});
+  assert.deepEqual(a.assignments,b.assignments);
+  assert.equal(a.matchedCount,2);
+  assert.equal(JSON.stringify([first,last]),saved);
+});
+test('source package exposes the maximal matching without adding a new dispatch provider',()=>{
+  const pkg=JSON.parse(readFileSync(new URL('../package.json',import.meta.url),'utf8'));
+  assert.equal(pkg.exports['./allocation-readiness'],'./src/allocation-readiness.mjs');
+  assert.equal(typeof plan,'function');
 });
