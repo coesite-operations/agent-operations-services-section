@@ -256,29 +256,31 @@ value terms. The Academy neither preselects the section nor writes its territory
     academy-rsi solicit-software-tender --lot <urn>
     academy-rsi verify
 
-## Operation-scoped ChatGPT connector triage
+## Operation-scoped ChatGPT connector triage — Engineering-owned
 
-`./connector-call-evidence` (`src/connector-call-evidence.mjs`) now gives
-executive/scheduled work a deterministic read-first failure classifier and
-an exact-operation coverage readout. Feed it issuer-observed dispatch,
-provider reach, HTTP status, actual safety decision and readback witnesses;
-never infer those facts from the English text of `The tool failed internally.`
-For example, a denied GitHub PR operation cannot erase the successful GitHub
-file commit, and a successful GitHub file read cannot certify PR or merge
-capability. A host pre-dispatch safety refusal is a HOLD for the *same exact
-effect*; it is not a GitHub ACL problem or an invitation to issue the same
-mutation via a lower-level route. Repair independent permitted work instead.
-An unlocated internal Cold Red Gate tool error is not proof of a native
-service outage: preserve UNKNOWN and test each advertised read operation
-independently before drawing a provider-wide conclusion. Read back uncertain
-writes using the original object/work reference before any replay.
+The original diagnostic and tests now live **only** in Red Cup's existing Agent Harness Computer System Engineering package:
+`@red-cup-engineering/agent-harness-computer-system-engineering-services-section/connector-call-evidence`.
+[Engineering PR #418](https://github.com/red-cup-engineering/computer-engineering-services-section/pull/418)
+received the exact source and original adversarial test (Git blobs
+`3c6baeecf9e07bddb164a0160692dd583206a2a1` and
+`795fbf2b4355ff4837d3ef132034588704e3d5b5`);
+[Operations PR #189](https://github.com/coesite-operations/operations-services-section/pull/189)
+already removed the duplicate Academy source, test, export and
+`carrier-recovery.mjs` re-export. Never recreate or import those old
+`services/agent-services-section/src/connector-call-evidence.mjs` or local test paths.
 
-The classifier is a pure source-level method, **not a live connector adapter**,
-not evidence that the Cold Red Gate world, L-Space, or compute tool now works,
-and not permission to bypass actual host safety. Verification executes
-`test/connector-call-evidence.test.mjs` as part of this package's tests.
-The exact, still-unresolved live connector catalog/actor binding demand lives
-at `red-cup-engineering/engineering-services-section#5`.
+Supply the Engineering diagnostic with issuer-observed dispatch, provider
+reach, HTTP status, host refusal and independent effect readback. An internal
+exception is not proof of provider rejection; a successful sibling call cannot
+verify a failed operation. A pre-dispatch safety refusal holds that exact
+effect, not permission for a workaround. Read back uncertain writes before
+replay. This remains a pure source diagnostic, not a live adapter or
+permission/deployment proof. The unresolved live connector catalog incident is
+[Engineering #5](https://github.com/red-cup-engineering/engineering-services-section/issues/5).
+
+Academy `npm test` now selects **all surviving local regression tests**,
+including the formerly omitted FOUR-charge projection. The original connector
+diagnostic test belongs to **Agent Harness Engineering's** suite.
 
 ## Allocation census source guard
 
