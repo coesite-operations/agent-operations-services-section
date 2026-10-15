@@ -1,15 +1,31 @@
 {
   "id": "professional-repertoire-import-and-projection",
   "owner": "union-officer-academy",
-  "sourceSettlements": ["executive-office", "561-group", "lenticule-science", "leader-movement-team"],
-  "admittedAssets": ["reusable professional offices", "reusable duties and work forms", "executable skill packages and scripts", "session-character stores and chronicles"],
-  "canonicalTerritory": ["content/professional-repertoire", "lib/professional-repertoire", "content/characters"],
-  "transition": "Existing source paths remain read-compatible projections only where the projection ledger proves digest equality. The Academy carrier is the source of future general amendments. Consumer-specific divergence requires an explicit specialization overlay.",
+  "sourceSettlements": [
+    "executive-office",
+    "561-group",
+    "lenticule-science",
+    "leader-movement-team"
+  ],
+  "admittedAssets": [
+    "reusable professional offices",
+    "reusable duties and work forms",
+    "reusable declarative skill specifications and source-qualified references to separately Engineering-owned executors",
+    "session-character stores and chronicles"
+  ],
+  "canonicalTerritory": [
+    "content/professional-repertoire",
+    "lib/professional-repertoire",
+    "content/characters"
+  ],
+  "transition": "Existing original skill/package/script bytes, distinct behaviors, professional qualifications and consuming effects are preserved. Executable packages or scripts still located in Academy/Operations are unresolved source-extraction debt, not Operations-owned implementation by declaration. Reusable data is Academy-canonical; all executable skill operations belong to Red Cup Engineering only after versioned, full-consumer migration and independent receiving. Prior projections remain digest-bound until their actual consumers receive the replacement. Customer and corporate overlays remain owner-specific.",
   "prohibitions": [
     "no source occurrence is treated as ownership evidence",
     "no projection may be amended independently",
     "no specialized service law is generalized merely because another service could imagine using it",
     "no character chronicle is confused with a runtime session or model state",
-    "no import conveys appointment, protected context, or operational authority"
+    "no import conveys appointment, protected context, or operational authority",
+    "no executable source, script, test, server, package or tool becomes Operations-owned software by appearing inside an admitted skill bundle; preserve and migrate unique capabilities with real consumers to the competent Engineering owner",
+    "no professional qualification, catalog entry, digest-equal projection or historical retained script counts as Engineering source integration, a runnable deployment or independently received service"
   ]
 }
