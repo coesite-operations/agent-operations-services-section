@@ -209,4 +209,3 @@ export function operationReadbackCoverage({
 }
 
 // Available through the existing carrier-recovery entry point for work pulses.
-export { diagnoseConnectorCall, diagnoseOperationSet } from "./connector-call-evidence.mjs";
