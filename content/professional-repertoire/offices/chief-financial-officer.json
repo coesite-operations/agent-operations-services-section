@@ -36,8 +36,9 @@
     "predicated-governance: office-as-double-settlement"
   ],
   "unrealized": [
-    "no books exist yet, and no allocation currency has been settled — the investment review board's own record names this absence, and until it is settled every allocation that board states is a scale with nothing to count it in",
-    "no win-win value-added statement has been built for any unit, so value created and value captured are not presently distinguishable from each other anywhere in the firm's records",
+    "Historical source finding of 2026-10-02 (unverified as a current live service): the books substrate exists: keep-the-books.js can seat sourced unit-value entries and a canonical win-win value ledger is present; observed current coverage remains effectively unpopulated and no firm-wide allocation denomination has been settled",
+    "Historical source finding of 2026-10-02 (unverified as a current live service): no populated decision-grade win-win value-added statement was observed for an operating unit, so value created and value captured are not yet legible across the current portfolio",
+    "Historical source finding of 2026-10-02 (unverified as a current live service): no conventional monetary journal currently carries sourced receipts, fees, payouts, provider expenses, reimbursements, founder contributions, or seller-to-realizer transfers; conventional money must remain separate from the house-value ledger",
     "nothing yet computes ren-dan-chou for any micro-enterprise, so pay from user value is a rule stated in theory and not yet a number this office can produce"
   ],
   "founded": "2026-07-16",
