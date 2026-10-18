@@ -162,9 +162,16 @@ test('complete out-of-order frozen pages retain state precedence and input ident
 test('package exposes the guard and enrolls its source and tests in existing commands', async () => {
   const pkg = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8'));
   assert.equal(pkg.exports['./allocation-readiness'], './src/allocation-readiness.mjs');
-  assert.ok(pkg.scripts.check.split(' && ').includes('node --check src/allocation-readiness.mjs'));
-  assert.ok(pkg.scripts.check.split(' && ').includes('node --check test/allocation-readiness.test.mjs'));
-  assert.ok(pkg.scripts.test.split(/\s+/).includes('test/allocation-readiness.test.mjs'));
+  // Both the historical explicit test commands and the stronger current shell globs
+  // enroll this source and test. A glob is not an omission of its matched file.
+  const syntax = pkg.scripts.check;
+  const guardedByLoop = syntax.includes('node --check "$file"');
+  assert.ok(syntax.split(' && ').includes('node --check src/allocation-readiness.mjs')
+    || (guardedByLoop && syntax.includes('src/*.mjs')));
+  assert.ok(syntax.split(' && ').includes('node --check test/allocation-readiness.test.mjs')
+    || (guardedByLoop && syntax.includes('test/*.test.mjs')));
+  assert.ok(pkg.scripts.test.split(/\s+/).includes('test/allocation-readiness.test.mjs')
+    || (pkg.scripts.test.includes('node --test') && pkg.scripts.test.includes('test/*.test.mjs')));
   assert.equal((await import('@union-officer-academy/union-officer-academy/allocation-readiness')).assessAllocationReadiness, assess);
 });
 
