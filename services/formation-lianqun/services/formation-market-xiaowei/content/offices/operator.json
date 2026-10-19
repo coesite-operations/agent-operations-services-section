@@ -1,8 +1,0 @@
-{
-  "id": "formation-market-xiaowei-operator",
-  "kind": "office",
-  "bearsDuty": ["formation-market-brokerage"],
-  "authorityScope": ["./"],
-  "jurisdiction": "formation-market-xiaowei",
-  "prohibitions": ["assign another member", "write Academy or customer records", "declare receiver acceptance"]
-}
