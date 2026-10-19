@@ -55,5 +55,9 @@
     "./carrier-recovery": "./src/carrier-recovery.mjs",
     "./capability-supply-receiving": "./src/capability-supply-receiving.mjs",
     "./allocation-readiness": "./src/allocation-readiness.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coesite-operations/union-officer-academy.git"
   }
 }
