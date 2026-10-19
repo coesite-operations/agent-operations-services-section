@@ -1,1 +1,0 @@
-{"id":"situated-practice-xiaowei-hires-member-runtime","kind":"package-service-contract","provider":"urn:ame:formation-lianqun-member-runtime-service","consumer":"urn:ame:situated-practice-xiaowei","interface":"@union-officer-academy/formation-lianqun-member-runtime-service#runFormationLianqunMember","consumerWritesOnly":true,"customerTerritoryMutation":false}
