@@ -1,0 +1,46 @@
+[submodule "services/agent-services-section/services/formation-lianqun/services/executive-officer-context-compilation-service"]
+	path = services/formation-lianqun/services/executive-officer-context-compilation-service
+	url = https://github.com/harmonious-union/officer-context-compilation-service.git
+[submodule "services/agent-services-section/services/enterprise-services-section"]
+	path = services/enterprise-services-section
+	url = https://github.com/emsenn/enterprise-services-section.git
+[submodule "services/agent-services-section/services/record-improvement-observation-service"]
+	path = services/record-improvement-observation-service
+	url = https://github.com/coesite-operations/record-improvement-observation-service.git
+	branch = main
+[submodule "services/agent-services-section/services/scheduled-activity-delivery-service"]
+	path = services/scheduled-activity-delivery-service
+	url = https://github.com/coesite-operations/scheduled-activity-delivery-service.git
+	branch = main
+[submodule "situated-practice-xiaowei"]
+	path = services/formation-lianqun/services/situated-practice-xiaowei
+	url = https://github.com/coesite-operations/situated-practice-xiaowei.git
+	branch = main
+[submodule "qualification-registry-xiaowei"]
+	path = services/formation-lianqun/services/qualification-registry-xiaowei
+	url = https://github.com/coesite-operations/qualification-registry-xiaowei.git
+	branch = main
+[submodule "independent-examination-xiaowei"]
+	path = services/formation-lianqun/services/independent-examination-xiaowei
+	url = https://github.com/coesite-operations/independent-examination-xiaowei.git
+	branch = main
+[submodule "formation-market-xiaowei"]
+	path = services/formation-lianqun/services/formation-market-xiaowei
+	url = https://github.com/coesite-operations/formation-market-xiaowei.git
+	branch = main
+[submodule "formation-lianqun-member-runtime-service"]
+	path = services/formation-lianqun/services/formation-lianqun-member-runtime-service
+	url = https://github.com/coesite-operations/formation-lianqun-member-runtime-service.git
+	branch = main
+[submodule "context-compilation-xiaowei"]
+	path = services/formation-lianqun/services/context-compilation-xiaowei
+	url = https://github.com/coesite-operations/context-compilation-xiaowei.git
+	branch = main
+[submodule "rendanheyi"]
+	path = services/management-thought/rendanheyi
+	url = https://github.com/coesite-operations/rendanheyi.git
+	branch = main
+[submodule "huidu-guanli"]
+	path = services/management-thought/huidu-guanli
+	url = https://github.com/coesite-operations/huidu-guanli.git
+	branch = main
