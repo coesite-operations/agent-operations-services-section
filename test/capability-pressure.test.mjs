@@ -14,6 +14,31 @@ function witnessFor(demand, supply, override = {}) {
   };
 }
 
+test('surface evidence is immutable, validated provenance rather than writable metadata', () => {
+  const originalRefs = [' source:original:one ', 'source:original:two'];
+  const input = {
+    surfaceId: 'surface:publisher', capabilityId: 'document.metadata.rename',
+    provider: 'Google Drive', evidenceAt: '2026-10-20T22:00:00Z', evidenceRefs: originalRefs
+  };
+  const surface = makeCapabilitySurface(input);
+  assert.ok(Object.isFrozen(surface));
+  assert.ok(Object.isFrozen(surface.evidenceRefs));
+  assert.deepEqual(surface.evidenceRefs, ['source:original:one', 'source:original:two']);
+  originalRefs[0] = 'source:forged';
+  originalRefs.push('source:added');
+  assert.deepEqual(surface.evidenceRefs, ['source:original:one', 'source:original:two'],
+    'the source input may change without rewriting the admitted observation');
+  assert.throws(() => surface.evidenceRefs.push('source:forged'), TypeError);
+  assert.throws(() => { surface.evidenceRefs[0] = 'source:forged'; }, TypeError);
+  for (const refs of [12, 'not-an-array', [{ref:'nested-mutable'}], [null], ['  ']]) {
+    assert.throws(() => makeCapabilitySurface({...input, evidenceRefs: refs}),
+      /evidenceRefs/, 'untyped evidence must never be silently discarded or retained');
+  }
+  const omitted = makeCapabilitySurface({...input, evidenceRefs: undefined});
+  assert.deepEqual(omitted.evidenceRefs, []);
+  assert.ok(Object.isFrozen(omitted.evidenceRefs));
+});
+
 test('connector gap does not imply provider absence', () => {
   const surface = makeCapabilitySurface({
     surfaceId: 'fastmail:chatgpt-web:email.draft.update',
