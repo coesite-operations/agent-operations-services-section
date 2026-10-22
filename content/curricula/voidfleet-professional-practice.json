@@ -15,8 +15,8 @@
       "identity": "voidfleet-academy/certification-system-design",
       "owner": "legacy-personal-academy-history",
       "authorityClass": "legacy-prior-art",
-      "digest": "sha256:a00c95b46f2166f8f90e8f15c58856fc9842e1f06f5ed8221c7c41cc44d8a985",
-      "reading": "Retain evidence/certification aspirations without adopting unproved numeric thresholds, model grades or automatic certification."
+      "reading": "Preserve historical evidence/certification aspiration as an unverified lead only; no numerical pass threshold, qualified examiner or automatic certificate is imported without exact original source.",
+      "sourceStatus": "historical document referenced by previous project notes; byte identity unverified in current owners, so cannot be a digest-bound admitted source"
     },
     {
       "identity": "union-officer-academy/common-core",
