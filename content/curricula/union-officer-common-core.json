@@ -14,15 +14,26 @@
     "distinguish qualification from recognition, induction, capability grant, and dispatch",
     "perform incumbent handover while preserving open obligations and contradictions",
     "distinguish incumbent succession, office succession, and curriculum succession",
-    "teach back a practice and propose a source-bound curriculum correction"
-    ,
+    "teach back a practice and propose a source-bound curriculum correction",
     "census the complete doctrine denominator before compressing an orientation and state every omission",
     "distinguish office source from projected agent configuration, character from model, and durable identity from a bounded run",
     "perform role, scene, affect, refusal, responsibility, contest, and repair as answerable professional conduct",
     "distinguish individual examination, assessment-system quality, credential custody, ombuds, integrity inquiry, and independent appeal",
-    "distinguish individually green components from a stitched operational formation and service loop"
+    "distinguish individually green components from a stitched operational formation and service loop",
+    "distinguish hiring a sovereign professional service section from recruiting an officer into the customer's own office",
+    "read a Voidfleet skill pack as a versioned curriculum and social cohort relationship, not a grant or automatic qualification",
+    "identify a ship's independently accountable captain, crew roles, service obligations and customer receiver without assuming the Academy owns the ship",
+    "separate professional competency under examination, provider capacity, price, service contract, receiver acceptance, and settled payment"
   ],
-  "formationStages": ["orientation", "simulation", "shadow-work", "supervised-practice", "independent-demonstration", "reflection", "teaching-back"],
+  "formationStages": [
+    "orientation",
+    "simulation",
+    "shadow-work",
+    "supervised-practice",
+    "independent-demonstration",
+    "reflection",
+    "teaching-back"
+  ],
   "requiredExercises": [
     "reconstruct a person-character-model-session-agent stack from evidence",
     "read one office and derive its duty-work-skill graph",
@@ -31,11 +42,19 @@
     "distinguish component readiness from officer qualification",
     "conduct a simulated handover with unresolved obligations and protected context",
     "compare two baselines and construct a bridge curriculum",
-    "teach one professional practice to another candidate"
+    "teach one professional practice to another candidate",
+    "compare a customer procurement of an office-service section with the provider's separately qualified Academy staffing and a customer-local vacant-office supply request",
+    "carry an original ship or service cell through voyage briefing, watchkeeping, handover, independent recipient check, casualty refusal and after-action teaching-back without inventing acts",
+    "refuse a supplier's offered model-session or shared skill pack masquerading as appointed officer or verified active service section"
   ],
   "assessmentLaw": {
     "independentExaminer": true,
-    "evidenceStates": ["no-admitted-evidence", "demonstrated", "refuted", "contradictory"],
+    "evidenceStates": [
+      "no-admitted-evidence",
+      "demonstrated",
+      "refuted",
+      "contradictory"
+    ],
     "completion": "every competency demonstrated through resolvable independent work; no attendance, attempt count, confidence, or reputation substitute",
     "negativeControl": "at least one exercise must conceal an authority or identity conflation that the candidate detects and refuses"
   },

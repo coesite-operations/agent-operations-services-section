@@ -29,7 +29,8 @@
       "enterprise-formation-mape",
       "officer-formation",
       "character-officer-supply",
-      "office-context-on-demand"
+      "office-context-on-demand",
+      "market-mediated-character-officer-supply"
     ],
     "roles": {
       "corporate-secretary": "preserve enterprise identity, authority chain, principal, and provenance",
@@ -123,5 +124,21 @@
     ],
     "observedOn": "2026-10-11",
     "note": "These are current Work Arena obligations observed by ChatGPT-Web; they motivate a reusable formation service rather than seven bespoke operating implementations."
+  },
+  "hireableProfessionalServices": {
+    "producer": "coesite-operations/group-operations/content/operations-campaign-library.v1.json",
+    "campaignId": "hire-professional-service-section",
+    "review": "https://github.com/coesite-operations/group-operations/pull/1",
+    "originalConsumer": "red-cup-engineering/agent-organization-engine/lib/organizing/src/enterprise/operating-cell-plan.mjs",
+    "relationship": "A receiving Group/Public/other sovereign enterprise buys a bounded, independently receivable outcome from a real Coesite professional Services Section; the source catalog selects the campaign, not a new scheduler.",
+    "academyRole": "Union Officer Academy's existing officer-formation, Voidfleet practice and character-officer-supply services meet the providing section's staffing gaps, not a customer-local appointment unless separately sought.",
+    "settlementBoundary": "Catalog entry → native Work/permission → provider source/offer → independently admitted contract → funded qualified run → recipient ACK → separately recognized financial effect; no link in this chain implies later stages.",
+    "refusals": [
+      "unknown section identity or independent capability",
+      "unawarded supplier bid",
+      "unverified training, cohort, or available staff",
+      "unauthorized contract or unmetered resources",
+      "provider-declared delivery without buyer ACK"
+    ]
   }
 }

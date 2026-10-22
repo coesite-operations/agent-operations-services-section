@@ -20,5 +20,22 @@
     "no claim that bid, award, supply, or animation is appointment"
   ],
   "recursiveImprovement": "Supplier outcomes, refusals, witnessed execution, and receiver receipts enter the Academy's knowledge loop; the next cohort, repertoire epoch, provider configuration, and bid can improve independently without an imperial release line.",
-  "offices": ["superintendent", "registrar", "formation-context-steward", "formation-practitioner", "independent-examiner"]
+  "offices": [
+    "superintendent",
+    "registrar",
+    "formation-context-steward",
+    "formation-practitioner",
+    "independent-examiner"
+  ],
+  "sectionServiceHiring": {
+    "distinctCategory": "HireProfessionalServiceSection",
+    "sourceOwner": "coesite-operations/group-operations",
+    "review": "https://github.com/coesite-operations/group-operations/pull/1",
+    "campaignId": "hire-professional-service-section",
+    "nativeReader": "red-cup-engineering/agent-organization-engine/lib/organizing/src/enterprise/operating-cell-plan.mjs",
+    "serviceProvider": "A separately founded Coesite Services Section with original Actor/Enterprise, legal provider/cost, qualified Work executor and receiver-contract capacity.",
+    "academyContribution": "Professional repertoire, optional Voidfleet training, qualification/shortfall, provider staffing under the section's own induction law; supplier Academy may bid on a separate officer supply lot, it does not sell the provider's service directly by default.",
+    "customerRelation": "Customer-to-Coesite supplier contract, delivery and beneficiary ACK; not the customer's academy admission, employment or office incumbency.",
+    "unavailable": "When no formed and qualified provider section exists, return a formation capability demand or conditional bid, never a fictional catalog entry, bid award, appointment or revenue."
+  }
 }
