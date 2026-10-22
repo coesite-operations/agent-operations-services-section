@@ -1,0 +1,177 @@
+{
+  "id": "voidfleet-professional-practice",
+  "name": "Voidfleet Academy: ship, fleet, and service-crew practice track",
+  "owner": "union-officer-academy",
+  "purpose": "Revive the Founder-directed Voidfleet Academy practice lineage within the Union Officer Academy's existing professional-formation services, as a progressive, cooperative ship/fleet and professional service-crew curriculum. This track is NOT a second personnel authority, a newly founded service enterprise, a cohort admission or a graduating class by declaring a curriculum.",
+  "sourceDoctrine": [
+    {
+      "identity": "voidfleet-academy/curriculum-design",
+      "owner": "legacy-red-cup-archive",
+      "authorityClass": "legacy-prior-art",
+      "digest": "sha256:eb150ec3b0973e4762ad962ab159b1efbaa39245247789f1d3528bd4ccfbab9c",
+      "reading": "Historical skill, duty, PQS and shipboard-learning design; reconstructed as a contemporary proposal, not an unchanged recovered programme."
+    },
+    {
+      "identity": "voidfleet-academy/certification-system-design",
+      "owner": "legacy-personal-academy-history",
+      "authorityClass": "legacy-prior-art",
+      "digest": "sha256:a00c95b46f2166f8f90e8f15c58856fc9842e1f06f5ed8221c7c41cc44d8a985",
+      "reading": "Retain evidence/certification aspirations without adopting unproved numeric thresholds, model grades or automatic certification."
+    },
+    {
+      "identity": "union-officer-academy/common-core",
+      "owner": "union-officer-academy",
+      "authorityClass": "current-practice",
+      "path": "content/curricula/union-officer-common-core.json",
+      "reading": "All enrolled candidates must receive the same mandatory common core; later alterations require a new formation epoch."
+    },
+    {
+      "identity": "union-officer-academy/agency-office-formation",
+      "owner": "union-officer-academy",
+      "authorityClass": "current-law",
+      "path": "content/doctrine/agency-office-formation.json",
+      "reading": "Separate person, character, model, session, office, qualification and receiver appointment."
+    },
+    {
+      "identity": "coesite-operations/group-operations/hire-professional-service-section",
+      "owner": "coesite-operations",
+      "authorityClass": "current-proposed-operating-campaign",
+      "review": "https://github.com/coesite-operations/group-operations/pull/1",
+      "reading": "Distinguish customer hiring a provider Services Section from Academy character supply and customer-local office induction; still uninstalled."
+    }
+  ],
+  "formationStages": [
+    "orientation",
+    "simulation",
+    "shadow-work",
+    "supervised-practice",
+    "independent-demonstration",
+    "reflection",
+    "teaching-back"
+  ],
+  "pqsCompetencyCategories": [
+    {
+      "id": "site-knowledge",
+      "demonstration": "Recover one ship, territory or customer's original obligations, physical/digital boundaries, local rules, hazard evidence and historical modifications from current owner; distinguish real from simulated deck."
+    },
+    {
+      "id": "recognition",
+      "demonstration": "Recognize personnel versus character versus officer, required watch/duty, actual Authority-to-Act, capability/communications loss, unsafe/denied voyage, and unknown observations before giving an order."
+    },
+    {
+      "id": "production",
+      "demonstration": "Carry an original accepted service order through admitted work, source-qualified division of labor, independent customer useful result and corrected economics without counting mock receipts."
+    },
+    {
+      "id": "constructor-competence",
+      "demonstration": "Select and demonstrate existing source-owned skill/tool constructors, capability attenuation, handover, interruption recovery, failure and safe stop under the exact provided provider."
+    },
+    {
+      "id": "law-awareness",
+      "demonstration": "Identify vessel/territory jurisdiction, privacy, sovereign/local procurement, service and employment boundaries, consent, licensing and liability, refuse effects outside exact grant."
+    }
+  ],
+  "competencies": [
+    {
+      "id": "accountable-ship",
+      "demonstration": "A ship is a bounded operational body with resources, captain and crew answerability, job and receiver; a ship term without real provider and service receipts is a hypothesis."
+    },
+    {
+      "id": "fleet-formation",
+      "demonstration": "Propose independent ship roles, interoperability and coordination without mistaking a shared model, masks or overlapping positions for separate independent workers."
+    },
+    {
+      "id": "watch-and-shift",
+      "demonstration": "Read real time/cadence/due work, execute a bounded authorized watch, hand over unsatisfied obligations with original provenance; do not invent continuous background execution."
+    },
+    {
+      "id": "service-section-commerce",
+      "demonstration": "Compare a customer hiring a Coesite operating Services Section to a receiver hiring an officer; preserve distinct supplier contract, section identity, Academy qualification, provider incumbent and buyer ACK."
+    },
+    {
+      "id": "failure-and-repair",
+      "demonstration": "Run a casualty/unknown-capacity refusal, route repair to original Engineering/Operations owner, and prove resumed useful receiving in independent subsequent practice."
+    },
+    {
+      "id": "teaching-back",
+      "demonstration": "Teach and reproduce a witnessed practice with its original skill-pack and cohort baseline without claiming other candidates passed the assessment."
+    }
+  ],
+  "practiceRoles": [
+    "captain-accountability",
+    "watchkeeper-duty",
+    "navigator-evidence",
+    "quartermaster-resource",
+    "independent-examiner",
+    "customer-receiver"
+  ],
+  "packLineage": {
+    "packMeaning": "Complete digest-bound set of lawful duties, procedures, skills, source doctrine, capability and refusal tests plus exact omissions, not model-weight training.",
+    "cohortMeaning": "Explicit Academy-opened asynchronous social formation class with syllabus, provider configuration, examined practice, current baseline and individual candidate lineage.",
+    "certification": "Evidence-bound qualification only when actual Academy record/examiner admits it; a demonstrated skill neither seats an officer nor forms a provider section.",
+    "succession": "Retain source edition, skill-pack delta, prior practice, restrictions and independent examiner findings into successor cohort; never silently migrate all learners."
+  },
+  "requiredExercises": [
+    {
+      "id": "source-traced-ship-watch",
+      "situation": "One authorized ship/service cell has real original Work, resources, watch and independent beneficiary.",
+      "pass": "Original scope, actual authenticated duty, bounded run, exact cost, independent useful-unit ACK, handover and AAR retain original witness."
+    },
+    {
+      "id": "provider-vs-employee",
+      "situation": "Customer wants to buy professional contracting service from Coesite and says they have hired an Academy officer.",
+      "pass": "Distinguish service contract and qualified section from customer-local office vacancy, selection, receiver recognition+induction; no invented personnel authority."
+    },
+    {
+      "id": "independent-crew-refusal",
+      "situation": "One cloud model voices captain, navigator and independent examiner masks.",
+      "pass": "Detect one actual executing Actor and no independent assent; require different actual original reviewer and accurate human/agent count."
+    },
+    {
+      "id": "casualty-unknown-capacity",
+      "situation": "Listed professional office has no deployed provider, available qualified character or verified capacity.",
+      "pass": "Retain service as available to inquire, not delivered/contracted; demand an authentic provider candidate and fail safely."
+    },
+    {
+      "id": "fleet-after-action",
+      "situation": "A prior delegated work shift partly fails and an Academy source changes.",
+      "pass": "Apply source-qualified correction, examine subsequent independent case, open successor cohort when a material pack/doctrine/assessment change occurs; do not grant new certification."
+    }
+  ],
+  "assessmentLaw": {
+    "independentExaminer": true,
+    "evidenceStates": [
+      "no-admitted-evidence",
+      "demonstrated",
+      "refuted",
+      "contradictory"
+    ],
+    "completion": "Each of five PQS categories, service-section commerce, source-traced ship duty, refusal and teachback must have independent valid current-baseline evidence; a current source projection alone is insufficient.",
+    "refusal": "Any hidden authority, misleading independent witness, provider capacity, client data rights or unreceived result retains a gap/refusal rather than promotion.",
+    "prohibitedShortcuts": [
+      "attendance-count",
+      "raw task count",
+      "confidence threshold",
+      "model grade",
+      "source file published",
+      "same actor in different masks"
+    ],
+    "sourceStatus": "candidate training programme pending competent Academy acceptance and original native formation episode"
+  },
+  "authorityWithheld": [
+    "customer appointment",
+    "customer induction",
+    "contract signature",
+    "procurement spend",
+    "ship captaincy",
+    "professional license",
+    "new service-section foundation",
+    "active cohort enrollment",
+    "independently accepted delivery"
+  ],
+  "omissions": [
+    "No original historical Voidfleet Academy was re-founded by this curriculum; the earliest historical reference is a digest-bound legacy source.",
+    "No currently enrolled Voidfleet formation cohort, issued qualification, original ship admission, independently accepted professional service contract or external operator throughput was observed in this turn.",
+    "No universal educational numeric threshold, model-tier competence claim, duty transfer or automatic professional title is established."
+  ]
+}

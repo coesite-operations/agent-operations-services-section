@@ -8,7 +8,7 @@ import { canonical, digest, readRecords, verifyNode } from "./academy.mjs";
 
 const NODE_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const REQUIRED_SCHEMAS = ["formation-request", "curriculum-revision", "formation-baseline", "cohort", "assessment-challenge-commitment", "assessment-challenge-reveal", "enrollment", "training-event", "assessment", "qualification", "formation-refusal", "formation-record-correction", "requalification-gap", "formation-epoch-gap", "doctrine-admission", "qualification-status-event", "succession-exercise", "curriculum-program", "character-cohort-membership", "character-animation"];
-const REQUIRED_PATHS = ["README.md", "package.json", "lib/ownership.json", "lib/management/roster.json", "content/contracts/character-officer-supply.json", "content/contracts/receiver-local-academy-necessity.json", "content/contracts/professional-repertoire-import-and-projection.json", "content/books/academy-ledger.json", "content/doctrine/agency-office-formation.json", "content/doctrine/character-corps-and-professional-repertoire.json", "content/doctrine/locally-derived-academy-constitution.json", "content/doctrine/management-thought-services.json", "content/doctrine/corpus-led-institutional-obligations.json", "content/curricula/union-officer-common-core.json", "content/curricula/executive-officer-to-the-leader.json", "content/services/officer-formation.json", "content/services/character-officer-supply.json", "content/services/local-necessity-and-demand-gluing.json", "content/services/market-mediated-character-officer-supply.json", "content/services/doctrine-stewardship.json", "content/services/office-context-on-demand.json", "content/services/qualification-and-requalification.json", "content/catalogs/formation-products.json", "content/catalogs/professional-repertoire.json", "content/catalogs/projection-ledger.json", "content/catalogs/territorial-artifact-adjudications.json", "content/catalogs/character-corps.json", "content/cohorts/2026-07-union-officer-corps.json", "content/catalogs/provider-adapters.json", "content/independence/examination-and-appeal-boundary.json", "content/formation-offers/executive-officer-to-the-leader.json", "services/management-thought/huidu-guanli/package.json", "services/management-thought/rendanheyi/package.json"];
+const REQUIRED_PATHS = ["README.md", "package.json", "lib/ownership.json", "lib/management/roster.json", "content/contracts/character-officer-supply.json", "content/contracts/receiver-local-academy-necessity.json", "content/contracts/professional-repertoire-import-and-projection.json", "content/books/academy-ledger.json", "content/doctrine/agency-office-formation.json", "content/doctrine/character-corps-and-professional-repertoire.json", "content/doctrine/locally-derived-academy-constitution.json", "content/doctrine/management-thought-services.json", "content/doctrine/corpus-led-institutional-obligations.json", "content/curricula/union-officer-common-core.json", "content/curricula/voidfleet-professional-practice.json", "content/curricula/executive-officer-to-the-leader.json", "content/services/officer-formation.json", "content/services/character-officer-supply.json", "content/services/local-necessity-and-demand-gluing.json", "content/services/market-mediated-character-officer-supply.json", "content/services/doctrine-stewardship.json", "content/services/office-context-on-demand.json", "content/services/qualification-and-requalification.json", "content/catalogs/formation-products.json", "content/catalogs/professional-repertoire.json", "content/catalogs/projection-ledger.json", "content/catalogs/territorial-artifact-adjudications.json", "content/catalogs/character-corps.json", "content/cohorts/2026-07-union-officer-corps.json", "content/catalogs/provider-adapters.json", "content/independence/examination-and-appeal-boundary.json", "content/formation-offers/executive-officer-to-the-leader.json", "services/management-thought/huidu-guanli/package.json", "services/management-thought/rendanheyi/package.json"];
 
 function rawDigest(path) {
   return `sha256:${createHash("sha256").update(readFileSync(path)).digest("hex")}`;
@@ -32,6 +32,50 @@ function assertDigest(root, path, expected, owner) {
   const target = resolve(root, path);
   if (!target.startsWith(`${resolve(root)}/`) || !existsSync(target)) throw new Error(`${owner}: source path unresolved`);
   if (rawDigest(target) !== expected) throw new Error(`${owner}: source drifted from curriculum digest`);
+}
+
+/** Source-type admission guard for the historical Voidfleet practice track.
+ * This checks Academy-owned curriculum and supplier/receiver distinctions.
+ * Qualification requires existing Academy's independent record functions;
+ * a source-only track never opens a cohort or admits a customer contract.
+ */
+export function verifyVoidfleetProgram({ common, voidfleet, offerForServiceSections, officerFormation } = {}) {
+  if (!voidfleet || voidfleet.id !== "voidfleet-professional-practice" ||
+      voidfleet.owner !== "union-officer-academy" ||
+      !Array.isArray(voidfleet.pqsCompetencyCategories)) throw new TypeError("voidfleet program: original Academy curriculum missing");
+  const pqs = ["site-knowledge", "recognition", "production", "constructor-competence", "law-awareness"];
+  const ids = voidfleet.pqsCompetencyCategories.map(c => c.id);
+  if (ids.length !== pqs.length || new Set(ids).size !== pqs.length ||
+      pqs.some(id => !ids.includes(id)) ||
+      voidfleet.pqsCompetencyCategories.some(c => typeof c.demonstration !== "string" || c.demonstration.length < 60))
+    throw new TypeError("voidfleet program: five original PQS competencies need distinct witnessed practical criteria");
+  const stages = ["orientation", "simulation", "shadow-work", "supervised-practice", "independent-demonstration", "reflection", "teaching-back"];
+  if (JSON.stringify(voidfleet.formationStages) !== JSON.stringify(stages) ||
+      !Array.isArray(voidfleet.requiredExercises) || voidfleet.requiredExercises.length < 5 ||
+      new Set(voidfleet.requiredExercises.map(e => e.id)).size !== voidfleet.requiredExercises.length)
+    throw new TypeError("voidfleet program: progressive exercises and stages incomplete");
+  if (!Array.isArray(common?.competencies) ||
+      !common.competencies.some(s => typeof s === "string" && s.includes("hiring a sovereign professional service section")))
+    throw new TypeError("voidfleet program: mandatory common core has not taught section hire versus officer recruitment");
+  if (!voidfleet.assessmentLaw?.independentExaminer ||
+      JSON.stringify(voidfleet.assessmentLaw.evidenceStates) !==
+       JSON.stringify(["no-admitted-evidence","demonstrated","refuted","contradictory"]) ||
+      voidfleet.authorityWithheld?.length < 8 ||
+      !voidfleet.authorityWithheld.includes("active cohort enrollment") ||
+      !voidfleet.authorityWithheld.includes("new service-section foundation"))
+    throw new TypeError("voidfleet program: independent qualification and authority nonidentifications missing");
+  if (!officerFormation?.curriculumTracks?.some(t => t.id === voidfleet.id &&
+      t.source === "content/curricula/voidfleet-professional-practice.json") ||
+      offerForServiceSections?.sectionServiceHiring?.campaignId !== "hire-professional-service-section" ||
+      offerForServiceSections.sectionServiceHiring.sourceOwner !== "coesite-operations/group-operations")
+    throw new TypeError("voidfleet program: original provider section hiring and Academy formation consumer are not selected");
+  if (!voidfleet.sourceDoctrine?.some(s => s.identity === "voidfleet-academy/curriculum-design" &&
+      s.authorityClass === "legacy-prior-art" && /^sha256:[a-f0-9]{64}$/.test(s.digest)) ||
+      !voidfleet.sourceDoctrine?.some(s => s.identity === "union-officer-academy/common-core"))
+    throw new TypeError("voidfleet program: original history and current Academy sources disconnected");
+  return Object.freeze({ id:voidfleet.id, sourceQualified:true,
+    trainingTrackAvailable:true, qualificationAdmitted:false, cohortOpened:false,
+    serviceSectionFormed:false, recipientAccepted:false });
 }
 
 export async function verifyAcademy(root = NODE_ROOT) {
@@ -94,7 +138,11 @@ export async function verifyAcademy(root = NODE_ROOT) {
   }
   const common = JSON.parse(readFileSync(join(root, "content", "curricula", "union-officer-common-core.json"), "utf8"));
   const executive = JSON.parse(readFileSync(join(root, "content", "curricula", "executive-officer-to-the-leader.json"), "utf8"));
-  for (const program of [common, executive]) {
+  const voidfleet = JSON.parse(readFileSync(join(root, "content", "curricula", "voidfleet-professional-practice.json"), "utf8"));
+  const offerForServiceSections = JSON.parse(readFileSync(join(root, "content", "services", "market-mediated-character-officer-supply.json"), "utf8"));
+  const officerFormation = JSON.parse(readFileSync(join(root, "content", "services", "officer-formation.json"), "utf8"));
+  verifyVoidfleetProgram({ common, voidfleet, offerForServiceSections, officerFormation });
+  for (const program of [common, voidfleet, executive]) {
     if (program.owner !== "union-officer-academy" || !Array.isArray(program.competencies) || program.competencies.length === 0) throw new Error(`${program.id ?? "curriculum"}: malformed Academy curriculum program`);
   }
   assertDigest(territory, executive.targetOffice.path, executive.targetOffice.digest, "executive-officer target office");
@@ -143,7 +191,7 @@ export async function verifyAcademy(root = NODE_ROOT) {
       throw new Error(`foreign doctrine is not digest-bound to its owning jurisdiction: ${required.source}`);
     }
   }
-  return { ok: true, schemas: REQUIRED_SCHEMAS.length, offices: roster.offices.length, skills: roster.skills.length, curricula: 2, productTypes: products.productTypes.length, providerAdapters: adapters.providers.length, institutionalObligations: obligations.obligations.length, doctrineAdmissions: admissions.length, journal };
+  return { ok: true, schemas: REQUIRED_SCHEMAS.length, offices: roster.offices.length, skills: roster.skills.length, curricula: 3, productTypes: products.productTypes.length, providerAdapters: adapters.providers.length, institutionalObligations: obligations.obligations.length, doctrineAdmissions: admissions.length, journal };
 }
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
