@@ -18,6 +18,13 @@ function tri(value, name) {
   return value;
 }
 
+/** Evidence is retained testimony, not a mutable side channel of an admitted surface. */
+function surfaceEvidenceRefs(input) {
+  const refs = input.evidenceRefs ?? [];
+  if (!Array.isArray(refs)) throw new TypeError('evidenceRefs must be an array');
+  return Object.freeze(refs.map((ref, index) => REQUIRED(ref, 'evidenceRefs[' + index + ']')));
+}
+
 function fromFourBits(positive, negative) {
   if (positive) return negative ? 'CONTESTED' : 'HELD';
   return negative ? 'REFUTED' : 'UNKNOWN';
@@ -57,7 +64,7 @@ export function makeCapabilitySurface(input) {
     readback: tri(input.readback ?? 'UNKNOWN', 'readback'),
     health: input.health ?? 'UNKNOWN',
     evidenceAt: REQUIRED(input.evidenceAt, 'evidenceAt'),
-    evidenceRefs: Array.isArray(input.evidenceRefs) ? [...input.evidenceRefs] : []
+    evidenceRefs: surfaceEvidenceRefs(input)
   };
   if (!HEALTH.has(surface.health)) throw new TypeError('health has invalid standing');
   return Object.freeze(surface);
