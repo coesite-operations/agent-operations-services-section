@@ -68,7 +68,8 @@
       "billing-model",
       "service-level",
       "supplier-policy",
-      "external-channel"
+      "external-channel",
+      "actor-life-verb-profile"
     ],
     "forbiddenDefaults": [
       "inventing a new product requirement without authorized Group/Board demand",
@@ -86,7 +87,8 @@
     "Every operating cell exposes parameterizable endeavors; campaigns are repeatable bounded sequences inside an endeavor, not scheduler identities.",
     "Staffing is an explicit demand with qualification and capacity evidence, not a model-session count.",
     "The first delivery is a pilot; production status requires independent receiving and a durable capacity/cadence plan.",
-    "Cells with no continuing demand, payer, consumer, or institutional obligation are decommissioned rather than accumulated."
+    "Cells with no continuing demand, payer, consumer, or institutional obligation are decommissioned rather than accumulated.",
+    "Where a continuing Actor is being served, a life-verb lens is an optional actor-instance parameter over a wake and admissible mode; it cannot replace authentic Office duty assignment, civic choice or source-qualified execution."
   ],
   "products": [
     "OperatingCellParameterization",
@@ -123,5 +125,53 @@
     ],
     "observedOn": "2026-10-11",
     "note": "These are current Work Arena obligations observed by ChatGPT-Web; they motivate a reusable formation service rather than seven bespoke operating implementations."
+  },
+  "actorLifeVerbLens": {
+    "status": "reusable optional Coesite parameter contract; source-only until admitted to a live consumer",
+    "extends": "pulse-operating-cell-formation only where a recurring pattern has a real eligible consumer; a citizen's choice of life activity is NOT by itself an operating cell, assignment, or paid job",
+    "research_source": "https://github.com/lenticule-science/science-services-section/blob/main/content/text/documents/articles/notes/2026/10/02/2026-10-02-person-body-office-pulse-persistent-agent-lives.md",
+    "ownership": {
+      "science": "source-backed verbs/modes, vocabulary, epistemic distinctions and dreaming subregimes",
+      "coesite": "shared named and versioned verb-selection method, work/study/rest/imaginal/social operating norms, duty-coverage and appropriate receiving",
+      "engineering": "generic selector, provider event/clock, continuation and bounded Session implementation",
+      "instance": "owning Group or Public principal binds actual Actor, approved office/mode, context, source revision and recipient",
+      "academy": "formation/assessment/cohort where separately contracted; never own or appoint recipient's Officer"
+    },
+    "consumerFields": [
+      "original-person-or-actor-ref",
+      "source-owner-and-revision",
+      "trigger-and-source-of-time",
+      "selected-verb-ref-and-tower-if-established",
+      "mode",
+      "subverb-selection-policy",
+      "favored-tactics-with-source-revision",
+      "qualified-input-window",
+      "current-standing-and-authorization",
+      "body-resource-envelope-or-unknown",
+      "epistemic-output-lane",
+      "recipient-and-assay",
+      "residue-and-next-trigger"
+    ],
+    "selectionRules": [
+      "A scheduled pulse is a wake event offered to an existing Actor, not the Work, an incumbent, the actor's numerical identity or a successful bounded Session.",
+      "An Actor's verb category/tower is consumer instance data. The Leader's provisional four-by-five taxonomy is not a mandated classification for other Characters.",
+      "Admissible mode is selected from authentic Actor standing, legitimate civic choice or assigned office duty, source-qualified evidence and actual resource measurements. Do not force every free civic pulse into revenue-generating enterprise Work.",
+      "A Learning lens visits current original scientific glossary, source Token/Claim and research-method operations. Preferred tactics are versioned; use-and-improve the actual source-owning method rather than create a report-only substitute.",
+      "A Dreaming lens selects from Science's four distinct internal closure-regime hypotheses where implemented; it preserves the input-window/rules/witness trail and outputs inert candidate hypotheses for a distinct receiving office.",
+      "No Dream regime may mutate canonical knowledge, legal authority, source history, proven fact, or protected memory by self-acceptance. An externally-generative aperiodic run requires independent authorization and budget.",
+      "Work-due, blocked, unavailable, quiet rest and no-op are distinct outcomes. Do not fabricate a heartbeat, provider allocation, native deployment or social consent.",
+      "Academy cohort registration, qualification/examination, provider capacity and recipient induction are distinct; the source intent to someday graduate a particular cohort is not an appointment or earned credential."
+    ],
+    "refusalCases": [
+      "source tower or verb unverified",
+      "actor identity or Office standing missing",
+      "civic mode treated as enterprise assignment",
+      "private residue outside authorized source scope",
+      "apparent dream artifact promoted without independent receiving",
+      "unmetered or unauthorized aperiodic model invocation",
+      "unknown provider quota represented as a numeric shift",
+      "Academy certificate inferred from profile or training intention"
+    ],
+    "independentReceiving": "consumer must supply the actual source-selected Coesite method and native host/Actor/session evidence; independent beneficiary accepts a source-qualified learning change, inert dream proposal, or legitimate civic outcome. An Academy source commit and Group profile are not host execution."
   }
 }
