@@ -1316,7 +1316,7 @@
       "classification": "projection",
       "canonicalPath": "lib/emsenn/services/561-group/services/coesite-clearing/services/union-officer-academy/lib/professional-repertoire/skills/recalling-a-requirement/SKILL.md",
       "digest": "sha256:60288f298b2894fbd65d5b050eead4ad2b2cb7b4a8b51e7177a717e4690042a6",
-      "canonicalDigest": "sha256:60288f298b2894fbd65d5b050eead4ad2b2cb7b4a8b51e7177a717e4690042a6",
+      "canonicalDigest": "sha256:3d0bdd93f3710640cf0fd4c593e27c4a436ccb5ff22e826318c9b596c6ed00ee",
       "reason": "digest-equal publication of Academy professional law"
     },
     {
@@ -1326,7 +1326,7 @@
       "classification": "projection",
       "canonicalPath": "lib/emsenn/services/561-group/services/coesite-clearing/services/union-officer-academy/lib/professional-repertoire/skills/recalling-a-term/SKILL.md",
       "digest": "sha256:637a2c8b4120899b72134819cfb7417a9abc0dcf1f4090c738766e489df8fc53",
-      "canonicalDigest": "sha256:637a2c8b4120899b72134819cfb7417a9abc0dcf1f4090c738766e489df8fc53",
+      "canonicalDigest": "sha256:a129147487beaefa1bcd126d1efaaded19a4aa184dc428287b3f1d3b4d5ed49c",
       "reason": "digest-equal publication of Academy professional law"
     },
     {
@@ -1346,7 +1346,7 @@
       "classification": "projection",
       "canonicalPath": "lib/emsenn/services/561-group/services/coesite-clearing/services/union-officer-academy/lib/professional-repertoire/skills/rendering-a-dag-of-the-offices-of-a-firm/SKILL.md",
       "digest": "sha256:a545ddd50c1fa5eac386affa3771fb066bcae2bf6d44072ad958f7b88b9b4851",
-      "canonicalDigest": "sha256:a545ddd50c1fa5eac386affa3771fb066bcae2bf6d44072ad958f7b88b9b4851",
+      "canonicalDigest": "sha256:f553129d6e32a2bb67896e08945fd9faaedb73624eaafb4b3bed176729c08225",
       "reason": "digest-equal publication of Academy professional law"
     },
     {
@@ -4676,7 +4676,7 @@
       "id": "recalling-a-requirement",
       "classification": "academy-repertoire",
       "canonicalPath": "lib/emsenn/services/561-group/services/coesite-clearing/services/union-officer-academy/lib/professional-repertoire/skills/recalling-a-requirement/SKILL.md",
-      "digest": "sha256:60288f298b2894fbd65d5b050eead4ad2b2cb7b4a8b51e7177a717e4690042a6",
+      "digest": "sha256:3d0bdd93f3710640cf0fd4c593e27c4a436ccb5ff22e826318c9b596c6ed00ee",
       "reason": "canonical Academy professional or character carrier"
     },
     {
@@ -4685,7 +4685,7 @@
       "id": "recalling-a-term",
       "classification": "academy-repertoire",
       "canonicalPath": "lib/emsenn/services/561-group/services/coesite-clearing/services/union-officer-academy/lib/professional-repertoire/skills/recalling-a-term/SKILL.md",
-      "digest": "sha256:637a2c8b4120899b72134819cfb7417a9abc0dcf1f4090c738766e489df8fc53",
+      "digest": "sha256:a129147487beaefa1bcd126d1efaaded19a4aa184dc428287b3f1d3b4d5ed49c",
       "reason": "canonical Academy professional or character carrier"
     },
     {
@@ -4703,7 +4703,7 @@
       "id": "rendering-a-dag-of-the-offices-of-a-firm",
       "classification": "academy-repertoire",
       "canonicalPath": "lib/emsenn/services/561-group/services/coesite-clearing/services/union-officer-academy/lib/professional-repertoire/skills/rendering-a-dag-of-the-offices-of-a-firm/SKILL.md",
-      "digest": "sha256:a545ddd50c1fa5eac386affa3771fb066bcae2bf6d44072ad958f7b88b9b4851",
+      "digest": "sha256:f553129d6e32a2bb67896e08945fd9faaedb73624eaafb4b3bed176729c08225",
       "reason": "canonical Academy professional or character carrier"
     },
     {
@@ -4874,7 +4874,7 @@
       "id": "writing-a-term",
       "classification": "academy-repertoire",
       "canonicalPath": "lib/emsenn/services/561-group/services/coesite-clearing/services/union-officer-academy/lib/professional-repertoire/skills/writing-a-term/SKILL.md",
-      "digest": "sha256:7ad625c7c95a8741f1da8f565a135d3164cc110db0c8ca43f46ef909cfc8a876",
+      "digest": "sha256:2965ba0f3f61d5ebc9b4845cd3bc64a506a7157faf7685c56d0e0253d03b067f",
       "reason": "canonical Academy professional or character carrier"
     },
     {

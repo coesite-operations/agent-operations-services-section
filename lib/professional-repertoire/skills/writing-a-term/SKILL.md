@@ -8,12 +8,12 @@ description: Writes a firm term to the glossary — a new term at its owning uni
 The **write** half of the glossary, and the deterministic inverse of `recalling-a-term`.
 
 ```sh
-node lib/emsenn/services/561-group/services/coesite-clearing/services/union-officer-academy/lib/professional-repertoire/skills/writing-a-term/scripts/write-a-term.js \
+node <union-officer-academy-engine>/lib/professional-repertoire/skills/writing-a-term/scripts/write-a-term.js \
   --home <unit-dir> --slug <slug> --name "<Display Name>" --description "<one line>" <<'BODY'
 <your standalone plain-English definition, one sentence per line>
 BODY
 
-node lib/emsenn/services/561-group/services/coesite-clearing/services/union-officer-academy/lib/professional-repertoire/skills/writing-a-term/scripts/write-a-term.js \
+node <union-officer-academy-engine>/lib/professional-repertoire/skills/writing-a-term/scripts/write-a-term.js \
   --slug <slug> --update [--from <path>] [--keep-body]
 ```
 

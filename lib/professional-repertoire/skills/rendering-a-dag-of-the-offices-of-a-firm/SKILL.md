@@ -22,7 +22,7 @@ The 561 Group is a Lakota tiyóšpaye — an extended kinship band — founded b
 ## Run it
 
 ```sh
-node lib/emsenn/services/561-group/services/coesite-clearing/services/union-officer-academy/lib/professional-repertoire/skills/rendering-a-dag-of-the-offices-of-a-firm/scripts/render-office-dag.mjs
+node <union-officer-academy-engine>/lib/professional-repertoire/skills/rendering-a-dag-of-the-offices-of-a-firm/scripts/render-office-dag.mjs
 ```
 
 Options: `--format tree` (default, the command hierarchy), `--format edges` (every relation, flat), `--format dot` (Graphviz).
