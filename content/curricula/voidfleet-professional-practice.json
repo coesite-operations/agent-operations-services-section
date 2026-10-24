@@ -33,10 +33,10 @@
       "reading": "Separate person, character, model, session, office, qualification and receiver appointment."
     },
     {
-      "identity": "coesite-operations/group-operations/hire-professional-service-section",
+      "identity": "coesite-operations/group-operations-services-section/hire-professional-service-section",
       "owner": "coesite-operations",
       "authorityClass": "current-proposed-operating-campaign",
-      "review": "https://github.com/coesite-operations/group-operations/pull/1",
+      "review": "https://github.com/coesite-operations/group-operations-services-section/pull/1",
       "reading": "Distinguish customer hiring a provider Services Section from Academy character supply and customer-local office induction; still uninstalled."
     }
   ],

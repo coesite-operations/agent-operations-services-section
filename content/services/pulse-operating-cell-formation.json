@@ -128,9 +128,9 @@
     "note": "These are current Work Arena obligations observed by ChatGPT-Web; they motivate a reusable formation service rather than seven bespoke operating implementations."
   },
   "hireableProfessionalServices": {
-    "producer": "coesite-operations/group-operations/content/operations-campaign-library.v1.json",
+    "producer": "coesite-operations/group-operations-services-section/content/operations-campaign-library.v1.json",
     "campaignId": "hire-professional-service-section",
-    "review": "https://github.com/coesite-operations/group-operations/pull/1",
+    "review": "https://github.com/coesite-operations/group-operations-services-section/pull/1",
     "originalConsumer": "red-cup-engineering/agent-organization-engine/lib/organizing/src/enterprise/operating-cell-plan.mjs",
     "relationship": "A receiving Group/Public/other sovereign enterprise buys a bounded, independently receivable outcome from a real Coesite professional Services Section; the source catalog selects the campaign, not a new scheduler.",
     "academyRole": "Union Officer Academy's existing officer-formation, Voidfleet practice and character-officer-supply services meet the providing section's staffing gaps, not a customer-local appointment unless separately sought.",

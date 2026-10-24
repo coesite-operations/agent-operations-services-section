@@ -29,8 +29,8 @@
   ],
   "sectionServiceHiring": {
     "distinctCategory": "HireProfessionalServiceSection",
-    "sourceOwner": "coesite-operations/group-operations",
-    "review": "https://github.com/coesite-operations/group-operations/pull/1",
+    "sourceOwner": "coesite-operations/group-operations-services-section",
+    "review": "https://github.com/coesite-operations/group-operations-services-section/pull/1",
     "campaignId": "hire-professional-service-section",
     "nativeReader": "red-cup-engineering/agent-organization-engine/lib/organizing/src/enterprise/operating-cell-plan.mjs",
     "serviceProvider": "A separately founded Coesite Services Section with original Actor/Enterprise, legal provider/cost, qualified Work executor and receiver-contract capacity.",
