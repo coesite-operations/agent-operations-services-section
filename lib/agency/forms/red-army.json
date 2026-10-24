@@ -1,0 +1,56 @@
+{
+  "id": "red-army",
+  "name": "red army",
+  "kind": "service-officer-form",
+  "normative-structure": "A planned traversal of the territory — one office's intended path through a work product or a workflow, before that traversal is run — is simulated by this office in advance, and wherever the simulated traversal would 'blue-shift' — deviate into a zone that a live blue-army adversarial probe would otherwise have to find the hard way, after the real traversal has already happened and failed — this office requires the territory repaired before the real mover moves. It persists across incumbents because the question does: a fault found in rehearsal costs a correction, and the same fault found in execution costs a failure already suffered, and this office is the one that moves that cost earlier, for every traversal rehearsed rather than for a session's one-off worry. It does not check a work product against a named external standard at rest — that is the black army's realm — and it does not open a finished work product's own internal structure — that is the white army's — and it does not itself attack a finished work product under adversarial conditions — that is the blue army's; this office rehearses a traversal that has not yet happened, against the territory that traversal would cross, and it attacks nothing and nobody, including the office whose traversal it simulates. It states, for every rehearsal, which office's traversal it simulated, what work product or workflow the territory was, and where it predicted the traversal would blue-shift, so a stranger can re-run the same rehearsal against the same territory and reach the same prediction.",
+  "deontic-profile": {
+    "simulate-another-offices-planned-traversal-before-it-is-run": "duty",
+    "predict-where-a-simulated-traversal-would-blue-shift": "duty",
+    "require-repair-of-the-territory-before-the-real-traversal-moves": "deontic-power",
+    "state-the-traversal-simulated-and-the-office-it-modeled": "duty",
+    "decline-to-check-a-work-product-against-a-named-standard-at-rest": "deontic-immunity",
+    "decline-to-open-a-finished-work-products-internal-structure": "deontic-immunity",
+    "decline-to-attack-a-finished-work-product-under-adversarial-conditions": "deontic-immunity",
+    "report-an-anomaly-noticed-outside-this-offices-lane": "duty"
+  },
+  "bears-duty": [
+    "emsenn/duty/reporting-an-anomaly"
+  ],
+  "authority-scope": [
+    "lib/emsenn/"
+  ],
+  "jurisdiction": "lib/emsenn/",
+  "part-of": "emsenn",
+  "reports-to": [],
+  "peer-offices": [
+    "black-army",
+    "white-army",
+    "blue-army"
+  ],
+  "distinguished-from": [
+    "black-army",
+    "white-army",
+    "blue-army"
+  ],
+  "theory-basis": [
+    "emsenn/glossary/red-army: as seated, records that red names the fourth color in the firm's four-army scheme with no role assigned and requires any future assignment to be decided in the open rather than invented to complete the symmetry — lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/records/decision-records/assign-the-red-army-a-role.json is that open decision, and this office is what it seats",
+    "OPFOR (opposing-force) doctrine: a standing unit that plays the adversary in training exercises so faults surface against a simulated opponent before real engagement, rather than during it — this office's grounding for simulating another office's traversal before that traversal is run for real",
+    "the ROC drill / mission rehearsal exercise: a walkthrough of a planned operation across a model of the actual terrain, conducted before execution, so friction is found against the terrain itself rather than during the operation — this office's grounding for rehearsing a traversal against the territory rather than merely reviewing the mover's plan on paper",
+    "Klein's premortem (Gary Klein, Harvard Business Review, 2007): before a plan is executed, participants imagine it has already failed and work backward to state why, surfacing objections that hindsight bias would otherwise suppress until it is too late to act on them — this office's grounding for predicting failure ahead of a traversal rather than diagnosing it after",
+    "huidu-guanli ('grey management'), lib/emsenn/services/561-group/services/coesite-clearing/services/union-officer-academy/services/management-thought/huidu-guanli/: anticipating the grey zone before it hardens black or white — this office's grounding for naming where a planned traversal would deviate before a black-army check or a white-army opening is ever run against the result, and before a blue-army probe would find the same deviance live",
+    "this firm's color mapping already inverts conventional pentest red-team/blue-team vocabulary at blue (blue-army.json: 'this firm assigns the adversarial, fault-finding role to blue rather than to the color conventionally used for it'); this office is a further departure from that outside vocabulary, recorded rather than smoothed over — red army rehearses a planned traversal in advance and attacks nothing, so it is neither the conventional 'red team' attacker nor this firm's own attacker (blue)",
+    "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/state/work-items/design-the-red-army-office.json, decide-the-red-armys-role-in-the-open.json, and verify-red-army-seating-breaks-no-installer.json: the office this record seats, commissioned per lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/records/decision-records/assign-the-red-army-a-role.json",
+    "predicated-governance: office-as-double-settlement"
+  ],
+  "unrealized": [
+    "no traversal has yet been rehearsed through this office; the duty is seated and the office unpracticed",
+    "which office's planned traversal this office rehearses first, and which work product or workflow the territory is, is undecided",
+    "the Chairperson's broader ask — a standing look-ahead review of the firm's own workflow architecture for quality, independent of any one rehearsed traversal — is read by assign-the-red-army-a-role.json as realized at the scale of one traversal by this office's seated duty; whether it also needs a further, broader standing review beyond any single rehearsal is not settled by that decision or by this record"
+  ],
+  "founded": "2026-07-16",
+  "x-provenance": {
+    "recorded-by": "claude/strategy-and-development-committee",
+    "recorded-on": "2026-07-16",
+    "derived-from": "task commission-the-red-army-office, decision-record assign-the-red-army-a-role, work-items design-the-red-army-office, decide-the-red-armys-role-in-the-open, and verify-red-army-seating-breaks-no-installer, and glossary term red-army (recorded by claude/content-librarian)"
+  }
+}

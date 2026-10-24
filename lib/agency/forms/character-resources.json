@@ -1,0 +1,51 @@
+{
+  "id": "character-resources",
+  "name": "character resources",
+  "kind": "service-officer-form",
+  "normative-structure": "Who holds what office is a readout of this office's personnel register, not a claim in prose that happens to be believed. It persists across incumbents because incumbency is a double settlement — recognition and induction — and a firm with no office keeping that settlement machine-readable has only prose's word for who is seated where, which is exactly the condition that let a character be recorded as First Officer with nothing to correct it. The office answers for the register matching reality, for the mutual-selection rule running in both directions where it applies, and for the three rights being recorded as delegated in full or not delegated at all — never as a partial grant that reads as full.",
+  "deontic-profile": {
+    "induct-a-candidate-into-a-vacant-office": "deontic-power",
+    "record-a-units-mutual-selection-of-its-leader": "deontic-power",
+    "keep-the-personnel-register-so-incumbency-is-a-readout": "duty",
+    "record-the-three-rights-a-unit-actually-holds-rather-than-what-it-was-told": "duty",
+    "refuse-an-incumbency-claim-the-register-cannot-source": "duty",
+    "decline-to-decide-who-should-hold-an-office": "deontic-immunity",
+    "decline-to-appraise-a-units-project-work": "deontic-immunity",
+    "report-an-anomaly-noticed-outside-this-offices-lane": "duty"
+  },
+  "bears-duty": [
+    "emsenn/duty/keeping-the-personnel-register",
+    "emsenn/duty/reporting-an-anomaly"
+  ],
+  "authority-scope": [
+    "lib/emsenn/"
+  ],
+  "jurisdiction": "lib/emsenn/",
+  "part-of": "emsenn",
+  "reports-to": [],
+  "distinguished-from": [
+    "corporate-secretary",
+    "zero-distance-office"
+  ],
+  "theory-basis": [
+    "emsenn/term/office: incumbency is the double settlement of recognition (backward, history-sensitive) and induction (forward-committed); vacant is (bottom, bottom), dignitas is (t,t), and a top in either is a repair condition — this office keeps that settlement as a record rather than as an assumption",
+    "rendanheyi/sanquan: the three rights — decision, personnel, distribution — delegated in full constitute a unit as an enterprise; any two without the third produces a department every time regardless of what the unit is called, per lib/emsenn/services/561-group/services/coesite-clearing/services/union-officer-academy/services/management-thought/rendanheyi/content/glossary/terms/sanquan.md",
+    "rendanheyi/guanbing-huxuan: selection running both ways — the unit's members choosing and removing their leader, not only the leader choosing them — is a personnel fact this office must be able to record in both directions",
+    "huidu-guanli/ipd: functional managers own capability-building and staffing while project leads appraise project work — the two are different offices, and this one is the first, not the second",
+    "predicated-governance: office-as-double-settlement"
+  ],
+  "unrealized": [
+    "no personnel register exists yet — incumbency across the firm is presently prose's claim, checked by nobody, which is the exact condition that produced the fabricated First Officer attribution the requirement names",
+    "no unit has a recorded instance of guanbing-huxuan or the three rights held in full; sanquan and mutual selection are stated here as the standard this office answers to, not as anything yet true of any seated unit",
+    "the boundary between this office's staffing duty and a project lead's appraisal of project work is asserted from IPD and not yet tested against any firm project where the two could conflict"
+  ],
+  "founded": "2026-07-16",
+  "x-provenance": {
+    "recorded-by": "claude/requirements-implementation-team",
+    "recorded-on": "2026-07-16",
+    "derived-from": "emsenn/requirement/the-firm-carries-its-corporate-functions",
+    "amended-by": "claude/configuration-manager",
+    "amended-on": "2026-07-16",
+    "amendment": "renamed from human-resources to character-resources as required by Chairperson Sennhauser; supersedes the seated human-resources record, which is archived with a superseded-by stamp"
+  }
+}

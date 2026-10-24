@@ -1,0 +1,55 @@
+{
+  "id": "investment-review-board",
+  "name": "investment review board",
+  "kind": "service-officer-form",
+  "normative-structure": "A product line exists because this office decided it should, at its altitude, above every checkpoint — and the checkpoint body's go decisions spend from an allocation this office chose. It persists across incumbents because the question does: left unasked, lines exist because they already existed, each gate below decided honestly, and the sum is a portfolio nobody chose. Its verdicts are three and all three are first-class — open, continue at a stated scale, close — and a close returns its allocation instead of letting a line starve beside the ones that live. Its discipline is altitude in both directions: it does not reach down into any project's gates, because a board that decides checkpoints has become a second funding body with better seniority, and the body below does not open lines, because a checkpoint body that can is holding an unbounded purse.",
+  "deontic-profile": {
+    "open-a-line-with-a-stated-allocation": "deontic-power",
+    "continue-a-line-at-a-stated-scale": "deontic-power",
+    "close-a-line-and-recover-its-allocation": "deontic-power",
+    "state-the-allocation-a-verdict-binds": "duty",
+    "state-the-basis-so-a-stranger-can-read-it": "duty",
+    "hear-the-standing-picture-beside-the-lines-own-case": "duty",
+    "name-sunk-cost-and-then-set-it-aside": "duty",
+    "decline-to-decide-an-individual-checkpoint": "deontic-immunity",
+    "decline-to-judge-the-works-quality-or-soundness": "deontic-immunity",
+    "report-an-anomaly-noticed-outside-this-offices-lane": "duty"
+  },
+  "bears-duty": [
+    "emsenn/duty/deciding-an-investment",
+    "emsenn/duty/reporting-an-anomaly"
+  ],
+  "authority-scope": [
+    "lib/emsenn/"
+  ],
+  "jurisdiction": "lib/emsenn/",
+  "part-of": "emsenn",
+  "reports-to": [],
+  "presides-over": [
+    "integrated-portfolio-management-team"
+  ],
+  "distinguished-from": [
+    "integrated-portfolio-management-team",
+    "requirements-management-team"
+  ],
+  "theory-basis": [
+    "huidu-guanli/ipd: the investment review board (产品投资评审委员会, IRB) decides investment above the product line — historically chaired by Xu Zhijun — while the IPMT decides go/no-go at each checkpoint within a chartered line; the two are one deciding line at two altitudes and neither may work at the other's",
+    "huidu-guanli/ipd: the IPMT is tiered (C-IPMT at the company, PL-IPMT at the product line) precisely because funding decisions have altitudes; this office is the top of that ladder in this firm",
+    "huidu-guanli: 战略耐性 — strategic patience is a chosen allocation sustained through noise, which is only possible when someone owns the allocation; a firm that cannot close a line cannot be patient with the ones it keeps",
+    "predicated-governance: office-as-double-settlement"
+  ],
+  "unrealized": [
+    "the firm's lines have never been enumerated as lines, so this office's first act would be naming the portfolio it governs — the ventures, ships, platform, and lab of the standing picture — rather than deciding within it",
+    "no allocation currency is defined: the firm budgets attention rather than money, and what an allocation is denominated in is not yet settled",
+    "this board and the checkpoint body below it are presently the same incumbent in practice, which collapses the altitude separation the two records assert; the separation is written and known to be unenforced"
+  ],
+  "founded": "2026-07-16",
+  "x-provenance": {
+    "recorded-by": "claude/chief-of-staff",
+    "recorded-on": "2026-07-16",
+    "derived-from": "note-on-the-kernel-offices-of-a-software-node — the deciding line; seated because integrated-portfolio-management-team's unrealized named its absence as the thing leaving the IPMT unbounded",
+    "amended-by": "claude/configuration-manager",
+    "amended-on": "2026-07-16",
+    "amendment": "added bears-duty emsenn/duty/reporting-an-anomaly and deontic-profile entry report-an-anomaly-noticed-outside-this-offices-lane: duty, per stand-up-the-anomaly-reporting-channel"
+  }
+}
