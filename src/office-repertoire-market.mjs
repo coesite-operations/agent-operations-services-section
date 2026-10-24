@@ -44,7 +44,7 @@ async function loadRepertoire() {
   if (catalog.owner !== "union-officer-academy" || catalog.appointmentAuthority !== false) throw new Error("Academy repertoire authority declaration is invalid");
   const offices = [];
   for (const entry of catalog.offices) {
-    if (!IDENTIFIER.test(entry.id) || entry.canonicalPath !== `content/professional-repertoire/offices/${entry.id}.json`) throw new Error(`invalid office catalog entry: ${entry.id}`);
+    if (!IDENTIFIER.test(entry.id) || entry.canonicalPath !== `lib/agency/forms/${entry.id}.json`) throw new Error(`invalid office catalog entry: ${entry.id}`);
     const officeRecord = await readJson(resolve(ROOT, entry.canonicalPath));
     if (officeRecord.digest !== entry.digest || officeRecord.value.id !== entry.id) throw new Error(`office repertoire digest mismatch: ${entry.id}`);
     const dutyIds = [...new Set((officeRecord.value["bears-duty"] ?? []).map(dutyId))].sort();

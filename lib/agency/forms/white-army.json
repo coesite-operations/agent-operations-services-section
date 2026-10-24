@@ -1,0 +1,48 @@
+{
+  "id": "white-army",
+  "name": "white army",
+  "kind": "service-officer-form",
+  "normative-structure": "A work product is checked by opening its own internal structure and examining whether its reasoning holds on its own terms — its proofs close, its rules are consistent, its logic is well-formed — judged from the inside rather than against an external standard or an adversary's attack. It persists across incumbents because the question does: a work product can pass every external standard and still reason falsely inside itself, and this office is the one that opens it to find out. It does not check a work product against a named external standard — that is the black army's realm — and it does not attack a work product under adversarial conditions to see whether it survives — that is the blue army's. It states, for every verdict, the internal rule a structure satisfied or failed, so a stranger can re-derive the same verdict from the same structure.",
+  "deontic-profile": {
+    "check-a-work-products-internal-logical-structure": "duty",
+    "check-a-work-products-internal-mathematical-structure": "duty",
+    "state-the-internal-rule-a-structure-satisfied-or-failed": "duty",
+    "decline-to-judge-a-work-product-against-an-external-standard": "deontic-immunity",
+    "decline-to-probe-the-work-product-adversarially": "deontic-immunity",
+    "report-an-anomaly-noticed-outside-this-offices-lane": "duty"
+  },
+  "bears-duty": [
+    "emsenn/duty/reporting-an-anomaly"
+  ],
+  "authority-scope": [
+    "lib/emsenn/"
+  ],
+  "jurisdiction": "lib/emsenn/",
+  "part-of": "emsenn",
+  "reports-to": [],
+  "peer-offices": [
+    "black-army",
+    "blue-army"
+  ],
+  "distinguished-from": [
+    "black-army",
+    "blue-army"
+  ],
+  "theory-basis": [
+    "emsenn/glossary/white-army: the white army checks a work product by examining its internal logical and mathematical structure, judged from the inside rather than against an external standard",
+    "ISO/IEC/IEEE 29119: white-box (structural) testing, where a system is checked by examining its internal structure and logic rather than only its external behavior — this office's practice",
+    "mo jia (Mohist tradition): the surviving Mohist canon is among the earliest Chinese work of formal logic, geometry, and rigorous disputation, produced by a school also known for the mathematical discipline it brought to the engineering of city defense",
+    "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/state/work-items/design-the-white-army-office.json and define-the-four-armies.json: the office this record seats, commissioned alongside black-army and blue-army as one of three army offices designed by the strategy-and-development-committee",
+    "predicated-governance: office-as-double-settlement"
+  ],
+  "unrealized": [
+    "no work product has yet been checked through this office; the duty is seated and the office unpracticed",
+    "the red army names a fourth color in the same scheme with no office commissioned to it; whether it will be given a role, per emsenn/glossary/red-army, is not this office's decision"
+  ],
+  "founded": "2026-07-16",
+  "x-provenance": {
+    "recorded-by": "claude/strategy-and-development-committee",
+    "recorded-on": "2026-07-16",
+    "derived-from": "task commission-the-army-offices, work-items design-the-white-army-office and define-the-four-armies, and glossary term white-army (recorded by claude/content-librarian)"
+  }
+}

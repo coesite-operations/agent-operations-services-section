@@ -56,7 +56,7 @@ function canonicalRecords(directory) {
 }
 
 export function makeProfessionalCatalog(territory) {
-  const offices = canonicalRecords("content/professional-repertoire/offices").map((item) => ({
+  const offices = canonicalRecords("lib/agency/forms").map((item) => ({
     ...item,
     priorProjection: `${EO}/content/offices/${item.id}.json`,
     projectionDigest: rawDigest(join(territory, EO, "content", "offices", `${item.id}.json`))
@@ -123,10 +123,11 @@ function readdirSafe(path) {
 
 function discoverCarriers(territory) {
   const all = filesBelow(join(territory, "lib", "emsenn"), { exclude: ["node_modules", ".git", "data", "legacy", "_archive", "fixtures"] });
+  const academyForms = `${territoryRel(ACADEMY_ROOT)}/lib/agency/forms/`;
   const carriers = [];
   for (const path of all) {
     const p = territoryRel(path);
-    if ((p.includes("/content/offices/") || p.includes("/professional-repertoire/offices/") || p.includes("/lib/management/offices/")) && p.endsWith(".json")) carriers.push({ kind: "office", path: p, id: json(path).id });
+    if ((p.includes("/content/offices/") || p.startsWith(academyForms) || p.includes("/lib/management/offices/")) && p.endsWith(".json")) carriers.push({ kind: "office", path: p, id: json(path).id });
     else if ((p.includes("/content/duties/") || p.includes("/professional-repertoire/duties/")) && p.endsWith(".json")) carriers.push({ kind: "duty", path: p, id: json(path).id });
     else if (p.endsWith("/SKILL.md") || p.endsWith("/skill.json")) carriers.push({ kind: "skill", path: p, id: p.split("/").at(-2) });
   }
@@ -152,7 +153,7 @@ function classify(carrier, territory, catalog, characterLedger) {
   const canonical = canonicalIndex(catalog, academyPrefix);
   const absolute = join(territory, carrier.path);
   const digest = carrier.kind === "skill" && carrier.path.endsWith("/skill.json") ? rawDigest(absolute) : rawDigest(absolute);
-  if (carrier.path.startsWith(`${academyPrefix}/content/professional-repertoire/`) || carrier.path.startsWith(`${academyPrefix}/lib/professional-repertoire/`) || carrier.path.startsWith(`${academyPrefix}/content/characters/`)) {
+  if (carrier.path.startsWith(`${academyPrefix}/content/professional-repertoire/`) || carrier.path.startsWith(`${academyPrefix}/lib/agency/forms/`) || carrier.path.startsWith(`${academyPrefix}/lib/professional-repertoire/`) || carrier.path.startsWith(`${academyPrefix}/content/characters/`)) {
     return { ...carrier, classification: "academy-repertoire", canonicalPath: carrier.path, digest, reason: "canonical Academy professional or character carrier" };
   }
   if (carrier.path.startsWith(`${academyPrefix}/content/offices/`) || carrier.path.startsWith(`${academyPrefix}/content/duties/`) || carrier.path.startsWith(`${academyPrefix}/lib/management/skills/`)) {

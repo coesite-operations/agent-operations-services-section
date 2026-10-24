@@ -1,0 +1,54 @@
+{
+  "id": "senior-software-engineer",
+  "name": "senior software engineer",
+  "kind": "service-officer-form",
+  "normative-structure": "A design review that catches faults before they are code has to be done by someone who could have authored the design, at the depth the author worked at, and one office answers for that review actually happening at that depth. It persists across incumbents because review decays into approval: under schedule pressure, reviewing becomes skimming, skimming becomes signing, and the signature survives the decay — every reviewed-and-failed design in history carries an approval from someone who looked. This office answers for what its review passed, which is what makes it a review and not a ritual. It takes the units whose design has defeated a module developer, and it teaches through the review rather than around it, because a senior who quietly rewrites a junior's design has fixed one unit and taught nothing. It cannot review its own designs, and it cannot be made the author of everything it reviews — a reviewer who authors everything is not a reviewer, and the office's independence from authorship is the review's value. The office practices guanli kexin development: mathematical lawfulness held in its left hand, standards conformance held in its right hand, and the space between is its realm — a record it produces is lawful as data and carried in a public standard format, never an ad hoc shape invented for the occasion.",
+  "deontic-profile": {
+    "review-a-low-level-design-and-answer-for-what-the-review-passed": "duty",
+    "take-the-unit-whose-design-has-defeated-its-developer": "duty",
+    "raise-a-developers-design-craft-through-the-review-rather-than-around-it": "duty",
+    "return-a-low-level-design-that-cannot-be-reviewed-as-written": "deontic-power",
+    "decline-to-review-its-own-design": "deontic-immunity",
+    "resist-becoming-the-author-of-every-design-it-reviews": "deontic-immunity",
+    "report-an-anomaly-noticed-outside-this-offices-lane": "duty"
+  },
+  "provides-skill": [
+    "writing-a-low-level-design"
+  ],
+  "authority-scope": [
+    "lib/emsenn/"
+  ],
+  "jurisdiction": "lib/emsenn/",
+  "part-of": "emsenn",
+  "reports-to": "module-lead",
+  "peer-offices": [
+    "module-developer"
+  ],
+  "distinguished-from": [
+    "module-lead",
+    "module-developer"
+  ],
+  "theory-basis": [
+    "huidu-guanli/ipd: 技术评审 is a gate with an accountable reviewer, not a meeting — the review's finding is a record, and the reviewer answers for what passed the same way the author answers for what was written",
+    "huidu-guanli/neibu-jiangshi: instruction is delivered by those currently doing the work, as a duty attached to their expertise — the senior's teaching obligation is work with a standard, not an honorific, and articulating a practice well enough to transmit it is what turns one person's competence into the firm's",
+    "huidu-guanli: 将军是打出来的，不是提拔出来的 — generals are produced by fighting, which is why the office that reviews the hardest designs is also the office that takes the units that defeat their developers: the authority to fault a design originates in doing, and would not survive the incumbent leaving practice to review full-time",
+    "predicated-governance: office-as-double-settlement",
+    "guanli kexin development: mathematical lawfulness in the left hand — records as facts a machine can check, EAVT datoms and lawful events; standards conformance in the right hand — public formats such as ActivityPub, CloudEvents, and the ISO/IEC/IEEE information items, never ad hoc shapes; the space between the hands is the office's realm — per huidu-guanli/kexin, trustworthiness is built in at design and ranks above feature and schedule"
+  ],
+  "unrealized": [
+    "no low-level design has ever been carried to review, so the office's central duty answers for an empty record",
+    "the distinction between this office and the module lead's approval power is written but unexercised — no design has yet passed review and then met approval, so the two-step has never been walked"
+  ],
+  "founded": "2026-07-15",
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-15",
+    "amended-by": "codex/engineering-process-group",
+    "amended-on": "2026-07-17",
+    "amendment": "added bears-duty emsenn/duty/reporting-an-anomaly and deontic-profile entry report-an-anomaly-noticed-outside-this-offices-lane: duty, per stand-up-the-anomaly-reporting-channel; added bears-duty emsenn/duty/reviewing-a-low-level-design, realizing the existing deontic-profile obligation through the governed duty/work records"
+  },
+  "bears-duty": [
+    "emsenn/duty/reporting-an-anomaly",
+    "emsenn/duty/reviewing-a-low-level-design"
+  ]
+}

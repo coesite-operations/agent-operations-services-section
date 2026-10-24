@@ -1,0 +1,67 @@
+{
+  "id": "product-development-team-leader",
+  "name": "product development team leader",
+  "kind": "service-officer-form",
+  "normative-structure": "A charter the firm accepted is delivered, whole, by a team that crosses every function the delivery needs, and one office answers for that delivery. It persists across incumbents because the accountability does: a charter split across functional managers is a charter nobody is answerable for, and each function will deliver its own part impeccably into a product the user does not want, with no party at fault. This office is the party at fault. It runs the team and appraises its members, while the functional managers own capability and staffing — the crossing is the mechanism and not an accident of reporting lines. Its authority stops at the domain representatives: a major technical choice needs the core group's consensus, because a leader who can overrule every domain has re-created the single point of judgement the team exists to replace. It cannot certify its own delivery, and it cannot fund it. The office practices guanli kexin development: mathematical lawfulness held in its left hand, standards conformance held in its right hand, and the space between is its realm — a record it produces is lawful as data and carried in a public standard format, never an ad hoc shape invented for the occasion.",
+  "deontic-profile": {
+    "run-a-development-team-against-a-charter": "deontic-power",
+    "appraise-a-member-of-the-team-it-runs": "deontic-power",
+    "pull-a-functional-expert-into-the-team-on-demand": "deontic-power",
+    "chair-the-change-control-board": "deontic-power",
+    "deliver-the-charter-the-funding-body-issued": "duty",
+    "get-the-core-groups-consensus-before-a-major-technical-choice": "duty",
+    "carry-the-work-to-a-technical-review-it-does-not-organize": "duty",
+    "decline-to-certify-the-work-it-delivers": "deontic-immunity",
+    "decline-to-fund-its-own-charter": "deontic-immunity",
+    "resist-a-functional-managers-claim-over-how-the-team-is-appraised": "deontic-immunity",
+    "report-an-anomaly-noticed-outside-this-offices-lane": "duty"
+  },
+  "bears-duty": [
+    "emsenn/duty/delivering-a-charter",
+    "emsenn/duty/reporting-an-anomaly"
+  ],
+  "authority-scope": [
+    "lib/emsenn/"
+  ],
+  "jurisdiction": "lib/emsenn/",
+  "part-of": "emsenn",
+  "reports-to": "integrated-portfolio-management-team",
+  "presides-over": [
+    "change-control-board",
+    "system-architect",
+    "system-engineer",
+    "module-lead"
+  ],
+  "peer-offices": [
+    "requirements-management-team"
+  ],
+  "served-by": [
+    "product-quality-assurance"
+  ],
+  "distinguished-from": [
+    "integrated-portfolio-management-team",
+    "product-quality-assurance"
+  ],
+  "theory-basis": [
+    "huidu-guanli/ipd: the product development team leader (PDT经理, LPDT) runs the team under 经理负责制 and owns appraisal of project members while functional managers own capability-building and staffing — the crossed matrix is the mechanism, and a major technical choice still requires 核心组 consensus, so the leader cannot simply overrule the domain representatives",
+    "huidu-guanli/ipd: the product development team's core group (核心组) carries formal cross-functional seats — marketing, R&D, finance, manufacturing, procurement, technical support — with quality entering as PQA rather than as another functional seat, which is the structural tell that certification is not a stage of the work",
+    "huidu-guanli/ipd: the change control board (变更控制委员会) is chaired by this office and carries commercial representation, so change is a business decision taken by the party accountable for delivery",
+    "huidu-guanli: 把天才个人的能力，沉淀成组织的流程，让平庸的人按流程也能打胜仗 — this office exists so that delivery survives a forgetful, rushed, or merely adequate incumbent",
+    "rendanheyi: 小微主 — the position is taken and not given, acquired by 抢单 against other bidders by committing to a target, and held only while the members sustain the holder under 官兵互选; there is consequently no party who can appoint one",
+    "predicated-governance: office-as-double-settlement",
+    "guanli kexin development: mathematical lawfulness in the left hand — records as facts a machine can check, EAVT datoms and lawful events; standards conformance in the right hand — public formats such as ActivityPub, CloudEvents, and the ISO/IEC/IEEE information items, never ad hoc shapes; the space between the hands is the office's realm — per huidu-guanli/kexin, trustworthiness is built in at design and ranks above feature and schedule"
+  ],
+  "unrealized": [
+    "the core group (核心组) seats this office must get consensus from are not seated, so the consensus requirement binds nothing and the office is presently a leader of nobody",
+    "the charter's four-part shape is specified in deciding-a-decision-checkpoint, but no charter has ever been issued, so this office has never actually run a team against one",
+    "rendanheyi says this position is taken by 抢单 and held under 官兵互选, and the firm has no bidding act and no removal act — so in practice the office would be appointed, which the model says is a misunderstanding of the term rather than a variation on it"
+  ],
+  "founded": "2026-07-15",
+  "x-provenance": {
+    "recorded-by": "claude/configuration-manager",
+    "recorded-on": "2026-07-15",
+    "amended-by": "claude/configuration-manager",
+    "amended-on": "2026-07-16",
+    "amendment": "added bears-duty emsenn/duty/reporting-an-anomaly and deontic-profile entry report-an-anomaly-noticed-outside-this-offices-lane: duty, per stand-up-the-anomaly-reporting-channel"
+  }
+}

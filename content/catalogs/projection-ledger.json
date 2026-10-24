@@ -4,218 +4,218 @@
   "professionalRepertoire": [
     {
       "id": "black-army",
-      "canonicalPath": "content/professional-repertoire/offices/black-army.json",
-      "digest": "sha256:2b002b8d81e054f77a47672b0a7d4d0f47ebcd484d639b56335940eb4e1471dc",
+      "canonicalPath": "lib/agency/forms/black-army.json",
+      "digest": "sha256:19e35edb092be5ac07398041ea084465562da91b87e6035d0173f96d0a9797f9",
       "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/black-army.json",
       "projectionDigest": "sha256:2b002b8d81e054f77a47672b0a7d4d0f47ebcd484d639b56335940eb4e1471dc"
     },
     {
       "id": "blue-army",
-      "canonicalPath": "content/professional-repertoire/offices/blue-army.json",
-      "digest": "sha256:b0989f08dad46a2e72adaa23af962db37312224da64ae96a583c6f23238f2e2c",
+      "canonicalPath": "lib/agency/forms/blue-army.json",
+      "digest": "sha256:8e1a46d25a8e68e1279c1f79d5090e86b8b8a525ee694bc0e27346961176541f",
       "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/blue-army.json",
       "projectionDigest": "sha256:b0989f08dad46a2e72adaa23af962db37312224da64ae96a583c6f23238f2e2c"
     },
     {
       "id": "chairperson",
-      "canonicalPath": "content/professional-repertoire/offices/chairperson.json",
-      "digest": "sha256:cc30139b5fb81484a02edad638848130975b016afcc9ff86b5dca2d02d2f463e",
+      "canonicalPath": "lib/agency/forms/chairperson.json",
+      "digest": "sha256:16cbbd266976c444492c966c68bd4d6a9e05686ea0462cf3c57dd9f74655d338",
       "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/chairperson.json",
       "projectionDigest": "sha256:cc30139b5fb81484a02edad638848130975b016afcc9ff86b5dca2d02d2f463e"
     },
     {
       "id": "change-control-board",
-      "canonicalPath": "content/professional-repertoire/offices/change-control-board.json",
-      "digest": "sha256:74352e6975d92038ee35793bf46191a3a0dc1d510e66284fc7e7a4df8f33d2cb",
+      "canonicalPath": "lib/agency/forms/change-control-board.json",
+      "digest": "sha256:938305d780318882fb689e0b1543e14c11ad0ced6ee6ee71e3afd0c31dcdc70f",
       "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/change-control-board.json",
       "projectionDigest": "sha256:74352e6975d92038ee35793bf46191a3a0dc1d510e66284fc7e7a4df8f33d2cb"
     },
     {
       "id": "character-resources",
-      "canonicalPath": "content/professional-repertoire/offices/character-resources.json",
-      "digest": "sha256:e03524eb60ec81197d2e357891c5f929d6202779ae6553f860e0ab1a43eeca86",
+      "canonicalPath": "lib/agency/forms/character-resources.json",
+      "digest": "sha256:38bb119896080f9f62dd3616c793cfa2e6f078d54da546b4d9e1c6020d859654",
       "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/character-resources.json",
       "projectionDigest": "sha256:e03524eb60ec81197d2e357891c5f929d6202779ae6553f860e0ab1a43eeca86"
     },
     {
       "id": "chief-financial-officer",
-      "canonicalPath": "content/professional-repertoire/offices/chief-financial-officer.json",
-      "digest": "sha256:73e4fba1610578a9db47d6dfd1f2ff1d7f82b0067430380ebff36336f1cf34b5",
+      "canonicalPath": "lib/agency/forms/chief-financial-officer.json",
+      "digest": "sha256:3f3ca2791cdbf395e8983f19fa0760c6d5383f08e7e6e148e01c63328e793885",
       "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/chief-financial-officer.json",
       "projectionDigest": "sha256:73e4fba1610578a9db47d6dfd1f2ff1d7f82b0067430380ebff36336f1cf34b5"
     },
     {
       "id": "configuration-manager",
-      "canonicalPath": "content/professional-repertoire/offices/configuration-manager.json",
-      "digest": "sha256:00a0c547b2602355391eeed88508216039d0cefda233717ab6a4958d51c5e44a",
+      "canonicalPath": "lib/agency/forms/configuration-manager.json",
+      "digest": "sha256:014b1be559ab355121e7846ca10539ce4aea5fe9eba34ff599de5d0e3121bfd3",
       "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/configuration-manager.json",
       "projectionDigest": "sha256:00a0c547b2602355391eeed88508216039d0cefda233717ab6a4958d51c5e44a"
     },
     {
       "id": "content-librarian",
-      "canonicalPath": "content/professional-repertoire/offices/content-librarian.json",
-      "digest": "sha256:d050a4d730c32513261e7fc545c7eebba1cf4f44b46f2bf6bb82573120556c59",
+      "canonicalPath": "lib/agency/forms/content-librarian.json",
+      "digest": "sha256:9152000af2408f2206b565cab0529f442c088470080231b4897335ff1b8d501a",
       "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/content-librarian.json",
       "projectionDigest": "sha256:d050a4d730c32513261e7fc545c7eebba1cf4f44b46f2bf6bb82573120556c59"
     },
     {
       "id": "corporate-secretary",
-      "canonicalPath": "content/professional-repertoire/offices/corporate-secretary.json",
-      "digest": "sha256:37e336f401bdca8bb7f010edd01e2097ec816094bed4185347d4cab7b09cd080",
+      "canonicalPath": "lib/agency/forms/corporate-secretary.json",
+      "digest": "sha256:e6577b12ad0777e95d48ee244e9c21eddc9f1e85bade4af426d48612298bcab4",
       "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/corporate-secretary.json",
       "projectionDigest": "sha256:37e336f401bdca8bb7f010edd01e2097ec816094bed4185347d4cab7b09cd080"
     },
     {
       "id": "engineering-process-group",
-      "canonicalPath": "content/professional-repertoire/offices/engineering-process-group.json",
-      "digest": "sha256:0e801b1164b5faa2da67ca6f0c3227be0c9b71ba0fc731dd8688e8543f6e6db6",
+      "canonicalPath": "lib/agency/forms/engineering-process-group.json",
+      "digest": "sha256:0ad4409097b6d8b58c67f62de27fb5cc8c98f3f602b91a3efbaa0dab0120c8e3",
       "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/engineering-process-group.json",
       "projectionDigest": "sha256:0e801b1164b5faa2da67ca6f0c3227be0c9b71ba0fc731dd8688e8543f6e6db6"
     },
     {
       "id": "general-counsel",
-      "canonicalPath": "content/professional-repertoire/offices/general-counsel.json",
-      "digest": "sha256:d0ef26ddd7cfb6335601988767d1490958ae36d719d562c706bb4b849907ef8b",
+      "canonicalPath": "lib/agency/forms/general-counsel.json",
+      "digest": "sha256:b2a284866b656dc31c13cb29c6e3df2a2a2cdfd48173a768e73d1c14bd14b2fc",
       "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/general-counsel.json",
       "projectionDigest": "sha256:d0ef26ddd7cfb6335601988767d1490958ae36d719d562c706bb4b849907ef8b"
     },
     {
       "id": "integrated-portfolio-management-team",
-      "canonicalPath": "content/professional-repertoire/offices/integrated-portfolio-management-team.json",
-      "digest": "sha256:84d77d8de6ae82a55d815ddf2675c5a52cc2858f1e8bd79e5fd73aa951dadd9b",
+      "canonicalPath": "lib/agency/forms/integrated-portfolio-management-team.json",
+      "digest": "sha256:c2e2d9689619279acf17e9193d120e3fbe7e234810ac2616b9f468880d1c167f",
       "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/integrated-portfolio-management-team.json",
       "projectionDigest": "sha256:84d77d8de6ae82a55d815ddf2675c5a52cc2858f1e8bd79e5fd73aa951dadd9b"
     },
     {
       "id": "internal-audit",
-      "canonicalPath": "content/professional-repertoire/offices/internal-audit.json",
-      "digest": "sha256:477669fa7a6ddcdabdc2920a5db07ecb1a870227265b77c00cba7408ed961206",
+      "canonicalPath": "lib/agency/forms/internal-audit.json",
+      "digest": "sha256:29aa7084bf49e90238074bf9742218170f9139a921b3f0d1ec85f8ae98961810",
       "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/internal-audit.json",
       "projectionDigest": "sha256:477669fa7a6ddcdabdc2920a5db07ecb1a870227265b77c00cba7408ed961206"
     },
     {
       "id": "investment-review-board",
-      "canonicalPath": "content/professional-repertoire/offices/investment-review-board.json",
-      "digest": "sha256:3410e4b372d6f7806332ad58bd73e8f4dce5ec19dbc5de0151161ac23b259764",
+      "canonicalPath": "lib/agency/forms/investment-review-board.json",
+      "digest": "sha256:325a91a3d93e72ecc4f8a5da17c568e466cd306083a53fc317e3aa9037d27172",
       "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/investment-review-board.json",
       "projectionDigest": "sha256:3410e4b372d6f7806332ad58bd73e8f4dce5ec19dbc5de0151161ac23b259764"
     },
     {
       "id": "module-developer",
-      "canonicalPath": "content/professional-repertoire/offices/module-developer.json",
-      "digest": "sha256:541186ab4beb3ad0d5dec3771ebaac68054dfbe2df8da66c886b65df3ea3571e",
+      "canonicalPath": "lib/agency/forms/module-developer.json",
+      "digest": "sha256:c8d696dcbb006b36033491a2c69165c57ea319fa777aa23d1b4ec45c242f9055",
       "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/module-developer.json",
       "projectionDigest": "sha256:541186ab4beb3ad0d5dec3771ebaac68054dfbe2df8da66c886b65df3ea3571e"
     },
     {
       "id": "module-lead",
-      "canonicalPath": "content/professional-repertoire/offices/module-lead.json",
-      "digest": "sha256:455db63c3c402dcfa2976fb9c1daeccbd1b3fbde7287c374e1246922bf0bd259",
+      "canonicalPath": "lib/agency/forms/module-lead.json",
+      "digest": "sha256:1bb01932d89fba98795b10135c553901cd90243ebaf44ac1e0dbdae0eff0571d",
       "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/module-lead.json",
       "projectionDigest": "sha256:455db63c3c402dcfa2976fb9c1daeccbd1b3fbde7287c374e1246922bf0bd259"
     },
     {
       "id": "pilot-department",
-      "canonicalPath": "content/professional-repertoire/offices/pilot-department.json",
-      "digest": "sha256:5b423261a395c22891e5cde291d6dd6536ce71d90c3128b88622580ceb01e0fb",
+      "canonicalPath": "lib/agency/forms/pilot-department.json",
+      "digest": "sha256:4b458c53de35acc3fdd70ffa85be061dd2535e9cec09261c3650657320a3374c",
       "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/pilot-department.json",
       "projectionDigest": "sha256:5b423261a395c22891e5cde291d6dd6536ce71d90c3128b88622580ceb01e0fb"
     },
     {
       "id": "product-development-team-leader",
-      "canonicalPath": "content/professional-repertoire/offices/product-development-team-leader.json",
-      "digest": "sha256:6902a7361dabe08d2152245c5b07206debd98ed694cae43b4dc773ab6196a358",
+      "canonicalPath": "lib/agency/forms/product-development-team-leader.json",
+      "digest": "sha256:ef7cfb5b741ed9a3306360f890ae6d6e4d748cc8cf9287465c05a0c90c5863ee",
       "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/product-development-team-leader.json",
       "projectionDigest": "sha256:6902a7361dabe08d2152245c5b07206debd98ed694cae43b4dc773ab6196a358"
     },
     {
       "id": "product-quality-assurance",
-      "canonicalPath": "content/professional-repertoire/offices/product-quality-assurance.json",
-      "digest": "sha256:9b355676218eadde1fd2d50d8711eda1bbec97d5a5aea26536cf1d745f05b1f9",
+      "canonicalPath": "lib/agency/forms/product-quality-assurance.json",
+      "digest": "sha256:9fbb3c5406e594bce28ee9502465eb4c265dcac77accc84e5227f105307d8ae8",
       "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/product-quality-assurance.json",
       "projectionDigest": "sha256:9b355676218eadde1fd2d50d8711eda1bbec97d5a5aea26536cf1d745f05b1f9"
     },
     {
       "id": "quality-operations",
-      "canonicalPath": "content/professional-repertoire/offices/quality-operations.json",
-      "digest": "sha256:e8472c440965b8407b9618c2356c32719564c62eac4c717fd4a954176cc3c266",
+      "canonicalPath": "lib/agency/forms/quality-operations.json",
+      "digest": "sha256:670e908232372e91b547b317a522134cff35880f66edd358d923644df8037f72",
       "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/quality-operations.json",
       "projectionDigest": "sha256:e8472c440965b8407b9618c2356c32719564c62eac4c717fd4a954176cc3c266"
     },
     {
       "id": "red-army",
-      "canonicalPath": "content/professional-repertoire/offices/red-army.json",
-      "digest": "sha256:4551a0e471fffb8b433d8d077655bd8db19e4983f0d9c6de13a07b082296f33f",
+      "canonicalPath": "lib/agency/forms/red-army.json",
+      "digest": "sha256:5c0d536659887c2717fc4b7fe2b4f5bc3899574f17c5fdaa0bf7c26232a99a4c",
       "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/red-army.json",
       "projectionDigest": "sha256:4551a0e471fffb8b433d8d077655bd8db19e4983f0d9c6de13a07b082296f33f"
     },
     {
       "id": "requirements-analysis-team",
-      "canonicalPath": "content/professional-repertoire/offices/requirements-analysis-team.json",
-      "digest": "sha256:19fce6840db316fade260fa3cc8848b2f8a71e4f86d55917ef863093b365fc89",
+      "canonicalPath": "lib/agency/forms/requirements-analysis-team.json",
+      "digest": "sha256:d6075b609b50bdb28533ac43b956987b7bdec57d8432362d76d0beb737999b78",
       "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/requirements-analysis-team.json",
       "projectionDigest": "sha256:19fce6840db316fade260fa3cc8848b2f8a71e4f86d55917ef863093b365fc89"
     },
     {
       "id": "requirements-implementation-team",
-      "canonicalPath": "content/professional-repertoire/offices/requirements-implementation-team.json",
-      "digest": "sha256:58bc9ad2c29c90a19433af06a1f7a4a3d150febbd84866fb371bd9bfa3ca597e",
+      "canonicalPath": "lib/agency/forms/requirements-implementation-team.json",
+      "digest": "sha256:c82282ce8e915490737c9e9ebcc065fd360f9fc338c92da8f0e0fe1ca5047f1a",
       "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/requirements-implementation-team.json",
       "projectionDigest": "sha256:58bc9ad2c29c90a19433af06a1f7a4a3d150febbd84866fb371bd9bfa3ca597e"
     },
     {
       "id": "requirements-management-team",
-      "canonicalPath": "content/professional-repertoire/offices/requirements-management-team.json",
-      "digest": "sha256:ebc989c8d40c790682b6470ba1d34bd152dbee9eec89aa1028869a5764e8a05a",
+      "canonicalPath": "lib/agency/forms/requirements-management-team.json",
+      "digest": "sha256:b963c0244ff12e6d66197a80520c8cf474d6c085a5eb659339ff370624f1c50f",
       "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/requirements-management-team.json",
       "projectionDigest": "sha256:ebc989c8d40c790682b6470ba1d34bd152dbee9eec89aa1028869a5764e8a05a"
     },
     {
       "id": "senior-software-engineer",
-      "canonicalPath": "content/professional-repertoire/offices/senior-software-engineer.json",
-      "digest": "sha256:80f3ad67adce5b78b9ca682a1d625788d33dcf0f222ce6df25f4ee36c1f6b6b8",
+      "canonicalPath": "lib/agency/forms/senior-software-engineer.json",
+      "digest": "sha256:c4f8fca49b502e11fd1fddc2dba6c45bc28a1fabf2df8ee7d51bf8a6f21f66d0",
       "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/senior-software-engineer.json",
       "projectionDigest": "sha256:80f3ad67adce5b78b9ca682a1d625788d33dcf0f222ce6df25f4ee36c1f6b6b8"
     },
     {
       "id": "strategy-and-development-committee",
-      "canonicalPath": "content/professional-repertoire/offices/strategy-and-development-committee.json",
-      "digest": "sha256:ef74c997bc61f52cd937e4a1a7c06e4a98f93b863efadbcb808c3f77c7d67d2f",
+      "canonicalPath": "lib/agency/forms/strategy-and-development-committee.json",
+      "digest": "sha256:ea693c4ff7ec2d12eae1bb03b533509678e3f630e06fe0581fa9fd2d6b37460e",
       "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/strategy-and-development-committee.json",
       "projectionDigest": "sha256:ef74c997bc61f52cd937e4a1a7c06e4a98f93b863efadbcb808c3f77c7d67d2f"
     },
     {
       "id": "system-architect",
-      "canonicalPath": "content/professional-repertoire/offices/system-architect.json",
-      "digest": "sha256:75f494db926f896e8117d27e507510d9fafdb743e17f43072199e309b71be1d9",
+      "canonicalPath": "lib/agency/forms/system-architect.json",
+      "digest": "sha256:ab7b46e9c6a3dc3926ec1dfeb8d6c72e3126afc1737c475c6f5047515f96e190",
       "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/system-architect.json",
       "projectionDigest": "sha256:75f494db926f896e8117d27e507510d9fafdb743e17f43072199e309b71be1d9"
     },
     {
       "id": "system-engineer",
-      "canonicalPath": "content/professional-repertoire/offices/system-engineer.json",
-      "digest": "sha256:b5e9e7a96c5554fd53f6d3d9745f1aeb4c178bb8fad15d149b85d0fdcf8fd5a2",
+      "canonicalPath": "lib/agency/forms/system-engineer.json",
+      "digest": "sha256:7994d5786ced0f9f84258ab81187f6d5a0b6543ec5078ecb848c221d02eb967f",
       "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/system-engineer.json",
       "projectionDigest": "sha256:b5e9e7a96c5554fd53f6d3d9745f1aeb4c178bb8fad15d149b85d0fdcf8fd5a2"
     },
     {
       "id": "task-dispatcher",
-      "canonicalPath": "content/professional-repertoire/offices/task-dispatcher.json",
-      "digest": "sha256:7f87f3d20aad4f26838926f943ca82d9e137e74ceaff4e184dd53200c32a15c3",
+      "canonicalPath": "lib/agency/forms/task-dispatcher.json",
+      "digest": "sha256:4b709925695f505d60acb232fb9db3f7d35e0410454ece63368b436d93515849",
       "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/task-dispatcher.json",
       "projectionDigest": "sha256:7f87f3d20aad4f26838926f943ca82d9e137e74ceaff4e184dd53200c32a15c3"
     },
     {
       "id": "white-army",
-      "canonicalPath": "content/professional-repertoire/offices/white-army.json",
-      "digest": "sha256:09b2a267e399dd0ce2601089b2aa75a5ab3f211c6ea71acdd9a8884245ffc04b",
+      "canonicalPath": "lib/agency/forms/white-army.json",
+      "digest": "sha256:d745a454d83e56de19735e94239e354f762c0f0de3955ccee8aa4d54a5608576",
       "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/white-army.json",
       "projectionDigest": "sha256:09b2a267e399dd0ce2601089b2aa75a5ab3f211c6ea71acdd9a8884245ffc04b"
     },
     {
       "id": "zero-distance-office",
-      "canonicalPath": "content/professional-repertoire/offices/zero-distance-office.json",
-      "digest": "sha256:8f8f916ab63be1af6071b835478add8e785248a7ef596f0b3ae6ae4565eb3ff0",
+      "canonicalPath": "lib/agency/forms/zero-distance-office.json",
+      "digest": "sha256:6e6823ab46766f579b147218cff73a7d929e6b7ec68819455f4fa8829015e4b9",
       "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/zero-distance-office.json",
       "projectionDigest": "sha256:8f8f916ab63be1af6071b835478add8e785248a7ef596f0b3ae6ae4565eb3ff0"
     },
@@ -684,7 +684,7 @@
     {
       "id": "keeping-the-books",
       "canonicalPath": "content/professional-repertoire/works/keeping-the-books.json",
-      "digest": "sha256:7d4589bb1894e5ed2669fa9e30540253c1701f8cfb75181662b1b0a0d9313472",
+      "digest": "sha256:73824d85f678eeacebc55108769e033285d9a401325bb4571f19de6220c2f6f5",
       "priorProjection": "lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/data/records/works/keeping-the-books.json",
       "projectionDigest": "sha256:7d4589bb1894e5ed2669fa9e30540253c1701f8cfb75181662b1b0a0d9313472"
     },
