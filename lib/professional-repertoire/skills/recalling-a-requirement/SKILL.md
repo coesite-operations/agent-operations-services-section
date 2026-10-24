@@ -8,9 +8,9 @@ description: Reads a requirement and derives whether it is met by re-running its
 The **read** half of the requirements line, and the deterministic inverse of `writing-a-requirement`.
 
 ```sh
-node lib/emsenn/services/561-group/services/coesite-clearing/services/union-officer-academy/lib/professional-repertoire/skills/recalling-a-requirement/scripts/recall-a-requirement.js --slug <slug>
-node lib/emsenn/services/561-group/services/coesite-clearing/services/union-officer-academy/lib/professional-repertoire/skills/recalling-a-requirement/scripts/recall-a-requirement.js --audit
-node lib/emsenn/services/561-group/services/coesite-clearing/services/union-officer-academy/lib/professional-repertoire/skills/recalling-a-requirement/scripts/recall-a-requirement.js          # list
+node <union-officer-academy-engine>/lib/professional-repertoire/skills/recalling-a-requirement/scripts/recall-a-requirement.js --slug <slug>
+node <union-officer-academy-engine>/lib/professional-repertoire/skills/recalling-a-requirement/scripts/recall-a-requirement.js --audit
+node <union-officer-academy-engine>/lib/professional-repertoire/skills/recalling-a-requirement/scripts/recall-a-requirement.js          # list
 ```
 
 Exits non-zero when a requirement is not met, so it can itself be a `--met-when` condition of another requirement.

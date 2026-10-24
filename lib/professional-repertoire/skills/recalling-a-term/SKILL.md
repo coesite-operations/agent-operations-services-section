@@ -8,8 +8,8 @@ description: Recalls what a firm term means by reading the glossary — the near
 The **read** half of the glossary. One script, two modes.
 
 ```sh
-node lib/emsenn/services/561-group/services/coesite-clearing/services/union-officer-academy/lib/professional-repertoire/skills/recalling-a-term/scripts/recall-a-term.js <term> [--from <path>]
-node lib/emsenn/services/561-group/services/coesite-clearing/services/union-officer-academy/lib/professional-repertoire/skills/recalling-a-term/scripts/recall-a-term.js <term> --search
+node <union-officer-academy-engine>/lib/professional-repertoire/skills/recalling-a-term/scripts/recall-a-term.js <term> [--from <path>]
+node <union-officer-academy-engine>/lib/professional-repertoire/skills/recalling-a-term/scripts/recall-a-term.js <term> --search
 ```
 
 - **resolve** (default) — what the term means *from here*: the nearest definition, printed in full.

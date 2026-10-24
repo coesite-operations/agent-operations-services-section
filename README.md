@@ -7,6 +7,16 @@
 [![Tips welcome](https://img.shields.io/badge/tips-welcome-d4a017)](https://github.com/561-group/.github/blob/main/TIPS.md)
 <!-- 561-group-standards:badges:end -->
 
+> **This repository holds the Academy's operation data only.** Its executable
+> code (the academy engine, examinations, officer-supply market, office-repertoire
+> MCP server, verifiers, formation runtime, per-skill scripts, tests and the
+> `npm` scripts/bins named below) lives in
+> [red-cup-engineering/union-officer-academy-engine](https://github.com/red-cup-engineering/union-officer-academy-engine)
+> (package `@union-officer-academy/union-officer-academy`). Run the engine
+> against this checkout by setting `UNION_OFFICER_ACADEMY_ROOT` to this
+> repository's root. Any `npm run ...` / `src/...` / `scripts/...` / `test/...`
+> reference below names engine code, not a file in this repository.
+
 Union Officer Academy is the 561 Group's sovereign officer corps and
 professional-formation ANT Colony. It is the canonical home of the Union's
 reusable professional offices, duties, works, disciplines, executable skills,
