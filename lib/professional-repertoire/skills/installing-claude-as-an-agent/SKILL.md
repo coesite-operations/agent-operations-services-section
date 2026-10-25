@@ -43,7 +43,7 @@ What does exist is preloading — an agent whose context holds the full skill te
 ## Run it
 
 ```sh
-node lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/installing-claude-as-an-agent/scripts/install-claude-as-an-agent.js \
+node services/board-of-directors/services/executive-office/lib/management/skills/installing-claude-as-an-agent/scripts/install-claude-as-an-agent.js \
   <office> <node>
 ```
 

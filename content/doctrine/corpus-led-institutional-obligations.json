@@ -15,7 +15,7 @@
       "office": "superintendent",
       "obligation": "keep a sovereign service membrane, admit or refuse contracts, procure missing specialties, and answer for Academy resources",
       "sourceDenominator": [
-        {"path": "lib/emsenn/services/561-group/services/coesite-clearing/services/union-officer-academy/services/management-thought/rendanheyi/content/glossary/terms/sanquan.md", "authorityClass": "current-law"}
+        {"path": "services/coesite-clearing/services/union-officer-academy/services/management-thought/rendanheyi/content/glossary/terms/sanquan.md", "authorityClass": "current-law"}
       ],
       "rule": "one office owns the Academy boundary; it does not absorb foreign service work"
     },
@@ -23,8 +23,8 @@
       "office": "registrar",
       "obligation": "keep reproducible formation epochs, candidate lineages, qualifications, and requalification deltas without an imperial latest-version line",
       "sourceDenominator": [
-        {"path": "lib/emsenn/services/561-group/services/coesite-clearing/services/union-officer-academy/lib/schemas/cohort.schema.json", "authorityClass": "current-law"},
-        {"path": "lib/emsenn/services/561-group/services/board-of-directors/lib/agency/characters/emsenn/content/documents/articles/notes/2026/07/04/2026-07-04-research-on-why-partial-context-ringleading-cannot-work-here.md", "authorityClass": "admitted-research"}
+        {"path": "services/coesite-clearing/services/union-officer-academy/lib/schemas/cohort.schema.json", "authorityClass": "current-law"},
+        {"path": "services/board-of-directors/lib/agency/characters/emsenn/content/documents/articles/notes/2026/07/04/2026-07-04-research-on-why-partial-context-ringleading-cannot-work-here.md", "authorityClass": "admitted-research"}
       ],
       "rule": "configuration custody, registration, and qualification lineage are one continuous record obligation"
     },
@@ -32,9 +32,9 @@
       "office": "formation-context-steward",
       "obligation": "compile complete, authority-preserving office formation bundles from actual office, character, persona, skill, context, learning, and harness carriers",
       "sourceDenominator": [
-        {"path": "lib/emsenn/services/561-group/lib/agency/characters/rom-keldar/governance/skills/compiling-context/compiling-context.md", "authorityClass": "legacy-prior-art"},
-        {"path": "lib/emsenn/services/561-group/services/coesite-clearing/services/union-officer-academy/lib/professional-repertoire/skills/installing-claude-as-an-agent/scripts/install-claude-as-an-agent.js", "authorityClass": "current-practice"},
-        {"path": "lib/emsenn/services/561-group/services/board-of-directors/lib/agency/characters/emsenn/content/documents/articles/notes/2026/07/04/2026-07-04-research-on-why-partial-context-ringleading-cannot-work-here.md", "authorityClass": "admitted-research"}
+        {"path": "lib/agency/characters/rom-keldar/governance/skills/compiling-context/compiling-context.md", "authorityClass": "legacy-prior-art"},
+        {"path": "services/coesite-clearing/services/union-officer-academy/lib/professional-repertoire/skills/installing-claude-as-an-agent/scripts/install-claude-as-an-agent.js", "authorityClass": "current-practice"},
+        {"path": "services/board-of-directors/lib/agency/characters/emsenn/content/documents/articles/notes/2026/07/04/2026-07-04-research-on-why-partial-context-ringleading-cannot-work-here.md", "authorityClass": "admitted-research"}
       ],
       "rule": "this office owns compilation; the foreign offices and provider runtimes remain foreign"
     },
@@ -42,9 +42,9 @@
       "office": "formation-practitioner",
       "obligation": "conduct situated progressive practice and coordinate current-practitioner teaching and named mentorship",
       "sourceDenominator": [
-        {"path": "lib/emsenn/services/561-group/services/board-of-directors/lib/agency/characters/emsenn/content/documents/articles/notes/2026/06/27/2026-06-27-research-on-answerable-performances.md", "authorityClass": "admitted-research"},
-        {"path": "lib/emsenn/services/561-group/services/coesite-clearing/services/union-officer-academy/services/management-thought/huidu-guanli/content/glossary/terms/neibu-jiangshi.md", "authorityClass": "current-law"},
-        {"path": "lib/emsenn/services/561-group/services/coesite-clearing/services/union-officer-academy/services/management-thought/huidu-guanli/content/glossary/terms/daoshi.md", "authorityClass": "current-law"}
+        {"path": "services/board-of-directors/lib/agency/characters/emsenn/content/documents/articles/notes/2026/06/27/2026-06-27-research-on-answerable-performances.md", "authorityClass": "admitted-research"},
+        {"path": "services/coesite-clearing/services/union-officer-academy/services/management-thought/huidu-guanli/content/glossary/terms/neibu-jiangshi.md", "authorityClass": "current-law"},
+        {"path": "services/coesite-clearing/services/union-officer-academy/services/management-thought/huidu-guanli/content/glossary/terms/daoshi.md", "authorityClass": "current-law"}
       ],
       "rule": "lecturer and mentor are accountable engagement castings; they are not automatically permanent Academy offices"
     },
@@ -52,8 +52,8 @@
       "office": "independent-examiner",
       "obligation": "judge answerable performance independently and return evidence or refusal without appointment authority",
       "sourceDenominator": [
-        {"path": "lib/emsenn/services/561-group/services/board-of-directors/lib/agency/characters/emsenn/content/documents/articles/notes/2026/06/27/2026-06-27-research-on-answerable-performances.md", "authorityClass": "admitted-research"},
-        {"path": "lib/emsenn/services/561-group/services/red-cup-engineering/src/content/assets/legacy/2026-06-17-archive.emsenn.net/content/emsenn-archive-org/old-archive/triage/engineering-archive/operations/command/commands/rsc-quiescent/triage/decision-making/analyses/academy-curriculum-design.md", "authorityClass": "legacy-prior-art"}
+        {"path": "services/board-of-directors/lib/agency/characters/emsenn/content/documents/articles/notes/2026/06/27/2026-06-27-research-on-answerable-performances.md", "authorityClass": "admitted-research"},
+        {"path": "services/red-cup-engineering/src/content/assets/legacy/2026-06-17-archive.emsenn.net/content/emsenn-archive-org/old-archive/triage/engineering-archive/operations/command/commands/rsc-quiescent/triage/decision-making/analyses/academy-curriculum-design.md", "authorityClass": "legacy-prior-art"}
       ],
       "rule": "examination stays independent of formation and qualification remains distinct from recognition, induction, installation, and capability grants"
     }

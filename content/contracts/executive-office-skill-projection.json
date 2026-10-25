@@ -4,7 +4,7 @@
   "customer":"union-officer-academy",
   "provider":"executive-office",
   "capabilities":["project-a-skill","write-a-schema","write-an-office","make-a-task","dispatch-a-task","list-open-obligations"],
-  "providerSource":"lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/project-a-skill.js",
+  "providerSource":"services/board-of-directors/services/executive-office/lib/management/skills/project-a-skill.js",
   "customerAdapters":"lib/management/skills/*.js named by the admitted capabilities",
   "terms":["Academy invokes the provider mechanism; it does not copy or claim ownership of it","source and target remain inside the admitted mesh","projection output remains Academy-owned","provider failure is returned uncensored"],
   "authority":{"customerSkillMutation":true,"providerMutation":false,"foreignWrite":false}

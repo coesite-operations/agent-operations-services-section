@@ -40,7 +40,7 @@ emsenn, verbatim (2026-07-15):
 This is **lexical scope resolution** — the standard algorithm of any module system (Rust crates, OCaml functors, SML modules). It was specified for this corpus long before it was named again: Part 6 of the archived `theoretical-overview.md`, "The slug-resolution algorithm".
 
 The rule's address is
-`lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/documents/articles/notes/2026/07/15/2026-07-15-note-on-term-resolution-by-filesystem-distance.md`.
+`services/board-of-directors/services/executive-office/content/documents/articles/notes/2026/07/15/2026-07-15-note-on-term-resolution-by-filesystem-distance.md`.
 **If the note and the script disagree, the note wins and the script is the defect.**
 
 The order the script implements:

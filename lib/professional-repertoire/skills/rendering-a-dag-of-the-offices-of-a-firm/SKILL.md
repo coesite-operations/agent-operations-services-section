@@ -44,7 +44,7 @@ Nearness is measured in the filesystem, from the file doing the referring: the c
 Two things fall out of this, and both are the reason for the rule.
 
 **A name can mean different things in different places, correctly.**
-`executive-assistant` names two different offices: the 561 Group's, and emsenn's own at `lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices/`.
+`executive-assistant` names two different offices: the 561 Group's, and emsenn's own at `services/board-of-directors/services/executive-office/content/offices/`.
 When a 561 Group office says `executive-assistant`, the nearest one wins and it means the Group's.
 When emsenn's tree says it, it means emsenn's.
 Neither has to be renamed, and neither shadows the other.

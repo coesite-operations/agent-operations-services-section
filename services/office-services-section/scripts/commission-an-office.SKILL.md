@@ -1,6 +1,6 @@
 ---
 name: commissioning-an-office
-description: Seats or retires a canonical office spec in the firm's pool at lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices, validating it against emsenn/schema/office, patching the superior's presides-over edge, and proving the whole pool conforms before reporting success. Use when there is work nobody answers for and an office must be seated for it, or when an office answers for nothing and must be decommissioned with its work's destination recorded.
+description: Seats or retires a canonical office spec in the firm's pool at services/board-of-directors/services/executive-office/content/offices, validating it against emsenn/schema/office, patching the superior's presides-over edge, and proving the whole pool conforms before reporting success. Use when there is work nobody answers for and an office must be seated for it, or when an office answers for nothing and must be decommissioned with its work's destination recorded.
 ---
 
 # commissioning-an-office
@@ -29,7 +29,7 @@ Use when there is work nobody answers for and an office must be seated for it, o
 Commission — the spec comes in whole, on stdin:
 
 ```sh
-cat chief-engineer.json | node lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/commissioning-an-office/scripts/commission-an-office.js
+cat chief-engineer.json | node services/board-of-directors/services/executive-office/lib/management/skills/commissioning-an-office/scripts/commission-an-office.js
 ```
 
 Decommission:
