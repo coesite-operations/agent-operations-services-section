@@ -46,7 +46,7 @@ writes nothing.
 ```
 cat body.md | node .claude/skills/write-research-note/scripts/write-research-note.mjs \
   --term "sheaf-laplacians" \
-  --for lib/emsenn/services/561-group/services/lenticule-science/services/obsmetrological-services-section \   # what the research serves; $root walks up from here
+  --for services/lenticule-science/services/obsmetrological-services-section \   # what the research serves; $root walks up from here
   --tags "sheaf,laplacian,obsmetrologia" \
   --description "one-line summary for retrieval"
 ```

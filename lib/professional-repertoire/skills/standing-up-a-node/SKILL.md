@@ -55,10 +55,10 @@ theory). Its body owes the process runtime contract:
 ## Run it
 
 ```sh
-echo '{"path":"lib/emsenn/services/561-group/services/thing",
+echo '{"path":"services/thing",
        "description":"…",
        "owns":["lib/management/offices"]}' \
-  | node lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/standing-up-a-node/scripts/stand-up-a-node.mjs
+  | node services/board-of-directors/services/executive-office/lib/management/skills/standing-up-a-node/scripts/stand-up-a-node.mjs
 ```
 
 Options: `--root <repo-root>`, `--dry-run`. `repo` may be supplied to name the

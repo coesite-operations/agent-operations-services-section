@@ -44,7 +44,7 @@ An office seated in its own directory also holds any skill seated under it — a
 ## Run it
 
 ```sh
-node lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/installing-claude-as-an-office/scripts/install-claude-as-an-officer.js \
+node services/board-of-directors/services/executive-office/lib/management/skills/installing-claude-as-an-office/scripts/install-claude-as-an-officer.js \
   <office> <node>
 ```
 
@@ -75,9 +75,9 @@ A roster is any `offices/` directory in the tree, found by walking it, not by a 
 
 | Standing in | `executive-assistant` resolves to |
 | --- | --- |
-| the repo root | `lib/emsenn/services/561-group/lib/agency/offices/executive-assistant` |
-| `lib/emsenn/services/561-group/` | the same — the 561 Group's |
-| `lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/characters/emsenn/` | `lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/characters/emsenn/lib/management/offices/executive-assistant` |
+| the repo root | `lib/agency/offices/executive-assistant` |
+| `` | the same — the 561 Group's |
+| `services/board-of-directors/services/executive-office/lib/characters/emsenn/` | `services/board-of-directors/services/executive-office/lib/characters/emsenn/lib/management/offices/executive-assistant` |
 
 This is the glossary's rule — one answer per question, resolved from where you stand — applied to office ids. A nearer office shadowing a farther one **is the rule working**, not a conflict, and the script does not treat it as one. "One answer" is a property of the resolution, never a count of seats.
 

@@ -8,10 +8,10 @@ description: Checks every office spec in a firm's office pool against the office
 The conformance half of the office pool. Answers one question: **is this roster correct, or is it only correct because someone was careful?**
 
 ```sh
-node lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/checking-the-offices-of-a-firm-conform/scripts/check-the-offices-of-a-firm-conform.mjs [<office-pool-dir>]
+node services/board-of-directors/services/executive-office/lib/management/skills/checking-the-offices-of-a-firm-conform/scripts/check-the-offices-of-a-firm-conform.mjs [<office-pool-dir>]
 ```
 
-Defaults to the ecosystem pool at `lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/content/offices`. Pass a directory to check a unit's own pool. Exits non-zero with every finding listed; exits zero only when the whole pool passes.
+Defaults to the ecosystem pool at `services/board-of-directors/services/executive-office/content/offices`. Pass a directory to check a unit's own pool. Exits non-zero with every finding listed; exits zero only when the whole pool passes.
 
 ## What it checks, and why each half is needed
 

@@ -55,7 +55,7 @@ between them.
    ```sh
    echo '{"id":"…","name":"…","target":"…","boundary":["…"],
           "allocation":"…","appraisal":"…","issued-to":"<office>"}' \
-     | node lib/emsenn/services/561-group/services/board-of-directors/services/executive-office/lib/management/skills/deciding-a-decision-checkpoint/scripts/issue-a-charter.js
+     | node services/board-of-directors/services/executive-office/lib/management/skills/deciding-a-decision-checkpoint/scripts/issue-a-charter.js
    ```
 
    The record conforms to `emsenn/term/charter` and seats in the charters

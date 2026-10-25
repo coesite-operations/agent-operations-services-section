@@ -13,7 +13,7 @@ indicated corpus node first... Never guess from a slug. One read of the named
 file beats ten skimmed neighbours."** This skill is what lets a session honor
 that rule without loading the whole corpus into its own context.
 
-Root: `lib/emsenn/services/561-group/services/lenticule-science/services/obsmetrological-services-section/src/services/obsmetrologia`
+Root: `services/lenticule-science/services/obsmetrological-services-section/src/services/obsmetrologia`
 
 ## Where to look, in order
 
@@ -54,7 +54,7 @@ corpus is a metered, authorization-gated act — `observe_notebooklm_market`
 states plainly that "a purchased workspace offer does not create Leader
 authority; live opening also requires a current exact notebook-creation
 authorization" (see
-`lib/emsenn/services/561-group/services/red-cup-engineering/services/inference-services-section/services/notebooklm-inference-team/src/notebook-creation-authorization-client.mjs`).
+`services/red-cup-engineering/services/inference-services-section/services/notebooklm-inference-team/src/notebook-creation-authorization-client.mjs`).
 Report that an Obsmetrologia advisory corpus does not exist yet as a named
 gap, the same way `content-librarian` reports an absent term, rather than
 opening a paid workspace on this skill's own authority.
