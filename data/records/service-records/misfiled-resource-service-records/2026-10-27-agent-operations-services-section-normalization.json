@@ -1,0 +1,1098 @@
+{
+  "id": "2026-10-27-agent-operations-services-section-normalization",
+  "kind": "misfiled-resources-register",
+  "by": "apply-services-section-normalization",
+  "date": "2026-10-27",
+  "moved": [
+    {
+      "from": "data/records/assessment-case-bank-records/executive-officer-to-the-leader.json",
+      "to": "data/records/service-records/assessment-case-bank-service-records/executive-officer-to-the-leader.json",
+      "rule": "eavt-data-law",
+      "sourceSha256": "336bad2bfb427eab44ec047346f54ec713878d42c10176b18fc6b4a336a6dc90",
+      "destinationSha256": "336bad2bfb427eab44ec047346f54ec713878d42c10176b18fc6b4a336a6dc90",
+      "byteIdentical": true
+    }
+  ],
+  "owed": [
+    {
+      "rule": "stray-top-level",
+      "reason": "LICENSE/ is not an entry the services-section law knows; its owner decides where it belongs",
+      "directory": ".",
+      "count": 1
+    },
+    {
+      "rule": "stray-top-level",
+      "reason": "NOTICE/ is not an entry the services-section law knows; its owner decides where it belongs",
+      "directory": ".",
+      "count": 1
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/-B",
+      "count": 2
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/-Z",
+      "count": 2
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/0N",
+      "count": 2
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "0Nz91UnG5LUZyWEGYJ9OwBA2l1fger6ej3yl_dxivqI is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/0N",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "0Nz91UnG5LUZyWEGYJ9OwBA2l1fger6ej3yl_dxivqI.media-type is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/0N",
+      "count": 1
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/0c",
+      "count": 2
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "0cHwcU9B0eMs6MQ2YCNyYaHk5nWjmgwi4Em64ZXN_A4 is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/0c",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "0cHwcU9B0eMs6MQ2YCNyYaHk5nWjmgwi4Em64ZXN_A4.media-type is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/0c",
+      "count": 1
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/15",
+      "count": 2
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/17",
+      "count": 2
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/3H",
+      "count": 2
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "3HI3C72D9tDD1n99VTFMFXUWLe_60fN7N7QawyFteqc is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/3H",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "3HI3C72D9tDD1n99VTFMFXUWLe_60fN7N7QawyFteqc.media-type is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/3H",
+      "count": 1
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/4H",
+      "count": 2
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "4HQrhgdqpJ5x_ARbPN7RVSJqxuvR9vjAOmwTZJdcnQQ is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/4H",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "4HQrhgdqpJ5x_ARbPN7RVSJqxuvR9vjAOmwTZJdcnQQ.media-type is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/4H",
+      "count": 1
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/4Q",
+      "count": 2
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "4QzvECrKiF_mTWc0yiY2FrYsbSlcB9iJCugziLHNL9A is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/4Q",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "4QzvECrKiF_mTWc0yiY2FrYsbSlcB9iJCugziLHNL9A.media-type is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/4Q",
+      "count": 1
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/4s",
+      "count": 2
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/5H",
+      "count": 2
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/5J",
+      "count": 2
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/67",
+      "count": 2
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/6s",
+      "count": 2
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/7v",
+      "count": 2
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "7vEo6Bb9No6KCvn55U2ek1g_miuMnAxFHdg9X5o8vxs is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/7v",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "7vEo6Bb9No6KCvn55U2ek1g_miuMnAxFHdg9X5o8vxs.media-type is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/7v",
+      "count": 1
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/9L",
+      "count": 2
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "9LSe1vJSkGD6opkLauRgEkf_0rIhTnXdjgAY8XJCE80 is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/9L",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "9LSe1vJSkGD6opkLauRgEkf_0rIhTnXdjgAY8XJCE80.media-type is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/9L",
+      "count": 1
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/BI",
+      "count": 2
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/Bt",
+      "count": 2
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "BtIfkktAGNJtT6Vw7VnQoQThEPHcfO2mnFr2ojFjoYY is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/Bt",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "BtIfkktAGNJtT6Vw7VnQoQThEPHcfO2mnFr2ojFjoYY.media-type is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/Bt",
+      "count": 1
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/CI",
+      "count": 2
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "CIE4SSydny6RkFD4bFYPO7daC2_HFSGkFujLjeW5fdU is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/CI",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "CIE4SSydny6RkFD4bFYPO7daC2_HFSGkFujLjeW5fdU.media-type is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/CI",
+      "count": 1
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/Fn",
+      "count": 2
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "FnZYRiOZ_tKjaU7i3nA35PnE2SXJyz8iqvHZmEHbQp4 is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/Fn",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "FnZYRiOZ_tKjaU7i3nA35PnE2SXJyz8iqvHZmEHbQp4.media-type is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/Fn",
+      "count": 1
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/HH",
+      "count": 2
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "HHVA6cjb4Ga9_IL8F4CX6p0muK43BqdV2S_e6SEvsy8 is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/HH",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "HHVA6cjb4Ga9_IL8F4CX6p0muK43BqdV2S_e6SEvsy8.media-type is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/HH",
+      "count": 1
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/Hh",
+      "count": 2
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/Ht",
+      "count": 2
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "HtKLabTgUgMzmHitprz1fdtv2esikbImnvkI1NX7WFQ is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/Ht",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "HtKLabTgUgMzmHitprz1fdtv2esikbImnvkI1NX7WFQ.media-type is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/Ht",
+      "count": 1
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/IB",
+      "count": 2
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/Jm",
+      "count": 2
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/L2",
+      "count": 2
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/Md",
+      "count": 2
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/Mo",
+      "count": 2
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "Moag1MBPJ5qz26fqWCZeKYSS3vugVD791RiBBEJrOxo is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/Mo",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "Moag1MBPJ5qz26fqWCZeKYSS3vugVD791RiBBEJrOxo.media-type is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/Mo",
+      "count": 1
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/P3",
+      "count": 2
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "P3Ee278DAiZl6xO9PXp5ILcRZN2Ed22Pmz_GiiBfVR4 is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/P3",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "P3Ee278DAiZl6xO9PXp5ILcRZN2Ed22Pmz_GiiBfVR4.media-type is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/P3",
+      "count": 1
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/PJ",
+      "count": 2
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "PJ0CqaRtaR0oObKl8qEUIn7iKgDfuTf2ko3J_J_tBug is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/PJ",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "PJ0CqaRtaR0oObKl8qEUIn7iKgDfuTf2ko3J_J_tBug.media-type is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/PJ",
+      "count": 1
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/Pp",
+      "count": 2
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "PpauULcOrgLKXsC_s2EAAW9r2BKshpBtB2AJ81HPUf0 is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/Pp",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "PpauULcOrgLKXsC_s2EAAW9r2BKshpBtB2AJ81HPUf0.media-type is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/Pp",
+      "count": 1
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/Pu",
+      "count": 2
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "PualUR8vaxDkvAWTlOBVftyUTlZe7Kxl2TOSD9XXYnQ is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/Pu",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "PualUR8vaxDkvAWTlOBVftyUTlZe7Kxl2TOSD9XXYnQ.media-type is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/Pu",
+      "count": 1
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/U3",
+      "count": 2
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/Uq",
+      "count": 2
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "UqxQBfOm8A5u1VZG95eUpkEyGmcosg3ZqA8Qo8poB0g is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/Uq",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "UqxQBfOm8A5u1VZG95eUpkEyGmcosg3ZqA8Qo8poB0g.media-type is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/Uq",
+      "count": 1
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/Us",
+      "count": 2
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "UsUU8FnzrjZqcgbwVoQhcjask2IlgJnHP0INLv0fml4 is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/Us",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "UsUU8FnzrjZqcgbwVoQhcjask2IlgJnHP0INLv0fml4.media-type is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/Us",
+      "count": 1
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/VL",
+      "count": 2
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/Yc",
+      "count": 2
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "YceZFNM_jerFqb9dRsy6xrFbxcmGLZkxGuC_R35HZEc is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/Yc",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "YceZFNM_jerFqb9dRsy6xrFbxcmGLZkxGuC_R35HZEc.media-type is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/Yc",
+      "count": 1
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/Yo",
+      "count": 2
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/Zh",
+      "count": 2
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/_R",
+      "count": 2
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/_T",
+      "count": 2
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "_TDLtN6tb1fShN65KajseJnXmW58e0fL2fKZ2FwG3Jc is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/_T",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "_TDLtN6tb1fShN65KajseJnXmW58e0fL2fKZ2FwG3Jc.media-type is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/_T",
+      "count": 1
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/_x",
+      "count": 2
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "_xPl4MXvXCsAu7JQQhfreXEdyB6_ZfidaAsw9bQw5hw is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/_x",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "_xPl4MXvXCsAu7JQQhfreXEdyB6_ZfidaAsw9bQw5hw.media-type is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/_x",
+      "count": 1
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/aZ",
+      "count": 2
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/aq",
+      "count": 2
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/az",
+      "count": 2
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/cz",
+      "count": 2
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "czK99eT9PwXlncBiv_ZFrlsRSdVIE62klf8CB8x6B34 is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/cz",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "czK99eT9PwXlncBiv_ZFrlsRSdVIE62klf8CB8x6B34.media-type is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/cz",
+      "count": 1
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/dG",
+      "count": 2
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "dGIGdPHrz3EW8b92desNbGd0PqS7aGZiTojk8fdwa7g is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/dG",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "dGIGdPHrz3EW8b92desNbGd0PqS7aGZiTojk8fdwa7g.media-type is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/dG",
+      "count": 1
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/dO",
+      "count": 2
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "dO2lyy82i67YiTOuN0TFvtZNitRBk9VjRPikMd_cw0k is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/dO",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "dO2lyy82i67YiTOuN0TFvtZNitRBk9VjRPikMd_cw0k.media-type is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/dO",
+      "count": 1
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/gc",
+      "count": 2
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/i4",
+      "count": 2
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/iE",
+      "count": 2
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "iE5nMRJU8wru2SOXIuUW56Ubyqf0Sm3zaIk5exT0hqk is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/iE",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "iE5nMRJU8wru2SOXIuUW56Ubyqf0Sm3zaIk5exT0hqk.media-type is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/iE",
+      "count": 1
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/iv",
+      "count": 2
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/jW",
+      "count": 2
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "jWG_7c7qtY9iuQ7RC4DOjvAsSDGIg67qVVe3TPSjxLw is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/jW",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "jWG_7c7qtY9iuQ7RC4DOjvAsSDGIg67qVVe3TPSjxLw.media-type is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/jW",
+      "count": 1
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/kE",
+      "count": 2
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "kEfXDaU3I0e2_Akv5SudvPVNly9vYGy7ccNMpxEgaQo is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/kE",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "kEfXDaU3I0e2_Akv5SudvPVNly9vYGy7ccNMpxEgaQo.media-type is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/kE",
+      "count": 1
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/kk",
+      "count": 2
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "kkVVgoc9RnhLqZNq1XYxtKYSFTOJA5m25K4_EuiZjuQ is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/kk",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "kkVVgoc9RnhLqZNq1XYxtKYSFTOJA5m25K4_EuiZjuQ.media-type is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/kk",
+      "count": 1
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/mS",
+      "count": 2
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "mSmRcmLMj56ANsNUKwgyDFvR2bfxtrfiVmV6rLib0_Q is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/mS",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "mSmRcmLMj56ANsNUKwgyDFvR2bfxtrfiVmV6rLib0_Q.media-type is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/mS",
+      "count": 1
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/mT",
+      "count": 2
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "mTSwJMw9KthrpBoQ1INv510ga75DoJP1v_9eqSDw8Hw is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/mT",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "mTSwJMw9KthrpBoQ1INv510ga75DoJP1v_9eqSDw8Hw.media-type is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/mT",
+      "count": 1
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/o1",
+      "count": 2
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/oD",
+      "count": 2
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/p4",
+      "count": 2
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/pY",
+      "count": 2
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "pYkJJa3W0uC9gpJFwDCKWriC91xubZNZBoUIRA1x_Hc is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/pY",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "pYkJJa3W0uC9gpJFwDCKWriC91xubZNZBoUIRA1x_Hc.media-type is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/pY",
+      "count": 1
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/pw",
+      "count": 2
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "pwJc68wWIivLhcNTN9oftheI7DEpcOPoxWsDo7lkYEM is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/pw",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "pwJc68wWIivLhcNTN9oftheI7DEpcOPoxWsDo7lkYEM.media-type is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/pw",
+      "count": 1
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/py",
+      "count": 2
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/qr",
+      "count": 2
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/qz",
+      "count": 2
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "qz8tcfoBdhR_2EYGOKmSg2yLOH0yzoSKFyCjHWuluig is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/qz",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "qz8tcfoBdhR_2EYGOKmSg2yLOH0yzoSKFyCjHWuluig.media-type is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/qz",
+      "count": 1
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/sX",
+      "count": 2
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/uN",
+      "count": 2
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "uN_KD8_IBdkIt0wfJjndRCCzanCNiCmVsGbKW2920WI is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/uN",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "uN_KD8_IBdkIt0wfJjndRCCzanCNiCmVsGbKW2920WI.media-type is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/uN",
+      "count": 1
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/uP",
+      "count": 2
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/up",
+      "count": 2
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/vH",
+      "count": 2
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/vt",
+      "count": 2
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/vy",
+      "count": 2
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "vyFWFiU7eLROMwCyS0fIjcDLQr1BYcJoRhYpyXJx65M is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/vy",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "vyFWFiU7eLROMwCyS0fIjcDLQr1BYcJoRhYpyXJx65M.media-type is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/vy",
+      "count": 1
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/w6",
+      "count": 2
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/xS",
+      "count": 2
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "xS3_kz5rnBmhzYFeg75mJa6P8Kd_Qwn4QZTlpVYwKug is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/xS",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "xS3_kz5rnBmhzYFeg75mJa6P8Kd_Qwn4QZTlpVYwKug.media-type is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/xS",
+      "count": 1
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/xc",
+      "count": 2
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "xcHd9FY4_ToOfN1HkIXBgE74yJ0WcWyY4bozOIdRi0g is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/xc",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "xcHd9FY4_ToOfN1HkIXBgE74yJ0WcWyY4bozOIdRi0g.media-type is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/xc",
+      "count": 1
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/yj",
+      "count": 2
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "yjCkEWkvX1JPbZK9w8RNsnKZla41sBXX8rpUP6pc_x4 is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/yj",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "yjCkEWkvX1JPbZK9w8RNsnKZla41sBXX8rpUP6pc_x4.media-type is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/immutable/sha-256/yj",
+      "count": 1
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/indexes/rwil-category/sha-256/66G_Snpcfud8sn0XRa3i1ZoSW3Uyt7A0EZQKWaPZ0dE",
+      "count": 10
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "66G_Snpcfud8sn0XRa3i1ZoSW3Uyt7A0EZQKWaPZ0dE is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/indexes/rwil-category/sha-256/66G_Snpcfud8sn0XRa3i1ZoSW3Uyt7A0EZQKWaPZ0dE",
+      "count": 10
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/indexes/rwil-category/sha-256/DWS8yVTmzQOBuVXl07VlWPcU4Qa9g90xjXls3DXUHFM",
+      "count": 10
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "DWS8yVTmzQOBuVXl07VlWPcU4Qa9g90xjXls3DXUHFM is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/indexes/rwil-category/sha-256/DWS8yVTmzQOBuVXl07VlWPcU4Qa9g90xjXls3DXUHFM",
+      "count": 10
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/indexes/rwil-category/sha-256/l6UzmxL0RSlCF1ukwB0mtpssI7WDfflPITMzqHmAGls",
+      "count": 4
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "l6UzmxL0RSlCF1ukwB0mtpssI7WDfflPITMzqHmAGls is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/indexes/rwil-category/sha-256/l6UzmxL0RSlCF1ukwB0mtpssI7WDfflPITMzqHmAGls",
+      "count": 4
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/indexes/rwil-category/sha-256/wtAZGmSsZEd5GxtdVLTXAWns20wu7T1_jBoLCT5XI3k",
+      "count": 2
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "wtAZGmSsZEd5GxtdVLTXAWns20wu7T1_jBoLCT5XI3k is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/indexes/rwil-category/sha-256/wtAZGmSsZEd5GxtdVLTXAWns20wu7T1_jBoLCT5XI3k",
+      "count": 2
+    },
+    {
+      "rule": "data-fits-no-tier",
+      "reason": "data/witness-journal-custody is not under a tier the data law files (data/logs/service-logs, data/state, data/records/service-records)",
+      "directory": "data/witness-journal-custody/objects/indexes/rwil-category/sha-256/yc28JyCGgSn_ut6dVU9RFWv9zCAO8dh5Bu-xl8fkDYs",
+      "count": 50
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "0cHwcU9B0eMs6MQ2YCNyYaHk5nWjmgwi4Em64ZXN_A4.json is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/indexes/rwil-category/sha-256/yc28JyCGgSn_ut6dVU9RFWv9zCAO8dh5Bu-xl8fkDYs",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "4QzvECrKiF_mTWc0yiY2FrYsbSlcB9iJCugziLHNL9A.json is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/indexes/rwil-category/sha-256/yc28JyCGgSn_ut6dVU9RFWv9zCAO8dh5Bu-xl8fkDYs",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "9LSe1vJSkGD6opkLauRgEkf_0rIhTnXdjgAY8XJCE80.json is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/indexes/rwil-category/sha-256/yc28JyCGgSn_ut6dVU9RFWv9zCAO8dh5Bu-xl8fkDYs",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "HtKLabTgUgMzmHitprz1fdtv2esikbImnvkI1NX7WFQ.json is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/indexes/rwil-category/sha-256/yc28JyCGgSn_ut6dVU9RFWv9zCAO8dh5Bu-xl8fkDYs",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "Moag1MBPJ5qz26fqWCZeKYSS3vugVD791RiBBEJrOxo.json is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/indexes/rwil-category/sha-256/yc28JyCGgSn_ut6dVU9RFWv9zCAO8dh5Bu-xl8fkDYs",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "PJ0CqaRtaR0oObKl8qEUIn7iKgDfuTf2ko3J_J_tBug.json is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/indexes/rwil-category/sha-256/yc28JyCGgSn_ut6dVU9RFWv9zCAO8dh5Bu-xl8fkDYs",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "PpauULcOrgLKXsC_s2EAAW9r2BKshpBtB2AJ81HPUf0.json is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/indexes/rwil-category/sha-256/yc28JyCGgSn_ut6dVU9RFWv9zCAO8dh5Bu-xl8fkDYs",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "UqxQBfOm8A5u1VZG95eUpkEyGmcosg3ZqA8Qo8poB0g.json is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/indexes/rwil-category/sha-256/yc28JyCGgSn_ut6dVU9RFWv9zCAO8dh5Bu-xl8fkDYs",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "UsUU8FnzrjZqcgbwVoQhcjask2IlgJnHP0INLv0fml4.json is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/indexes/rwil-category/sha-256/yc28JyCGgSn_ut6dVU9RFWv9zCAO8dh5Bu-xl8fkDYs",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "_xPl4MXvXCsAu7JQQhfreXEdyB6_ZfidaAsw9bQw5hw.json is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/indexes/rwil-category/sha-256/yc28JyCGgSn_ut6dVU9RFWv9zCAO8dh5Bu-xl8fkDYs",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "iE5nMRJU8wru2SOXIuUW56Ubyqf0Sm3zaIk5exT0hqk.json is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/indexes/rwil-category/sha-256/yc28JyCGgSn_ut6dVU9RFWv9zCAO8dh5Bu-xl8fkDYs",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "qz8tcfoBdhR_2EYGOKmSg2yLOH0yzoSKFyCjHWuluig.json is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/indexes/rwil-category/sha-256/yc28JyCGgSn_ut6dVU9RFWv9zCAO8dh5Bu-xl8fkDYs",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "uN_KD8_IBdkIt0wfJjndRCCzanCNiCmVsGbKW2920WI.json is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/indexes/rwil-category/sha-256/yc28JyCGgSn_ut6dVU9RFWv9zCAO8dh5Bu-xl8fkDYs",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "xcHd9FY4_ToOfN1HkIXBgE74yJ0WcWyY4bozOIdRi0g.json is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/indexes/rwil-category/sha-256/yc28JyCGgSn_ut6dVU9RFWv9zCAO8dh5Bu-xl8fkDYs",
+      "count": 1
+    },
+    {
+      "rule": "named-not-hashed",
+      "reason": "yjCkEWkvX1JPbZK9w8RNsnKZla41sBXX8rpUP6pc_x4.json is an opaque hash, not a name",
+      "directory": "data/witness-journal-custody/objects/indexes/rwil-category/sha-256/yc28JyCGgSn_ut6dVU9RFWv9zCAO8dh5Bu-xl8fkDYs",
+      "count": 1
+    }
+  ]
+}
