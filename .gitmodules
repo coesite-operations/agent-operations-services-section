@@ -3,7 +3,7 @@
 	url = https://github.com/harmonious-union/officer-context-compilation-service.git
 [submodule "services/agent-services-section/services/enterprise-services-section"]
 	path = services/enterprise-services-section
-	url = https://github.com/emsenn/enterprise-services-section.git
+	url = https://github.com/561-group/internal-services-section.git
 [submodule "services/agent-services-section/services/record-improvement-observation-service"]
 	path = services/record-improvement-observation-service
 	url = https://github.com/coesite-operations/record-improvement-observation-service.git
