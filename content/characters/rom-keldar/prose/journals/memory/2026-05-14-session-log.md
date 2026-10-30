@@ -1,11 +1,11 @@
 ---
 name: session-log-2026-05-14
-description: Log of the 2026-05-14 rom-keldar session with emsenn. Roughly 20 corrections from emsenn, captured as failure-pattern memos in `2026-05-14-lessons-from-this-session.md`. Substantive deposits captured in `2026-05-14-math-primitives-deposited.md` and `2026-05-14-convention-duplication-finding.md`.
+description: Historical 14 May session log and later boot-stage completion, with source links, attributed corrections, separate results and dated unresolved work; not a current operational status.
 ---
 
 # 2026-05-14 session log
 
-## What this session accomplished
+## Earlier session: corrections and deposits
 
 This was a difficult session — emsenn corrected the rom-keldar roughly 20 times across various failure patterns (importing abstractions, treating spec docs as authoritative, inventing categorical structure, cramming definitions, scaffolding cruft, stripping records to nothing, asking instead of doing, hoarding context in inference).
 The full pattern list is in `2026-05-14-lessons-from-this-session.md`.
@@ -45,7 +45,7 @@ Plus the bloated character-agent engineering survey in this directory's `work/in
 - "Frontmatter is structured predication presentation, not metadata."
 - "We have not named [the morphisms] — that's why you need coherent records."
 
-## What's still pending
+## Earlier checkpoint: pending work (historical, not current)
 
 Files in this directory that are still bloated/wrong from earlier in this session and not yet improved:
 
@@ -61,3 +61,17 @@ Files in this directory that are still bloated/wrong from earlier in this sessio
 
 Future iterations should improve these.
 The next session inherits them as draft state; improving them is the iterative work that makes each session leave the directory better than it found it.
+
+## Later boot-stage completion — same date, after compaction
+
+The [later point-in-time completion report](https://github.com/coesite-operations/agent-operations-services-section/blob/e6dfd9e3c9cab64ba202acf432e837df6e310109/content/characters/rom-keldar/prose/journals/memory/2026-05-14-boot-session-completion.md) describes a subsequent checkpoint, not a second independent operation. It claims that the agent:
+
+- removed **496** generated `questions/` files, retaining `.gitkeep`;
+- removed ungrounded `type: surface-file` and `class: static` frontmatter from `SOUL.md.tmpl` and other character surfaces; changed `surface-files.md` to prohibit those keys; and updated `MEMORY.md`, `TOOLS.md` and `AGENTS.md` with contemporary structure, skill and MCP context;
+- wrote separate identity and heartbeat rendering skills/scripts; the reported heartbeat design lists `work/tasks/*.md` with `status: open` at install time, **not a verified present installation**;
+- migrated `persona` to `character`, corrected the `auditing-terms-vs-objects-inconsistency` and `synthesizing-agent-definition` tasks to the then-current **structures/transformers/concepts** direction, and reported completed tasks closed;
+- reported a contemporaneous MCP health check and release `0.2.0+boot` at `work/governance/records/releases/2026.05.14+boot.jsonl`. Neither is proof of a current host or independently verified release bytes.
+
+At this later checkpoint the **one reported remaining task** was `consolidating-duplicate-filings-of-objects-to-terms-migration`, needing a disposition for external source records. The previous pending list describes the *earlier* checkpoint only; neither list is current Work.
+
+**Separate custody retained:** the [correction lessons](2026-05-14-lessons-from-this-session.md), [mathematical-source inventory](2026-05-14-math-primitives-deposited.md), [convention finding](2026-05-14-convention-duplication-finding.md) and [founding orientation](2026-05-14-founding-session-additions.md) carry distinct explanatory material. The retired snapshot remains in Git at the linked original revision; no separate redirect or copy is needed.
