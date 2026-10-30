@@ -1,0 +1,120 @@
+# ScheduleDelivery Service
+
+**Historical Agent Operations source, not a current runbook.** [Red Cup Engineering](https://github.com/red-cup-engineering/scheduled-activity-delivery-service) owns the executable driver and schedule/receipt law; the [dedicated Coesite subsection](https://github.com/coesite-operations/scheduled-activity-delivery-operations-services-section) owns instance data, Agent Cards and deployment units. This file retains distinct earlier carrier constraints and recovery observations rather than a second manual. Verify old paths, permissions and commands against those owners before use. It does not establish an installed timer or accepted Run. Original blob: `d9accc20656a49e4fb4351b561faeb584db6ebea`.
+
+## Original carrier-specific conditions (historical)
+
+The current direct-package Koios
+carrier does not use that ActivityPub transport configuration: its isolated
+environment exposes only a local job manifest, public verification-key maps, a
+read-only continuity baseline, and fixed candidate/replay roots to the selected
+package bin.
+
+A self-contained bin needs no further declaration. A package that uses local
+runtime modules must declare each operation's additional regular files in
+`scheduledActivityDelivery.runtimeFiles`, keyed by operation name; the selected
+bin is implicit. Every relative static import must name one of those files.
+The carrier rejects bare and dynamic imports, so it never treats ambient
+`node_modules` resolution as part of a customer schedule. It captures and
+read-only mounts each declared file by raw digest before invoking the bin.
+
+## Bounded projections and legacy custody
+
+`run-due` reads current active-schedule projections and direct occurrence
+reservations; it does not snapshot the append-only schedule/receipt history or
+walk every historic attempt. One tick considers at most 32 active schedules,
+invokes at most three targets concurrently, and rotates both dispatch and
+interrupted-attempt recovery windows so later work is not starved. New current
+attempt cells and their exact semantic identities share one encoding, while
+historic relational-RMN cells remain admitted read-only.
+
+Cold Red Gate's retired `clockkeeper-service` used an older JSONL/RMN/RWIL
+custody layout and old literal contracts. Preserve and import it as historical
+evidence only:
+
+```sh
+node scripts/import-legacy-clockkeeper.mjs \
+  --source-root /explicit/quiesced-copy/data \
+  --destination-root /explicit/archive-journal
+```
+
+The importer validates the complete source before its first destination write,
+uses date-partitioned journal batches, is idempotent, and writes only beneath
+`legacy-clockkeeper/archive/v1`. It never maps old schedules into the current
+contract, creates active projections, or invokes delivery. A current schedule
+must be solicited and accepted again against the exact current target package
+and operation.
+
+## Cold Red Gate recovery boundary
+
+`content/deployments/cold-red-gate/install-and-verify.sh` installs the user
+service and timer but never starts or enables either. It refuses to replace an
+enabled or currently active timer. In its normal form it requires the complete local
+environment: a job manifest, public verification-key maps, a read-only
+continuity baseline, and fixed candidate/replay roots from
+`~/.config/emsenn/scheduled-activity-delivery.env`; copy the adjacent
+`.env.example` and replace its six paths. It contains no credential, schedule,
+or signing material and is not repository content. The manifest and key maps
+must be regular non-symlink readable files; the baseline must be an absolute,
+real non-symlink readable/searchable directory; candidate and replay roots must
+also be writable by the service account.
+
+For a deliberately inert package rollout before environment or schedule
+authority exists, use `sh install-and-verify.sh --staged`. It runs
+`--structural-only` preflight, validates the package, dependency closure, and
+unit/timer, installs them, and daemon-reloads systemd. Structural success is
+explicitly not activation readiness and cannot enable or start the timer.
+
+On the VPS, after placing the service at
+`~/services/scheduled-activity-delivery-service` and running `npm ci`, run:
+
+```sh
+chmod 600 ~/.config/emsenn/scheduled-activity-delivery.env
+sh ~/services/scheduled-activity-delivery-service/content/deployments/cold-red-gate/install-and-verify.sh
+node ~/services/scheduled-activity-delivery-service/scripts/cold-red-gate-preflight.mjs \
+  --service-root ~/services/scheduled-activity-delivery-service \
+  --require-koios-schedule
+```
+
+The final command is the enablement gate. It verifies the exact package bin and
+Node ESM dependency closure, the unit/timer binding, the narrow local Koios
+runtime configuration boundary, a no-write plan of the currently selected
+signed Koios job, and an accepted active Koios schedule bound to the same exact
+runtime closure. It also verifies the three fixed isolation executables used by
+live delivery (`timeout`, `nice`, and `bwrap`) and runs a
+five-second, zero-effect Bubblewrap assay: a read-only host root, fresh
+`/proc`, `/dev`, and `/tmp`, plus a read-only overlay, and requires the kernel
+to report all five capability sets empty with `NoNewPrivs=1`. Each actual target starts from that read-only root;
+only the provider-configured Koios output and replay roots are remounted
+read-write, by their fixed environment names. Customer schedules never select a
+host path. Structural-only rollout performs this host-prerequisite check but
+never requires Koios configuration or schedule authority. It exits nonzero if
+any required condition is absent. A passing result
+is evidence for a separate,
+deliberate `systemctl --user enable --now
+scheduled-activity-delivery-run-due.timer`; this repository does not perform
+that state change.
+
+## Bare Cedar Fog deployment boundary
+
+Bare Cedar Fog uses the current repository checkout as its service carrier.
+Its installer has the same non-activation rule as the VPS installer: it may
+verify and install exact repository units, but it never starts or enables the
+timer. A staged install proves only the package, Node dependency closure,
+systemd unit, timer, and host-coordinate structure:
+
+```sh
+sh content/deployments/bare-cedar-fog/install-and-verify.sh --staged
+```
+
+Before a separate activation decision, run the full gate:
+
+```sh
+node scripts/bare-cedar-fog-preflight.mjs
+```
+
+The full gate reads the durable schedule journal without reserving an
+occurrence or invoking a target. It requires at least one accepted active live
+schedule and re-inspects each selected target runtime closure. Historical
+receipts do not authorize activation, and an empty active-schedule projection
+is a refusal rather than permission to run a purposeless timer.
