@@ -18,5 +18,84 @@
     "turning a repeatedly winning provider into a central appointing authority",
     "equating a supplied character or ephemeral model call with an officer",
     "hiding uncontracted or refused receivers inside a total-demand claim"
-  ]
+  ],
+  "professionalFormationBoundary": {
+    "scope": "LocalOfficerSupplyNecessity and LocallyGluedAcademyDemand establish receiver-local officer-supply need and awarded providers. They do not determine whether a staffed enterprise needs further formation, requalification, shared practice, or succession. The Academy is a continuing institution of situated professional learning, examination and practice transmission, not a central personnel authority.",
+    "sourceHomes": {
+      "formationDoctrine": "content/doctrine/agency-office-formation.json",
+      "commonCore": "content/curricula/union-officer-common-core.json",
+      "qualificationAndRequalification": "content/services/qualification-and-requalification.json",
+      "situatedPracticum": "lib/management/skills/arranging-customer-local-practicum/SKILL.md",
+      "succession": "lib/management/skills/recording-succession-practice/SKILL.md",
+      "academyLearning": "content/services/academy-recursive-self-improvement.json",
+      "sourceExecutable": "red-cup-engineering/union-officer-academy-engine/src/local-academy-necessity.mjs"
+    },
+    "receiverLocalNeedReadings": [
+      {
+        "kind": "officer-supply",
+        "evidence": "A complete, current receiver-owned census of the exact office epoch lacks a qualified, recognized and inducted incumbent.",
+        "response": "Existing officer-supply derivation, neutral tender and receiver-controlled award; no forced Academy selection."
+      },
+      {
+        "kind": "situated-formation",
+        "evidence": "A receiver identifies a specific judgment, skill or accountable-performance gap even with a current incumbent.",
+        "response": "Existing formation and customer-local practicum; no new vacancy, relief or automatic credential."
+      },
+      {
+        "kind": "requalification",
+        "evidence": "An evidenced change of office, curriculum, assessment, jurisdiction or execution substrate invalidates the applicability of an earlier competence witness.",
+        "response": "Use existing baseline and formation-epoch gaps; preserve original qualifications and examine only the warranted bridge."
+      },
+      {
+        "kind": "collective-practice",
+        "evidence": "Qualified participants cannot yet demonstrate a lawful joint Work handoff, independent review or nonconflicting crew performance.",
+        "response": "Use existing situated and Voidfleet group exercises; distinct masks or model sessions do not establish independent agents."
+      },
+      {
+        "kind": "succession-practice",
+        "evidence": "A receiver-held continuing duty lacks a witnessed lawful handover or backup during interruption, despite an occupied office.",
+        "response": "Existing succession exercises and receiver authority; the Academy neither appoints a successor nor relieves an incumbent."
+      },
+      {
+        "kind": "external-capability-obstruction",
+        "evidence": "Duty performance is blocked by unavailable source, executor, provider, rights, money or runtime, not an evidenced educational deficit.",
+        "response": "Retain original Work and route its upstream CapabilityDemand or Engineering/Operations correction; do not prescribe retraining as a substitute."
+      }
+    ],
+    "evidenceLaws": [
+      "A missing, outdated or incomplete census is unknown, not proof of a vacancy or of staffing sufficiency. Only the receiver can validate its local premises and authorize a need.",
+      "Competence, lawful authority, and installed operational capacity are different claims with different assayers and recipients; qualification is not a guarantee of service delivery.",
+      "Learning requires granted participation in situated practice and independently examined demonstrations, including refusal, handoff, uncertainty and teaching-back; attendance, model choice and eloquent simulation are insufficient.",
+      "No language, sensory modality, body, disability profile or model family is a default qualification requirement: derive essential competencies and accessible modes of demonstration from the actual receiver situation.",
+      "Professional jurisdiction remains contestable and learning must admit correction from affected receivers and practitioners; Academy supply success does not make its curriculum a monopoly.",
+      "Academy learning is admitted only through its existing controlled successor doctrine, formation baseline, cohort and AcademyKnowledgeEpoch methods, not by mutating qualifications or customer Work."
+    ],
+    "counterexamplesForIndependentReceiving": [
+      {
+        "situation": "complete census with qualified incumbent but new duty demands unexamined skill",
+        "expected": "supply not needed; formation or requalification remains a separate admissible demand"
+      },
+      {
+        "situation": "incomplete current incumbency census",
+        "expected": "unknown, neither automatic vacancy nor automatic sufficiency"
+      },
+      {
+        "situation": "qualified incumbent blocked solely by absent executor",
+        "expected": "upstream capability obstruction, not compulsory retraining"
+      },
+      {
+        "situation": "multiple qualified participants share one actual agent runtime and claim independent review",
+        "expected": "collective-practice and assessor-independence refusal"
+      },
+      {
+        "situation": "formed candidate receives an Academy qualification but the receiving office declines induction",
+        "expected": "Academy evidence remains; no appointment, Work discharge or receiver accepted outcome"
+      },
+      {
+        "situation": "equivalent situated performance in another accessible language or medium",
+        "expected": "evaluate the actual competency, not an ungrounded default language or sensory channel"
+      }
+    ],
+    "statusBoundary": "These are conceptual need distinctions and receiving discriminators, not new executable operation schemas, qualifications, appointments, permissions, installed abilities or accepted downstream Work. Any changed software must pass the original Requirement-to-generated-Engineering method and independent real-consumer receiving."
+  }
 }
