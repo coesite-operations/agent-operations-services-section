@@ -275,44 +275,8 @@ value terms. The Academy neither preselects the section nor writes its territory
 
 ## Operation-scoped ChatGPT connector triage — Engineering-owned
 
-The original diagnostic and tests now live **only** in Red Cup's existing Agent Harness Computer System Engineering package:
-`@red-cup-engineering/agent-harness-computer-system-engineering-services-section/connector-call-evidence`.
-[Engineering PR #418](https://github.com/red-cup-engineering/computer-engineering-services-section/pull/418)
-received the exact source and original adversarial test (Git blobs
-`3c6baeecf9e07bddb164a0160692dd583206a2a1` and
-`795fbf2b4355ff4837d3ef132034588704e3d5b5`);
-[Operations PR #189](https://github.com/coesite-operations/operations-services-section/pull/189)
-already removed the duplicate Academy source, test, export and
-`carrier-recovery.mjs` re-export. Never recreate or import those old
-`services/agent-services-section/src/connector-call-evidence.mjs` or local test paths.
-
-Supply the Engineering diagnostic with issuer-observed dispatch, provider
-reach, HTTP status, host refusal and independent effect readback. An internal
-exception is not proof of provider rejection; a successful sibling call cannot
-verify a failed operation. A pre-dispatch safety refusal holds that exact
-effect, not permission for a workaround. Read back uncertain writes before
-replay. This remains a pure source diagnostic, not a live adapter or
-permission/deployment proof. The unresolved live connector catalog incident is
-[Engineering #5](https://github.com/red-cup-engineering/engineering-services-section/issues/5).
-
-Academy `npm test` now selects **all surviving local regression tests**,
-including the formerly omitted FOUR-charge projection. The original connector
-diagnostic test belongs to **Agent Harness Engineering's** suite.
+[Computer Engineering PR #418](https://github.com/red-cup-engineering/computer-engineering-services-section/pull/418) moved the original connector diagnostic and adversarial tests to [Agent Harness Engineering](https://github.com/red-cup-engineering/agent-harness-computer-system-engineering-services-section) as `connector-call-evidence`; [Coesite PR #189](https://github.com/coesite-operations/operations-services-section/pull/189) retired the Academy copies. The diagnostic separately evaluates observed dispatch, provider reach, HTTP response, host refusal and independent effect readback. An internal exception does not prove provider rejection; a sibling call does not verify the failed operation; a safety refusal forbids a workaround; an uncertain write requires readback before retry. The owning code and tests belong upstream, and the actual connector incident remains [Engineering #5](https://github.com/red-cup-engineering/engineering-services-section/issues/5). None of this grants current host rights or deployed behavior.
 
 ## Allocation census source guard
 
-`./allocation-readiness` (`src/allocation-readiness.mjs`) checks a complete set
-of dated `metroplat.work.allocation-candidates` pages before summarizing the
-reported allocation states. Pass each response with the cursor used to request
-it, and pass `expectedDate` when the caller requires a particular calendar
-date. The guard rejects impossible dates, sparse lists, duplicate scopes,
-incoherent page counts and non-object candidates. Its candidate boundary
-follows the wire contract's object type; it does not introduce a provider-id
-or admission schema. Existing work/skill reasons and choice-required,
-already-allocated and incomplete outcomes remain distinct.
-
-The package check, test and verify commands enroll the guard regression suite.
-Passing these source checks does not establish deployed wiring, current
-provider admission, operational capacity, institutional qualification or
-receiver acceptance. The guard only summarizes the supplied observation; it
-does not authorize, allocate, seat or dispatch a worker.
+[The original MetroPlat allocation-readiness Engineering service](https://github.com/red-cup-engineering/union-officer-academy-engine/blob/main/services/metroplat-allocation-readiness-service/README.md) owns `assessAllocationReadiness`, `planNonoverlappingAllocations`, the native tests and the bounded matching/Hall-deficiency witness. The Academy engine's `src/allocation-readiness.mjs` only re-exports these functions; Coesite keeps no executable copy. The library reads complete, dated, cursor-qualified allocation-candidate pages, accepts an optional `expectedDate`, refuses invalid/incomplete/duplicate source readings and distinguishes choice-required, already-allocated and incomplete outcomes. It does **not** appoint, allocate, dispatch or pay an officer. Passing source checks does not demonstrate installed or independently received operations.
