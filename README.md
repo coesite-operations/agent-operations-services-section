@@ -107,7 +107,7 @@ packs—while naming their owners, digests, contracts, omissions, and authority.
 
 The Academy's five internal governing offices are defined in `lib/management/roster.json` and named below. Its **products**, not its staff, are the professional repertoire (`content/professional-repertoire/`, `lib/professional-repertoire/`) and character corps (`content/characters/`). The receiving enterprises separately own specialist offices, protected context and appointments.
 
-Historical Executive Office and character-store copies remain digest-bound projections during consumer migration, not rival owners. The [Academy engine](https://github.com/red-cup-engineering/union-officer-academy-engine) verifies canonical coverage and projection drift; a passing verification does not imply receiver induction.
+Historical Executive Office and character-store copies remain digest-bound projections during consumer migration, not rival owners. The [Academy engine](https://github.com/red-cup-engineering/union-officer-academy-engine) rejects unclassified live carriers, missing Academy canonical law and drifting projections; passing verification still does not imply receiver induction.
 
 ## The Academy's organs and operating swarm
 
