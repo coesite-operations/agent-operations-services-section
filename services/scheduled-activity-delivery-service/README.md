@@ -1,8 +1,6 @@
 # ScheduleDelivery Service
 
-**Historical Agent Operations carrier, not the current implementation or deployment guide.** This directory retains only its original explanatory README. [Red Cup Engineering](https://github.com/red-cup-engineering/scheduled-activity-delivery-service) now owns the executable ScheduleDelivery service, commands and schedule/receipt law. The [dedicated Coesite Operations subsection](https://github.com/coesite-operations/scheduled-activity-delivery-operations-services-section) owns the instance data, cards and deployment declarations. Their current sources replace the duplicated portable-service introduction, schedule-renewal explanation and old local CLI examples previously copied here.
-
-**Historical evidence retained below:** The bounded projection, direct-package Koios transport and runtime-file rules and the two host recovery boundaries were recorded with this original carrier. They require current source, host and recipient requalification before execution; the existence of this document does not prove an installed timer, a current credential, a permissible customer activity or an accepted Run. Original file blob: `d9accc20656a49e4fb4351b561faeb584db6ebea`.
+**Historical Agent Operations source, not a current runbook.** [Red Cup Engineering](https://github.com/red-cup-engineering/scheduled-activity-delivery-service) owns the executable driver and schedule/receipt law; the [dedicated Coesite subsection](https://github.com/coesite-operations/scheduled-activity-delivery-operations-services-section) owns instance data, Agent Cards and deployment units. This file retains distinct earlier carrier constraints and recovery observations rather than a second manual. Verify old paths, permissions and commands against those owners before use. It does not establish an installed timer or accepted Run. Original blob: `d9accc20656a49e4fb4351b561faeb584db6ebea`.
 
 ## Original carrier-specific conditions (historical)
 
