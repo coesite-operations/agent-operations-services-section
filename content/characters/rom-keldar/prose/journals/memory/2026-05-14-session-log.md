@@ -62,19 +62,16 @@ Files in this directory that are still bloated/wrong from earlier in this sessio
 Future iterations should improve these.
 The next session inherits them as draft state; improving them is the iterative work that makes each session leave the directory better than it found it.
 
-## Later boot-stage completion (same date; post-compaction)
+## Later boot-stage completion — same date, after compaction
 
-The [separate later completion report at this exact pre-consolidation revision](https://github.com/coesite-operations/agent-operations-services-section/blob/e6dfd9e3c9cab64ba202acf432e837df6e310109/content/characters/rom-keldar/prose/journals/memory/2026-05-14-boot-session-completion.md) was another **point-in-time state summary**, not a distinct explanatory concept. It claimed that after the preceding checkpoint, the agent:
+The [later point-in-time completion report](https://github.com/coesite-operations/agent-operations-services-section/blob/e6dfd9e3c9cab64ba202acf432e837df6e310109/content/characters/rom-keldar/prose/journals/memory/2026-05-14-boot-session-completion.md) describes a subsequent checkpoint, not a second independent operation. It claims that the agent:
 
-- removed 496 generated `questions/` files and retained an empty-directory marker;
-- removed ungrounded `type: surface-file` and `class: static` declarations from the `SOUL.md.tmpl` template and other character surfaces, then updated `surface-files.md` to forbid those keys;
-- revised the character store's `MEMORY.md`, `TOOLS.md` and `AGENTS.md` (including source-path inventory, actual MCP configuration, skill descriptions and interaction constraints), and changed the scoped term `persona` to `character`;
-- reported new identity- and heartbeat-rendering skills/scripts, with `HEARTBEAT.md` rendered from `work/tasks/*.md` entries marked `status: open` at installation; this describes a historical design, **not proof the current renderer is installed**;
-- corrected `auditing-terms-vs-objects-inconsistency` and `synthesizing-agent-definition` records to use the then-current **structures/transformers/concepts** vocabulary instead of the earlier objects→terms migration, and marked the tasks it believed completed;
-- reported an MCP server health response and client connection history **at that time**, and a cut of version `0.2.0+boot` with record `work/governance/records/releases/2026.05.14+boot.jsonl`. This is **an attributed historical release claim**, not current host readiness or independently inspected release bytes.
+- removed **496** generated `questions/` files, retaining `.gitkeep`;
+- removed ungrounded `type: surface-file` and `class: static` frontmatter from `SOUL.md.tmpl` and other character surfaces; changed `surface-files.md` to prohibit those keys; and updated `MEMORY.md`, `TOOLS.md` and `AGENTS.md` with contemporary structure, skill and MCP context;
+- wrote separate identity and heartbeat rendering skills/scripts; the reported heartbeat design lists `work/tasks/*.md` with `status: open` at install time, **not a verified present installation**;
+- migrated `persona` to `character`, corrected the `auditing-terms-vs-objects-inconsistency` and `synthesizing-agent-definition` tasks to the then-current **structures/transformers/concepts** direction, and reported completed tasks closed;
+- reported a contemporaneous MCP health check and release `0.2.0+boot` at `work/governance/records/releases/2026.05.14+boot.jsonl`. Neither is proof of a current host or independently verified release bytes.
 
-At the later checkpoint, the author reported **one** remaining open item, `consolidating-duplicate-filings-of-objects-to-terms-migration`, awaiting a justified disposition for external source records. That later observation supersedes the earlier checkpoint's local task list **only for that 2026 session**, not for today's Work board.
+At this later checkpoint the **one reported remaining task** was `consolidating-duplicate-filings-of-objects-to-terms-migration`, needing a disposition for external source records. The previous pending list describes the *earlier* checkpoint only; neither list is current Work.
 
-## Reading and custody
-
-This retained account is the historical session-level locator; the separate [correction lessons](2026-05-14-lessons-from-this-session.md), [mathematical-source inventory](2026-05-14-math-primitives-deposited.md), [convention duplication finding](2026-05-14-convention-duplication-finding.md), and [founding-orientation record](2026-05-14-founding-session-additions.md) each still explain distinct material and have **not** been retired. The superseded completion snapshot remains available through the pinned Git revision above. Do not infer an active release, actual office authority, present file structure or current unresolved tasks from either May 14 summary.
+**Separate custody retained:** the [correction lessons](2026-05-14-lessons-from-this-session.md), [mathematical-source inventory](2026-05-14-math-primitives-deposited.md), [convention finding](2026-05-14-convention-duplication-finding.md) and [founding orientation](2026-05-14-founding-session-additions.md) carry distinct explanatory material. The retired snapshot remains in Git at the linked original revision; no separate redirect or copy is needed.
