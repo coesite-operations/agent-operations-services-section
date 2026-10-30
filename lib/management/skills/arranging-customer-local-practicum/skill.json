@@ -10,7 +10,8 @@
     "an original FormationRequest, Enrollment, FormationBaseline, customer office epoch and source-owned Work identity are resolved before field practice",
     "the actual customer officer records a bounded observation or simulation grant, protected-context and egress terms, stop conditions, budget, and a separate eligible examiner",
     "a live practitioner Session, installed and available provider, and customer-owned operation permission are evidenced before any real customer effect; missing material yields a typed refusal",
-    "the placement has one lawful positive case plus risk-relevant denial, interruption, replay, or handoff controls grounded in its real provider contract"
+    "the placement has one lawful positive case plus risk-relevant denial, interruption, replay, or handoff controls grounded in its real provider contract",
+    "the WIT source event, customer-owned ACK admission or explicit refusal, independently retained source selection and permitted ATT operation are separately identified without inventing a new Work or a live Session"
   ],
   "postconditions": [
     "one field placement whose practice is real and whose authority remains customer-owned",
@@ -18,7 +19,8 @@
     "the original customer Work identity and prior event/effect head survive interruption, refusal and replay without duplicate Work or an unlicensed side effect",
     "every admitted TrainingEvent is tied to the exact enrollment, baseline, bundle and candidate identity and carries digest-verifiable evidence, a declared outcome and customerMutation false",
     "an independent examiner receives complete case-level evidence for the existing assessing-a-candidate process without the practitioner issuing an Assessment or Qualification",
-    "source, session, operation and beneficiary receiving remain separate observed states, with missing and contradictory evidence preserved"
+    "source, session, operation and beneficiary receiving remain separate observed states, with missing and contradictory evidence preserved",
+    "each event-driven practice case preserves WIT, ACK, ATT or withheld-ATT evidence, its original Work and stable independent selection; changing the candidate cannot also rewrite the receiver's expected source"
   ],
   "witness": {
     "records": [
@@ -26,7 +28,8 @@
       "source-qualified FormationRequest, Enrollment, FormationBaseline, customer Office and original Work identities",
       "customer-granted practice and observation bounds, provider contract, available executor and Session witness or typed refusal",
       "TrainingEvent evidence artifacts and digests, case IDs, interruption and replay comparison, customerMutation false, or existing FormationRefusal",
-      "independent customer-operation effect/denial receipt and handoff for a separately authored Assessment"
+      "independent customer-operation effect/denial receipt and handoff for a separately authored Assessment",
+      "source-pinned WIT event, customer admission/refusal ACK, independently selected source, positive and alias-substitution negative controls, actual permitted ATT or withheld effect and separate beneficiary receiving"
     ]
   },
   "closure-kind": "procedure",
