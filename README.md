@@ -105,20 +105,9 @@ packs—while naming their owners, digests, contracts, omissions, and authority.
 
 ## What the Academy owns
 
-The Academy has three deliberately separate populations:
+The Academy's five internal governing offices are defined in `lib/management/roster.json` and named below. Its **products**, not its staff, are the professional repertoire (`content/professional-repertoire/`, `lib/professional-repertoire/`) and character corps (`content/characters/`). The receiving enterprises separately own specialist offices, protected context and appointments.
 
-- five governing offices in `lib/management/roster.json`;
-- the professional repertoire in `content/professional-repertoire/` and
-  `lib/professional-repertoire/`, plus the character corps in
-  `content/characters/`; and
-- hyper-specialized offices, protected context, and appointments that remain
-  in receiving services.
-
-The second population is the Academy's educational and labor product, not its
-internal staff roster. Historical Executive Office and character-store copies
-are retained only as digest-bound projections during consumer migration.
-`npm run verify` fails if a live carrier is unclassified, if reusable law lacks
-an Academy canonical carrier, or if a retained projection drifts.
+Historical Executive Office and character-store copies remain digest-bound projections during consumer migration, not rival owners. The [Academy engine](https://github.com/red-cup-engineering/union-officer-academy-engine) verifies canonical coverage and projection drift; a passing verification does not imply receiver induction.
 
 ## The Academy's organs and operating swarm
 
@@ -273,10 +262,15 @@ value terms. The Academy neither preselects the section nor writes its territory
     academy-rsi solicit-software-tender --lot <urn>
     academy-rsi verify
 
-## Operation-scoped ChatGPT connector triage — Engineering-owned
+## Connector incident diagnosis: upstream source
 
-[Computer Engineering PR #418](https://github.com/red-cup-engineering/computer-engineering-services-section/pull/418) moved the original connector diagnostic and adversarial tests to [Agent Harness Engineering](https://github.com/red-cup-engineering/agent-harness-computer-system-engineering-services-section) as `connector-call-evidence`; [Coesite PR #189](https://github.com/coesite-operations/operations-services-section/pull/189) retired the Academy copies. The diagnostic separately evaluates observed dispatch, provider reach, HTTP response, host refusal and independent effect readback. An internal exception does not prove provider rejection; a sibling call does not verify the failed operation; a safety refusal forbids a workaround; an uncertain write requires readback before retry. The owning code and tests belong upstream, and the actual connector incident remains [Engineering #5](https://github.com/red-cup-engineering/engineering-services-section/issues/5). None of this grants current host rights or deployed behavior.
+[Computer Engineering #418](https://github.com/red-cup-engineering/computer-engineering-services-section/pull/418) transferred `connector-call-evidence` and its adversarial tests to [Agent Harness Engineering](https://github.com/red-cup-engineering/agent-harness-computer-system-engineering-services-section); [Coesite #189](https://github.com/coesite-operations/operations-services-section/pull/189) retired the Academy copies. The [original Engineering incident #5](https://github.com/red-cup-engineering/engineering-services-section/issues/5) remains the incident record.
 
-## Allocation census source guard
+The diagnostic distinguishes dispatch, provider reach, HTTP response, host refusal and independent effect readback. An internal exception is not necessarily a provider refusal; a sibling call cannot confirm the failed operation. Respect security refusals and read back uncertain writes before retrying. Neither this note nor the upstream source proves an installed service or grants host authority.
 
-[The original MetroPlat allocation-readiness Engineering service](https://github.com/red-cup-engineering/union-officer-academy-engine/blob/main/services/metroplat-allocation-readiness-service/README.md) owns `assessAllocationReadiness`, `planNonoverlappingAllocations`, the native tests and the bounded matching/Hall-deficiency witness. The Academy engine's `src/allocation-readiness.mjs` only re-exports these functions; Coesite keeps no executable copy. The library reads complete, dated, cursor-qualified allocation-candidate pages, accepts an optional `expectedDate`, refuses invalid/incomplete/duplicate source readings and distinguishes choice-required, already-allocated and incomplete outcomes. It does **not** appoint, allocate, dispatch or pay an officer. Passing source checks does not demonstrate installed or independently received operations.
+## Allocation census: upstream source
+
+[MetroPlat allocation-readiness Engineering](https://github.com/red-cup-engineering/union-officer-academy-engine/blob/main/services/metroplat-allocation-readiness-service/README.md) owns `assessAllocationReadiness`, `planNonoverlappingAllocations`, tests and the bounded matching/Hall-deficiency witness; the Academy engine only re-exports them. Coesite holds no duplicate executable implementation.
+
+Readers require complete, dated, cursor-qualified candidate pages, optionally checked against `expectedDate`; invalid, incomplete or duplicated readings are refused. The results distinguish incomplete, choice-required and already-allocated states but **do not** appoint, allocate, dispatch, pay or establish an installed and independently received service.
+
