@@ -164,36 +164,31 @@ a pilot that limits the Academy.
 
 ## Executable boundary
 
-**The Academy supplies the operating data and contracts; [Red Cup's
-Academy engine](https://github.com/red-cup-engineering/union-officer-academy-engine/blob/main/README.md#current-cli-surface)
-owns the executable CLI and its supported verbs.** No `src/`, executable
-`bin` or `npm` command is supplied by this checkout. A package source
-tree or verified formation record is not a deployed provider or a customer
-appointment.
+The Academy owns **operating records and terms**, not runnable code. [Red
+Cup's Academy engine](https://github.com/red-cup-engineering/union-officer-academy-engine/blob/main/README.md#current-cli-surface)
+owns the executable entrypoints, accepted verbs and validation. This
+checkout has no Academy `src/` or `bin` and supplies no current CLI;
+source availability neither grants authority nor proves installation.
 
-The enterprise provider contract distinguishes ActivityStreams
-Offer/Accept/Reject, a scoped OCap/CapTP operation, CloudEvents and EAVT
-witnesses. The existing `solicit-service` and `invoke-service` routes
-are implemented by Engineering; an ActivityPub server or x402 cash
-settlement is **not** established by this section. The customer controls
-its own territory, source appointment and acceptance.
+The provider contract distinguishes ActivityStreams Offer/Accept/Reject,
+scoped OCap/CapTP invocation, CloudEvents and EAVT witnesses. The buyer
+controls territory, induction and acceptance. ActivityPub server deployment
+and x402 settlement are **not** established here.
 
-An Academy formation must preserve the live five-member arrangement,
-provider-authored bids and commitments, exact Executive Office cohort and
-bundle, independently checked stage performances, examiner-only reveal,
-a failing same-baseline control, qualification, customer-owned projection,
-at least one actual boundary invocation and five member-local value entries.
-The current Engine verification also checks source material and carrier
-digests. A green local source test is not customer induction.
+The Engine's formation verification requires the admitted five-member
+agreement; supplier-authored bids/commitments; exact Executive Office
+cohort/bundle; distinct performances, examiner-only reveal and failing
+same-baseline control; qualification and customer-owned projection;
+an actual provider-boundary invocation and five member-local value entries.
+It also checks material and carrier digests. Passing its tests cannot
+appoint an officer or certify a live customer outcome.
 
-Qualifications remain historical cohort evidence; successors reference
-their predecessors through `supersedes` and a registrar-owned
-`QualificationStatusEvent`, without deleting the old credential or
-moving appointment authority from the receiving enterprise. The supported
-record lifecycle covers admission, curriculum, baseline, cohort, enrollment,
+The Academy records request, curriculum, baseline, cohort, enrollment,
 formation bundle, training, assessment, qualification or refusal and
-requalification-gap discovery. **Select actual Engineering CLI verbs from
-its current source**, rather than maintaining a second command list here.
+requalification gaps. A successor qualification retains `supersedes` and
+its registrar-owned `QualificationStatusEvent`; old records are not
+deleted and customer appointment powers are unchanged. Use the Engine
+source for actual commands rather than copying a second executable manual.
 
 Huidu Guanli and Rendanheyi remain Academy-owned management-thought
 services under `services/management-thought/`.
