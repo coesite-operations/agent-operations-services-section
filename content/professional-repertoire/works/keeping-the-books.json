@@ -3,7 +3,7 @@
   "name": "keeping the books",
   "from": "2026-10-02 observed source state: A books substrate and unit-value writer exist, but current portfolio coverage is largely unpopulated, conventional monetary events lack their own canonical journal, and no firm-wide allocation denomination is settled.",
   "to": "Books kept in a settled denomination, recording value created and value captured separately per unit, so an allocation the investment review board states is a number something can be checked against.",
-  "cost": "Settling the allocation denomination, populating sourced unit-value entries, and adding conventional monetary event coverage without collapsing money into the win-win value ledger or house-resource measures.",
+  "cost": "Settling the allocation denomination, populating sourced unit-value entries, and adding conventional monetary event coverage without collapsing money into the win-win value ledger or group-resource measures.",
   "otherwise": "The investment review board's allocations remain scales with nothing to count them in, and 'accounts must match reality' has no accounts to check.",
   "x-provenance": {
     "recorded-by": "claude/requirements-implementation-team",
