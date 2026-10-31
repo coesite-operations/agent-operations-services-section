@@ -164,54 +164,39 @@ a pilot that limits the Academy.
 
 ## Executable boundary
 
-At the enterprise membrane, `solicit-service` and `invoke-service` implement
-the Executive Office's provider-discovery contract: ActivityStreams
-Offer/Accept/Reject, an OCap-shaped capability with exact CapTP method and root
-attenuation, CloudEvents 1.0 notifications, and EAVT evidence. ActivityPub
-server deployment and x402 settlement are explicitly not claimed.
+**The Academy supplies the operating data and contracts; [Red Cup's
+Academy engine](https://github.com/red-cup-engineering/union-officer-academy-engine/blob/main/README.md#current-cli-surface)
+owns the executable CLI and its supported verbs.** No `src/`, executable
+`bin` or `npm` command is supplied by this checkout. A package source
+tree or verified formation record is not a deployed provider or a customer
+appointment.
 
-The autonomic service is invoked through the standard provider boundary:
+The enterprise provider contract distinguishes ActivityStreams
+Offer/Accept/Reject, a scoped OCap/CapTP operation, CloudEvents and EAVT
+witnesses. The existing `solicit-service` and `invoke-service` routes
+are implemented by Engineering; an ActivityPub server or x402 cash
+settlement is **not** established by this section. The customer controls
+its own territory, source appointment and acceptance.
 
-    solicit-service --operation solicit-service
-    invoke-service --operation invoke-service
-    mape-formation-territory --operation mape-formation-territory
+An Academy formation must preserve the live five-member arrangement,
+provider-authored bids and commitments, exact Executive Office cohort and
+bundle, independently checked stage performances, examiner-only reveal,
+a failing same-baseline control, qualification, customer-owned projection,
+at least one actual boundary invocation and five member-local value entries.
+The current Engine verification also checks source material and carrier
+digests. A green local source test is not customer induction.
 
-`npm run verify` stays red unless it resolves the live five-member agreement,
-provider-authored bids and commitments, exact EO cohort and bundle, distinct
-stage performances, examiner-only reveal, failing same-baseline control, final
-qualification, customer-owned projection, retained target-delivery outcomes
-including at least one actual boundary invocation, receiver acceptance, and
-five member-local value entries. It also rehashes every qualified context
-material and every live provider carrier configuration, and rejects drift. A
-structural inventory or self-authored completion claim cannot satisfy it.
+Qualifications remain historical cohort evidence; successors reference
+their predecessors through `supersedes` and a registrar-owned
+`QualificationStatusEvent`, without deleting the old credential or
+moving appointment authority from the receiving enterprise. The supported
+record lifecycle covers admission, curriculum, baseline, cohort, enrollment,
+formation bundle, training, assessment, qualification or refusal and
+requalification-gap discovery. **Select actual Engineering CLI verbs from
+its current source**, rather than maintaining a second command list here.
 
-Qualifications are historical cohort evidence, never floating office labels.
-The current successor qualification names the prior qualification in
-`supersedes`; a registrar-owned `QualificationStatusEvent` marks that prior
-qualification superseded without deleting it or transferring appointment
-authority from the customer.
-
-The executable lifecycle admits requests, compiles curricula, establishes
-baselines and formation epochs, enrolls exact candidates, compiles
-OfficeFormationBundle records, records situated formation and independent
-assessment, issues qualifications or refusals, and derives requalification
-gaps. Every write is Academy-local.
-
-    union-officer-academy admit-request
-    union-officer-academy compile-curriculum
-    union-officer-academy establish-baseline
-    union-officer-academy open-cohort
-    union-officer-academy enroll
-    union-officer-academy compile-office-formation-bundle
-    union-officer-academy record-training
-    union-officer-academy record-assessment
-    union-officer-academy issue-qualification
-    union-officer-academy derive-requalification-gap
-    union-officer-academy derive-formation-epoch-gap
-    union-officer-academy verify
-
-Huidu Guanli and Rendanheyi remain Academy-owned management-thought services
-under services/management-thought/.
+Huidu Guanli and Rendanheyi remain Academy-owned management-thought
+services under `services/management-thought/`.
 
 ## Academy self-government and RSI
 
@@ -255,12 +240,13 @@ result. Its provider-authored clarification `Question` is retained as a
 superseding lot containing the missing purpose, proof, ceiling, authority, and
 value terms. The Academy neither preselects the section nor writes its territory.
 
-    academy-rsi run-cycle
-    academy-rsi observe
-    academy-rsi record-acting-lead-mandate --source-goal <goal> --source-direction <direction>
-    academy-rsi publish-leadership-lot --lot <urn>
-    academy-rsi solicit-software-tender --lot <urn>
-    academy-rsi verify
+**CLI boundary:** The [current Engineering
+entrypoint](https://github.com/red-cup-engineering/union-officer-academy-engine/blob/main/README.md#current-cli-surface)
+dispatches `academy-rsi run-cycle` and `academy-rsi verify`. It does
+**not** dispatch `observe`, `record-acting-lead-mandate`,
+`publish-leadership-lot` or `solicit-software-tender` as shell
+commands. Those institutional decisions require their actual source
+contracts and admissible provider, not an invented CLI invocation.
 
 ## Connector incident diagnosis: upstream source
 
